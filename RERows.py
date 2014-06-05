@@ -2,8 +2,10 @@
 # forked from https://gist.github.com/kklimonda/890640
 # by Jeremi "jeremi360" Biernacki
 
-import sys
+import sys, os
 from gi.repository import Gtk, Gdk, WebKit
+
+UI_FILE = os.path.join("ui", "RERows beta06.ui")
 
 class BrowserTab(Gtk.VBox):
     def __init__(self, *args, **kwargs):
