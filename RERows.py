@@ -60,7 +60,9 @@ class BrowserTab(Gtk.VBox):
 
     def _load_url(self, widget):
         url = self.url_bar.get_text()
-        if not "://" in url:
+        if not "://" or  not "." in url:
+            url = "http://www.google.pl/search?q=" + url
+        elif not "http://" in url:
             url = "http://" + url
         self.webview.load_uri(url)
 
