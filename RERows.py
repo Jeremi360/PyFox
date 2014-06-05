@@ -73,7 +73,7 @@ class Browser(Gtk.Window):
         self.notebook.set_scrollable(True)
 
         # basic stuff
-            self.tabs = []
+        self.tabs = []
         self.set_size_request(400, 400)
 
         # create a first, empty browser tab
