@@ -15,13 +15,13 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="no_show_all">True</property>
-        <property name="valign">start</property>
         <property name="resize_mode">immediate</property>
         <property name="orientation">vertical</property>
         <child>
           <object class="GtkBox" id="toolbox">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="valign">start</property>
             <property name="homogeneous">True</property>
             <property name="baseline_position">top</property>
             <child>
