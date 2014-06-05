@@ -4,7 +4,7 @@ from gi.repository import Gtk, GdkPixbuf, WebKit
 import os, sys
 import urllib
 
-UI_FILE = os.path.join("ui", "RERows beta0.5 fresh.ui")
+UI_FILE = os.path.join("ui", "RERows beta0.6.ui")
 
 class Browser:
 	def __init__(self):
@@ -35,14 +35,14 @@ class Browser:
 			self.webview.go_forward()
 		elif button.get_stock_id() == Gtk.STOCK_GO_BACK:
 			self.webview.go_back()
-	
+
 	def  on_fresh(self, button):
 			self.webview.reload()
-		
+
 	def url_active(self, widget):
 		url = widget.get_text()
 		if not "://" or  not "." in url:
-			url = "http://www.google.pl/search?q=" + url 
+			url = "http://www.google.pl/search?q=" + url
 		elif not "http://" in url:
 			url = "http://" + url
 		self.webview.load_uri(url)
@@ -62,7 +62,7 @@ class Browser:
 			self.url.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
 		except:
 			self.url.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
-			
+
 	def progress_load(self, webview, amount):
 		self.progressbar.set_fraction(amount / 100.0)
 
@@ -84,4 +84,4 @@ class Browser:
 if __name__ == "__main__":
 	app = Browser()
 	Gtk.main()
-	
+
