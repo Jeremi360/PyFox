@@ -4,12 +4,12 @@ from gi.repository import Gtk, GdkPixbuf, WebKit
 import os, sys
 import urllib
 
-UI_FILE = os.path.join("ui", "Tab.ui")
+UI_tab = os.path.join("ui", "Tab.ui")
 
-class Browser:
+class Tab:
 	def __init__(self):
 		self.ui = Gtk.Builder()
-		self.ui.add_from_file(UI_FILE)
+		self.ui.add_from_file(UI_tab)
 		self.ui.connect_signals(self)
 
 		self.back = self.ui.get_object("back")
@@ -80,6 +80,8 @@ class Browser:
 
 	def destroy(self, window):
 		Gtk.main_quit()
+
+class Browser():
 
 if __name__ == "__main__":
 	app = Browser()
