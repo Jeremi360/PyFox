@@ -68,20 +68,20 @@ class Browser(Gtk.Window):
     def __init__(self, *args, **kwargs):
         super(Browser, self).__init__(*args, **kwargs)
 
-    # create notebook and tabs
-    self.notebook = Gtk.Notebook()
-    self.notebook.set_scrollable(True)
+        # create notebook and tabs
+        self.notebook = Gtk.Notebook()
+        self.notebook.set_scrollable(True)
 
-    # basic stuff
-        self.tabs = []
-    self.set_size_request(400,400)
+        # basic stuff
+            self.tabs = []
+        self.set_size_request(400, 400)
 
         # create a first, empty browser tab
         self.tabs.append((self._create_tab(), Gtk.Label("New Tab")))
         self.notebook.append_page(*self.tabs[0])
         self.add(self.notebook)
 
-    # connect signals
+        # connect signals
         self.connect("destroy", Gtk.main_quit)
         self.connect("key-press-event", self._key_pressed)
         self.notebook.connect("switch-page", self._tab_changed)
@@ -126,9 +126,9 @@ class Browser(Gtk.Window):
     def _open_new_tab(self):
         current_page = self.notebook.get_current_page()
         page_tuple = (self._create_tab(), Gtk.Label("New Tab"))
-        self.tabs.insert(current_page+1, page_tuple)
-        self.notebook.insert_page(page_tuple[0], page_tuple[1], current_page+1)
-        self.notebook.set_current_page(current_page+1)
+        self.tabs.insert(current_page + 1, page_tuple)
+        self.notebook.insert_page(page_tuple[0], page_tuple[1], current_page + 1)
+        self.notebook.set_current_page(current_page + 1)
 
     def _focus_url_bar(self):
         current_page = self.notebook.get_current_page()
