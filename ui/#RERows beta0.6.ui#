@@ -169,9 +169,6 @@
             <property name="position">1</property>
           </packing>
         </child>
-        <child>
-          <placeholder/>
-        </child>
       </object>
     </child>
   </template>
