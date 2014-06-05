@@ -4,7 +4,7 @@ from gi.repository import Gtk, GdkPixbuf, WebKit
 import os, sys
 import urllib
 
-UI_FILE = os.path.join("ui", "RERows05 beta06.ui")
+UI_FILE = os.path.join("ui", "Tab.ui")
 
 class Browser:
 	def __init__(self):
