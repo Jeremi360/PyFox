@@ -20,7 +20,49 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
-              <placeholder/>
+              <object class="GtkBox" id="box2">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkToolButton" id="back">
+                    <property name="use_action_appearance">False</property>
+                    <property name="visible">True</property>
+                    <property name="sensitive">False</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">Wstecz</property>
+                    <property name="use_underline">True</property>
+                    <property name="stock_id">gtk-go-back</property>
+                    <signal name="clicked" handler="on_button" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkToolButton" id="forward">
+                    <property name="use_action_appearance">False</property>
+                    <property name="visible">True</property>
+                    <property name="sensitive">False</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">Dalej</property>
+                    <property name="use_underline">True</property>
+                    <property name="stock_id">gtk-go-forward</property>
+                    <signal name="clicked" handler="on_button" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
             </child>
             <child>
               <placeholder/>
@@ -42,38 +84,6 @@
           <object class="GtkToolbar" id="navibar">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <child>
-              <object class="GtkToolButton" id="back">
-                <property name="use_action_appearance">False</property>
-                <property name="visible">True</property>
-                <property name="sensitive">False</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Wstecz</property>
-                <property name="use_underline">True</property>
-                <property name="stock_id">gtk-go-back</property>
-                <signal name="clicked" handler="on_button" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="homogeneous">True</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkToolButton" id="forward">
-                <property name="use_action_appearance">False</property>
-                <property name="visible">True</property>
-                <property name="sensitive">False</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Dalej</property>
-                <property name="use_underline">True</property>
-                <property name="stock_id">gtk-go-forward</property>
-                <signal name="clicked" handler="on_button" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="homogeneous">True</property>
-              </packing>
-            </child>
             <child>
               <object class="GtkToolItem" id="urlbar">
                 <property name="use_action_appearance">False</property>
