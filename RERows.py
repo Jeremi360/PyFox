@@ -81,7 +81,13 @@ class Tab:
 	def destroy(self, window):
 		Gtk.main_quit()
 
+UI_main = os.path.join("ui", "Main.ui")
+
 class Browser():
+	def __init__(self):
+		self.ui = Gtk.Builder()
+		self.ui.add_from_file(UI_main)
+		self.ui.connect_signals(self)
 
 if __name__ == "__main__":
 	app = Browser()
