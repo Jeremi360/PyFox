@@ -80,6 +80,7 @@
                     <property name="primary_icon_name">applications-internet</property>
                     <property name="secondary_icon_activatable">False</property>
                     <property name="secondary_icon_sensitive">False</property>
+                    <property name="input_purpose">url</property>
                     <signal name="activate" handler="url_active" swapped="no"/>
                   </object>
                   <packing>
