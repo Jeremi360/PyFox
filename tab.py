@@ -4,7 +4,7 @@
 
 from gi.repository import Gtk, GdkPixbuf, WebKit
 import os, sys
-import urllib
+import urllib2
 from find import Find
 
 UI_tab = os.path.join("ui", "Tab.ui")
