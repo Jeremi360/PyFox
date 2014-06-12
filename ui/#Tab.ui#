@@ -97,9 +97,6 @@
               </packing>
             </child>
             <child>
-              <placeholder/>
-            </child>
-            <child>
               <object class="GtkButton" id="next">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -110,9 +107,12 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">3</property>
+                <property name="position">2</property>
                 <property name="non_homogeneous">True</property>
               </packing>
+            </child>
+            <child>
+              <placeholder/>
             </child>
             <child>
               <object class="GtkButtonBox" id="supbox">
