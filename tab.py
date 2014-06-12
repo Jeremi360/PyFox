@@ -20,7 +20,7 @@ class Tab:
 		self.back = self.ui.get_object("back")
 		self.forward = self.ui.get_object("next")
 		self.url = self.ui.get_object("url")
-		self.progressbar = self.ui.get_object("progressbar")
+		#self.progressbar = self.ui.get_object("progressbar")
 		self.fresh = self.ui.get_object("fresh")
 		self.top = self.ui.get_object("top")
 		#self.zoomin = self.ui.get_object("zoomin")
