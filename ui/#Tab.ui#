@@ -132,34 +132,12 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButtonBox" id="supbox">
+              <object class="GtkProgressBar" id="progressbar">
+                <property name="height_request">20</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
-                <property name="layout_style">center</property>
-                <child>
-                  <object class="GtkButtonBox" id="ubox">
-                    <property name="width_request">-1</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="layout_style">center</property>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
-                    <property name="position">0</property>
-                    <property name="non_homogeneous">True</property>
-                  </packing>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
+                <property name="ellipsize">middle</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -167,6 +145,9 @@
                 <property name="position">4</property>
                 <property name="non_homogeneous">True</property>
               </packing>
+            </child>
+            <child>
+              <placeholder/>
             </child>
             <child>
               <object class="GtkButton" id="fresh">
@@ -179,7 +160,7 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">5</property>
+                <property name="position">6</property>
                 <property name="non_homogeneous">True</property>
               </packing>
             </child>
@@ -193,7 +174,7 @@ or remove from them</property>
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">6</property>
+                <property name="position">7</property>
                 <property name="non_homogeneous">True</property>
               </packing>
             </child>
@@ -221,7 +202,7 @@ or remove from them</property>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">7</property>
+                <property name="position">8</property>
                 <property name="non_homogeneous">True</property>
               </packing>
             </child>
@@ -294,21 +275,8 @@ or remove from them</property>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">8</property>
-                <property name="non_homogeneous">True</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkProgressBar" id="progressbar">
-                <property name="height_request">20</property>
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="ellipsize">middle</property>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">False</property>
                 <property name="position">9</property>
+                <property name="non_homogeneous">True</property>
               </packing>
             </child>
             <child>
