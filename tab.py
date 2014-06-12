@@ -99,4 +99,4 @@ class Tab(Gtk.VBox):
 if __name__ == "__main__":
 	Gtk.init(sys.argv)
 	tab = Tab()
-    Gtk.main()
+	Gtk.main()
