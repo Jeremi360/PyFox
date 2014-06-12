@@ -82,83 +82,66 @@
               </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkButton" id="back">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">image9</property>
+                <property name="relief">none</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
             </child>
             <child>
-              <object class="GtkButtonBox" id="supbox">
+              <object class="GtkButton" id="next">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="orientation">vertical</property>
-                <property name="layout_style">center</property>
-                <child>
-                  <object class="GtkButtonBox" id="ubox">
-                    <property name="width_request">-1</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="layout_style">center</property>
-                    <child>
-                      <object class="GtkEntry" id="url">
-                        <property name="width_request">-1</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="invisible_char">●</property>
-                        <property name="progress_pulse_step">0.20000000000000001</property>
-                        <property name="primary_icon_name">applications-internet</property>
-                        <property name="secondary_icon_activatable">False</property>
-                        <property name="secondary_icon_sensitive">False</property>
-                        <property name="input_purpose">url</property>
-                        <signal name="activate" handler="url_active" swapped="no"/>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">-1</property>
-                        <property name="non_homogeneous">True</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkComboBoxText" id="enginebox">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="active">0</property>
-                        <items>
-                          <item id="&lt;Tutaj należy wprowadzić identyfikator&gt;" translatable="yes">Google</item>
-                        </items>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">False</property>
-                        <property name="position">1</property>
-                        <property name="non_homogeneous">True</property>
-                      </packing>
-                    </child>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
-                    <property name="position">0</property>
-                    <property name="non_homogeneous">True</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkProgressBar" id="progressbar">
-                    <property name="height_request">20</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="ellipsize">middle</property>
-                  </object>
-                  <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">False</property>
-                    <property name="position">1</property>
-                    <property name="non_homogeneous">True</property>
-                  </packing>
-                </child>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">image10</property>
+                <property name="relief">none</property>
               </object>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
                 <property name="position">2</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="url">
+                <property name="width_request">-1</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">●</property>
+                <property name="progress_pulse_step">0.20000000000000001</property>
+                <property name="primary_icon_name">applications-internet</property>
+                <property name="secondary_icon_activatable">False</property>
+                <property name="secondary_icon_sensitive">False</property>
+                <property name="input_purpose">url</property>
+                <signal name="activate" handler="url_active" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">3</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkProgressBar" id="progressbar">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="orientation">vertical</property>
+                <property name="ellipsize">middle</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">4</property>
                 <property name="non_homogeneous">True</property>
               </packing>
             </child>
@@ -173,7 +156,7 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">3</property>
+                <property name="position">5</property>
                 <property name="non_homogeneous">True</property>
               </packing>
             </child>
@@ -187,51 +170,27 @@ or remove from them</property>
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">4</property>
+                <property name="position">6</property>
                 <property name="non_homogeneous">True</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="next">
+              <object class="GtkButton" id="open">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="image">image10</property>
+                <property name="image">image3</property>
                 <property name="relief">none</property>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">5</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButtonBox" id="addsbox">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="layout_style">center</property>
-                <child>
-                  <object class="GtkButton" id="open">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="image">image3</property>
-                    <property name="relief">none</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
-                    <property name="position">0</property>
-                    <property name="non_homogeneous">True</property>
-                  </packing>
-                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">6</property>
+                <property name="position">7</property>
                 <property name="non_homogeneous">True</property>
               </packing>
+            </child>
+            <child>
+              <placeholder/>
             </child>
             <child>
               <object class="GtkButtonBox" id="viewbox">
@@ -302,23 +261,27 @@ or remove from them</property>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">7</property>
+                <property name="position">9</property>
                 <property name="non_homogeneous">True</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="back">
+              <object class="GtkComboBoxText" id="enginebox">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="image">image9</property>
-                <property name="relief">none</property>
+                <property name="can_focus">False</property>
+                <property name="active">0</property>
+                <items>
+                  <item id="&lt;Tutaj należy wprowadzić identyfikator&gt;" translatable="yes">Google</item>
+                </items>
               </object>
               <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">8</property>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">10</property>
               </packing>
+            </child>
+            <child>
+              <placeholder/>
             </child>
           </object>
           <packing>
