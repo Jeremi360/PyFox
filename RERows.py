@@ -133,8 +133,8 @@ class Browser(Gtk.Window):
 
 
 if __name__ == "__main__":
-    Gtk.init(sys.argv)
+	Gtk.init(sys.argv)
 
-    browser = Browser()
+	browser = Browser()
 
-    Gtk.main()
+	Gtk.main()
