@@ -112,7 +112,6 @@
             </child>
             <child>
               <object class="GtkEntry" id="url">
-                <property name="width_request">-1</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="invisible_char">●</property>
