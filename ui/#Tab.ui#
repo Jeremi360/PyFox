@@ -75,7 +75,7 @@
             <property name="orientation">vertical</property>
             <property name="layout_style">spread</property>
             <child>
-              <object class="GtkButton" id="button1">
+              <object class="GtkButton" id="back">
                 <property name="label" translatable="yes">button</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
