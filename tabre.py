@@ -11,9 +11,8 @@ class Browser:
 		self.ui = Gtk.Builder()
 		self.ui.add_from_file(UI_FILE)
 		self.ui.connect_signals(self)
-
 		self.back = self.ui.get_object("back")
-		self.forward = self.ui.get_object("next")
+		self.next = self.ui.get_object("next")
 		self.url = self.ui.get_object("url")
 		self.fresh = self.ui.get_object("fresh")
 
@@ -26,17 +25,12 @@ class Browser:
 		self.webview.connect("load-finished", self.finish_load)
 		self.webview.connect("load-progress-changed", self.progress_load)
 
+		self.back.connect("clicked", lambda x: self.webview.go_back())
+		self.next.connect("clicked", lambda x: self.webview.go_forward())
+		self.fresh.connect("clicked", lambda x: self.webview.reload())
+
 		self.window = self.ui.get_object("window")
 		self.window.show_all()
-
-	def on_button(self, button):
-		if button.get_stock_id() == Gtk.STOCK_GO_FORWARD:
-			self.webview.go_forward()
-		elif button.get_stock_id() == Gtk.STOCK_GO_BACK:
-			self.webview.go_back()
-
-	def  on_fresh(self, button):
-			self.webview.reload()
 
 	def url_active(self, widget):
 		url = widget.get_text()
