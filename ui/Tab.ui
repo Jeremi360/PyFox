@@ -229,8 +229,8 @@ or remove from them</property>
                 <property name="primary_icon_sensitive">False</property>
               </object>
               <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
                 <property name="position">0</property>
               </packing>
             </child>
@@ -254,6 +254,7 @@ or remove from them</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="image">image11</property>
+                <property name="relief">none</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -267,6 +268,8 @@ or remove from them</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="image">image12</property>
+                <property name="relief">none</property>
+                <property name="yalign">0.50999999046325684</property>
               </object>
               <packing>
                 <property name="expand">False</property>
