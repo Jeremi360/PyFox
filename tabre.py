@@ -13,7 +13,7 @@ class Browser:
 		self.ui.connect_signals(self)
 
 		self.back = self.ui.get_object("back")
-		self.forward = self.ui.get_object("forward")
+		self.forward = self.ui.get_object("next")
 		self.url = self.ui.get_object("url")
 		self.fresh = self.ui.get_object("fresh")
 
