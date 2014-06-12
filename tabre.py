@@ -29,7 +29,7 @@ class Browser:
 		self.back.connect("clicked", lambda x: self.webview.go_back())
 		self.next.connect("clicked", lambda x: self.webview.go_forward())
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
-		self.top.connect("clicked", lambda x: scroll.do_scroll_child(Gtk.ScrollType.START, False))
+		self.top.connect("clicked", lambda x: scroll.do_scroll_child(scroll, Gtk.ScrollType.START, False))
 
 		self.window = self.ui.get_object("window")
 		self.window.show_all()
