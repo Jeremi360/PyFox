@@ -60,7 +60,7 @@ class Browser:
 			self.url.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
 
 	def progress_load(self, webview, amount):
-		self.url.set_fraction(amount / 100.0)
+		self.url.set_progress_fraction(amount / 100.0)
 
 	def finish_load(self):
 		self.url.set_text(self.webview.get_uri())
