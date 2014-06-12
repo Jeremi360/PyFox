@@ -37,6 +37,11 @@
     <property name="can_focus">False</property>
     <property name="icon_name">go-top</property>
   </object>
+  <object class="GtkImage" id="image8">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">view-refresh</property>
+  </object>
   <object class="GtkBox" id="box">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -57,8 +62,8 @@
             <property name="always_show_image">True</property>
           </object>
           <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
             <property name="position">0</property>
             <property name="non_homogeneous">True</property>
           </packing>
@@ -107,8 +112,8 @@
             </child>
           </object>
           <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
             <property name="position">1</property>
             <property name="non_homogeneous">True</property>
           </packing>
@@ -196,18 +201,16 @@
           </packing>
         </child>
         <child>
-          <object class="GtkToolButton" id="fresh">
-            <property name="use_action_appearance">False</property>
+          <object class="GtkButton" id="fresh">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Odśwież</property>
-            <property name="use_underline">True</property>
-            <property name="stock_id">gtk-refresh</property>
-            <signal name="clicked" handler="on_fresh" swapped="no"/>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="image">image8</property>
+            <property name="relief">none</property>
           </object>
           <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
             <property name="position">3</property>
             <property name="non_homogeneous">True</property>
           </packing>
@@ -221,8 +224,8 @@
             <property name="relief">none</property>
           </object>
           <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
             <property name="position">5</property>
             <property name="non_homogeneous">True</property>
           </packing>
@@ -249,8 +252,8 @@
             </child>
           </object>
           <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
             <property name="position">6</property>
             <property name="non_homogeneous">True</property>
           </packing>
@@ -269,8 +272,8 @@
                 <property name="relief">none</property>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
                 <property name="position">0</property>
                 <property name="non_homogeneous">True</property>
               </packing>
@@ -284,8 +287,8 @@
                 <property name="relief">none</property>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
                 <property name="position">1</property>
                 <property name="non_homogeneous">True</property>
               </packing>
@@ -299,8 +302,8 @@
                 <property name="relief">none</property>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
                 <property name="position">2</property>
                 <property name="non_homogeneous">True</property>
               </packing>
@@ -314,23 +317,23 @@
                 <property name="relief">none</property>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
                 <property name="position">3</property>
                 <property name="non_homogeneous">True</property>
               </packing>
             </child>
           </object>
           <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
             <property name="position">7</property>
             <property name="non_homogeneous">True</property>
           </packing>
         </child>
       </object>
       <packing>
-        <property name="expand">False</property>
+        <property name="expand">True</property>
         <property name="fill">True</property>
         <property name="position">0</property>
       </packing>
