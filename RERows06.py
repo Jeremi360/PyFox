@@ -10,7 +10,6 @@ class Browser:
 	def __init__(self):
 		self.ui = Gtk.Builder()
 		self.ui.add_from_file(UI_FILE)
-		self.box.
 		self.ui.connect_signals(self)
 
 		self.back = self.ui.get_object("back")
