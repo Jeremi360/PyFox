@@ -3,6 +3,7 @@
 from gi.repository import Gtk, GdkPixbuf, WebKit
 import os, sys
 import urllib
+from find import Find
 
 UI_tab = os.path.join("ui", "Tab.ui")
 
@@ -79,4 +80,4 @@ class Tab(Gtk.VBox):
 			self.forward.set_sensitive(False)
 
 	def destroy(self, window):
-		Gtk.main_quit())
+		Gtk.main_quit()
