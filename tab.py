@@ -39,7 +39,7 @@ class Tab:
 		self.webview.connect("load-progress-changed", self.progress_load)
 
 		find_box = Find(self)
-		self.pack_start(find_box, False, False, 1)
+		self.ui.pack_start(find_box, False, False, 1)
 
 		self.find.connect("clicked", lambda x: find_box.show())
 
