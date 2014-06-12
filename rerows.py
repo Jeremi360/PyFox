@@ -6,6 +6,7 @@ import sys, os
 from gi.repository import Gtk, Gdk, WebKit
 from tab import Tab as BrowserTab
 
+
 class Browser(Gtk.Window):
     def __init__(self, *args, **kwargs):
         super(Browser, self).__init__(*args, **kwargs)
