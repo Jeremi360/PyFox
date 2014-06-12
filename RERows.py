@@ -108,6 +108,25 @@ class Browser(Gtk.Window):
 		self.notebook.show()
 		self.show()
 
+	def _tab_changed(self, notebook, current_page, index):
+        if not index:
+            return
+        title = self.tabs[index][0].webview.get_title()
+        if title:
+            self.set_title(title)
+
+	def _title_changed(self, webview, frame, title):
+		current_page = self.notebook.get_current_page()
+
+		counter = 0
+		for tab, label in self.tabs:
+			if tab.webview is webview:
+				label.set_text(title)
+				if counter == current_page:
+					self._tab_changed(None, None, counter)
+				break
+			counter += 1
+
 	def _create_tab(self):
 		tab = Tab()
 		tab.webview.connect("title-changed", self._title_changed)
