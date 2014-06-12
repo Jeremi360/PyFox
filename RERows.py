@@ -91,19 +91,19 @@ class Browser():
 
 		self.tabs = []
 
-		self.notebook.set_scrollable(True)
+		self.gTabs.set_scrollable(True)
 
 		# create a first, empty browser tab
 		self.tabs.append((self._create_tab(), Gtk.Label("New Tab")))
-		self.notebook.append_page(*self.tabs[0])
-		self.add(self.notebook)
+		self.gTabs.append_page(*self.tabs[0])
+		self.add(self.gTabs)
 
 		# connect signals
 		self.connect("destroy", Gtk.main_quit)
 		self.connect("key-press-event", self._key_pressed)
-		self.notebook.connect("switch-page", self._tab_changed)
+		self.gTabs.connect("switch-page", self._tab_changed)
 
-		self.notebook.show()
+		self.gTabs.show()
 		self.show()
 
 	def _create_tab(self):
