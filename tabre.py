@@ -33,7 +33,7 @@ class Browser:
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
 		self.top.connect("clicked", lambda x: self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False))
 
-		self.webview.set_zoom_level(True)
+		self.webview.set_zoom_level(False)
 
 		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
 		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
@@ -59,11 +59,11 @@ class Browser:
 		except:
 			self.url.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
 
-	def progress_load(self, webview, amount):
+	def progress_load(self):
 		pass
 
-	def finish_load(self, webview, frame):
-		self.url.set_text(frame.get_uri())
+	def finish_load(self):
+		self.url.set_text(self.webview.get_uri())
 
 		if self.webview.can_go_back():
 			self.back.set_sensitive(True)
