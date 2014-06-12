@@ -9,7 +9,7 @@ from find import Find
 
 UI_tab = os.path.join("ui", "Tab.ui")
 
-class Tab(Gtk.VBox):
+class Tab:
 	def __init__(self):
 		self.ui = Gtk.Builder()
 		self.ui.add_from_file(UI_tab)
