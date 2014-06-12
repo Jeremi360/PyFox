@@ -68,7 +68,6 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="baseline_position">top</property>
-            <property name="layout_style">expand</property>
             <child>
               <object class="GtkButton" id="find">
                 <property name="visible">True</property>
@@ -83,6 +82,49 @@
                 <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">0</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButtonBox" id="navibox">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkButton" id="back">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="image">image9</property>
+                    <property name="relief">none</property>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                    <property name="non_homogeneous">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="next">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="image">image10</property>
+                    <property name="relief">none</property>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                    <property name="non_homogeneous">True</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
                 <property name="non_homogeneous">True</property>
               </packing>
             </child>
@@ -113,8 +155,8 @@
                       </object>
                       <packing>
                         <property name="expand">False</property>
-                        <property name="fill">False</property>
-                        <property name="position">0</property>
+                        <property name="fill">True</property>
+                        <property name="position">-1</property>
                         <property name="non_homogeneous">True</property>
                       </packing>
                     </child>
@@ -150,52 +192,8 @@
                     <property name="ellipsize">middle</property>
                   </object>
                   <packing>
-                    <property name="expand">False</property>
+                    <property name="expand">True</property>
                     <property name="fill">False</property>
-                    <property name="position">1</property>
-                    <property name="non_homogeneous">True</property>
-                  </packing>
-                </child>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">1</property>
-                <property name="non_homogeneous">True</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButtonBox" id="navibox">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="orientation">vertical</property>
-                <property name="layout_style">expand</property>
-                <child>
-                  <object class="GtkButton" id="back">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="image">image9</property>
-                    <property name="relief">none</property>
-                  </object>
-                  <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                    <property name="non_homogeneous">True</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkButton" id="next">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="image">image10</property>
-                    <property name="relief">none</property>
-                  </object>
-                  <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
                     <property name="position">1</property>
                     <property name="non_homogeneous">True</property>
                   </packing>
@@ -242,7 +240,6 @@
               <object class="GtkButtonBox" id="addsbox">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="layout_style">expand</property>
                 <child>
                   <object class="GtkButton" id="open">
                     <property name="visible">True</property>
@@ -270,7 +267,6 @@
               <object class="GtkButtonBox" id="viewbox">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="layout_style">expand</property>
                 <child>
                   <object class="GtkButton" id="top">
                     <property name="visible">True</property>
