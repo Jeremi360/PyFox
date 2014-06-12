@@ -109,11 +109,11 @@ class Browser(Gtk.Window):
 		self.show()
 
 	def _tab_changed(self, notebook, current_page, index):
-        if not index:
-            return
-        title = self.tabs[index][0].webview.get_title()
-        if title:
-            self.set_title(title)
+		if not index:
+			return
+		title = self.tabs[index][0].webview.get_title()
+		if title:
+			self.set_title(title)
 
 	def _title_changed(self, webview, frame, title):
 		current_page = self.notebook.get_current_page()
