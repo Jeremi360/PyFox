@@ -6,7 +6,7 @@ import urllib
 
 UI_FILE = os.path.join("ui", "Tab.ui")
 
-class Browser(Gtk.HBox):
+class Browser(Gtk.VBox):
 	def __init__(self):
 		self.ui = Gtk.Builder()
 		self.ui.add_from_file(UI_FILE)
