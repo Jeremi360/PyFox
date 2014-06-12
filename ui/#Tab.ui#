@@ -122,9 +122,6 @@
                 <property name="orientation">vertical</property>
                 <property name="baseline_position">top</property>
                 <child>
-                  <placeholder/>
-                </child>
-                <child>
                   <object class="GtkBox" id="subox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
