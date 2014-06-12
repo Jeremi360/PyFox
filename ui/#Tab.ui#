@@ -147,7 +147,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="fav">
+              <object class="GtkButton" id="booked">
                 <property name="label" translatable="yes">button</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
