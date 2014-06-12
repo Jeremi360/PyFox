@@ -37,17 +37,17 @@ class Browser(object):
 		self.top.connect("clicked", lambda x: self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False))
 		self.find.connect("clicked", lambda x: self.findbox.show())
 
-		closefb = self.ui.get_object("close")
-		closefb.connect("clicked", lambda x: self.hide())
+		closefb = self.ui.get_object("closefb")
+		closefb.connect("clicked", lambda x: self.findbox.hide())
 
 		find_entry = self.ui.get_object("find_entry")
 		find_entry.connect("activate", lambda x: self.webview.search_text(self.find_entry.get_text(), False, True, True))
 
-		prev = self.ui.get_object("back")
-		prev.connect("clicked", lambda x: self.webview.search_text(self.find_entry.get_text(), False, False, True))
+		backfb = self.ui.get_object("backfb")
+		backfb.connect("clicked", lambda x: self.webview.search_text(self.find_entry.get_text(), False, False, True))
 
-		nextb = self.ui.get_object("nextb")
-		nextb.connect("clicked", lambda x: self.webview.search_text(self.find_entry.get_text(), False, True, True))
+		nextfb = self.ui.get_object("nextfb")
+		nextfb.connect("clicked", lambda x: self.webview.search_text(self.find_entry.get_text(), False, True, True))
 
 		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
 		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
