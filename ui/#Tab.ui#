@@ -194,7 +194,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="button5">
+          <object class="GtkButton" id="boo">
             <property name="label" translatable="yes">button</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
