@@ -17,6 +17,11 @@
     <property name="can_focus">False</property>
     <property name="icon_name">document-open</property>
   </object>
+  <object class="GtkImage" id="image4">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">zoom-original</property>
+  </object>
   <object class="GtkImage" id="image5">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -130,6 +135,7 @@
               <object class="GtkProgressBar" id="progressbar">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="valign">center</property>
                 <property name="orientation">vertical</property>
                 <property name="ellipsize">middle</property>
               </object>
@@ -200,25 +206,28 @@ or remove from them</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="top">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="image">image7</property>
-                <property name="relief">none</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">9</property>
-                <property name="non_homogeneous">True</property>
-              </packing>
+              <placeholder/>
             </child>
             <child>
               <object class="GtkButtonBox" id="viewbox">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="layout_style">center</property>
+                <child>
+                  <object class="GtkButton" id="top">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="image">image7</property>
+                    <property name="relief">none</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">0</property>
+                    <property name="non_homogeneous">True</property>
+                  </packing>
+                </child>
                 <child>
                   <object class="GtkButton" id="zoomin">
                     <property name="visible">True</property>
@@ -230,19 +239,6 @@ or remove from them</property>
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="position">0</property>
-                    <property name="non_homogeneous">True</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkImage" id="image4">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="icon_name">zoom-original</property>
-                  </object>
-                  <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
                     <property name="position">1</property>
                     <property name="non_homogeneous">True</property>
                   </packing>
