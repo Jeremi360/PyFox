@@ -17,6 +17,11 @@
     <property name="can_focus">False</property>
     <property name="icon_name">document-open</property>
   </object>
+  <object class="GtkImage" id="image6">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-zoom-out</property>
+  </object>
   <object class="GtkBox" id="box">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -264,10 +269,10 @@
             </child>
             <child>
               <object class="GtkButton" id="zoomout">
-                <property name="label" translatable="yes">button</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="image">image6</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -320,10 +325,5 @@
         <property name="position">2</property>
       </packing>
     </child>
-  </object>
-  <object class="GtkImage" id="image6">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-zoom-out</property>
   </object>
 </interface>
