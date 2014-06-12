@@ -63,7 +63,6 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="baseline_position">top</property>
-            <property name="layout_style">center</property>
             <child>
               <object class="GtkButton" id="find">
                 <property name="visible">True</property>
@@ -132,17 +131,18 @@
               </packing>
             </child>
             <child>
-              <object class="GtkProgressBar" id="progressbar">
+              <object class="GtkComboBoxText" id="enginebox">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="orientation">vertical</property>
-                <property name="ellipsize">middle</property>
+                <property name="active">0</property>
+                <items>
+                  <item id="&lt;Tutaj należy wprowadzić identyfikator&gt;" translatable="yes">Google</item>
+                </items>
               </object>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">4</property>
-                <property name="non_homogeneous">True</property>
+                <property name="position">5</property>
               </packing>
             </child>
             <child>
@@ -156,7 +156,7 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">5</property>
+                <property name="position">6</property>
                 <property name="non_homogeneous">True</property>
               </packing>
             </child>
@@ -170,7 +170,7 @@ or remove from them</property>
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">6</property>
+                <property name="position">7</property>
                 <property name="non_homogeneous">True</property>
               </packing>
             </child>
@@ -185,103 +185,65 @@ or remove from them</property>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">7</property>
+                <property name="position">8</property>
                 <property name="non_homogeneous">True</property>
               </packing>
             </child>
             <child>
-              <placeholder/>
-            </child>
-            <child>
-              <object class="GtkButtonBox" id="viewbox">
+              <object class="GtkButton" id="zoomout">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="layout_style">center</property>
-                <child>
-                  <object class="GtkButton" id="top">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="image">image7</property>
-                    <property name="relief">none</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
-                    <property name="position">0</property>
-                    <property name="non_homogeneous">True</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkButton" id="zoomin">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="image">image5</property>
-                    <property name="relief">none</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
-                    <property name="position">1</property>
-                    <property name="non_homogeneous">True</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkButton" id="zoomres">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="image">image4</property>
-                    <property name="relief">none</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
-                    <property name="position">2</property>
-                    <property name="non_homogeneous">True</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkButton" id="zoomout">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="image">image6</property>
-                    <property name="relief">none</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
-                    <property name="position">3</property>
-                    <property name="non_homogeneous">True</property>
-                  </packing>
-                </child>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">image6</property>
+                <property name="relief">none</property>
               </object>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
                 <property name="position">9</property>
-                <property name="non_homogeneous">True</property>
               </packing>
             </child>
             <child>
-              <object class="GtkComboBoxText" id="enginebox">
+              <object class="GtkButton" id="zoomres">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="active">0</property>
-                <items>
-                  <item id="&lt;Tutaj należy wprowadzić identyfikator&gt;" translatable="yes">Google</item>
-                </items>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">image4</property>
+                <property name="relief">none</property>
               </object>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">10</property>
+                <property name="position">11</property>
               </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkButton" id="top">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">image7</property>
+                <property name="relief">none</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">12</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="zoomin">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">image5</property>
+                <property name="relief">none</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">13</property>
+              </packing>
             </child>
           </object>
           <packing>
