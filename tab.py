@@ -36,10 +36,13 @@ class Tab(Gtk.VBox):
 		self.webview.connect("load-finished", self.finish_load)
 		self.webview.connect("load-progress-changed", self.progress_load)
 
-		self.window = self.ui.get_object("window")
+		self.box = self.ui.get_object("box")
 		find_box = Find(self)
-		self.window.pack_start(find_box, False, False, 1)
-		self.window.show_all()
+		self.box.pack_start(find_box, False, False, 1)
+
+		self.find.connect("clicked", lambda x: find_box.show())
+
+		self.box.show_all()
 
 	def on_button(self, button):
 		if button.get_stock_id() == Gtk.STOCK_GO_FORWARD:
