@@ -10,6 +10,7 @@ class Browser(object):
 		self.ui = Gtk.Builder()
 		self.ui.add_from_file(UI_FILE)
 		self.ui.connect_signals(self)
+
 		self.back = self.ui.get_object("back")
 		self.next = self.ui.get_object("next")
 		self.url = self.ui.get_object("url")
@@ -37,6 +38,7 @@ class Browser(object):
 		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
 
 		self.window = self.ui.get_object("window")
+		self.window.maximize()
 		self.window.show_all()
 
 	def url_active(self, widget):
