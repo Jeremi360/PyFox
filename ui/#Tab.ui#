@@ -5,7 +5,7 @@
   <object class="GtkImage" id="image1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="stock">gtk-missing-image</property>
+    <property name="stock">gtk-find</property>
   </object>
   <object class="GtkWindow" id="window">
     <property name="can_focus">False</property>
