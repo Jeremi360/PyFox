@@ -48,23 +48,6 @@
         <property name="homogeneous">True</property>
         <property name="layout_style">expand</property>
         <child>
-          <object class="GtkBox" id="navibox">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-        <child>
           <object class="GtkBox" id="urlbox">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
@@ -191,6 +174,9 @@
             <property name="fill">False</property>
             <property name="position">5</property>
           </packing>
+        </child>
+        <child>
+          <placeholder/>
         </child>
         <child>
           <object class="GtkBox" id="viewbox">
