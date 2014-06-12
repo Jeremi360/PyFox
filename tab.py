@@ -68,7 +68,7 @@ class Tab(Gtk.VBox):
 
 	def load_icon(self, webview, url):
 		try:
-			f = urllib.parse(url)
+			f = urllib.open(url)
 			data = f.read()
 			pixbuf_loader = GdkPixbuf.PixbufLoader()
 			pixbuf_loader.write(data)
