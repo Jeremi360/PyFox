@@ -131,6 +131,9 @@
           </packing>
         </child>
         <child>
+          <placeholder/>
+        </child>
+        <child>
           <object class="GtkButton" id="book">
             <property name="use_action_appearance">True</property>
             <property name="visible">True</property>
