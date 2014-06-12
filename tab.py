@@ -11,7 +11,7 @@ Gtk.ScrolledWindow
 
 UI_tab = os.path.join("ui", "Tab.ui")
 
-class Tab:
+class Tab(object):
 	def __init__(self):
 		self.ui = Gtk.Builder()
 		self.ui.add_from_file(UI_tab)
