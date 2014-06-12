@@ -128,6 +128,7 @@
           <object class="GtkButtonBox" id="supbox">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="halign">baseline</property>
             <property name="hexpand">True</property>
             <property name="orientation">vertical</property>
             <property name="layout_style">spread</property>
