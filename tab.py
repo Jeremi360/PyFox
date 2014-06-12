@@ -20,6 +20,7 @@ class Browser(object):
 		self.zoomres = self.ui.get_object("zoomres")
 		self.zoomout = self.ui.get_object("zoomout")
 		self.findbox = self.ui.get_object("findbox")
+		self.find = self.ui.get_object("find")
 		self.findbox.hide()
 
 		self.webview = WebKit.WebView()
