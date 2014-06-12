@@ -46,7 +46,7 @@ class Browser(object):
 		url = widget.get_text()
 		if not "://" or  not "." in url:
 			url = "http://www.google.pl/search?q=" + url
-		elif not "http://" in url:
+		elif not "://" in url:
 			url = "http://" + url
 		self.webview.load_uri(url)
 

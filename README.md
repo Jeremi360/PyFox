@@ -2,7 +2,7 @@
 "Warning: for rerows.py now don't work - core dump error :("
 
 You need python version 2.7 or 3.x and Gtk and Webkit from gir repository.
-To run for now use python tabre.py
+To run for now use python tab.py
 
 Features:
 - google search in adrees bar
