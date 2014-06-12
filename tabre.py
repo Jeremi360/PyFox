@@ -46,7 +46,7 @@ class Browser:
 
 	def load_icon(self, webview, url):
 		try:
-			f = urllib.request.urlopen(url)
+			f = urllib.urlopen(url)
 			data = f.read()
 			pixbuf_loader = GdkPixbuf.PixbufLoader()
 			pixbuf_loader.write(data)
