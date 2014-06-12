@@ -2,7 +2,7 @@
 
 from gi.repository import Gtk, GdkPixbuf, WebKit
 import os, sys
-import urllib
+import urllib2
 
 UI_FILE = os.path.join("ui", "Tab.ui")
 
@@ -46,7 +46,7 @@ class Browser:
 
 	def load_icon(self, webview, url):
 		try:
-			f = urllib.urlopen(url)
+			f = urllib2.urlopen(url)
 			data = f.read()
 			pixbuf_loader = GdkPixbuf.PixbufLoader()
 			pixbuf_loader.write(data)
