@@ -48,6 +48,23 @@
         <property name="baseline_position">top</property>
         <property name="layout_style">expand</property>
         <child>
+          <object class="GtkToolButton" id="fresh">
+            <property name="use_action_appearance">True</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Odśwież</property>
+            <property name="use_underline">True</property>
+            <property name="stock_id">gtk-refresh</property>
+            <signal name="clicked" handler="on_fresh" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">-1</property>
+            <property name="non_homogeneous">True</property>
+          </packing>
+        </child>
+        <child>
           <object class="GtkButton" id="find">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
@@ -60,7 +77,7 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">False</property>
-            <property name="position">0</property>
+            <property name="position">1</property>
             <property name="non_homogeneous">True</property>
           </packing>
         </child>
@@ -110,7 +127,23 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">False</property>
-            <property name="position">1</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="book">
+            <property name="use_action_appearance">True</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="image">image2</property>
+            <property name="relief">none</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">5</property>
+            <property name="non_homogeneous">True</property>
           </packing>
         </child>
         <child>
@@ -188,40 +221,7 @@
           <packing>
             <property name="expand">True</property>
             <property name="fill">True</property>
-            <property name="position">2</property>
-            <property name="non_homogeneous">True</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkToolButton" id="fresh">
-            <property name="use_action_appearance">True</property>
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Odśwież</property>
-            <property name="use_underline">True</property>
-            <property name="stock_id">gtk-refresh</property>
-            <signal name="clicked" handler="on_fresh" swapped="no"/>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="position">3</property>
-            <property name="non_homogeneous">True</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkButton" id="book">
-            <property name="use_action_appearance">True</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <property name="image">image2</property>
-            <property name="relief">none</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="position">5</property>
+            <property name="position">6</property>
             <property name="non_homogeneous">True</property>
           </packing>
         </child>
