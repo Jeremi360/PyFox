@@ -185,7 +185,7 @@
         </child>
         <child>
           <object class="GtkToolButton" id="fresh">
-            <property name="use_action_appearance">False</property>
+            <property name="use_action_appearance">True</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Odśwież</property>
@@ -201,6 +201,7 @@
         </child>
         <child>
           <object class="GtkButton" id="book">
+            <property name="use_action_appearance">True</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
