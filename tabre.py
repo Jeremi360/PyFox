@@ -5,7 +5,7 @@ import os, sys
 
 UI_FILE = os.path.join("ui", "Tab.ui")
 
-class Browser:
+class Browser(object):
 	def __init__(self):
 		self.ui = Gtk.Builder()
 		self.ui.add_from_file(UI_FILE)
@@ -32,8 +32,6 @@ class Browser:
 		self.next.connect("clicked", lambda x: self.webview.go_forward())
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
 		self.top.connect("clicked", lambda x: self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False))
-
-		self.webview.set_zoom_level(False)
 
 		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
 		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
