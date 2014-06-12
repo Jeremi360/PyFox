@@ -22,7 +22,7 @@
             <property name="homogeneous">True</property>
             <property name="layout_style">spread</property>
             <child>
-              <object class="GtkButton" id="button1">
+              <object class="GtkButton" id="findb">
                 <property name="label" translatable="yes">button</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
