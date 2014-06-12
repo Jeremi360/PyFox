@@ -27,8 +27,8 @@ class Browser(Gtk.Window):
 		self.webview.connect("load-finished", self.finish_load)
 		self.webview.connect("load-progress-changed", self.progress_load)
 
-		self.window = self.ui.get_object("window")
-		self.window.show_all()
+		#self.window = self.ui.get_object("window")
+		self.show_all()
 
 	def on_button(self, button):
 		if button.get_stock_id() == Gtk.STOCK_GO_FORWARD:
