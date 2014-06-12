@@ -278,7 +278,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButtonBox" id="sbox">
+          <object class="GtkButtonBox" id="supbox">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="orientation">vertical</property>
