@@ -115,7 +115,7 @@
                 <property name="width_request">-1</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="hexpand">False</property>
+                <property name="hexpand">True</property>
                 <property name="invisible_char">●</property>
                 <property name="progress_pulse_step">0.20000000000000001</property>
                 <property name="primary_icon_name">applications-internet</property>
