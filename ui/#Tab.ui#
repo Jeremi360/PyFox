@@ -206,6 +206,7 @@
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
             <property name="image">image8</property>
+            <property name="relief">none</property>
           </object>
           <packing>
             <property name="expand">True</property>
