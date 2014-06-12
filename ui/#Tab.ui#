@@ -146,7 +146,6 @@
                         <property name="width_request">-1</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="hexpand">True</property>
                         <property name="invisible_char">●</property>
                         <property name="progress_pulse_step">0.20000000000000001</property>
                         <property name="primary_icon_name">applications-internet</property>
@@ -191,8 +190,6 @@
                     <property name="height_request">20</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="halign">center</property>
-                    <property name="valign">center</property>
                     <property name="ellipsize">middle</property>
                   </object>
                   <packing>
