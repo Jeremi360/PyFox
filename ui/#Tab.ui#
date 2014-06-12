@@ -7,6 +7,11 @@
     <property name="can_focus">False</property>
     <property name="stock">gtk-find</property>
   </object>
+  <object class="GtkImage" id="image2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">list-add</property>
+  </object>
   <object class="GtkImage" id="image3">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -119,6 +124,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
+            <property name="image">image2</property>
             <property name="relief">none</property>
           </object>
           <packing>
@@ -327,16 +333,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkImage" id="image2">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="icon_name">list-add</property>
-          </object>
-          <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
-            <property name="position">4</property>
-          </packing>
+          <placeholder/>
         </child>
         <child>
           <placeholder/>
