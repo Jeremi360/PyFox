@@ -3,7 +3,7 @@
 # by Jeremi "jeremi360" Biernacki
 
 import sys, os
-from gi.repository import Gtk, Gdk, WebKit
+from gi.repository import Gtk, Gdk
 from tab import Tab as BrowserTab
 
 

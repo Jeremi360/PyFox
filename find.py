@@ -1,4 +1,4 @@
-from gi.repository import Gtk, GdkPixbuf, WebKit
+from gi.repository import Gtk
 import os, sys
 
 UI_find = os.path.join("ui", "Find.ui")
