@@ -8,7 +8,7 @@ Features:
 - google search in adrees bar
 - history back and forward buttons
 - fix address mistake
-- zoom in & out
+- zoom in & out & and reset to 100%
 - go to top
 - show favicon
 - progress in url bar
