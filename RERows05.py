@@ -4,7 +4,7 @@ from gi.repository import Gtk, GdkPixbuf, WebKit
 import os, sys
 import urllib
 
-UI_FILE = os.path.join("ui", "Fork beta05 fresh.ui")
+UI_FILE = os.path.join("ui", "py beta05 fresh.ui")
 
 class Browser:
 	def __init__(self):
