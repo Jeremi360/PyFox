@@ -32,8 +32,8 @@ class Browser:
 		self.next.connect("clicked", lambda x: self.webview.go_forward())
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
 		self.top.connect("clicked", lambda x: self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False))
-		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
-		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
+		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in(True))
+		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out(True))
 
 		self.window = self.ui.get_object("window")
 		self.window.show_all()
