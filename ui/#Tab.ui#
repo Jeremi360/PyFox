@@ -222,6 +222,7 @@
               <object class="GtkSwitch" id="book">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="tooltip_text" translatable="yes">bookmark</property>
               </object>
               <packing>
                 <property name="expand">True</property>
