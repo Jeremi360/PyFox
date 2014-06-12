@@ -147,6 +147,7 @@
                   <object class="GtkComboBoxText" id="enginebox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="active">0</property>
                     <items>
                       <item id="&lt;Tutaj należy wprowadzić identyfikator&gt;" translatable="yes">Google</item>
                     </items>
