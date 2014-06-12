@@ -3,9 +3,9 @@
 
 
 from gi.repository import Gtk, GdkPixbuf, WebKit
-import os
+import os, sys
 import urllib
-from find import Find
+#from find import Find
 
 Gtk.ScrolledWindow
 
@@ -105,4 +105,8 @@ class Tab:
 	def destroy(self, window):
 		Gtk.main_quit()
 
-
+if __name__ == "__main__":
+	Gtk.init(sys.argv)
+	browser = Gtk.Window()
+	browser.add(Tab())
+	Gtk.main()
