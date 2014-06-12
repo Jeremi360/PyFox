@@ -6,7 +6,7 @@ import os
 
 UI_find = os.path.join("ui", "Find.ui")
 
-class Find(Gtk.ButtonBox):
+class Find:
     def __init__(self, tab):
         self.ui = Gtk.Builder()
         self.ui.add_from_file(UI_find)
