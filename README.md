@@ -1,8 +1,8 @@
-You need python version >= 2.6 and Gtk and Webkit from gir repository.
-Version of this program is 0.8 .
+
+"Warning: for now don't work - core dump error :("
+
+You need python version 2.7 or 3.x and Gtk and Webkit from gir repository.
 To run: python RERows.py
-Other python files are older version
-file "ui/RERows next.ui" is mockup of 1.0 version of this program to view this use Glade in 3.x version.
 
 Features:
 - google search in adrees bar
@@ -10,7 +10,6 @@ Features:
 - fix address mistake
 - have tabs :D (ctrl+t - one new tab; ctrl+w - close current tab)
 - find box (ctrl+f)
-
 
 You can't:
 -Download files
