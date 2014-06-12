@@ -5,7 +5,6 @@
 from gi.repository import Gtk, GdkPixbuf, WebKit
 import os, sys
 import urllib
-#from find import Find
 
 UI_tab = os.path.join("ui", "Tab.ui")
 
@@ -18,21 +17,10 @@ class Tab(object):
 		self.back = self.ui.get_object("back")
 		self.forward = self.ui.get_object("next")
 		self.url = self.ui.get_object("url")
-		#self.progressbar = self.ui.get_object("progressbar")
 		self.fresh = self.ui.get_object("fresh")
-		self.top = self.ui.get_object("top")
-		#self.zoomin = self.ui.get_object("zoomin")
-		#self.zoomres = self.ui.get_object("zoomres")
-		#self.zoomout = self.ui.get_object("zoomout")
-		#self.find = self.ui.get_object("find")
-		#self.book = self.ui.get_object("book")
-		#self.open = self.ui.get_object("open")
-		#self.enginebox = self.ui.get_object("enginebox")
 
 		self.webview = WebKit.WebView()
 		scroll = self.ui.get_object("scroll")
-
-		self.top.connect("clicked", lambda x: scroll.scroll_child(self, Gtk.ScrollType.START, False))
 
 		self.webview.connect("title-changed", self.title_chang)
 		self.webview.connect("icon-loaded", self.load_icon)
@@ -42,13 +30,6 @@ class Tab(object):
 		scroll.add(self.webview)
 
 		box = self.ui.get_object("box")
-
-		'''
-		find_box = Find(self)
-		box.pack_start(find_box, False, False, 1)
-
-		self.find.connect("clicked", lambda x: find_box.show())
-		'''
 
 		box.show_all()
 
@@ -104,6 +85,5 @@ class Tab(object):
 		Gtk.main_quit()
 
 if __name__ == "__main__":
-	#Gtk.init(sys.argv)
 	app = Tab()
 	Gtk.main()
