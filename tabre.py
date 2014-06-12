@@ -16,10 +16,13 @@ class Browser:
 		self.url = self.ui.get_object("url")
 		self.fresh = self.ui.get_object("fresh")
 		self.top = self.ui.get_object("top")
+		self.zoomin = self.ui.get_object("zoomin")
+		self.zoomres = self.ui.get_object("zoomres")
+		self.zoomout = self.ui.get_object("zoomout")
 
 		self.webview = WebKit.WebView()
-		scroll = self.ui.get_object("scroll")
-		scroll.add(self.webview)
+		self.scroll = self.ui.get_object("scroll")
+		self.scroll.add(self.webview)
 
 		self.webview.connect("title-changed", self.title_chang)
 		self.webview.connect("icon-loaded", self.load_icon)
@@ -29,7 +32,7 @@ class Browser:
 		self.back.connect("clicked", lambda x: self.webview.go_back())
 		self.next.connect("clicked", lambda x: self.webview.go_forward())
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
-		self.top.connect("clicked", lambda x: scroll.do_scroll_child(scroll, Gtk.ScrollType.START, False))
+		self.top.connect("clicked", lambda x: self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False))
 
 		self.window = self.ui.get_object("window")
 		self.window.show_all()
@@ -59,7 +62,7 @@ class Browser:
 			self.url.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
 
 	def progress_load(self, webview, amount):
-		self.progressbar.set_fraction(amount / 100.0)
+
 
 	def finish_load(self, webview, frame):
 		self.url.set_text(frame.get_uri())
@@ -69,9 +72,9 @@ class Browser:
 		else:
 			self.back.set_sensitive(False)
 		if self.webview.can_go_forward():
-			self.forward.set_sensitive(True)
+			self.next.set_sensitive(True)
 		else:
-			self.forward.set_sensitive(False)
+			self.next.set_sensitive(False)
 
 	def destroy(self, window):
 		Gtk.main_quit()
