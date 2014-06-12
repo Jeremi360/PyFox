@@ -45,6 +45,7 @@
   <object class="GtkImage" id="image9">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
+    <property name="icon_name">go-previous</property>
   </object>
   <object class="GtkBox" id="box">
     <property name="visible">True</property>
