@@ -37,7 +37,7 @@ class Tab(Gtk.VBox):
 		self.webview.connect("load-progress-changed", self.progress_load)
 
 		find_box = Find(self)
-		self.ui.pack_start(find_box, False, False, 1)
+		self.pack_start(find_box, False, False, 1)
 
 		self.find.connect("clicked", lambda x: find_box.show())
 
