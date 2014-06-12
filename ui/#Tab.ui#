@@ -248,7 +248,6 @@
                 </child>
                 <child>
                   <object class="GtkButton" id="zoom1">
-                    <property name="label" translatable="yes">button</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
