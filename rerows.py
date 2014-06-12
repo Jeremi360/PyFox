@@ -4,7 +4,7 @@
 
 import sys
 from gi.repository import Gtk, Gdk
-from tab import Tab
+from tab import Browser as Tab
 
 
 class Browser(Gtk.Window):
