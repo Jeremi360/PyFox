@@ -192,7 +192,7 @@
                     <property name="ellipsize">middle</property>
                   </object>
                   <packing>
-                    <property name="expand">False</property>
+                    <property name="expand">True</property>
                     <property name="fill">False</property>
                     <property name="position">1</property>
                     <property name="non_homogeneous">True</property>
