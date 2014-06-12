@@ -40,11 +40,11 @@ class Tab:
 
 		find_box = Find(self)
 		box = self.ui.get_object("box")
-		self.box.pack_start(find_box, False, False, 1)
+		box.pack_start(find_box, False, False, 1)
 
 		self.find.connect("clicked", lambda x: find_box.show())
 
-		self.box.show_all()
+		box.show_all()
 
 	def on_button(self, button):
 		if button.get_stock_id() == Gtk.STOCK_GO_FORWARD:
