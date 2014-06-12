@@ -102,19 +102,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="next">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="image">image10</property>
-                    <property name="relief">none</property>
-                  </object>
-                  <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                    <property name="non_homogeneous">True</property>
-                  </packing>
+                  <placeholder/>
                 </child>
               </object>
               <packing>
@@ -232,7 +220,18 @@ or remove from them</property>
               </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkButton" id="next">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">image10</property>
+                <property name="relief">none</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">5</property>
+              </packing>
             </child>
             <child>
               <object class="GtkButtonBox" id="addsbox">
