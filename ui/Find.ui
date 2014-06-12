@@ -27,7 +27,7 @@
     <property name="can_focus">False</property>
     <property name="baseline_position">top</property>
     <child>
-      <object class="GtkSearchEntry" id="searchentry1">
+      <object class="GtkSearchEntry" id="Fentry">
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="primary_icon_name">edit-find-symbolic</property>
