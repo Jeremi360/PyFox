@@ -56,8 +56,6 @@ class Browser:
 		except:
 			self.url.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
 
-	def progress_load(self, webview, amount):
-
 
 	def finish_load(self, webview, frame):
 		self.url.set_text(frame.get_uri())
