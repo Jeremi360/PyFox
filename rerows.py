@@ -2,8 +2,8 @@
 # forked from https://gist.github.com/kklimonda/890640
 # by Jeremi "jeremi360" Biernacki
 
-import sys, os
-from gi.repository import Gtk, GdkPixbuf, Gdk
+import sys
+from gi.repository import Gtk, Gdk
 from tab import Tab
 
 
