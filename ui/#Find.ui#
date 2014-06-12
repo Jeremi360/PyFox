@@ -20,6 +20,7 @@
   <object class="GtkImage" id="image4">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
+    <property name="icon_name">window-close</property>
   </object>
   <object class="GtkButtonBox" id="findbox">
     <property name="visible">True</property>
