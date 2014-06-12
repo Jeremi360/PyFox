@@ -83,28 +83,31 @@ class Tab:
 
 UI_main = os.path.join("ui", "Main.ui")
 
-class Browser:
-	def __init__(self):
-		self.ui = Gtk.Builder()
-		self.ui.add_from_file(UI_main)
-		self.ui.connect_signals(self)
+class Browser(Gtk.Window):
+	def __init__(self, *args, **kwargs):
+		super(Browser, self).__init__(*args, **kwargs)
 
+		# create notebook and tabs
+		self.notebook = Gtk.Notebook()
+		self.notebook.set_scrollable(True)
+
+		# basic stuff
 		self.tabs = []
-
-		self.gTabs.set_scrollable(True)
+		self.set_size_request(400, 400)
 
 		# create a first, empty browser tab
 		self.tabs.append((self._create_tab(), Gtk.Label("New Tab")))
-		self.gTabs.append_page(*self.tabs[0])
-		self.add(self.gTabs)
+		self.notebook.append_page(*self.tabs[0])
+		self.add(self.notebook)
 
 		# connect signals
 		self.connect("destroy", Gtk.main_quit)
 		self.connect("key-press-event", self._key_pressed)
-		self.gTabs.connect("switch-page", self._tab_changed)
+		self.notebook.connect("switch-page", self._tab_changed)
 
-		self.gTabs.show()
+		self.notebook.show()
 		self.show()
+
 
 	def _create_tab(self):
 		tab = Tab()
