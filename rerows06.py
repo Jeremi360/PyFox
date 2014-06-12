@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
 from gi.repository import Gtk, GdkPixbuf, WebKit
-import os, sys
+import os
 import urllib
 
 UI_FILE = os.path.join("ui", "Tab.ui")
 
-class Browser:
+class Browser(Gtk.Window):
 	def __init__(self):
 		self.ui = Gtk.Builder()
 		self.ui.add_from_file(UI_FILE)
