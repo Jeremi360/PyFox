@@ -4,7 +4,7 @@
 
 from gi.repository import Gtk, GdkPixbuf, WebKit
 import os, sys
-import urllib2
+import urllib
 from find import Find
 
 UI_tab = os.path.join("ui", "Tab.ui")
@@ -68,7 +68,7 @@ class Tab(Gtk.VBox):
 
 	def load_icon(self, webview, url):
 		try:
-			f = urllib2.urlopen(url)
+			f = urllib.request.urlopen(url)
 			data = f.read()
 			pixbuf_loader = GdkPixbuf.PixbufLoader()
 			pixbuf_loader.write(data)
