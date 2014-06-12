@@ -127,7 +127,6 @@
                 <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">3</property>
-                <property name="non_homogeneous">True</property>
               </packing>
             </child>
             <child>
