@@ -95,3 +95,8 @@ class Tab(Gtk.VBox):
 
 	def destroy(self, window):
 		Gtk.main_quit()
+
+if __name__ == "__main__":
+	Gtk.init(sys.argv)
+    tab = Tab()
+    Gtk.main()
