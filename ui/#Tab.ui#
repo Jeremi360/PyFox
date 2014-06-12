@@ -206,7 +206,6 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="image">image6</property>
                 <property name="relief">none</property>
               </object>
               <packing>
@@ -326,7 +325,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="image">image2</property>
+            <property name="image">image6</property>
             <property name="relief">none</property>
           </object>
           <packing>
