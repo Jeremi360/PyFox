@@ -42,6 +42,11 @@
     <property name="can_focus">False</property>
     <property name="icon_name">view-refresh</property>
   </object>
+  <object class="GtkImage" id="image9">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-missing-image</property>
+  </object>
   <object class="GtkBox" id="box">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -76,10 +81,10 @@
             <property name="layout_style">spread</property>
             <child>
               <object class="GtkButton" id="back">
-                <property name="label" translatable="yes">button</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="image">image9</property>
               </object>
               <packing>
                 <property name="expand">True</property>
