@@ -4,7 +4,7 @@
 
 import sys, os
 from gi.repository import Gtk, GdkPixbuf, Gdk
-from tab import Tab as BrowserTab
+from tab import Tab
 
 
 class Browser(Gtk.Window):
@@ -52,7 +52,7 @@ class Browser(Gtk.Window):
             counter += 1
 
     def _create_tab(self):
-        tab = BrowserTab()
+        tab = Tab()
         tab.webview.connect("title-changed", self._title_changed)
         return tab
 
