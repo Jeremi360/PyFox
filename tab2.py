@@ -2,9 +2,8 @@
 # by Jeremi "jeremi360" Biernacki
 
 
-from gi.repository import Gtk, GdkPixbuf, WebKit
+from gi.repository import Gtk
 import os
-import urllib
 
 UI_tab = os.path.join("ui", "Tab.ui")
 
