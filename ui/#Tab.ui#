@@ -255,19 +255,7 @@ or remove from them</property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="zoomres">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="image">image4</property>
-                    <property name="relief">none</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
-                    <property name="position">2</property>
-                    <property name="non_homogeneous">True</property>
-                  </packing>
+                  <placeholder/>
                 </child>
                 <child>
                   <placeholder/>
@@ -281,7 +269,18 @@ or remove from them</property>
               </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkButton" id="zoomres">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">image4</property>
+                <property name="relief">none</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">11</property>
+              </packing>
             </child>
           </object>
           <packing>
