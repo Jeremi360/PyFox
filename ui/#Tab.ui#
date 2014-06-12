@@ -230,13 +230,15 @@
                 <property name="expand">False</property>
                 <property name="fill">False</property>
                 <property name="position">0</property>
+                <property name="non_homogeneous">True</property>
               </packing>
             </child>
           </object>
           <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
             <property name="position">6</property>
+            <property name="non_homogeneous">True</property>
           </packing>
         </child>
         <child>
@@ -253,9 +255,10 @@
                 <property name="relief">none</property>
               </object>
               <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
                 <property name="position">0</property>
+                <property name="non_homogeneous">True</property>
               </packing>
             </child>
             <child>
@@ -267,8 +270,8 @@
                 <property name="relief">none</property>
               </object>
               <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
                 <property name="position">1</property>
                 <property name="non_homogeneous">True</property>
               </packing>
@@ -282,8 +285,8 @@
                 <property name="relief">none</property>
               </object>
               <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
                 <property name="position">2</property>
                 <property name="non_homogeneous">True</property>
               </packing>
@@ -297,17 +300,18 @@
                 <property name="relief">none</property>
               </object>
               <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
                 <property name="position">3</property>
                 <property name="non_homogeneous">True</property>
               </packing>
             </child>
           </object>
           <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
             <property name="position">7</property>
+            <property name="non_homogeneous">True</property>
           </packing>
         </child>
       </object>
