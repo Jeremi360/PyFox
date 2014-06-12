@@ -123,7 +123,7 @@
               <object class="GtkButtonBox" id="ubox">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="layout_style">start</property>
+                <property name="layout_style">spread</property>
                 <child>
                   <object class="GtkEntry" id="url">
                     <property name="visible">True</property>
@@ -147,8 +147,9 @@
                   <object class="GtkComboBoxText" id="enginebox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="active">0</property>
                     <items>
-                      <item translatable="yes">Google</item>
+                      <item id="&lt;Tutaj należy wprowadzić identyfikator&gt;" translatable="yes">Google</item>
                     </items>
                   </object>
                   <packing>
