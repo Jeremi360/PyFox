@@ -51,6 +51,7 @@ class Tab:
 
 		self.find.connect("clicked", lambda x: find_box.show())
 		'''
+
 		box.show_all()
 
 	def on_button(self, button):
