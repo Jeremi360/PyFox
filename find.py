@@ -12,16 +12,16 @@ class Find(Gtk.ButtonBox):
         self.ui.add_from_file(UI_find)
         self.ui.connect_signals(self)
 
-        close_button = self.ui.get_object("close")
-        close_button.connect("clicked", lambda x: self.hide())
+        close = self.ui.get_object("close")
+        close.connect("clicked", lambda x: self.hide())
 
-        self.find_entry = self.ui.get_object("entry")
-        self.find_entry.connect("activate", lambda x: tab.webview.search_text(tab.find_entry.get_text(), False, True, True))
+        find = self.ui.get_object("find")
+        find.connect("activate", lambda x: tab.webview.search_text(tab.find_entry.get_text(), False, True, True))
 
-        prev_button = self.ui.get_object("back")
-        prev_button.connect("clicked", lambda x: tab.webview.search_text(tab.find_entry.get_text(), False, False, True))
+        prev = self.ui.get_object("back")
+        prev.connect("clicked", lambda x: tab.webview.search_text(tab.find_entry.get_text(), False, False, True))
 
-        next_button = self.ui.get_object("next")
-        next_button.connect("clicked", lambda x: tab.webview.search_text(tab.find_entry.get_text(), False, True, True))
+        next = self.ui.get_object("next")
+        next.connect("clicked", lambda x: tab.webview.search_text(tab.find_entry.get_text(), False, True, True))
 
 
