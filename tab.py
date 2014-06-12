@@ -36,7 +36,7 @@ class Browser(object):
 
 		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
 		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
-		self.zoomres.connect("clicked", lambda x: self.webview.set_zoom_level(100.0))
+		self.zoomres.connect("clicked", lambda x: self.webview.set_zoom_level(1.0))
 		self.webview.set_full_content_zoom(True)
 
 		self.window = self.ui.get_object("window")
