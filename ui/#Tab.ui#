@@ -136,7 +136,7 @@
                 <property name="can_focus">False</property>
                 <property name="hexpand">True</property>
                 <property name="orientation">vertical</property>
-                <property name="layout_style">spread</property>
+                <property name="layout_style">expand</property>
                 <child>
                   <object class="GtkButtonBox" id="ubox">
                     <property name="width_request">-1</property>
