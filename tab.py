@@ -7,8 +7,6 @@ import os, sys
 import urllib
 #from find import Find
 
-Gtk.ScrolledWindow
-
 UI_tab = os.path.join("ui", "Tab.ui")
 
 class Tab(object):
