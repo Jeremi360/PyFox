@@ -7,6 +7,16 @@
     <property name="can_focus">False</property>
     <property name="icon_name">edit-find</property>
   </object>
+  <object class="GtkImage" id="image10">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">go-next</property>
+  </object>
+  <object class="GtkImage" id="image11">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-go-forward</property>
+  </object>
   <object class="GtkApplicationWindow" id="window">
     <property name="can_focus">False</property>
     <property name="window_position">center</property>
@@ -206,7 +216,7 @@ or remove from them</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
-              <object class="GtkSearchEntry" id="find_en">
+              <object class="GtkSearchEntry" id="find_entry">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="primary_icon_name">edit-find-symbolic</property>
@@ -220,7 +230,7 @@ or remove from them</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="back1">
+              <object class="GtkButton" id="backfb">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -234,27 +244,29 @@ or remove from them</property>
               </packing>
             </child>
             <child>
-              <object class="GtkImage" id="image11">
+              <object class="GtkButton" id="nextfb">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="stock">gtk-go-forward</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">image11</property>
               </object>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">2</property>
+                <property name="position">4</property>
               </packing>
             </child>
             <child>
-              <object class="GtkImage" id="image12">
+              <object class="GtkButton" id="closefb">
+                <property name="label" translatable="yes">button</property>
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="icon_name">window-close</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">3</property>
+                <property name="position">5</property>
               </packing>
             </child>
           </object>
@@ -282,10 +294,10 @@ or remove from them</property>
       </object>
     </child>
   </object>
-  <object class="GtkImage" id="image10">
+  <object class="GtkImage" id="image12">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="icon_name">go-next</property>
+    <property name="icon_name">window-close</property>
   </object>
   <object class="GtkImage" id="image2">
     <property name="visible">True</property>
