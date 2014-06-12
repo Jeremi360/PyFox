@@ -147,6 +147,9 @@
                       <object class="GtkComboBoxText" id="enginebox">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
+                        <items>
+                          <item translatable="yes">Google</item>
+                        </items>
                       </object>
                       <packing>
                         <property name="expand">False</property>
