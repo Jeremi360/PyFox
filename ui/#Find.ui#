@@ -40,7 +40,6 @@
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="receives_default">True</property>
-        <property name="image">image1</property>
         <property name="relief">none</property>
         <property name="image_position">top</property>
       </object>
