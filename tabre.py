@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 
-from gi.repository import Gtk, GdkPixbuf, WebKit
+from gi.repository import Gtk, WebKit
 import os, sys
-import urllib
 
 UI_FILE = os.path.join("ui", "Tab.ui")
 
@@ -33,6 +32,8 @@ class Browser:
 		self.next.connect("clicked", lambda x: self.webview.go_forward())
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
 		self.top.connect("clicked", lambda x: self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False))
+		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
+		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
 
 		self.window = self.ui.get_object("window")
 		self.window.show_all()
@@ -45,7 +46,6 @@ class Browser:
 			url = "http://" + url
 		self.webview.load_uri(url)
 
-
 	def title_chang(self, webview, frame, title):
 		self.window.set_title("RERows:" + title)
 
@@ -56,6 +56,8 @@ class Browser:
 		except:
 			self.url.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
 
+	def progress_load(self, webview, amount):
+		pass
 
 	def finish_load(self, webview, frame):
 		self.url.set_text(frame.get_uri())
