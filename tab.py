@@ -104,6 +104,6 @@ class Tab(object):
 		Gtk.main_quit()
 
 if __name__ == "__main__":
-	Gtk.init(sys.argv)
-	browser = Tab()
+	#Gtk.init(sys.argv)
+	app = Tab()
 	Gtk.main()
