@@ -53,7 +53,7 @@ class Tab:
 
 	def load_icon(self, webview, url):
 		try:
-			f = urllib.urlopen(url)
+			f = urllib.parse(url)
 			data = f.read()
 			pixbuf_loader = GdkPixbuf.PixbufLoader()
 			pixbuf_loader.write(data)
