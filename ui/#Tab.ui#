@@ -141,7 +141,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkBox" id="box1">
+                  <object class="GtkBox" id="subox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
