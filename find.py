@@ -1,8 +1,11 @@
 from gi.repository import Gtk, GdkPixbuf, WebKit
 import os, sys
 
+UI_find = os.path.join("ui", "Find.ui")
+
 class Find(Gtk.HBox):
     def __init__(self, tab):
+
         close_button = Gtk.Button("Close")
         close_button.connect("clicked", lambda x: self.hide())
         self.find_entry = Gtk.Entry()
