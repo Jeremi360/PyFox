@@ -347,9 +347,6 @@
       </packing>
     </child>
     <child>
-      <placeholder/>
-    </child>
-    <child>
       <object class="GtkScrolledWindow" id="scroll">
         <property name="visible">True</property>
         <property name="can_focus">True</property>
