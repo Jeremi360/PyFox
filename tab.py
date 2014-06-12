@@ -39,11 +39,12 @@ class Tab:
 		self.webview.connect("load-progress-changed", self.progress_load)
 
 		find_box = Find(self)
-		self.ui.pack_start(find_box, False, False, 1)
+		box = self.ui.get_object("box")
+		self.box.pack_start(find_box, False, False, 1)
 
 		self.find.connect("clicked", lambda x: find_box.show())
 
-		self.show_all()
+		self.box.show_all()
 
 	def on_button(self, button):
 		if button.get_stock_id() == Gtk.STOCK_GO_FORWARD:
