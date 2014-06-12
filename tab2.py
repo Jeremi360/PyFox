@@ -15,7 +15,6 @@ class Browser:
 		self.back = self.ui.get_object("back")
 		self.forward = self.ui.get_object("forward")
 		self.url = self.ui.get_object("url")
-		self.progressbar = self.ui.get_object("progressbar")
 		self.fresh = self.ui.get_object("fresh")
 
 		self.webview = WebKit.WebView()
@@ -53,7 +52,7 @@ class Browser:
 
 	def load_icon(self, webview, url):
 		try:
-			f = urllib.urlopen(url)
+			f = urllib.request.urlopen(url)
 			data = f.read()
 			pixbuf_loader = GdkPixbuf.PixbufLoader()
 			pixbuf_loader.write(data)
