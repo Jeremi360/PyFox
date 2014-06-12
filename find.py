@@ -1,4 +1,7 @@
-from gi.repository import Gtk
+# forked from https://gist.github.com/kklimonda/890640
+# by Jeremi "jeremi360" Biernacki
+
+from gi.repository import Gtk, GdkPixbuf, WebKit
 import os, sys
 
 UI_find = os.path.join("ui", "Find.ui")
