@@ -26,7 +26,7 @@ class Tab(Gtk.VBox):
 		self.open = self.ui.get_object("open")
 		self.top = self.ui.get_object("top")
 		self.zoomin = self.ui.get_object("zoomin")
-		self.zoom = self.ui.get_object("zoom")
+		self.zoomres = self.ui.get_object("zoomres")
 		self.zoomout = self.ui.get_object("zoomout")
 
 		self.webview = WebKit.WebView()
