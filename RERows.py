@@ -83,7 +83,7 @@ class Tab:
 
 UI_main = os.path.join("ui", "Main.ui")
 
-class Browser():
+class Browser:
 	def __init__(self):
 		self.ui = Gtk.Builder()
 		self.ui.add_from_file(UI_main)
