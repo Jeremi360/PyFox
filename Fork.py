@@ -5,7 +5,7 @@
 import sys, os
 from gi.repository import Gtk, Gdk, WebKit
 
-UI_FILE = os.path.join("ui", "RERows beta06.ui")
+UI_FILE = os.path.join("ui", "tab beta06.ui")
 
 class BrowserTab(Gtk.VBox):
     def __init__(self, *args, **kwargs):
