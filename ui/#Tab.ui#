@@ -170,8 +170,8 @@
 or remove from them</property>
               </object>
               <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
                 <property name="position">7</property>
                 <property name="non_homogeneous">True</property>
               </packing>
@@ -203,6 +203,7 @@ or remove from them</property>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
                 <property name="position">9</property>
+                <property name="non_homogeneous">True</property>
               </packing>
             </child>
             <child>
@@ -217,6 +218,7 @@ or remove from them</property>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
                 <property name="position">11</property>
+                <property name="non_homogeneous">True</property>
               </packing>
             </child>
             <child>
@@ -231,6 +233,7 @@ or remove from them</property>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
                 <property name="position">12</property>
+                <property name="non_homogeneous">True</property>
               </packing>
             </child>
             <child>
@@ -245,6 +248,7 @@ or remove from them</property>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
                 <property name="position">13</property>
+                <property name="non_homogeneous">True</property>
               </packing>
             </child>
           </object>
