@@ -108,7 +108,6 @@ class Browser(Gtk.Window):
 		self.notebook.show()
 		self.show()
 
-
 	def _create_tab(self):
 		tab = Tab()
 		tab.webview.connect("title-changed", self._title_changed)
