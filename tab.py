@@ -43,12 +43,14 @@ class Tab:
 
 		scroll.add(self.webview)
 
-		find_box = Find(self)
 		box = self.ui.get_object("box")
+
+		'''
+		find_box = Find(self)
 		box.pack_start(find_box, False, False, 1)
 
 		self.find.connect("clicked", lambda x: find_box.show())
-
+		'''
 		box.show_all()
 
 	def on_button(self, button):
@@ -101,3 +103,5 @@ class Tab:
 
 	def destroy(self, window):
 		Gtk.main_quit()
+
+
