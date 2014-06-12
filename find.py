@@ -21,7 +21,7 @@ class Find(Gtk.ButtonBox):
         prev = self.ui.get_object("back")
         prev.connect("clicked", lambda x: tab.webview.search_text(tab.find_entry.get_text(), False, False, True))
 
-        next = self.ui.get_object("next")
-        next.connect("clicked", lambda x: tab.webview.search_text(tab.find_entry.get_text(), False, True, True))
+        nextb = self.ui.get_object("nextb")
+        nextb.connect("clicked", lambda x: tab.webview.search_text(tab.find_entry.get_text(), False, True, True))
 
 
