@@ -20,7 +20,6 @@
   <object class="GtkImage" id="image4">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="stock">gtk-missing-image</property>
   </object>
   <object class="GtkImage" id="image6">
     <property name="visible">True</property>
