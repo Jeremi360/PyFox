@@ -242,7 +242,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButtonBox" id="viebox">
+          <object class="GtkButtonBox" id="viewbox">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">start</property>
