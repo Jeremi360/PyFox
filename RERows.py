@@ -89,6 +89,30 @@ class Browser():
 		self.ui.add_from_file(UI_main)
 		self.ui.connect_signals(self)
 
+		self.tabs = []
+
+		self.notebook.set_scrollable(True)
+
+		# create a first, empty browser tab
+		self.tabs.append((self._create_tab(), Gtk.Label("New Tab")))
+		self.notebook.append_page(*self.tabs[0])
+		self.add(self.notebook)
+
+		# connect signals
+		self.connect("destroy", Gtk.main_quit)
+		self.connect("key-press-event", self._key_pressed)
+		self.notebook.connect("switch-page", self._tab_changed)
+
+		self.notebook.show()
+		self.show()
+
+	def _create_tab(self):
+		tab = Tab()
+		tab.webview.connect("title-changed", self._title_changed)
+		return tab
+
+
+
 if __name__ == "__main__":
 	app = Browser()
 	Gtk.main()
