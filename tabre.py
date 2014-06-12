@@ -18,8 +18,8 @@ class Browser:
 		self.top = self.ui.get_object("top")
 
 		self.webview = WebKit.WebView()
-		scrolled_window = self.ui.get_object("scroll")
-		scrolled_window.add(self.webview)
+		scroll = self.ui.get_object("scroll")
+		scroll.add(self.webview)
 
 		self.webview.connect("title-changed", self.title_chang)
 		self.webview.connect("icon-loaded", self.load_icon)
