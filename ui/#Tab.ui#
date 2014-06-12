@@ -125,7 +125,7 @@
                 <signal name="activate" handler="url_active" swapped="no"/>
               </object>
               <packing>
-                <property name="expand">False</property>
+                <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">3</property>
                 <property name="non_homogeneous">True</property>
