@@ -232,6 +232,9 @@ or remove from them</property>
               </packing>
             </child>
             <child>
+              <placeholder/>
+            </child>
+            <child>
               <object class="GtkButtonBox" id="addsbox">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
