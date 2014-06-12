@@ -118,12 +118,12 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="orientation">vertical</property>
-            <property name="layout_style">expand</property>
+            <property name="layout_style">spread</property>
             <child>
               <object class="GtkButtonBox" id="ubox">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="layout_style">expand</property>
+                <property name="layout_style">spread</property>
                 <child>
                   <object class="GtkEntry" id="url">
                     <property name="visible">True</property>
@@ -138,7 +138,7 @@
                   </object>
                   <packing>
                     <property name="expand">True</property>
-                    <property name="fill">False</property>
+                    <property name="fill">True</property>
                     <property name="position">0</property>
                     <property name="non_homogeneous">True</property>
                   </packing>
@@ -162,7 +162,7 @@
               </object>
               <packing>
                 <property name="expand">True</property>
-                <property name="fill">False</property>
+                <property name="fill">True</property>
                 <property name="position">0</property>
               </packing>
             </child>
@@ -178,7 +178,7 @@
               </object>
               <packing>
                 <property name="expand">True</property>
-                <property name="fill">False</property>
+                <property name="fill">True</property>
                 <property name="position">1</property>
                 <property name="non_homogeneous">True</property>
               </packing>
@@ -186,7 +186,7 @@
           </object>
           <packing>
             <property name="expand">True</property>
-            <property name="fill">False</property>
+            <property name="fill">True</property>
             <property name="position">2</property>
             <property name="non_homogeneous">True</property>
           </packing>
