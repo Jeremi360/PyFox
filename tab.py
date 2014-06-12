@@ -7,6 +7,8 @@ import os
 import urllib
 from find import Find
 
+Gtk.ScrolledWindow
+
 UI_tab = os.path.join("ui", "Tab.ui")
 
 class Tab:
@@ -20,23 +22,26 @@ class Tab:
 		self.url = self.ui.get_object("url")
 		self.progressbar = self.ui.get_object("progressbar")
 		self.fresh = self.ui.get_object("fresh")
-		self.find = self.ui.get_object("find")
-		#self.top = self.ui.get_object("top")
-		#self.book = self.ui.get_object("book")
+		self.top = self.ui.get_object("top")
 		#self.zoomin = self.ui.get_object("zoomin")
 		#self.zoomres = self.ui.get_object("zoomres")
 		#self.zoomout = self.ui.get_object("zoomout")
+		#self.find = self.ui.get_object("find")
+		#self.book = self.ui.get_object("book")
 		#self.open = self.ui.get_object("open")
 		#self.enginebox = self.ui.get_object("enginebox")
 
 		self.webview = WebKit.WebView()
-		scrolled_window = self.ui.get_object("scroll")
-		scrolled_window.add(self.webview)
+		scroll = self.ui.get_object("scroll")
+
+		self.top.connect("clicked", lambda x: scroll.scroll_child(self, Gtk.ScrollType.START, False))
 
 		self.webview.connect("title-changed", self.title_chang)
 		self.webview.connect("icon-loaded", self.load_icon)
 		self.webview.connect("load-finished", self.finish_load)
 		self.webview.connect("load-progress-changed", self.progress_load)
+
+		scroll.add(self.webview)
 
 		find_box = Find(self)
 		box = self.ui.get_object("box")
