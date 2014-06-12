@@ -8,8 +8,7 @@ from tab import Tab
 
 
 class Browser(Gtk.Window):
-    def __init__(self, *args, **kwargs):
-        super(Browser, self).__init__(*args, **kwargs)
+    def __init__(self):
 
         # create notebook and tabs
         self.notebook = Gtk.Notebook()
