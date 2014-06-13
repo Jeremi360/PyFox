@@ -80,7 +80,8 @@ class Tab(object):
 		self.zoomres.connect("clicked", lambda x: self.webview.set_zoom_level(1.0))
 		self.webview.set_full_content_zoom(True)
 
-		self.webview.set_property("enable-plugins", False)
+		self.settings = self.webview.get_property("settings")
+		self.settings.set_property("enable-plugins", False)
 
 		self.webview.show()
 
