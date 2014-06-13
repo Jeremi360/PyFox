@@ -56,8 +56,8 @@ class Tab(object):
 		self.webview.connect("load-finished", self.finish_load)
 		self.webview.connect("load-progress-changed", self.progress_load)
 
-		self.back.connect("clicked", lambda x: self.webview.go_back())
-		self.next.connect("clicked", lambda x: self.webview.go_forward())
+		self.back.connect("clicked", lambda x: self.go_back())
+		self.next.connect("clicked", lambda x: self.go_next())
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
 		self.top.connect("clicked", lambda x: self.scroll_to_top())
 		self.find.connect("clicked", lambda x: self.findbox_show())
@@ -86,6 +86,8 @@ class Tab(object):
 		self.window.set_title("RERows")
 		self.window.maximize()
 		self.window.show()
+
+	def
 
 	def on_find(self):
 		self.webview.search_text(self.findfb.get_text(), False, True, True)
@@ -147,9 +149,9 @@ class Tab(object):
 
 	def progress_load(self, webview, amount):
 		self.url.set_progress_fraction(amount / 100.0)
-		self.url.set_progress_fraction(0.0)
 
 	def finish_load(self, webview, frame):
+		self.url.set_progress_fraction(0.0)
 		self.url.set_text(self.webview.get_uri())
 
 		if self.webview.get_uri() in self.bookmarks:
