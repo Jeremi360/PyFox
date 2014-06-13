@@ -95,12 +95,15 @@ class Browser(object):
 				f = open(self.bookfile, "wb")
 				pickle.dump(self.bookmarks, f)
 				f.close()
+				print("booked", self.webview.get_uri())
 
 		if self.get_active():
-			self.bookmarks.append(self.webview.get_uri)
+			self.bookmarks.append(self.webview.get_uri())
 			f = open(self.bookfile, "wb")
 			pickle.dump(self.bookmarks, f)
 			f.close()
+			print("unbooked", self.webview.get_uri())
+
 
 
 	def findbox_show(self):
