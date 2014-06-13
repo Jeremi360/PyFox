@@ -10,7 +10,6 @@ class Browser(object):
 		self.ui = Gtk.Builder()
 		self.ui.add_from_file(UI_FILE)
 		self.ui.connect_signals(self)
-		self.finddex = False
 
 		self.back = self.ui.get_object("back")
 		self.next = self.ui.get_object("next")
@@ -40,7 +39,7 @@ class Browser(object):
 		self.find.connect("clicked", lambda x: self.findboxed())
 
 		closefb = self.ui.get_object("closefb")
-		closefb.connect("clicked", lambda x: self.findbox.hide())
+		closefb.connect("clicked", lambda x: self.findbox)
 
 		findfb = self.ui.get_object("findfb")
 		findfb.connect("activate", lambda x: self.webview.search_text(findfb.get_text(), False, True, True))
@@ -62,14 +61,13 @@ class Browser(object):
 		self.window.maximize()
 		self.window.show()
 
-	def findboxed(self):
-		if not self.finddex:
-			self.findbox.show()
-			self.finddex = True
+	def findbox_show()(self):
+		self.find.hide()
+		self.findbox.show()
 
-		else:
-			self.findbox.hide()
-			self.finddex = False
+	def findbox_hide(self):
+		self.findbox.hide()
+		self.find.show()
 
 	def url_active(self, widget):
 		url = widget.get_text()
