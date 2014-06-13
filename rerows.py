@@ -55,6 +55,8 @@ class Browser(object):
 		self.zoomres.connect("clicked", lambda x: self.webview.set_zoom_level(1.0))
 		self.webview.set_full_content_zoom(True)
 
+		self.webview.show()
+
 		self.window = self.ui.get_object("window")
 		self.window.maximize()
 		self.window.show()
