@@ -118,14 +118,14 @@ class Tab(object):
 
 		if self.book.get_active():
 			if self.url.get_text() in self.books:
-				pass
+				print(self.url.get_text(), "is booked")
 
 			else:
 				self.books.append(self.url.get_text())
 				f = open(self.bookfile, "wb")
 				pickle.dump(self.books, f)
 				f.close()
-				print(self.url.get_text(), "is booked")
+				print(self.url.get_text(), "is now booked")
 
 		else:
 			self.books.remove(self.url.get_text())
