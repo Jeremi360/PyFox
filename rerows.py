@@ -144,10 +144,10 @@ class Browser(object):
 		self.url.set_text(frame.get_uri())
 
 		if frame.get_uri() in self.bookmarks:
-			self.bookit.show()
+			self.unbookit.show()
 			print(frame.get_uri, "is booked")
 		else:
-			self.unbookit.show()
+			self.bookit.show()
 
 		if self.webview.can_go_back():
 			self.back.set_sensitive(True)
