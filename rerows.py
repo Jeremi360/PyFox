@@ -46,6 +46,9 @@ class Browser(object):
 		self.find = self.ui.get_object("find")
 		self.bookit = self.ui.get_object("bookit")
 		self.unbookit = self.ui.get_object("unbookit")
+
+		self.bookit.hide()
+		self.unbookit.hide()
 		self.findbox.hide()
 
 		self.webview = WebKit.WebView()
@@ -62,8 +65,8 @@ class Browser(object):
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
 		self.top.connect("clicked", lambda x: self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False))
 		self.find.connect("clicked", lambda x: self.findbox_show())
-		self.bookit.connect("clicked", lambda x: self.book(True))
-		self.unbookit.connect("clicked", lambda x: self.book(False))
+		self.bookit.connect("clicked", lambda x: self.on_bookit())
+		self.unbookit.connect("clicked", lambda x: self.on_unbookit())
 
 		closefb = self.ui.get_object("closefb")
 		closefb.connect("clicked", lambda x: self.findbox_hide())
@@ -89,23 +92,18 @@ class Browser(object):
 		self.window.maximize()
 		self.window.show()
 
-	def bookit(self):
-		if self.webview.get_uri() in self.bookmarks:
-			self.book.set_active(True)
+	def on_bookit(self, frame):
 
-			if not self.book.get_active():
-				self.bookmarks.remove(self.webview.get_uri())
-				f = open(self.bookfile, "wb")
-				pickle.dump(self.bookmarks, f)
-				f.close()
-				print("booked", self.webview.get_uri())
+		if frame.get_uri() in self.bookmarks:
+			self.bookit.hide()
+			print(frame.get_uri, "is booked")
 
-		if self.get_active():
-			self.bookmarks.append(self.webview.get_uri())
-			f = open(self.bookfile, "wb")
-			pickle.dump(self.bookmarks, f)
-			f.close()
-			print("unbooked", self.webview.get_uri())
+	def on_unbookit(self, frame):
+
+		if frame.get_uri() in self.bookmarks:
+			self.bookit.show()
+			print(frame.get_uri, "is booked")
+
 
 	def findbox_show(self):
 		self.find.hide()
@@ -124,7 +122,7 @@ class Browser(object):
 		self.webview.load_uri(url)
 
 	def title_chang(self, webview, frame, title):
-		self.window.set_title("RERows:" + title)
+		self.window.set_title("RERows: " + title)
 
 	def load_icon(self, webview, url):
 		try:
