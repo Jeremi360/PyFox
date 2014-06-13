@@ -47,11 +47,7 @@ class Tab(object):
 
 		self.findbox.hide()
 
-		self.settings = WebKit.WebSettings()
-		self.settings.set_property("enable-plugins", False)
-
 		self.webview = WebKit.WebView()
-		self.webview.set_settings(self.settings)
 		self.scroll = self.ui.get_object("scroll")
 		self.scroll.add(self.webview)
 
