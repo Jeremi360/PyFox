@@ -138,9 +138,9 @@ class Tab(object):
 		self.url.set_progress_fraction(0.0)
 
 	def finish_load(self, webview, frame):
-		self.url.set_text(frame.get_uri())
+		self.url.set_text(self.webview.get_uri())
 
-		if frame.get_uri() in self.bookmarks:
+		if self.webview.get_uri() in self.bookmarks:
 			self.book.set_active(True)
 		else:
 			self.book.set_active(False)
