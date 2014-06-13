@@ -136,7 +136,8 @@ class Browser(object):
 		self.url.set_progress_fraction(amount / 100.0)
 
 	def finish_load(self, webview, frame):
-		self.url.set_text(self.webview.get_uri())
+		#self.url.set_text(self.webview.get_uri())
+		self.url.set_text(frame.get_uri())
 
 		if self.webview.can_go_back():
 			self.back.set_sensitive(True)
