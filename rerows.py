@@ -59,21 +59,21 @@ class Tab(object):
 		self.back.connect("clicked", lambda x: self.webview.go_back())
 		self.next.connect("clicked", lambda x: self.webview.go_forward())
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
-		self.top.connect("clicked", lambda x: self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False))
+		self.top.connect("clicked", lambda x: self.scroll_to_top())
 		self.find.connect("clicked", lambda x: self.findbox_show())
 		self.book.connect("notify::active", lambda x: self.on_book())
 
-		closefb = self.ui.get_object("closefb")
-		closefb.connect("clicked", lambda x: self.findbox_hide())
+		self.closefb = self.ui.get_object("closefb")
+		self.closefb.connect("clicked", lambda x: self.findbox_hide())
 
-		findfb = self.ui.get_object("findfb")
-		findfb.connect("activate", lambda x: self.webview.search_text(findfb.get_text(), False, True, True))
+		self.findfb = self.ui.get_object("findfb")
+		self.findfb.connect("activate", lambda x:self.on_find())
 
-		backfb = self.ui.get_object("backfb")
-		backfb.connect("clicked", lambda x: self.webview.search_text(findfb.get_text(), False, False, True))
+		self.backfb = self.ui.get_object("backfb")
+		self.backfb.connect("clicked", lambda x: self.find_back())
 
-		nextfb = self.ui.get_object("nextfb")
-		nextfb.connect("clicked", lambda x: self.webview.search_text(findfb.get_text(), False, True, True))
+		self.nextfb = self.ui.get_object("nextfb")
+		self.nextfb.connect("clicked", lambda x: self.find_next())
 
 		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
 		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
@@ -86,6 +86,18 @@ class Tab(object):
 		self.window.set_title("RERows")
 		self.window.maximize()
 		self.window.show()
+
+	def on_find(self):
+		self.webview.search_text(self.findfb.get_text(), False, True, True)
+
+	def find_back(self):
+		self.webview.search_text(self.findfb.get_text(), False, False, True)
+
+	def find_next(self):
+		self.webview.search_text(self.findfb.get_text(), False, True, True)
+
+	def scroll_to_top(self):
+		self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False)
 
 	def on_book(self):
 
