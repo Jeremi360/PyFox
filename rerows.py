@@ -93,16 +93,18 @@ class Browser(object):
 		self.window.show()
 
 	def on_bookit(self, frame):
+		self.bookmarks.append(frame.get_uri)
+		f = open(self.bookfile, "wb")
+		pickle.dump(self.bookmarks, f)
+		f.close()
+		print(frame.get_uri, "is booked")
 
-		if frame.get_uri() in self.bookmarks:
-			self.bookit.hide()
-			print(frame.get_uri, "is booked")
-
-	def on_unbookit(self, frame):
-
-		if frame.get_uri() in self.bookmarks:
-			self.bookit.show()
-			print(frame.get_uri, "is booked")
+	def on_unbookit(self,  frame):
+		self.bookmarks.remove(frame.get_uri)
+		f = open(self.bookfile, "wb")
+		pickle.dump(self.bookmarks, f)
+		f.close()
+		print(frame.get_uri, "is unbooked")
 
 
 	def findbox_show(self):
@@ -137,6 +139,12 @@ class Browser(object):
 
 	def finish_load(self, webview, frame):
 		self.url.set_text(frame.get_uri())
+
+		if frame.get_uri() in self.bookmarks:
+			self.bookit.show()
+			print(frame.get_uri, "is booked")
+		else:
+			self.unbookit.show()
 
 		if self.webview.can_go_back():
 			self.back.set_sensitive(True)
