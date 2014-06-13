@@ -11,7 +11,7 @@ SettingsDir = os.path.join(home, ".rerows")
 class Tab(object):
 	def __init__(self):
 
-		self.bookfile = os.path.join(SettingsDir, "books")
+		self.bookfile = os.path.join(SettingsDir, "bookmarks")
 
 		#create settings:
 		if not os.path.exists(SettingsDir):
