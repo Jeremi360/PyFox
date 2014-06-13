@@ -1,12 +1,27 @@
 #!/usr/bin/env python
 
 from gi.repository import Gtk, WebKit
-import os, sys
+import os, pickle
 
 UI_FILE = os.path.join("ui", "Tab.ui")
+SettingsDir = os.path.join("~", ".rerows")
 
 class Browser(object):
 	def __init__(self):
+
+		if not os.path.exists(SettingsDir):
+			os.mkdir(SettingsDir)
+
+			#bookmarks
+
+			bookmarks = []
+			file = open(os.path.join(SettingsDir, "bookmarks"), "wb")
+			pickle.dump(bookmarks, file)
+			file.close()
+
+		file = open(os.path.join(SettingsDir, "bookmarks"), "wb")
+		self.bookmarks = pickle.load(file)
+
 		self.ui = Gtk.Builder()
 		self.ui.add_from_file(UI_FILE)
 		self.ui.connect_signals(self)
@@ -21,6 +36,7 @@ class Browser(object):
 		self.zoomout = self.ui.get_object("zoomout")
 		self.findbox = self.ui.get_object("findbox")
 		self.find = self.ui.get_object("find")
+		self.book = self.ui.get_object("book")
 		self.findbox.hide()
 
 		self.webview = WebKit.WebView()
