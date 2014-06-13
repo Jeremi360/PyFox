@@ -4,7 +4,9 @@ from gi.repository import Gtk, WebKit
 import os, pickle
 
 UI_FILE = os.path.join("ui", "Tab.ui")
-SettingsDir = os.path.join("~", ".rerows")
+home = os.path.expanduser("~")
+SettingsDir = os.path.join(home, ".rerows")
+
 
 class Browser(object):
 	def __init__(self):
