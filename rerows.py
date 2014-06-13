@@ -157,7 +157,7 @@ class Tab(object):
 
 	def load_icon(self, webview, url):
 		try:
-			pixbuf = self.webview.get_icon_pixbuf()
+			pixbuf = self.webview.try_get_icon_pixbuf()
 			self.url.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
 		except:
 			self.url.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
