@@ -98,6 +98,8 @@ class Browser(object):
 		pickle.dump(self.bookmarks, f)
 		f.close()
 		print(self.url.get_text(), "is booked")
+		self.bookit.hide()
+		self.unbookit.show()
 
 	def on_unbookit(self):
 		self.bookmarks.remove(self.url.get_text())
@@ -105,7 +107,8 @@ class Browser(object):
 		pickle.dump(self.bookmarks, f)
 		f.close()
 		print(self.url.get_text(), "is unbooked")
-
+		self.unbookit.hide()
+		self.bookit.show()
 
 	def findbox_show(self):
 		self.find.hide()
