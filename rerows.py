@@ -81,7 +81,7 @@ class Tab(object):
 		self.webview.set_full_content_zoom(True)
 
 		self.settings = self.webview.get_property("settings")
-		self.settings.set_property("enable-plugins", False)
+		self.settings.set_property("enable-plugins" = False)
 
 		self.webview.show()
 
