@@ -28,6 +28,7 @@ class Browser(object):
 		f = open(self.bookfile, "rb")
 		self.bookmarks = pickle.load(f)
 		f.close()
+		print(self.bookmarks)
 
 		self.ui = Gtk.Builder()
 		self.ui.add_from_file(UI_FILE)
@@ -103,8 +104,6 @@ class Browser(object):
 			pickle.dump(self.bookmarks, f)
 			f.close()
 			print("unbooked", self.webview.get_uri())
-
-
 
 	def findbox_show(self):
 		self.find.hide()
