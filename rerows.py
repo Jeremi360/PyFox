@@ -40,16 +40,16 @@ class Browser(object):
 		self.find.connect("clicked", lambda x: self.findboxed())
 
 		closefb = self.ui.get_object("closefb")
-		closefb.connect("clicked", lambda x: self.findbox.hide())
+		closefb.connect("clicked", lambda x: findbox.hide())
 
 		findfb = self.ui.get_object("findfb")
-		findfb.connect("activate", lambda x: self.webview.search_text(self.findfb.get_text(), False, True, True))
+		findfb.connect("activate", lambda x: self.webview.search_text(findfb.get_text(), False, True, True))
 
 		backfb = self.ui.get_object("backfb")
-		backfb.connect("clicked", lambda x: self.webview.search_text(self.findfb.get_text(), False, False, True))
+		backfb.connect("clicked", lambda x: self.webview.search_text(findfb.get_text(), False, False, True))
 
 		nextfb = self.ui.get_object("nextfb")
-		nextfb.connect("clicked", lambda x: self.webview.search_text(self.findfb.get_text(), False, True, True))
+		nextfb.connect("clicked", lambda x: self.webview.search_text(findfb.get_text(), False, True, True))
 
 		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
 		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
