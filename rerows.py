@@ -44,7 +44,8 @@ class Browser(object):
 		self.zoomout = self.ui.get_object("zoomout")
 		self.findbox = self.ui.get_object("findbox")
 		self.find = self.ui.get_object("find")
-		self.book = self.ui.get_object("book")
+		self.bookit = self.ui.get_object("bookit")
+		self.unbookit = self.ui.get_object("unbookit")
 		self.findbox.hide()
 
 		self.webview = WebKit.WebView()
@@ -61,7 +62,8 @@ class Browser(object):
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
 		self.top.connect("clicked", lambda x: self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False))
 		self.find.connect("clicked", lambda x: self.findbox_show())
-		self.book.connect("activate", lambda x: self.bookit())
+		self.bookit.connect("clicked", lambda x: self.book(True))
+		self.unbookit.connect("clicked", lambda x: self.book(False))
 
 		closefb = self.ui.get_object("closefb")
 		closefb.connect("clicked", lambda x: self.findbox_hide())
