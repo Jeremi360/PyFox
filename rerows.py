@@ -11,22 +11,22 @@ SettingsDir = os.path.join(home, ".rerows")
 class Tab(object):
 	def __init__(self):
 
-		self.bookfile = os.path.join(SettingsDir, "bookmarks")
+		self.bookfile = os.path.join(SettingsDir, "books")
 
 		#create settings:
 		if not os.path.exists(SettingsDir):
 			os.mkdir(SettingsDir)
 
-			#bookmarks
-			bookmarks = []
+			#books
+			books = []
 			f = open(self.bookfile, "wb")
-			pickle.dump(bookmarks, f)
+			pickle.dump(books, f)
 			f.close()
 
 		#load settings:
-		#bookmarks
+		#books
 		f = open(self.bookfile, "rb")
-		self.bookmarks = pickle.load(f)
+		self.books = pickle.load(f)
 		f.close()
 
 		self.ui = Gtk.Builder()
@@ -87,7 +87,20 @@ class Tab(object):
 		self.window.maximize()
 		self.window.show()
 
-	def
+	def ch_books(self):
+		if self.webview.get_uri() in self.books:
+			self.book.set_active(True)
+		else:
+			self.book.set_active(False)
+
+	def go_back(self):
+		self.webview.go_back()
+		self.ch_books()
+
+	def go_next(self):
+		self.webview.go_forward()
+		self.ch_books()
+
 
 	def on_find(self):
 		self.webview.search_text(self.findfb.get_text(), False, True, True)
@@ -104,20 +117,20 @@ class Tab(object):
 	def on_book(self):
 
 		if self.book.get_active():
-			if self.url.get_text() in self.bookmarks:
+			if self.url.get_text() in self.books:
 				pass
 
 			else:
-				self.bookmarks.append(self.url.get_text())
+				self.books.append(self.url.get_text())
 				f = open(self.bookfile, "wb")
-				pickle.dump(self.bookmarks, f)
+				pickle.dump(self.books, f)
 				f.close()
 				print(self.url.get_text(), "is booked")
 
 		else:
-			self.bookmarks.remove(self.url.get_text())
+			self.books.remove(self.url.get_text())
 			f = open(self.bookfile, "wb")
-			pickle.dump(self.bookmarks, f)
+			pickle.dump(self.books, f)
 			f.close()
 
 
@@ -154,7 +167,7 @@ class Tab(object):
 		self.url.set_progress_fraction(0.0)
 		self.url.set_text(self.webview.get_uri())
 
-		if self.webview.get_uri() in self.bookmarks:
+		if self.webview.get_uri() in self.books:
 			self.book.set_active(True)
 		else:
 			self.book.set_active(False)
