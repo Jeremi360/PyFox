@@ -36,10 +36,10 @@ class Browser(object):
 		self.next.connect("clicked", lambda x: self.webview.go_forward())
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
 		self.top.connect("clicked", lambda x: self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False))
-		self.find.connect("clicked", lambda x: self.findboxed())
+		self.find.connect("clicked", lambda x: self.findbox_show())
 
 		closefb = self.ui.get_object("closefb")
-		closefb.connect("clicked", lambda x: self.findbox)
+		closefb.connect("clicked", lambda x: self.findbox_hide())
 
 		findfb = self.ui.get_object("findfb")
 		findfb.connect("activate", lambda x: self.webview.search_text(findfb.get_text(), False, True, True))
