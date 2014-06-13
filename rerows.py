@@ -92,19 +92,19 @@ class Browser(object):
 		self.window.maximize()
 		self.window.show()
 
-	def on_bookit(self, frame):
-		self.bookmarks.append(frame.get_uri)
+	def on_bookit(self):
+		self.bookmarks.append(self.url.get_text())
 		f = open(self.bookfile, "wb")
 		pickle.dump(self.bookmarks, f)
 		f.close()
-		print(frame.get_uri, "is booked")
+		print(self.url.get_text(), "is booked")
 
-	def on_unbookit(self,  frame):
-		self.bookmarks.remove(frame.get_uri)
+	def on_unbookit(self):
+		self.bookmarks.remove(self.url.get_text())
 		f = open(self.bookfile, "wb")
 		pickle.dump(self.bookmarks, f)
 		f.close()
-		print(frame.get_uri, "is unbooked")
+		print(self.url.get_text(), "is unbooked")
 
 
 	def findbox_show(self):
