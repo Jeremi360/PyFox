@@ -61,7 +61,7 @@ class Browser(object):
 		self.window.maximize()
 		self.window.show()
 
-	def findbox_show()(self):
+	def findbox_show(self):
 		self.find.hide()
 		self.findbox.show()
 
