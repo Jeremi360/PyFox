@@ -40,7 +40,7 @@ class Browser(object):
 		self.find.connect("clicked", lambda x: self.findboxed())
 
 		closefb = self.ui.get_object("closefb")
-		closefb.connect("clicked", lambda x: findbox.hide())
+		closefb.connect("clicked", lambda x: self.findbox.hide())
 
 		findfb = self.ui.get_object("findfb")
 		findfb.connect("activate", lambda x: self.webview.search_text(findfb.get_text(), False, True, True))
