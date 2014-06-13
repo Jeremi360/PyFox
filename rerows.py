@@ -9,18 +9,23 @@ SettingsDir = os.path.join("~", ".rerows")
 class Browser(object):
 	def __init__(self):
 
+		self.bookfile = os.path.join(SettingsDir, "bookmarks")
+
+		#create settings:
 		if not os.path.exists(SettingsDir):
 			os.mkdir(SettingsDir)
 
 			#bookmarks
-
 			bookmarks = []
-			file = open(os.path.join(SettingsDir, "bookmarks"), "wb")
-			pickle.dump(bookmarks, file)
-			file.close()
+			f = open(self.bookfile, "wb")
+			pickle.dump(bookmarks, f)
+			f.close()
 
-		file = open(os.path.join(SettingsDir, "bookmarks"), "wb")
-		self.bookmarks = pickle.load(file)
+		#load settings:
+		#bookmarks
+		f = open(self.bookfile, "rb")
+		self.bookmarks = pickle.load(f)
+		f.close()
 
 		self.ui = Gtk.Builder()
 		self.ui.add_from_file(UI_FILE)
@@ -53,6 +58,7 @@ class Browser(object):
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
 		self.top.connect("clicked", lambda x: self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False))
 		self.find.connect("clicked", lambda x: self.findbox_show())
+		self.book.connect("clicked", lambda x: self.bookit())
 
 		closefb = self.ui.get_object("closefb")
 		closefb.connect("clicked", lambda x: self.findbox_hide())
@@ -74,8 +80,23 @@ class Browser(object):
 		self.webview.show()
 
 		self.window = self.ui.get_object("window")
+		self.window.set_title("RERows")
 		self.window.maximize()
 		self.window.show()
+
+	def bookit(self):
+		if self.webview.get_uri() in self.bookmarks:
+			self.book.set_active(True)
+
+			if not self.book.get_active():
+				self.bookmarks.remove(self.webview.get_uri())
+
+		if self.get_active():
+			self.bookmarks.append(self.webview.get_uri)
+			f = open(self.bookfile, "wb")
+			pickle.dump(f)
+			f.close()
+
 
 	def findbox_show(self):
 		self.find.hide()
