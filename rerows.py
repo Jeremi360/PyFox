@@ -8,7 +8,7 @@ home = os.path.expanduser("~")
 SettingsDir = os.path.join(home, ".rerows")
 
 
-class Browser(object):
+class Tab(object):
 	def __init__(self):
 
 		self.bookfile = os.path.join(SettingsDir, "bookmarks")
