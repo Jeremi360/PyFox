@@ -57,7 +57,7 @@ class Browser(object):
 
 		self.window = self.ui.get_object("window")
 		self.window.maximize()
-		self.window.show_all()
+		self.window.show()
 
 	def url_active(self, widget):
 		url = widget.get_text()
