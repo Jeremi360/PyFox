@@ -127,7 +127,7 @@ class Browser(object):
 		self.webview.load_uri(url)
 
 	def title_chang(self, webview, frame, title):
-		self.window.set_title("RERows: " + title)
+		self.window.set_title("RERows - " + title)
 
 	def load_icon(self, webview, url):
 		try:
