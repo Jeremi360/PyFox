@@ -90,11 +90,14 @@ class Browser(object):
 
 			if not self.book.get_active():
 				self.bookmarks.remove(self.webview.get_uri())
+				f = open(self.bookfile, "wb")
+				pickle.dump(self.bookmarks, f)
+				f.close()
 
 		if self.get_active():
 			self.bookmarks.append(self.webview.get_uri)
 			f = open(self.bookfile, "wb")
-			pickle.dump(f)
+			pickle.dump(self.bookmarks, f)
 			f.close()
 
 
