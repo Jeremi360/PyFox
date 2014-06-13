@@ -10,6 +10,7 @@ class Browser(object):
 		self.ui = Gtk.Builder()
 		self.ui.add_from_file(UI_FILE)
 		self.ui.connect_signals(self)
+		self.finddex = False
 
 		self.back = self.ui.get_object("back")
 		self.next = self.ui.get_object("next")
@@ -62,8 +63,13 @@ class Browser(object):
 		self.window.show()
 
 	def findboxed(self):
-		#if self.findbox.get
-		pass
+		if not self.finddex:
+			self.findbox.show()
+			self.finddex = True
+
+		else:
+			self.findbox.hide()
+			self.finddex = False
 
 	def url_active(self, widget):
 		url = widget.get_text()
