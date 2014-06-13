@@ -47,7 +47,10 @@ class Tab(object):
 
 		self.findbox.hide()
 
-		self.webview = WebKit.WebView()
+		self.settings = WebKit.WebSettings()
+		self.settings.set_property("enable-plugins", False)
+
+		self.webview = WebKit.WebView(self.settings)
 		self.scroll = self.ui.get_object("scroll")
 		self.scroll.add(self.webview)
 
@@ -79,9 +82,6 @@ class Tab(object):
 		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
 		self.zoomres.connect("clicked", lambda x: self.webview.set_zoom_level(1.0))
 		self.webview.set_full_content_zoom(True)
-
-		self.settings = self.webview.get_property("settings")
-		self.settings.set_property("enable-plugins" = False)
 
 		self.webview.show()
 
