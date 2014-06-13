@@ -18,7 +18,7 @@ class Browser(Gtk.Window):
         self.tabs = []
         self.set_size_request(400, 400)
 
-        # create a first, empty browser tab
+        # create a first, empty browser rerows
         self.tabs.append((self._create_tab(), Gtk.Label("New Tab")))
         self.notebook.append_page(*self.tabs[0])
         self.add(self.notebook)
