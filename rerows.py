@@ -43,11 +43,8 @@ class Tab(object):
 		self.zoomout = self.ui.get_object("zoomout")
 		self.findbox = self.ui.get_object("findbox")
 		self.find = self.ui.get_object("find")
-		self.bookit = self.ui.get_object("bookit")
-		self.unbookit = self.ui.get_object("unbookit")
+		self.book = self.ui.get_object("book")
 
-		self.bookit.hide()
-		self.unbookit.hide()
 		self.findbox.hide()
 
 		self.webview = WebKit.WebView()
@@ -64,8 +61,7 @@ class Tab(object):
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
 		self.top.connect("clicked", lambda x: self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False))
 		self.find.connect("clicked", lambda x: self.findbox_show())
-		self.bookit.connect("clicked", lambda x: self.on_bookit())
-		self.unbookit.connect("clicked", lambda x: self.on_unbookit())
+		self.book.connect("notify::active", lambda x: self.on_book())
 
 		closefb = self.ui.get_object("closefb")
 		closefb.connect("clicked", lambda x: self.findbox_hide())
@@ -91,22 +87,25 @@ class Tab(object):
 		self.window.maximize()
 		self.window.show()
 
-	def on_bookit(self):
-		self.bookmarks.append(self.url.get_text())
-		f = open(self.bookfile, "wb")
-		pickle.dump(self.bookmarks, f)
-		f.close()
-		print(self.url.get_text(), "is booked")
-		self.bookit.hide()
-		self.unbookit.show()
+	def on_book(self):
 
-	def on_unbookit(self):
-		self.bookmarks.remove(self.url.get_text())
-		f = open(self.bookfile, "wb")
-		pickle.dump(self.bookmarks, f)
-		f.close()
-		self.unbookit.hide()
-		self.bookit.show()
+		if self.book.get_active():
+			if self.url.get_text() in self.bookmarks:
+				pass
+
+			else:
+				self.bookmarks.append(self.url.get_text())
+				f = open(self.bookfile, "wb")
+				pickle.dump(self.bookmarks, f)
+				f.close()
+				print(self.url.get_text(), "is booked")
+
+		else:
+			self.bookmarks.remove(self.url.get_text())
+			f = open(self.bookfile, "wb")
+			pickle.dump(self.bookmarks, f)
+			f.close()
+
 
 	def findbox_show(self):
 		self.find.hide()
@@ -142,9 +141,9 @@ class Tab(object):
 		self.url.set_text(frame.get_uri())
 
 		if frame.get_uri() in self.bookmarks:
-			self.unbookit.show()
+			self.book.set_active(True)
 		else:
-			self.bookit.show()
+			self.book.set_active(False)
 
 		if self.webview.can_go_back():
 			self.back.set_sensitive(True)
