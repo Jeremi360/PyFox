@@ -72,7 +72,7 @@
     <property name="can_focus">False</property>
     <property name="icon_name">go-previous</property>
   </object>
-  <object class="GtkWindow" id="window1">
+  <object class="GtkWindow" id="window">
     <property name="can_focus">False</property>
     <child>
       <object class="GtkBox" id="box">
