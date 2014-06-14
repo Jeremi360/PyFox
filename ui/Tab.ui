@@ -27,20 +27,10 @@
     <property name="can_focus">False</property>
     <property name="icon_name">list-add</property>
   </object>
-  <object class="GtkImage" id="image14">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="icon_name">list-remove</property>
-  </object>
   <object class="GtkImage" id="image2">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="stock">gtk-go-back</property>
-  </object>
-  <object class="GtkImage" id="image3">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="icon_name">document-open</property>
   </object>
   <object class="GtkImage" id="image4">
     <property name="visible">True</property>
@@ -56,11 +46,6 @@
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="stock">gtk-zoom-out</property>
-  </object>
-  <object class="GtkImage" id="image7">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="icon_name">go-top</property>
   </object>
   <object class="GtkImage" id="image8">
     <property name="visible">True</property>
@@ -242,7 +227,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="bookit">
+              <object class="GtkButton" id="book">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -256,45 +241,17 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="unbookit">
+              <object class="GtkBox" id="addbox">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="image">image14</property>
-                <property name="relief">none</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <placeholder/>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
                 <property name="position">8</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="open">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="image">image3</property>
-                <property name="relief">none</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">9</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="top">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="image">image7</property>
-                <property name="relief">none</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">10</property>
               </packing>
             </child>
             <child>
