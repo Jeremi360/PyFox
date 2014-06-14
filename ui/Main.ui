@@ -2,6 +2,11 @@
 <!-- Generated with glade 3.16.1 -->
 <interface>
   <requires lib="gtk+" version="3.10"/>
+  <object class="GtkImage" id="CloseIcon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">window-close</property>
+  </object>
   <object class="GtkImage" id="MenuIcon">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -70,7 +75,18 @@
                       </packing>
                     </child>
                     <child>
-                      <placeholder/>
+                      <object class="GtkButton" id="Close">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">CloseIcon</property>
+                        <property name="relief">none</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
                     </child>
                   </object>
                 </child>
