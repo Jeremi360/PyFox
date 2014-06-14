@@ -3,7 +3,7 @@
 from gi.repository import Gtk, WebKit
 import os, pickle
 
-UI_FILE = os.path.join("ui", "Tab.ui")
+UI_FILE = os.path.join("ui", "Tabdev.ui")
 home = os.path.expanduser("~")
 SettingsDir = os.path.join(home, ".rerows")
 
