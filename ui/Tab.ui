@@ -2,60 +2,50 @@
 <!-- Generated with glade 3.16.1 -->
 <interface>
   <requires lib="gtk+" version="3.10"/>
-  <object class="GtkImage" id="image1">
+  <object class="GtkImage" id="BackIcon">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="icon_name">edit-find</property>
+    <property name="icon_name">go-previous</property>
   </object>
-  <object class="GtkImage" id="image10">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="icon_name">go-next</property>
-  </object>
-  <object class="GtkImage" id="image11">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-go-forward</property>
-  </object>
-  <object class="GtkImage" id="image12">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="icon_name">window-close</property>
-  </object>
-  <object class="GtkImage" id="image13">
+  <object class="GtkImage" id="BookIcon">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="stock">gtk-index</property>
   </object>
-  <object class="GtkImage" id="image2">
+  <object class="GtkImage" id="CloseIcon">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="stock">gtk-go-back</property>
+    <property name="icon_name">window-close</property>
   </object>
-  <object class="GtkImage" id="image4">
+  <object class="GtkImage" id="FindIcon">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="icon_name">zoom-original</property>
+    <property name="icon_name">edit-find</property>
   </object>
-  <object class="GtkImage" id="image5">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="icon_name">zoom-in</property>
-  </object>
-  <object class="GtkImage" id="image6">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-zoom-out</property>
-  </object>
-  <object class="GtkImage" id="image8">
+  <object class="GtkImage" id="FreshIcon">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">view-refresh</property>
   </object>
-  <object class="GtkImage" id="image9">
+  <object class="GtkImage" id="NextIcon">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="icon_name">go-previous</property>
+    <property name="icon_name">go-next</property>
+  </object>
+  <object class="GtkImage" id="ZoominIcon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">zoom-in</property>
+  </object>
+  <object class="GtkImage" id="ZoomoutIcon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-zoom-out</property>
+  </object>
+  <object class="GtkImage" id="ZoomresIcon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">zoom-original</property>
   </object>
   <object class="GtkWindow" id="window">
     <property name="can_focus">False</property>
@@ -75,7 +65,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="image">image1</property>
+                <property name="image">FindIcon</property>
                 <property name="relief">none</property>
               </object>
               <packing>
@@ -107,7 +97,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="image">image2</property>
+                    <property name="image">BackIcon</property>
                     <property name="relief">none</property>
                   </object>
                   <packing>
@@ -121,7 +111,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="image">image11</property>
+                    <property name="image">NextIcon</property>
                     <property name="relief">none</property>
                   </object>
                   <packing>
@@ -135,7 +125,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="image">image12</property>
+                    <property name="image">CloseIcon</property>
                     <property name="relief">none</property>
                     <property name="yalign">0.50999999046325684</property>
                   </object>
@@ -157,7 +147,6 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="image">image9</property>
                 <property name="relief">none</property>
               </object>
               <packing>
@@ -171,7 +160,6 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="image">image10</property>
                 <property name="relief">none</property>
               </object>
               <packing>
@@ -218,7 +206,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="image">image8</property>
+                <property name="image">FreshIcon</property>
                 <property name="relief">none</property>
               </object>
               <packing>
@@ -232,7 +220,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="image">image13</property>
+                <property name="image">BookIcon</property>
                 <property name="relief">none</property>
               </object>
               <packing>
@@ -246,7 +234,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="image">image6</property>
+                <property name="image">ZoomoutIcon</property>
                 <property name="relief">none</property>
               </object>
               <packing>
@@ -260,7 +248,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="image">image4</property>
+                <property name="image">ZoomresIcon</property>
                 <property name="relief">none</property>
               </object>
               <packing>
@@ -274,7 +262,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="image">image5</property>
+                <property name="image">ZoominIcon</property>
                 <property name="relief">none</property>
               </object>
               <packing>
