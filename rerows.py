@@ -59,28 +59,28 @@ class Tab(object):
 		self.webview.connect("load-finished", self.finish_load)
 		self.webview.connect("load-progress-changed", self.progress_load)
 
-		self.back.connect("clicked", lambda x: self.webview.go_back())
-		self.next.connect("clicked", lambda x: self.webview.go_forward())
-		self.fresh.connect("clicked", lambda x: self.webview.reload())
-		self.top.connect("clicked", lambda x: self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False))
-		self.find.connect("clicked", lambda x: self.findbox_show())
-		self.bookit.connect("clicked", lambda x: self.on_bookit())
-		self.unbookit.connect("clicked", lambda x: self.on_unbookit())
+		self.back.connect("clicked", self.webview.go_back)
+		self.next.connect("clicked", self.webview.go_forward)
+		self.fresh.connect("clicked", self.webview.reload)
+		self.top.connect("clicked", self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False))
+		self.find.connect("clicked", self.findbox_show)
+		self.bookit.connect("clicked", self.on_bookit)
+		self.unbookit.connect("clicked", self.on_unbookit)
 
 		closefb = self.ui.get_object("closefb")
-		closefb.connect("clicked", lambda x: self.findbox_hide())
+		closefb.connect("clicked", self.findbox_hide)
 
 		findfb = self.ui.get_object("findfb")
-		findfb.connect("activate", lambda x: self.webview.search_text(findfb.get_text(), False, True, True))
+		findfb.connect("activate", self.webview.search_text(findfb.get_text, False, True, True))
 
 		backfb = self.ui.get_object("backfb")
-		backfb.connect("clicked", lambda x: self.webview.search_text(findfb.get_text(), False, False, True))
+		backfb.connect("clicked", self.webview.search_text(findfb.get_text, False, False, True))
 
 		nextfb = self.ui.get_object("nextfb")
-		nextfb.connect("clicked", lambda x: self.webview.search_text(findfb.get_text(), False, True, True))
+		nextfb.connect("clicked", self.webview.search_text(findfb.get_text, False, True, True))
 
-		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
-		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
+		self.zoomin.connect("clicked", self.webview.zoom_in)
+		self.zoomout.connect("clicked", self.webview.zoom_out)
 		self.zoomres.connect("clicked", lambda x: self.webview.set_zoom_level(1.0))
 		self.webview.set_full_content_zoom(True)
 
