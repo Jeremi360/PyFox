@@ -4,35 +4,15 @@ from gi.repository import Gtk, WebKit
 import os, pickle
 
 UI_FILE = os.path.join("ui", "Tab.ui")
-home = os.path.expanduser("~")
-SettingsDir = os.path.join(home, ".rerowsdev")
-
 
 class Tab(object):
 	def __init__(self):
-
-		self.bookfile = os.path.join(SettingsDir, "bookmarks")
-
-		#create settings:
-		if not os.path.exists(SettingsDir):
-			os.mkdir(SettingsDir)
-
-			#bookmarks
-			bookmarks = []
-			f = open(self.bookfile, "wb")
-			pickle.dump(bookmarks, f)
-			f.close()
-
-		#load settings:
-		#bookmarks
-		f = open(self.bookfile, "rb")
-		self.bookmarks = pickle.load(f)
-		f.close()
-
+		#load UI from UI_FILE
 		self.ui = Gtk.Builder()
 		self.ui.add_from_file(UI_FILE)
 		self.ui.connect_signals(self)
 
+		#get objects from UI_FILE
 		self.back = self.ui.get_object("back")
 		self.next = self.ui.get_object("next")
 		self.url = self.ui.get_object("url")
@@ -46,6 +26,11 @@ class Tab(object):
 		self.bookit = self.ui.get_object("bookit")
 		self.unbookit = self.ui.get_object("unbookit")
 		self.engine = self.ui.get_object("engine")
+		self.closefb = self.ui.get_object("closefb")
+		self.findfb = self.ui.get_object("findfb")
+		self.backfb = self.ui.get_object("backfb")
+		self.nextfb = self.ui.get_object("nextfb")
+		self.openw = self.ui.get_object("open")
 
 		#hide this - don't work yet:
 		self.engine.hide()
@@ -55,15 +40,18 @@ class Tab(object):
 		#this UI elements are hide until is not in use
 		self.findbox.hide()
 
+		#create WEBVIEW
 		self.webview = WebKit.WebView()
 		self.scroll = self.ui.get_object("scroll")
 		self.scroll.add(self.webview)
 
+		#connect WEBVIEW signals with methods
 		self.webview.connect("title-changed", lambda x: self.title_chang())
 		self.webview.connect("icon-loaded", lambda x: self.load_icon())
 		self.webview.connect("load-finished", lambda x: self.finish_load())
 		self.webview.connect("load-progress-changed", lambda x: self.progress_load())
 
+		#connect UI elements with methods
 		self.back.connect("clicked", lambda x: self.webview.go_back())
 		self.next.connect("clicked", lambda x: self.webview.go_forward())
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
@@ -71,29 +59,23 @@ class Tab(object):
 		self.find.connect("clicked", lambda x: self.findbox_show())
 		self.bookit.connect("clicked", lambda x: self.on_bookit())
 		self.unbookit.connect("clicked", lambda x: self.on_unbookit())
-
-		self.closefb = self.ui.get_object("closefb")
 		self.closefb.connect("clicked", lambda x: self.findbox_hide())
-
-		self.findfb = self.ui.get_object("findfb")
 		self.findfb.connect("activate", lambda x: self.on_find())
-
-		self.backfb = self.ui.get_object("backfb")
 		self.backfb.connect("clicked", lambda x: self.find_back())
-
-		self.nextfb = self.ui.get_object("nextfb")
 		self.nextfb.connect("clicked", lambda x: self.find_next())
-
 		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
 		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
 		self.zoomres.connect("clicked", lambda x: self.webview.set_zoom_level(1.0))
+		self.openw.connect("clicked", lambda x: self.openusing())
+
+		#last settings
 		self.webview.set_full_content_zoom(True)
-
-		self.webview.show()
-
 		self.window = self.ui.get_object("window")
 		self.window.set_title("RERows")
 		self.window.maximize()
+
+		#show
+		self.webview.show()
 		self.window.show()
 
 	def on_find(self):
@@ -112,6 +94,9 @@ class Tab(object):
 		print("to dev")
 
 	def on_unbookit(self):
+		print("to dev")
+
+	def openusing(self):
 		print("to dev")
 
 	def findbox_show(self):
