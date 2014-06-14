@@ -88,10 +88,11 @@ class Tab(object):
 		self.window.show()
 
 	def ch_books(self):
-		if self.webview.get_uri() in self.books:
-			self.book.set_active(True)
-		else:
-			self.book.set_active(False)
+		with self.book.freeze_notify():
+			if self.webview.get_uri() in self.books:
+				self.book.set_active(True)
+			else:
+				self.book.set_active(False)
 
 	def go_back(self):
 		self.webview.go_back()
@@ -121,17 +122,20 @@ class Tab(object):
 				print(self.url.get_text(), "is booked")
 
 			else:
-				self.books.append(self.url.get_text())
+				with self.book.freeze_notify():
+					self.books.append(self.url.get_text())
+					f = open(self.bookfile, "wb")
+					pickle.dump(self.books, f)
+					f.close()
+					print(self.url.get_text(), "is now booked")
+
+		else:
+			with self.book.freeze_notify():
+				self.books.remove(self.url.get_text())
 				f = open(self.bookfile, "wb")
 				pickle.dump(self.books, f)
 				f.close()
-				print(self.url.get_text(), "is now booked")
-
-		else:
-			self.books.remove(self.url.get_text())
-			f = open(self.bookfile, "wb")
-			pickle.dump(self.books, f)
-			f.close()
+				print(self.url.get_text(), "is not booked")
 
 
 	def findbox_show(self):
