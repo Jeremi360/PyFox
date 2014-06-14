@@ -45,9 +45,14 @@ class Tab(object):
 		self.find = self.ui.get_object("find")
 		self.bookit = self.ui.get_object("bookit")
 		self.unbookit = self.ui.get_object("unbookit")
+		self.engine = self.ui.get_object("engine")
 
+		#hide this - don't work yet:
+		self.engine.hide()
 		self.bookit.hide()
 		self.unbookit.hide()
+
+		#this UI elements are hide until is not in use
 		self.findbox.hide()
 
 		self.webview = WebKit.WebView()
@@ -104,21 +109,10 @@ class Tab(object):
 		self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False)
 
 	def on_bookit(self):
-		self.bookmarks.append(self.url.get_text())
-		f = open(self.bookfile, "wb")
-		pickle.dump(self.bookmarks, f)
-		f.close()
-		print(self.url.get_text(), "is booked")
-		self.bookit.hide()
-		self.unbookit.show()
+		print("to dev")
 
 	def on_unbookit(self):
-		self.bookmarks.remove(self.url.get_text())
-		f = open(self.bookfile, "wb")
-		pickle.dump(self.bookmarks, f)
-		f.close()
-		self.unbookit.hide()
-		self.bookit.show()
+		print("to dev")
 
 	def findbox_show(self):
 		self.find.hide()
