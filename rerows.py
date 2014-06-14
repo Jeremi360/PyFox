@@ -31,6 +31,7 @@ class Tab(object):
 		self.backfb = self.ui.get_object("backfb")
 		self.nextfb = self.ui.get_object("nextfb")
 		self.adds = self.ui.get_object("addbox")
+		self.box = self.ui.get_object("box")
 
 		#hide this - don't work yet:
 		self.adds.hide()
