@@ -5,7 +5,7 @@ import os, pickle
 
 UI_FILE = os.path.join("ui", "Tab.ui")
 home = os.path.expanduser("~")
-SettingsDir = os.path.join(home, ".rerows")
+SettingsDir = os.path.join(home, ".rerowsdev")
 
 
 class Tab(object):
