@@ -148,10 +148,10 @@ class Tab(object):
 
 	def progress_load(self, webview, amount):
 		self.url.set_progress_fraction(amount / 100.0)
-		self.url.set_progress_fraction(0.0)
 
 	def finish_load(self, webview, frame):
 		self.url.set_text(frame.get_uri())
+		self.url.set_progress_fraction(0.0)
 
 		if frame.get_uri() in self.bookmarks:
 			self.unbookit.show()
