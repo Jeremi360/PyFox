@@ -17,7 +17,7 @@ class Tab(object):
 		self.next = self.ui.get_object("next")
 		self.url = self.ui.get_object("url")
 		self.fresh = self.ui.get_object("fresh")
-		self.top = self.ui.get_object("top")
+		#self.top = self.ui.get_object("top")
 		self.zoomin = self.ui.get_object("zoomin")
 		self.zoomres = self.ui.get_object("zoomres")
 		self.zoomout = self.ui.get_object("zoomout")
@@ -30,9 +30,10 @@ class Tab(object):
 		self.findfb = self.ui.get_object("findfb")
 		self.backfb = self.ui.get_object("backfb")
 		self.nextfb = self.ui.get_object("nextfb")
-		self.openw = self.ui.get_object("open")
+		self.adds = self.ui.get_object("addbox")
 
 		#hide this - don't work yet:
+		self.adds.hide()
 		self.engine.hide()
 		self.bookit.hide()
 		self.unbookit.hide()
@@ -55,7 +56,7 @@ class Tab(object):
 		self.back.connect("clicked", lambda x: self.webview.go_back())
 		self.next.connect("clicked", lambda x: self.webview.go_forward())
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
-		self.top.connect("clicked", lambda x: self.scroll_to_top())
+		#self.top.connect("clicked", lambda x: self.scroll_to_top())
 		self.find.connect("clicked", lambda x: self.findbox_show())
 		self.bookit.connect("clicked", lambda x: self.on_bookit())
 		self.unbookit.connect("clicked", lambda x: self.on_unbookit())
@@ -66,7 +67,6 @@ class Tab(object):
 		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
 		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
 		self.zoomres.connect("clicked", lambda x: self.webview.set_zoom_level(1.0))
-		self.openw.connect("clicked", lambda x: self.openusing())
 
 		#last settings
 		self.webview.set_full_content_zoom(True)
@@ -96,8 +96,6 @@ class Tab(object):
 	def on_unbookit(self):
 		print("to dev")
 
-	def openusing(self):
-		print("to dev")
 
 	def findbox_show(self):
 		self.find.hide()
