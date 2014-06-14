@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from gi.repository import Gtk, WebKit
-import os, pickle
+import os
 
 UI_FILE = os.path.join("ui", "Tab.ui")
 
