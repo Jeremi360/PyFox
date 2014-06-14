@@ -56,28 +56,28 @@ class Tab(object):
 		self.webview.connect("load-finished", self.finish_load)
 		self.webview.connect("load-progress-changed", self.progress_load)
 
-		self.back.connect("clicked", self.go_back())
-		self.next.connect("clicked", self.go_next())
-		self.fresh.connect("clicked", self.webview.reload())
-		self.top.connect("clicked", self.scroll_to_top())
-		self.find.connect("clicked", self.findbox_show())
-		self.book.connect("notify::active", self.on_book())
+		self.back.connect("clicked", self.go_back)
+		self.next.connect("clicked", self.go_next)
+		self.fresh.connect("clicked", self.webview.reload)
+		self.top.connect("clicked", self.scroll_to_top)
+		self.find.connect("clicked", self.findbox_show)
+		self.book.connect("notify::active", self.on_book)
 
 		self.closefb = self.ui.get_object("closefb")
-		self.closefb.connect("clicked", self.findbox_hide())
+		self.closefb.connect("clicked", self.findbox_hide)
 
 		self.findfb = self.ui.get_object("findfb")
-		self.findfb.connect("activate", lambda x:self.on_find())
+		self.findfb.connect("activate", self.on_find)
 
 		self.backfb = self.ui.get_object("backfb")
-		self.backfb.connect("clicked", self.find_back())
+		self.backfb.connect("clicked", self.find_back)
 
 		self.nextfb = self.ui.get_object("nextfb")
-		self.nextfb.connect("clicked", self.find_next())
+		self.nextfb.connect("clicked", self.find_next)
 
-		self.zoomin.connect("clicked", self.webview.zoom_in())
-		self.zoomout.connect("clicked", self.webview.zoom_out())
-		self.zoomres.connect("clicked", self.webview.set_zoom_level(1.0))
+		self.zoomin.connect("clicked", self.webview.zoom_in)
+		self.zoomout.connect("clicked", self.webview.zoom_out)
+		self.zoomres.connect("clicked", lambda x: self.webview.set_zoom_level(1.0))
 		self.webview.set_full_content_zoom(True)
 
 		self.webview.show()
