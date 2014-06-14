@@ -62,22 +62,22 @@ class Tab(object):
 		self.back.connect("clicked", self.webview.go_back)
 		self.next.connect("clicked", self.webview.go_forward)
 		self.fresh.connect("clicked", self.webview.reload)
-		self.top.connect("clicked", self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False))
+		self.top.connect("clicked", self.scroll_to_top)
 		self.find.connect("clicked", self.findbox_show)
 		self.bookit.connect("clicked", self.on_bookit)
 		self.unbookit.connect("clicked", self.on_unbookit)
 
-		closefb = self.ui.get_object("closefb")
-		closefb.connect("clicked", self.findbox_hide)
+		self.closefb = self.ui.get_object("closefb")
+		self.closefb.connect("clicked", self.findbox_hide)
 
-		findfb = self.ui.get_object("findfb")
-		findfb.connect("activate", self.webview.search_text(findfb.get_text, False, True, True))
+		self.findfb = self.ui.get_object("findfb")
+		self.findfb.connect("activate", self.on_find)
 
-		backfb = self.ui.get_object("backfb")
-		backfb.connect("clicked", self.webview.search_text(findfb.get_text, False, False, True))
+		self.backfb = self.ui.get_object("backfb")
+		self.backfb.connect("clicked", self.find_back)
 
-		nextfb = self.ui.get_object("nextfb")
-		nextfb.connect("clicked", self.webview.search_text(findfb.get_text, False, True, True))
+		self.nextfb = self.ui.get_object("nextfb")
+		self.nextfb.connect("clicked", self.find_next)
 
 		self.zoomin.connect("clicked", self.webview.zoom_in)
 		self.zoomout.connect("clicked", self.webview.zoom_out)
@@ -90,6 +90,18 @@ class Tab(object):
 		self.window.set_title("RERows")
 		self.window.maximize()
 		self.window.show()
+
+	def on_find(self):
+		self.webview.search_text(self.findfb.get_text(), False, True, True)
+
+	def find_back(self):
+		self.webview.search_text(self.findfb.get_text(), False, False, True)
+
+	def find_next(self):
+		self.webview.search_text(self.findfb.get_text(), False, True, True)
+
+	def scroll_to_top(self):
+		self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False)
 
 	def on_bookit(self):
 		self.bookmarks.append(self.url.get_text())
