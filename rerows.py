@@ -118,11 +118,11 @@ class Tab(object):
 	def on_book(self):
 
 		if self.book.get_active():
-			if self.url.get_text() in self.books:
-				print(self.url.get_text(), "is booked")
+			with self.book.freeze_notify():
+				if self.url.get_text() in self.books:
+					print(self.url.get_text(), "is booked")
 
-			else:
-				with self.book.freeze_notify():
+				else:
 					self.books.append(self.url.get_text())
 					f = open(self.bookfile, "wb")
 					pickle.dump(self.books, f)
