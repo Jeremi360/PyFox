@@ -170,7 +170,7 @@ class Tab(object):
 
 class Standalone(Gtk.Window):
 	def __init__(self):
-		self.set_size_request(400, 400)
+		#self.set_size_request(400, 400)
 		self.connect("destroy", Gtk.main_quit)
 		T = Tab(None, self)
 		self.add(T)
