@@ -22,7 +22,6 @@ class TabButton(object):
 		self.get().connent("toggled", lambda x: self.toggled())
 		self.close.connect("clicked", lambda x: self.des())
 
-
 	def get(self):
 		return self.ui.get_object("TabButton")
 
@@ -87,8 +86,6 @@ class Tab(object):
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
 		#self.top.connect("clicked", lambda x: self.scroll_to_top())
 		self.find.connect("clicked", lambda x: self.findbox_show())
-		self.bookit.connect("clicked", lambda x: self.on_bookit())
-		self.unbookit.connect("clicked", lambda x: self.on_unbookit())
 		self.closefb.connect("clicked", lambda x: self.findbox_hide())
 		self.findfb.connect("activate", lambda x: self.on_find())
 		self.backfb.connect("clicked", lambda x: self.find_back())
@@ -123,12 +120,8 @@ class Tab(object):
 	def scroll_to_top(self):
 		self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False)
 
-	def on_bookit(self):
+	def on_book(self):
 		print("to dev")
-
-	def on_unbookit(self):
-		print("to dev")
-
 
 	def findbox_show(self):
 		self.find.hide()
@@ -146,8 +139,10 @@ class Tab(object):
 			url = "http://" + url
 		self.webview.load_uri(url)
 
-	def title_chang(self, webview, frame, title):
-		self.window.set_title("RERows - " + title)
+	def title_chang(self, tabbutton = None, window = self.window,  webview, frame, title):
+		window.set_title("RERows - " + title)
+		if tabbutton != None:
+			tabbutton.
 
 	def load_icon(self, webview, url):
 		try:
@@ -162,11 +157,6 @@ class Tab(object):
 	def finish_load(self, webview, frame):
 		self.url.set_text(frame.get_uri())
 		self.url.set_progress_fraction(0.0)
-
-		if frame.get_uri() in self.bookmarks:
-			self.unbookit.show()
-		else:
-			self.bookit.show()
 
 		if self.webview.can_go_back():
 			self.back.set_sensitive(True)
