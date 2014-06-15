@@ -69,23 +69,23 @@ class Tab(object):
 		self.scroll.add(self.webview)
 
 		#connect WEBVIEW signals with methods
-		self.webview.connect("title-changed", lambda x: self.title_chang())
-		self.webview.connect("icon-loaded", lambda x: self.load_icon())
-		self.webview.connect("load-finished", lambda x: self.finish_load())
-		self.webview.connect("load-progress-changed", lambda x: self.progress_load())
+		self.webview.connect("title-changed", self.title_chang)
+		self.webview.connect("icon-loaded", self.load_icon)
+		self.webview.connect("load-finished", self.finish_load)
+		self.webview.connect("load-progress-changed", self.progress_load)
 
 		#connect UI elements with methods
-		self.back.connect("clicked", lambda x: self.webview.go_back())
-		self.next.connect("clicked", lambda x: self.webview.go_forward())
-		self.fresh.connect("clicked", lambda x: self.webview.reload())
-		#self.top.connect("clicked", lambda x: self.scroll_to_top())
-		self.find.connect("clicked", lambda x: self.findbox_show())
-		self.closefb.connect("clicked", lambda x: self.findbox_hide())
-		self.findfb.connect("activate", lambda x: self.on_find())
-		self.backfb.connect("clicked", lambda x: self.find_back())
-		self.nextfb.connect("clicked", lambda x: self.find_next())
-		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
-		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
+		self.back.connect("clicked", self.webview.go_back())
+		self.next.connect("clicked", self.webview.go_forward())
+		self.fresh.connect("clicked", self.webview.reload())
+		#self.top.connect("clicked", self.scroll_to_top())
+		self.find.connect("clicked", self.findbox_show())
+		self.closefb.connect("clicked", self.findbox_hide())
+		self.findfb.connect("activate", self.on_find())
+		self.backfb.connect("clicked", self.find_back())
+		self.nextfb.connect("clicked", self.find_next())
+		self.zoomin.connect("clicked", self.webview.zoom_in())
+		self.zoomout.connect("clicked", self.webview.zoom_out())
 		self.zoomres.connect("clicked", lambda x: self.webview.set_zoom_level(1.0))
 
 		#last settings
@@ -158,7 +158,7 @@ class Tab(object):
 		self.url.set_progress_fraction(amount / 100.0)
 
 	def finish_load(self, webview, frame):
-		self.url.set_text(self.webview.get_uri())
+		self.url.set_text(frame.get_uri())
 		self.url.set_progress_fraction(0.0)
 
 		if self.webview.can_go_back():
