@@ -147,12 +147,15 @@ class Tab(object):
 		try:
 			pixbuf = webview.try_get_favicon_pixbuf()
 			self.url.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
+
 			if self.tabbutton != None:
-				self.tabbutton.Icon.set_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
+				self.tabbutton.icon.set_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
+
 		except:
 			self.url.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
+
 			if self.tabbutton != None:
-				self.tabbutton.Icon.set_icon_from_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
+				self.tabbutton. Gtk.Image.icon.set_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
 
 	def progress_load(self, webview, amount):
 		self.url.set_progress_fraction(amount / 100.0)
