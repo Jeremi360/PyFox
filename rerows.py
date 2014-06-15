@@ -59,8 +59,6 @@ class Tab(object):
 		self.backfb = self.ui.get_object("backfb")
 		self.nextfb = self.ui.get_object("nextfb")
 
-		#hide this - don't work yet:
-
 
 		#this UI elements are hide until is not in use
 		self.findbox.hide()
