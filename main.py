@@ -2,7 +2,7 @@
 
 from gi.repository import Gtk
 import os
-from rerows import Tab
+from rerows import Tab, TabButton
 
 UI_FILE = os.path.join("ui", "Main.ui")
 
@@ -15,15 +15,11 @@ class Browser(object):
 
         #get objects from UI_FILE
         self.Tabs = self.ui.get_object("tabs")
-        self.TabButton = self.ui.get_object("TabButton")
         self.MenuButton = self.ui.get_object("MenuButton")
         self.Add = self.ui.get_object("Add")
         self.Downs = self.ui.get_object("Downs")
         self.Full = self.ui.get_object("Full")
         self.TabsBox = self.ui.get_object("TabsBox")
-
-        #TabButton - is temple
-        self.TabButton.hide()
 
         #hide this - don't work yet:
         self.MenuButton.hide()
@@ -33,5 +29,6 @@ class Browser(object):
 
     def new_tab(self):
         view = Tab().box
-        #self.TabsBox.
+        self.TabsBox.gtk_container_add(self.TabButton)
+        self.Tabs.
 

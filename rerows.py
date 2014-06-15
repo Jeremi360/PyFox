@@ -26,6 +26,9 @@ class TabButton(object):
 	def get(self):
 		return self.ui.get_object("TabButton")
 
+	def toggled(self):
+		pass
+
 	def des(self):
 		pass
 
