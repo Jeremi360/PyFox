@@ -4,13 +4,13 @@ from gi.repository import Gtk
 import os
 from rerows import Tab, TabButton
 
-UI_FILE = os.path.join("ui", "Main.ui")
+UI_Group = os.path.join("ui", "Group.ui")
 
 class Group(object):
     def __init__(self):
         #load UI from UI_FILE
         self.ui = Gtk.Builder()
-        self.ui.add_from_file(UI_FILE)
+        self.ui.add_from_file(UI_Group)
         self.ui.connect_signals(self)
 
         #get objects from UI_FILE
