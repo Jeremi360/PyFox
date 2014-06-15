@@ -145,7 +145,7 @@ class Tab(object):
 
 	def load_icon(self, webview, url):
 		try:
-			pixbuf = self.webview.get_icon_pixbuf()
+			pixbuf = self.webview.try_get_favicon_pixbuf()
 			self.url.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
 			if self.tabbutton != None:
 				self.tabbutton.Icon.set_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
@@ -158,7 +158,7 @@ class Tab(object):
 		self.url.set_progress_fraction(amount / 100.0)
 
 	def finish_load(self, webview, frame):
-		self.url.set_text(frame.get_uri())
+		self.url.set_text(self.webview.get_uri())
 		self.url.set_progress_fraction(0.0)
 
 		if self.webview.can_go_back():
