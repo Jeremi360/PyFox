@@ -27,7 +27,7 @@ class Browser(object):
         self.Tabs = Gtk.Notebook()
         self.Tabs.set_show_tabs(False)
         self.box.add(self.Tabs)
-        self.new_tab(s)
+        self.new_tab()
 
         #hide this - don't work yet:
         self.MenuButton.hide()

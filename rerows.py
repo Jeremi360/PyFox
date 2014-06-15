@@ -142,14 +142,18 @@ class Tab(object):
 	def title_chang(self, tabbutton = None, window = self.window,  webview, frame, title):
 		window.set_title("RERows - " + title)
 		if tabbutton != None:
-			tabbutton.
+			tabbutton.label.set_label(title)
 
-	def load_icon(self, webview, url):
+	def load_icon(self, tabbutton = None, webview, url):
 		try:
 			pixbuf = self.webview.get_icon_pixbuf()
 			self.url.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
+			if tabbutton != None:
+				tabbutton.Icon.set_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
 		except:
 			self.url.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
+			if tabbutton != None:
+				tabbutton.Icon.set_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
 
 	def progress_load(self, webview, amount):
 		self.url.set_progress_fraction(amount / 100.0)
