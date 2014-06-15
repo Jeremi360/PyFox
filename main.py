@@ -27,7 +27,7 @@ class Browser(object):
         self.Tabs = Gtk.Notebook()
         self.Tabs.set_show_tabs(False)
         self.box.add(self.Tabs)
-        #self.new_tab()
+        self.new_tab()
 
         self.window.show_all()
 
@@ -43,6 +43,6 @@ def destroy(self, window):
         Gtk.main_quit()
 
 if __name__ == "__main__":
-    app = Tab()
+    app = Browser()
     Gtk.main()
 
