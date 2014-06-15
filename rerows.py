@@ -139,7 +139,7 @@ class Tab(object):
 			url = "http://" + url
 		self.webview.load_uri(url)
 
-	def title_chang(self, tabbutton = None, window = None,  webview, frame, title):
+	def title_chang(self, webview, frame, title, tabbutton = None, window = None,):
 		if window == None:
 			self.window.set_title("RERows - " + title)
 		else:
@@ -147,7 +147,7 @@ class Tab(object):
 		if tabbutton != None:
 			tabbutton.label.set_label(title)
 
-	def load_icon(self, tabbutton = None, webview, url):
+	def load_icon(self, webview, url, tabbutton = None):
 		try:
 			pixbuf = self.webview.get_icon_pixbuf()
 			self.url.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
