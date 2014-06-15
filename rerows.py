@@ -75,17 +75,17 @@ class Tab(object):
 		self.webview.connect("load-progress-changed", self.progress_load)
 
 		#connect UI elements with methods
-		self.back.connect("clicked", lambda x: self.webview.go_back())
-		self.next.connect("clicked", self.webview.go_forward())
-		self.fresh.connect("clicked", self.webview.reload())
-		#self.top.connect("clicked", self.scroll_to_top())
-		self.find.connect("clicked", self.findbox_show())
-		self.closefb.connect("clicked", self.findbox_hide())
-		self.findfb.connect("activate", self.on_find())
-		self.backfb.connect("clicked", self.find_back())
-		self.nextfb.connect("clicked", self.find_next())
-		self.zoomin.connect("clicked", self.webview.zoom_in())
-		self.zoomout.connect("clicked", self.webview.zoom_out())
+		self.back.connect("clicked", self.webview.go_back)
+		self.next.connect("clicked", self.webview.go_forward)
+		self.fresh.connect("clicked", self.webview.reload)
+		#self.top.connect("clicked", self.scroll_to_top)
+		self.find.connect("clicked", self.findbox_show)
+		self.closefb.connect("clicked", self.findbox_hide)
+		self.findfb.connect("activate", self.on_find)
+		self.backfb.connect("clicked", self.find_back)
+		self.nextfb.connect("clicked", self.find_next)
+		self.zoomin.connect("clicked", self.webview.zoom_in)
+		self.zoomout.connect("clicked", self.webview.zoom_out)
 		self.zoomres.connect("clicked", lambda x: self.webview.set_zoom_level(1.0))
 
 		#last settings
