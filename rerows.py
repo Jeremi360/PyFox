@@ -3,16 +3,45 @@
 from gi.repository import Gtk, WebKit
 import os
 
-UI_FILE = os.path.join("ui", "Tab.ui")
+UI_TabButton = os.path.join("ui", "TabButton.ui")
+
+class TabButton(object):
+	def __init__(self, tab, tabgrup):
+
+		#load UI from UI_TabButton
+		self.ui = Gtk.Builder()
+		self.ui.add_from_file(UI_TabButton)
+		self.ui.connect_signals(self)
+
+		#get objects from UI_TabButton
+		self.icon = self.ui.get_object("Icon")
+		self.label = self.ui.get_object("label")
+		self.close = self.ui.get_object("Close")
+
+		#connect UI elements with methods
+		self.get().connent("toggled", lambda x: self.toggled())
+		self.close.connect("clicked", lambda x: self.des())
+
+
+	def get(self):
+		return self.ui.get_object("TabButton")
+
+	def des(self):
+		pass
+
+
+
+
+UI_Tab = os.path.join("ui", "Tab.ui")
 
 class Tab(object):
 	def __init__(self):
-		#load UI from UI_FILE
+		#load UI from UI_Tab
 		self.ui = Gtk.Builder()
-		self.ui.add_from_file(UI_FILE)
+		self.ui.add_from_file(UI_Tab)
 		self.ui.connect_signals(self)
 
-		#get objects from UI_FILE
+		#get objects from UI_Tab
 		self.back = self.ui.get_object("back")
 		self.next = self.ui.get_object("next")
 		self.url = self.ui.get_object("url")
