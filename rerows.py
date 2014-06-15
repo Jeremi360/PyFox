@@ -179,4 +179,3 @@ class Standalone(Gtk.Window):
 if __name__ == "__main__":
 	app = Standalone()
 	Gtk.main()
-
