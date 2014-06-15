@@ -53,14 +53,13 @@ class Tab(object):
 		self.find = self.ui.get_object("find")
 		self.bookit = self.ui.get_object("bookit")
 		self.unbookit = self.ui.get_object("unbookit")
-		self.engine = self.ui.get_object("engine")
 		self.closefb = self.ui.get_object("closefb")
 		self.findfb = self.ui.get_object("findfb")
 		self.backfb = self.ui.get_object("backfb")
 		self.nextfb = self.ui.get_object("nextfb")
 
 		#hide this - don't work yet:
-		self.engine.hide()
+
 
 		#this UI elements are hide until is not in use
 		self.findbox.hide()
