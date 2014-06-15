@@ -75,7 +75,7 @@ class Tab(object):
 		self.webview.connect("load-progress-changed", self.progress_load)
 
 		#connect UI elements with methods
-		self.back.connect("clicked", self.webview.go_back())
+		self.back.connect("clicked", lambda x: self.webview.go_back())
 		self.next.connect("clicked", self.webview.go_forward())
 		self.fresh.connect("clicked", self.webview.reload())
 		#self.top.connect("clicked", self.scroll_to_top())
