@@ -37,7 +37,7 @@ class Browser(object):
     def new_tab(self):
         t = Tab()
         self.Tabs.append_page(t.get())
-        b = self.TabButton(t)
+        b = TabButton(t)
         self.TabsBox.add(b.get())
         t.get().show()
         b.get().show()
