@@ -42,5 +42,10 @@ class Browser(object):
         t.get().show()
         b.get().show()
 
+def destroy(self, window):
+        Gtk.main_quit()
 
+if __name__ == "__main__":
+    app = Tab()
+    Gtk.main()
 
