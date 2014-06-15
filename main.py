@@ -13,6 +13,8 @@ class Browser(object):
         self.ui.add_from_file(UI_FILE)
         self.ui.connect_signals(self)
 
+        self.tabs = []
+
         #get objects from UI_FILE
         self.Tabs = self.ui.get_object("tabs")
         self.MenuButton = self.ui.get_object("MenuButton")
@@ -20,6 +22,9 @@ class Browser(object):
         self.Downs = self.ui.get_object("Downs")
         self.Full = self.ui.get_object("Full")
         self.TabsBox = self.ui.get_object("TabsBox")
+        self.window = self.ui.get_object("window")
+
+        self.window.set_size_request(800, 600)
 
         #hide this - don't work yet:
         self.MenuButton.hide()
@@ -29,6 +34,6 @@ class Browser(object):
 
     def new_tab(self):
         view = Tab().box
-        self.TabsBox.gtk_container_add(self.TabButton)
+        self.TabsBox.gtk_container_add(self.TabButton().get())
         self.Tabs.
 
