@@ -51,8 +51,6 @@ class Tab(object):
 		self.zoomout = self.ui.get_object("zoomout")
 		self.findbox = self.ui.get_object("findbox")
 		self.find = self.ui.get_object("find")
-		self.bookit = self.ui.get_object("bookit")
-		self.unbookit = self.ui.get_object("unbookit")
 		self.closefb = self.ui.get_object("closefb")
 		self.findfb = self.ui.get_object("findfb")
 		self.backfb = self.ui.get_object("backfb")
