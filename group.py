@@ -19,9 +19,7 @@ class Group(object):
         self.Downs = self.ui.get_object("Downs")
         self.Full = self.ui.get_object("Full")
         self.TabsBox = self.ui.get_object("TabsBox")
-        self.window = self.ui.get_object("Win")
         self.box = self.ui.get_object("box")
-        self.window.set_size_request(800, 600)
 
         #add Tabs
         self.Tabs = Gtk.Notebook()

@@ -37,6 +37,7 @@ class Tab(object):
 	def __init__(self, tabbutton = None, window = None):
 
 		self.tabbutton = tabbutton
+		self.window = window
 
 		#load UI from UI_Tab
 		self.ui = Gtk.Builder()
@@ -90,12 +91,6 @@ class Tab(object):
 
 		#last settings
 		self.webview.set_full_content_zoom(True)
-
-		if window == None:
-			self.window = self.ui.get_object("window")
-		else:
-			self.window = window
-
 		self.window.set_title("RERows")
 		self.window.maximize()
 
