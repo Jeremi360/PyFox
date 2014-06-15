@@ -139,7 +139,7 @@ class Tab(object):
 		self.webview.load_uri(url)
 
 	def title_chang(self, webview, frame, title):
-			self.window.set_title("RERows - " + title)
+		self.window.set_title("RERows - " + title)
 		if self.tabbutton != None:
 			self.tabbutton.label.set_label(title)
 
