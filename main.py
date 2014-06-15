@@ -6,7 +6,7 @@ from rerows import Tab, TabButton
 
 UI_FILE = os.path.join("ui", "Main.ui")
 
-class Browser(object):
+class Group(object):
     def __init__(self):
         #load UI from UI_FILE
         self.ui = Gtk.Builder()
@@ -39,10 +39,14 @@ class Browser(object):
         t.get().show()
         b.get().show()
 
-def destroy(self, window):
-        Gtk.main_quit()
+class Standalone(Gtk.Window):
+    def __init__(self):
+        self.set_size_request(400, 400)
+        self.connect("destroy", Gtk.main_quit)
+        G = Group()
+        self.add(G)
+        self.show()
 
 if __name__ == "__main__":
-    app = Browser()
+    app = Standalone()
     Gtk.main()
-
