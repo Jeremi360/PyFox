@@ -32,9 +32,6 @@ class TabButton(object):
 	def des(self):
 		pass
 
-
-
-
 UI_Tab = os.path.join("ui", "Tab.ui")
 
 class Tab(object):
@@ -63,7 +60,6 @@ class Tab(object):
 		self.backfb = self.ui.get_object("backfb")
 		self.nextfb = self.ui.get_object("nextfb")
 		self.adds = self.ui.get_object("addbox")
-		self.box = self.ui.get_object("box")
 
 		#hide this - don't work yet:
 		self.adds.hide()
@@ -110,6 +106,10 @@ class Tab(object):
 		#show
 		self.webview.show()
 		self.window.show()
+
+	def get(self):
+		return self.ui.get_object("box")
+
 
 	def on_find(self):
 		self.webview.search_text(self.findfb.get_text(), False, True, True)

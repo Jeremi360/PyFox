@@ -13,11 +13,6 @@ class Browser(object):
         self.ui.add_from_file(UI_FILE)
         self.ui.connect_signals(self)
 
-        self.Tabs = Gtk.Notebook()
-        self.Tabs.set_show_tabs(False)
-        self.
-
-
         #get objects from UI_FILE
         self.MenuButton = self.ui.get_object("MenuButton")
         self.Add = self.ui.get_object("Add")
@@ -25,17 +20,26 @@ class Browser(object):
         self.Full = self.ui.get_object("Full")
         self.TabsBox = self.ui.get_object("TabsBox")
         self.window = self.ui.get_object("Win")
-
+        self.box = self.ui.get_object("box")
         self.window.set_size_request(800, 600)
+
+        #add Tabs
+        self.Tabs = Gtk.Notebook()
+        self.Tabs.set_show_tabs(False)
+        self.box.add(self.Tabs)
 
         #hide this - don't work yet:
         self.MenuButton.hide()
         self.Downs.hide()
         self.Full.hide()
 
-
     def new_tab(self):
-        view = Tab().box
-        self.TabsBox.gtk_container_add(self.TabButton().get())
-        self.Tabs.
+        t = Tab()
+        self.Tabs.append_page(t.get())
+        b = self.TabButton(t)
+        self.TabsBox.add(b.get())
+        t.get().show()
+        b.get().show()
+
+
 
