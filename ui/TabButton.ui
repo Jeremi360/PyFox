@@ -21,7 +21,7 @@
         <property name="can_focus">False</property>
         <property name="homogeneous">True</property>
         <child>
-          <object class="GtkImage" id="WebIcon">
+          <object class="GtkImage" id="Icon">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="icon_name">applications-internet</property>
