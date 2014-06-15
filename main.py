@@ -29,15 +29,12 @@ class Browser(object):
         self.box.add(self.Tabs)
         self.new_tab()
 
-        #hide this - don't work yet:
-        self.MenuButton.hide()
-        self.Downs.hide()
-        self.Full.hide()
+        self.window.show_all()
 
     def new_tab(self):
         t = Tab()
         self.Tabs.append_page(t.get())
-        b = TabButton(t)
+        b = TabButton(t, self.window)
         self.TabsBox.add(b.get())
         t.get().show()
         b.get().show()
