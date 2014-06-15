@@ -34,7 +34,10 @@ class TabButton(object):
 UI_Tab = os.path.join("ui", "Tab.ui")
 
 class Tab(object):
-	def __init__(self):
+	def __init__(self, tabbutton = None, window = None):
+
+		self.tabbutton = tabbutton
+
 		#load UI from UI_Tab
 		self.ui = Gtk.Builder()
 		self.ui.add_from_file(UI_Tab)
@@ -89,7 +92,12 @@ class Tab(object):
 
 		#last settings
 		self.webview.set_full_content_zoom(True)
-		self.window = self.ui.get_object("window")
+
+		if window == None:
+			self.window = self.ui.get_object("window")
+		else:
+			self.window = window
+
 		self.window.set_title("RERows")
 		self.window.maximize()
 
@@ -132,24 +140,21 @@ class Tab(object):
 			url = "http://" + url
 		self.webview.load_uri(url)
 
-	def title_chang(self, webview, frame, title, tabbutton = None, window = None,):
-		if window == None:
+	def title_chang(self, webview, frame, title):
 			self.window.set_title("RERows - " + title)
-		else:
-			window.set_title("RERows - " + title)
-		if tabbutton != None:
-			tabbutton.label.set_label(title)
+		if self.tabbutton != None:
+			self.tabbutton.label.set_label(title)
 
-	def load_icon(self, webview, url, tabbutton = None):
+	def load_icon(self, webview, url):
 		try:
 			pixbuf = self.webview.get_icon_pixbuf()
 			self.url.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
-			if tabbutton != None:
-				tabbutton.Icon.set_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
+			if self.tabbutton != None:
+				self.tabbutton.Icon.set_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
 		except:
 			self.url.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
-			if tabbutton != None:
-				tabbutton.Icon.set_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
+			if self.tabbutton != None:
+				self.tabbutton.Icon.set_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
 
 	def progress_load(self, webview, amount):
 		self.url.set_progress_fraction(amount / 100.0)
