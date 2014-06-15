@@ -13,16 +13,18 @@ class Browser(object):
         self.ui.add_from_file(UI_FILE)
         self.ui.connect_signals(self)
 
-        self.tabs = []
+        self.Tabs = Gtk.Notebook()
+        self.Tabs.set_show_tabs(False)
+        self.
+
 
         #get objects from UI_FILE
-        self.Tabs = self.ui.get_object("tabs")
         self.MenuButton = self.ui.get_object("MenuButton")
         self.Add = self.ui.get_object("Add")
         self.Downs = self.ui.get_object("Downs")
         self.Full = self.ui.get_object("Full")
         self.TabsBox = self.ui.get_object("TabsBox")
-        self.window = self.ui.get_object("window")
+        self.window = self.ui.get_object("Win")
 
         self.window.set_size_request(800, 600)
 
