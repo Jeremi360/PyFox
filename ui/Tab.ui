@@ -7,6 +7,11 @@
     <property name="can_focus">False</property>
     <property name="icon_name">go-previous</property>
   </object>
+  <object class="GtkImage" id="BackIcon2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">go-previous</property>
+  </object>
   <object class="GtkImage" id="BookIcon">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -28,6 +33,11 @@
     <property name="icon_name">view-refresh</property>
   </object>
   <object class="GtkImage" id="NextIcon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">go-next</property>
+  </object>
+  <object class="GtkImage" id="NextIcon2">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">go-next</property>
@@ -147,6 +157,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="image">BackIcon2</property>
                 <property name="relief">none</property>
               </object>
               <packing>
@@ -160,6 +171,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="image">NextIcon2</property>
                 <property name="relief">none</property>
               </object>
               <packing>
@@ -184,19 +196,6 @@
                 <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">4</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="search">
-                <property name="label" translatable="yes">button</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">5</property>
               </packing>
             </child>
             <child>
