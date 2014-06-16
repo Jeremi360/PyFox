@@ -22,10 +22,10 @@ class Group(helper.Builder):
         #add Tabs
         self.Tabs = Gtk.Notebook()
         self.Tabs.set_show_tabs(False)
-        self.get().add(self.Tabs)
         self.new_tab()
+        self.get().add(self.Tabs)
 
-        self.get().show_all()
+        self.get().show()
 
     def set_title(self, text):
         self.parent.set_title(text)
