@@ -26,7 +26,7 @@ class TabButton(window.Builder):
 		return self.ui.get_object("TabButton")
 
 	def toggled(self):
-		t = self.group.page_num(self.tab.get())
+		t = self.group.tabs.page_num(self.tab.get())
 		self.group.tabs.set_current_page(t)
 
 
