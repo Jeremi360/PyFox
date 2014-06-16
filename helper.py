@@ -7,6 +7,7 @@ class Window(Gtk.Window):
         self.set_size_request(400, 400)
         self.connect("destroy", Gtk.main_quit)
         self.add(content)
+        self.maximize()
         self.show()
 
 

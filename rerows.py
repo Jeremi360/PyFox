@@ -84,7 +84,6 @@ class Tab(helper.Builder):
 		#last settings
 		self.webview.set_full_content_zoom(True)
 		self.window.set_title("RERows")
-		self.window.maximize()
 
 		#show
 		self.webview.show()
