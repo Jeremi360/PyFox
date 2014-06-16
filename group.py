@@ -18,7 +18,6 @@ class Group(helper.Builder):
         self.Downs = self.ui.get_object("Downs")
         self.Full = self.ui.get_object("Full")
         self.TabsBox = self.ui.get_object("TabsBox")
-        self.box = self.ui.get_object("box")
 
         #add Tabs
         self.Tabs = Gtk.Notebook()
@@ -26,7 +25,10 @@ class Group(helper.Builder):
         self.box.add(self.Tabs)
         self.new_tab()
 
-        self.box.show()
+        self.get().show()
+
+    def get(self):
+        return self.ui.get_object("box")
 
     def new_tab(self):
         t = Tab()

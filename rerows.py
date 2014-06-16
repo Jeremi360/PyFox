@@ -94,7 +94,6 @@ class Tab(helper.Builder):
 	def get(self):
 		return self.ui.get_object("box")
 
-
 	def on_find(self):
 		self.webview.search_text(self.findfb.get_text(), False, True, True)
 
@@ -163,7 +162,7 @@ class Tab(helper.Builder):
 
 class Window(helper.Window):
 	def __init__(self):
-		T = Tab(None, self)
+		T = Tab(None, self).get()
 		super(Window, self).__init__(T)
 
 if __name__ == "__main__":
