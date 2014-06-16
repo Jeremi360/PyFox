@@ -44,6 +44,7 @@ class Tab(window.Builder):
 		self.group = group
 
 		#get objects from UI_Tab
+		#main tab toolbar
 		self.back = self.ui.get_object("back")
 		self.next = self.ui.get_object("next")
 		self.url = self.ui.get_object("url")
@@ -52,12 +53,16 @@ class Tab(window.Builder):
 		self.zoomin = self.ui.get_object("zoomin")
 		self.zoomres = self.ui.get_object("zoomres")
 		self.zoomout = self.ui.get_object("zoomout")
-		self.findbox = self.ui.get_object("findbox")
 		self.find = self.ui.get_object("find")
+		self.book = self.ui.get_object("book")
+
+		#findbox
+		self.findbox = self.ui.get_object("findbox")
 		self.closefb = self.ui.get_object("closefb")
 		self.findfb = self.ui.get_object("findfb")
 		self.backfb = self.ui.get_object("backfb")
 		self.nextfb = self.ui.get_object("nextfb")
+
 
 		#this UI elements are hide until is not in use
 		self.findbox.hide()
@@ -74,18 +79,22 @@ class Tab(window.Builder):
 		self.webview.connect("load-progress-changed", self.progress_load)
 
 		#connect UI elements with methods
+		#main tab toolbar
 		self.back.connect("clicked", lambda x: self.webview.go_back())
 		self.next.connect("clicked", lambda x: self.webview.go_forward())
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
 		#self.top.connect("clicked", lambda x: self.scroll_to_top())
 		self.find.connect("clicked", lambda x: self.findbox_show())
+		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
+		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
+		self.zoomres.connect("clicked", lambda x: self.webview.set_zoom_level(1.0))
+
+		#findbox
 		self.closefb.connect("clicked", lambda x: self.findbox_hide())
 		self.findfb.connect("activate", lambda x: self.on_find())
 		self.backfb.connect("clicked", lambda x: self.find_back())
 		self.nextfb.connect("clicked", lambda x: self.find_next())
-		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
-		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
-		self.zoomres.connect("clicked", lambda x: self.webview.set_zoom_level(1.0))
+
 
 		#last settings
 		self.webview.set_full_content_zoom(True)
