@@ -39,5 +39,5 @@ class Group(object):
         b.get().show()
 
 if __name__ == "__main__":
-    app = Window()
+    app = Window(Group())
     Gtk.main()
