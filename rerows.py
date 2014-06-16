@@ -40,6 +40,7 @@ class Group(window.Builder):
         t = Tab(self)
         self.tabs.append_page(t.get())
         self.box.add(t.button.get())
+        t.button.toggled()
 
 class Window(window.Window):
     def __init__(self):
