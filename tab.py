@@ -28,12 +28,12 @@ class TabButton(window.Builder):
 		n = self.group.tabs.get_current_page()
 		t = self.group.tabs.page_num(self.tab.get())
 
-		if n == t:
-			self.button.toggled(False)
+		if n != t:
+			self.button.set_active(False)
 		else:
 			self.group.tabs.set_current_page(t)
 
-		if self.button.toggled(True):
+		if self.button.set_active(True):
 			self.group.tabs.set_current_page(t)
 
 	def des(self):
