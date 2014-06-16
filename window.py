@@ -65,7 +65,3 @@ class Window(Builder, Gtk.Window):
 
     def do_then_init(self):
         pass
-
-if __name__ == "__main__":
-    app = Window()
-    Gtk.main()
