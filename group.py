@@ -23,7 +23,7 @@ class Group(helper.Builder):
         self.Tabs = Gtk.Notebook()
         self.Tabs.set_show_tabs(False)
         self.new_tab()
-        self.get().add(self.Tabs)
+        self.get().pack_start(self.Tabs, True, True, 0)
 
         self.get().reorder_child(self.Add, -1)
 
