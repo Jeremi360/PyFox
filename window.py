@@ -25,20 +25,32 @@ class Window(Builder, Gtk.Window):
             try:
                 self.add_wc(self.content)
             except:
-                pass
+                self.connect("destroy", Gtk.main_quit)
         else:
             self.add_wc(wc_box)
 
-
-
         self.set_size_request(400, 400)
-        self.connect("destroy", Gtk.main_quit)
         self.add(self.content)
         self.maximize()
         self.set_icon_from_file(Logo)
         self.show()
 
+    def mac(self):
+        try:
+            self.maximize()
+        except:
+            self.unmaximize()
+
     def add_wc(self, wc_box):
+        close = self.ui.get_object("close")
+        close.connect("clicked", Gtk.main_quit())
+
+        max = self.ui.get_object("max")
+        max.connect("clicked", self.mac())
+
+        mini = self.ui.get_object("mini")
+        mini.connect("clicked", self.iconify())
+
         self.set_decorated(False)
         wc_box.end_pack(self.wc, False, False, 0)
         self.wc.show()
