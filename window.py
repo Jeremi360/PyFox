@@ -45,8 +45,8 @@ class Window(Builder, Gtk.Window):
         close = self.ui.get_object("close")
         close.connect("clicked", Gtk.main_quit())
 
-        max = self.ui.get_object("max")
-        max.connect("clicked", self.mac())
+        maks = self.ui.get_object("max")
+        maks.connect("clicked", self.mac())
 
         mini = self.ui.get_object("mini")
         mini.connect("clicked", self.iconify())
@@ -58,3 +58,6 @@ class Window(Builder, Gtk.Window):
     def do_then_init(self):
         pass
 
+if __name__ == "__main__":
+    app = Window()
+    Gtk.main()
