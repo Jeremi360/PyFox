@@ -13,18 +13,18 @@ class Group(helper.Builder):
         self.parent = parent
 
         #get objects from UI_FILE
-        self.MenuButton = self.ui.get_object("MenuButton")
-        self.Add = self.ui.get_object("Add")
-        self.Downs = self.ui.get_object("Downs")
-        self.Full = self.ui.get_object("Full")
-        self.TabsBox = self.ui.get_object("TabsBox")
+        self.menub = self.ui.get_object("MenuButton")
+        self.add = self.ui.get_object("Add")
+        self.downs = self.ui.get_object("Downs")
+        self.full = self.ui.get_object("Full")
+        self.box = self.ui.get_object("TabsBox")
 
         #add Tabs
-        self.Tabs = Gtk.Notebook()
-        self.Tabs.set_show_tabs(False)
+        self.tabs = Gtk.Notebook()
+        self.tabs.set_show_tabs(False)
         self.new_tab()
         self.get().pack_start(self.Tabs, True, True, 0)
-        self.Tabs.show()
+        self.tabs.show()
         self.get().show()
 
     def set_title(self, text):
@@ -35,9 +35,10 @@ class Group(helper.Builder):
 
     def new_tab(self):
         t = Tab(self.parent)
-        self.Tabs.append_page(t.get())
-        self.TabsBox.add(t.button.get())
-        self.get().reorder_child(self.Add, self.Add.get_order() + 1)
+        self.tabs.append_page(t.get())
+        self.box.add(t.button.get())
+        old = self.get().child_get_property(self.add, "position")
+        self.get().reorder_child(self.add, old + 1)
 
 class Window(helper.Window):
     def __init__(self):
