@@ -25,8 +25,16 @@ class TabButton(window.Builder):
 		return self.ui.get_object("box")
 
 	def toggled(self):
+		n = self.group.tabs.get_current_page()
 		t = self.group.tabs.page_num(self.tab.get())
-		self.group.tabs.set_current_page(t)
+
+		if n == t:
+			self.button.toggled(False)
+		else:
+			self.group.tabs.set_current_page(t)
+
+		if self.button.toggled(True):
+			self.group.tabs.set_current_page(t)
 
 	def des(self):
 		pass
