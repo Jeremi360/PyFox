@@ -18,7 +18,7 @@ class TabButton(window.Builder):
 		self.close = self.ui.get_object("Close")
 
 		#connect UI elements with methods
-		self.get().connect("toggled", lambda x: self.toggled())
+		self.button.connect("toggled", lambda x: self.toggled())
 		self.close.connect("clicked", lambda x: self.des())
 
 	def get(self):
