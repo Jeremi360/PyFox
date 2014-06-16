@@ -83,13 +83,11 @@ class Tab(helper.Builder):
 
 		#last settings
 		self.webview.set_full_content_zoom(True)
-		self.window.set_title("RERows")
+
+		self.tabbutton = TabButton(self, self.window)
 
 		#show
 		self.webview.show()
-		self.window.show()
-
-		self.tabbutton = TabButton(self, self.window)
 
 	def get(self):
 		return self.ui.get_object("box")
