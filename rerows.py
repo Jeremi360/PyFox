@@ -23,7 +23,8 @@ class Group(window.Builder):
         self.unfull.hide()
 
         self.add.connect("clicked", lambda x: self.new_tab())
-        #self.full.connect("clicked", lambda x: self.parent.)
+        self.full.connect("clicked", lambda x: self.on_full())
+        self.unfull.connect("clicked", lambda x: self.on_unfull())
 
         #add Tabs
         self.tabs = Gtk.Notebook()
