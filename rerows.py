@@ -141,7 +141,7 @@ class Tab(helper.Builder):
 		self.url.set_progress_fraction(amount / 100.0)
 
 	def finish_load(self, webview, frame):
-		self.url.set_text(frame.get_uri())
+		self.url.set_text(webview.get_uri())
 		self.url.set_progress_fraction(0.0)
 
 		if self.webview.can_go_back():
