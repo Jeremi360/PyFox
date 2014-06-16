@@ -37,8 +37,10 @@ class Group(helper.Builder):
 
 class Window(helper.Window):
     def __init__(self):
-        T = Group(self)
-        super(Window, self).__init__(T)
+        super(Window, self).__init__()
+
+    def do_then_init(self):
+        self.content = Group(self)
 
 if __name__ == "__main__":
     app = Window()
