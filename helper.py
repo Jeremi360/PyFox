@@ -1,5 +1,8 @@
 
 from gi.repository import Gtk
+import os
+
+Logo = os.path.join("icons", "logo.svg")
 
 class Window(Gtk.Window):
     def __init__(self, content = Gtk.Box()):
@@ -10,6 +13,7 @@ class Window(Gtk.Window):
         self.connect("destroy", Gtk.main_quit)
         self.add(self.content)
         self.maximize()
+        self.set_icon_from_file(Logo)
         self.show()
 
     def do_then_init(self):
