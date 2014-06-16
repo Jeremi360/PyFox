@@ -17,7 +17,10 @@ class Group(window.Builder):
         self.add = self.ui.get_object("Add")
         self.downs = self.ui.get_object("Downs")
         self.full = self.ui.get_object("Full")
+        self.unfull = self.ui.get_object("UnFull")
         self.box = self.ui.get_object("TabsBox")
+
+        self.unfull.hide()
 
         self.add.connect("clicked", lambda x: self.new_tab())
         #self.full.connect("clicked", lambda x: self.parent.)
@@ -35,6 +38,16 @@ class Group(window.Builder):
 
     def get(self):
         return self.ui.get_object("box")
+
+    def on_full(self):
+        self.full.hide()
+        self.parent.fullscreen()
+        self.unfull.show()
+
+    def on_unfull(self):
+        self.unfull.hide()
+        self.parent.fullscreen()
+        self.full.show()
 
     def new_tab(self):
         t = Tab(self)
