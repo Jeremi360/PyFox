@@ -61,10 +61,10 @@ class Tab(helper.Builder):
 		self.scroll.add(self.webview)
 
 		#connect WEBVIEW signals with methods
-		self.webview.connect("title-changed", lambda x: self.title_chang())
-		self.webview.connect("icon-loaded", lambda x: self.load_icon())
-		self.webview.connect("load-finished", lambda x: self.finish_load())
-		self.webview.connect("load-progress-changed", lambda x: self.progress_load())
+		self.webview.connect("title-changed", self.title_chang)
+		self.webview.connect("icon-loaded", self.load_icon)
+		self.webview.connect("load-finished", self.finish_load)
+		self.webview.connect("load-progress-changed", self.progress_load)
 
 		#connect UI elements with methods
 		self.back.connect("clicked", lambda x: self.webview.go_back())
