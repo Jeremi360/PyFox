@@ -42,4 +42,5 @@ class Window(helper.Window):
         super(Window, self).__init__(T)
 
 if __name__ == "__main__":
+    app = Window()
     Gtk.main()
