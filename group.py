@@ -8,9 +8,9 @@ import helper
 UI_Group = os.path.join("ui", "Group.ui")
 
 class Group(helper.Builder):
-    def __init__(self, window):
+    def __init__(self, parent):
         super(Group, self).__init__(UI_Group)
-        self.parent = window
+        self.parent = parent
 
         #get objects from UI_FILE
         self.MenuButton = self.ui.get_object("MenuButton")

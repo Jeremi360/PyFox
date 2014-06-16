@@ -7,7 +7,7 @@ import helper
 UI_TabButton = os.path.join("ui", "TabButton.ui")
 
 class TabButton(helper.Builder):
-	def __init__(self, tab, tabgrup):
+	def __init__(self, tab, group):
 		super(TabButton, self).__init__(UI_TabButton)
 
 		#get objects from UI_TabButton
@@ -31,10 +31,10 @@ class TabButton(helper.Builder):
 UI_Tab = os.path.join("ui", "Tab.ui")
 
 class Tab(helper.Builder):
-	def __init__(self, window = None):
+	def __init__(self, group = None):
 		super(Tab, self).__init__(UI_Tab)
 
-		self.window = window
+		self.group = group
 
 		#get objects from UI_Tab
 		self.back = self.ui.get_object("back")
@@ -51,7 +51,6 @@ class Tab(helper.Builder):
 		self.findfb = self.ui.get_object("findfb")
 		self.backfb = self.ui.get_object("backfb")
 		self.nextfb = self.ui.get_object("nextfb")
-
 
 		#this UI elements are hide until is not in use
 		self.findbox.hide()
@@ -84,7 +83,7 @@ class Tab(helper.Builder):
 		#last settings
 		self.webview.set_full_content_zoom(True)
 
-		self.tabbutton = TabButton(self, self.window)
+		self.tabbutton = TabButton(self, self.group)
 
 		#show
 		self.webview.show()
