@@ -47,7 +47,7 @@ class Group(window.Builder):
 
     def on_unfull(self):
         self.unfull.hide()
-        self.parent.fullscreen()
+        self.parent.unfullscreen()
         self.full.show()
 
     def new_tab(self):
