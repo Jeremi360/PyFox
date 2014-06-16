@@ -3,13 +3,14 @@
 from gi.repository import Gtk
 import os
 from rerows import Tab, TabButton
-from helper import Window, Builder
+import helper
 
 UI_Group = os.path.join("ui", "Group.ui")
 
-class Group(Builder):
-    def __init__(self):
+class Group(helper.Builder):
+    def __init__(self, window):
         super(Group, self).__init__(UI_Group)
+        self.window = window
 
         #get objects from UI_FILE
         self.MenuButton = self.ui.get_object("MenuButton")
@@ -25,7 +26,7 @@ class Group(Builder):
         self.box.add(self.Tabs)
         self.new_tab()
 
-        self.window.show_all()
+        self.box.show()
 
     def new_tab(self):
         t = Tab()
@@ -35,6 +36,10 @@ class Group(Builder):
         t.get().show()
         b.get().show()
 
+class Window(helper.Window):
+    def __init__(self):
+        T = Group(self)
+        super(Window, self).__init__(T)
+
 if __name__ == "__main__":
-    app = Window(Group())
     Gtk.main()

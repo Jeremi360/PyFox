@@ -2,11 +2,11 @@
 
 from gi.repository import Gtk, WebKit
 import os
-from helper import Builder, Window
+import helper
 
 UI_TabButton = os.path.join("ui", "TabButton.ui")
 
-class TabButton(Builder):
+class TabButton(helper.Builder):
 	def __init__(self, tab, tabgrup):
 		super(TabButton, self).__init__(UI_TabButton)
 
@@ -30,7 +30,7 @@ class TabButton(Builder):
 
 UI_Tab = os.path.join("ui", "Tab.ui")
 
-class Tab(Builder):
+class Tab(helper.Builder):
 	def __init__(self, tabbutton = None, window = None):
 		super(Tab, self).__init__(UI_Tab)
 
@@ -161,7 +161,7 @@ class Tab(Builder):
 		else:
 			self.next.set_sensitive(False)
 
-class Window(Window):
+class Window(helper.Window):
 	def __init__(self):
 		T = Tab(None, self)
 		super(Window, self).__init__(T)
