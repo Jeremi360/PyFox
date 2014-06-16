@@ -24,7 +24,6 @@ class Group(helper.Builder):
         self.Tabs.set_show_tabs(False)
         self.new_tab()
         self.get().pack_start(self.Tabs, True, True, 0)
-
         self.get().show()
 
     def set_title(self, text):
@@ -37,7 +36,6 @@ class Group(helper.Builder):
         t = Tab(self.parent)
         self.Tabs.append_page(t.get())
         self.TabsBox.add(t.button.get())
-        self.get().reorder_child(self.Add, -1)
 
 class Window(helper.Window):
     def __init__(self):
