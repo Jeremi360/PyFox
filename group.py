@@ -33,7 +33,7 @@ class Group(helper.Builder):
     def new_tab(self):
         t = Tab(self.window)
         self.Tabs.append_page(t.get())
-        self.TabsBox.add(t.tabbutton)
+        self.TabsBox.add(t.tabbutton.get())
 
 class Window(helper.Window):
     def __init__(self):
