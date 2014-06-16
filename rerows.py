@@ -2,16 +2,13 @@
 
 from gi.repository import Gtk, WebKit
 import os
+from helper import Builder, Window
 
 UI_TabButton = os.path.join("ui", "TabButton.ui")
 
-class TabButton(object):
+class TabButton(Builder):
 	def __init__(self, tab, tabgrup):
-
-		#load UI from UI_TabButton
-		self.ui = Gtk.Builder()
-		self.ui.add_from_file(UI_TabButton)
-		self.ui.connect_signals(self)
+		super(TabButton, self).__init__(UI_TabButton)
 
 		#get objects from UI_TabButton
 		self.icon = self.ui.get_object("Icon")
@@ -33,16 +30,12 @@ class TabButton(object):
 
 UI_Tab = os.path.join("ui", "Tab.ui")
 
-class Tab(object):
+class Tab(Builder):
 	def __init__(self, tabbutton = None, window = None):
+		super(Tab, self).__init__(UI_Tab)
 
 		self.tabbutton = tabbutton
 		self.window = window
-
-		#load UI from UI_Tab
-		self.ui = Gtk.Builder()
-		self.ui.add_from_file(UI_Tab)
-		self.ui.connect_signals(self)
 
 		#get objects from UI_Tab
 		self.back = self.ui.get_object("back")
@@ -168,13 +161,10 @@ class Tab(object):
 		else:
 			self.next.set_sensitive(False)
 
-class Window(Gtk.Window):
+class Window(Window):
 	def __init__(self):
-		self.set_size_request(400, 400)
-		self.connect("destroy", Gtk.main_quit)
 		T = Tab(None, self)
-		self.add(T)
-		self.show()
+		Window.__init__(self, T)
 
 if __name__ == "__main__":
 	app = Window()
