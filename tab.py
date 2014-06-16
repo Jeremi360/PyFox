@@ -10,6 +10,9 @@ class TabButton(window.Builder):
 	def __init__(self, tab, group):
 		super(TabButton, self).__init__(UI_TabButton)
 
+		self.group = group
+		self.tab = tab
+
 		#get objects from UI_TabButton
 		self.icon = self.ui.get_object("Icon")
 		self.label = self.ui.get_object("label")
@@ -23,10 +26,14 @@ class TabButton(window.Builder):
 		return self.ui.get_object("TabButton")
 
 	def toggled(self):
-		pass
+		t = self.group.page_num(self.tab.get())
+		self.group.set_current_page()
+
 
 	def des(self):
-		pass
+		self.tab.destroy()
+		self.get().destroy()
+
 
 UI_Tab = os.path.join("ui", "Tab.ui")
 
