@@ -53,7 +53,7 @@ class Group(window.Builder):
     def new_tab(self):
         t = Tab(self)
         self.tabs.append_page(t.get())
-        self.box.add(t.button)
+        self.box.add(t.get())
         t.button.toggled()
 
 class Window(window.Window):
