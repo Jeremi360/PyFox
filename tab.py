@@ -142,7 +142,7 @@ class Tab(window.Builder):
 
 		except:
 			self.url.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
-			self.button.icon.set_from_icon_name("applications-internet", self.button.icon.get_size())
+			self.button.icon.set_from_icon_name("applications-internet", 4)
 
 	def progress_load(self, webview, amount):
 		self.url.set_progress_fraction(amount / 100.0)
