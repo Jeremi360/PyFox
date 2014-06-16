@@ -24,6 +24,7 @@ class Group(helper.Builder):
         self.Tabs.set_show_tabs(False)
         self.new_tab()
         self.get().pack_start(self.Tabs, True, True, 0)
+        self.Tabs.show()
         self.get().show()
 
     def set_title(self, text):
