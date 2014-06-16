@@ -31,7 +31,7 @@ class Group(helper.Builder):
         return self.ui.get_object("box")
 
     def new_tab(self):
-        t = Tab(self.window)
+        t = Tab(self.parent)
         self.Tabs.append_page(t.get())
         self.TabsBox.add(t.tabbutton.get())
 
