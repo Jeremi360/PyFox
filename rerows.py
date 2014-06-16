@@ -159,8 +159,10 @@ class Tab(helper.Builder):
 
 class Window(helper.Window):
 	def __init__(self):
-		T = Tab(self).get()
 		super(Window, self).__init__(T)
+
+	def do_then_init(self):
+		self.container = Tab(self).get()
 
 if __name__ == "__main__":
 	app = Window()
