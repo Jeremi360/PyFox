@@ -23,7 +23,7 @@ class Group(helper.Builder):
         self.Tabs = Gtk.Notebook()
         self.Tabs.set_show_tabs(False)
         self.new_tab()
-        self.get().pack_start(self.Tabs, False, True, False)
+        self.get().pack_start(self.Tabs, False, True)
 
         self.get().show()
 
