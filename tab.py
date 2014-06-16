@@ -2,11 +2,11 @@
 
 from gi.repository import Gtk, WebKit
 import os
-import window
+import Garbbo
 
 UI_TabButton = os.path.join("ui", "TabButton.ui")
 
-class TabButton(window.Builder):
+class TabButton(Garbbo.Builder):
 	def __init__(self, tab, group):
 		super(TabButton, self).__init__(UI_TabButton)
 
@@ -42,7 +42,7 @@ class TabButton(window.Builder):
 
 UI_Tab = os.path.join("ui", "Tab.ui")
 
-class Tab(window.Builder):
+class Tab(Garbbo.Builder):
 	def __init__(self, group = None):
 		super(Tab, self).__init__(UI_Tab)
 
@@ -174,7 +174,7 @@ class Tab(window.Builder):
 		else:
 			self.next.set_sensitive(False)
 
-class Window(window.Window):
+class Window(Garbbo.Window):
 	def __init__(self):
 		super(Window, self).__init__()
 

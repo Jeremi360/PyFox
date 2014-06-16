@@ -3,11 +3,11 @@
 from gi.repository import Gtk
 import os
 from tab import Tab
-import window
+import Garbbo
 
 UI_Group = os.path.join("ui", "Group.ui")
 
-class Group(window.Builder):
+class Group(Garbbo.Builder):
     def __init__(self, parent):
         super(Group, self).__init__(UI_Group)
         self.parent = parent
@@ -56,7 +56,7 @@ class Group(window.Builder):
         self.box.add(t.TB.get())
         t.TB.toggled()
 
-class Window(window.Window):
+class Window(Garbbo.Window):
     def __init__(self):
         super(Window, self).__init__()
 
