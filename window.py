@@ -24,10 +24,13 @@ class Window(Builder, Gtk.Window):
         self.do_then_init()
 
         if wc_box == None:
+            self.add_wc(self.content)
+            '''
             try:
                 self.add_wc(self.content)
             except:
                 self.connect("destroy", lambda x: Gtk.main_quit())
+            '''
         else:
             self.add_wc(wc_box)
 
