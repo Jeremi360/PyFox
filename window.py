@@ -27,7 +27,7 @@ class Window(Builder, Gtk.Window):
             try:
                 self.add_wc(self.content)
             except:
-                self.connect("destroy", Gtk.main_quit())
+                self.connect("destroy", lambda x: Gtk.main_quit())
         else:
             self.add_wc(wc_box)
 
@@ -45,13 +45,13 @@ class Window(Builder, Gtk.Window):
 
     def add_wc(self, wc_box):
         close = self.ui.get_object("close")
-        close.connect("clicked", Gtk.main_quit())
+        close.connect("clicked", lambda x: Gtk.main_quit())
 
         maks = self.ui.get_object("max")
-        maks.connect("clicked", self.mac())
+        maks.connect("clicked", lambda x: self.mac())
 
         mini = self.ui.get_object("mini")
-        mini.connect("clicked", self.iconify())
+        mini.connect("clicked", lambda x: self.iconify())
 
         self.set_decorated(False)
         wc_box.end_pack(self.wc, False, False, 0)
