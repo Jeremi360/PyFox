@@ -37,6 +37,7 @@ class Group(helper.Builder):
         t = Tab(self.parent)
         self.Tabs.append_page(t.get())
         self.TabsBox.add(t.button.get())
+        self.get().reorder_child(self.Add, self.Add.get_order() + 1)
 
 class Window(helper.Window):
     def __init__(self):
