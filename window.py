@@ -16,7 +16,9 @@ UI_WC = os.path.join("ui", "WindowControls.ui")
 
 class Window(Builder, Gtk.Window):
     def __init__(self, content = Gtk.Box(), wc_box = None):
-        super(Window, self).__init__(UI_WC)
+        Gtk.Window.__init__(self)
+        Builder.__init__(self, UI_WC)
+
         self.wc = self.ui.get_object("box")
         self.content = content
         self.do_then_init()
