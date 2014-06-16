@@ -35,7 +35,6 @@ class Tab(helper.Builder):
 		super(Tab, self).__init__(UI_Tab)
 
 		self.window = window
-		self.tabbutton = TabButton(self, self.window)
 
 		#get objects from UI_Tab
 		self.back = self.ui.get_object("back")
@@ -90,6 +89,8 @@ class Tab(helper.Builder):
 		#show
 		self.webview.show()
 		self.window.show()
+
+		self.tabbutton = TabButton(self, self.window)
 
 	def get(self):
 		return self.ui.get_object("box")
@@ -162,7 +163,7 @@ class Tab(helper.Builder):
 
 class Window(helper.Window):
 	def __init__(self):
-		T = Tab(None, self).get()
+		T = Tab(self).get()
 		super(Window, self).__init__(T)
 
 if __name__ == "__main__":
