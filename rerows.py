@@ -3,11 +3,11 @@
 from gi.repository import Gtk
 import os
 from tab import Tab
-import helper
+import window
 
 UI_Group = os.path.join("ui", "Group.ui")
 
-class Group(helper.Builder):
+class Group(window.Builder):
     def __init__(self, parent):
         super(Group, self).__init__(UI_Group)
         self.parent = parent
@@ -38,7 +38,7 @@ class Group(helper.Builder):
         self.tabs.append_page(t.get())
         self.box.add(t.button.get())
 
-class Window(helper.Window):
+class Window(window.Window):
     def __init__(self):
         super(Window, self).__init__()
 
