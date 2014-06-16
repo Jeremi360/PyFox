@@ -19,6 +19,9 @@ class Group(window.Builder):
         self.full = self.ui.get_object("Full")
         self.box = self.ui.get_object("TabsBox")
 
+        self.add.connect("clicked", lambda x: self.new_tab())
+        #self.full.connect("clicked", lambda x: self.parent.)
+
         #add Tabs
         self.tabs = Gtk.Notebook()
         self.tabs.set_show_tabs(False)
