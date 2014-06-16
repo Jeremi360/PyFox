@@ -83,7 +83,7 @@ class Tab(helper.Builder):
 		#last settings
 		self.webview.set_full_content_zoom(True)
 
-		self.tabbutton = TabButton(self, self.group)
+		self.button = TabButton(self, self.group)
 
 		#show
 		self.webview.show()
