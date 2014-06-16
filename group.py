@@ -25,8 +25,6 @@ class Group(helper.Builder):
         self.get().add(self.Tabs)
         self.new_tab()
 
-        self.parent.show_all()
-
     def get(self):
         return self.ui.get_object("box")
 
