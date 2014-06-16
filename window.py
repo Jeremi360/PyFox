@@ -27,7 +27,7 @@ class Window(Builder, Gtk.Window):
             try:
                 self.add_wc(self.content)
             except:
-                self.connect("destroy", Gtk.main_quit)
+                self.connect("destroy", Gtk.main_quit())
         else:
             self.add_wc(wc_box)
 
