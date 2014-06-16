@@ -164,7 +164,7 @@ class Tab(Builder):
 class Window(Window):
 	def __init__(self):
 		T = Tab(None, self)
-		Window.__init__(self, T)
+		super(Window, self).__init__(T)
 
 if __name__ == "__main__":
 	app = Window()
