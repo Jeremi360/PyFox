@@ -168,7 +168,7 @@ class Tab(object):
 		else:
 			self.next.set_sensitive(False)
 
-class Standalone(Gtk.Window):
+class Window(Gtk.Window):
 	def __init__(self):
 		self.set_size_request(400, 400)
 		self.connect("destroy", Gtk.main_quit)
@@ -177,5 +177,5 @@ class Standalone(Gtk.Window):
 		self.show()
 
 if __name__ == "__main__":
-	app = Standalone()
+	app = Window()
 	Gtk.main()
