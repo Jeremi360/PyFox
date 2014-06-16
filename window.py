@@ -15,7 +15,7 @@ class Builder(object):
 UI_WC = os.path.join("ui", "WindowControls.ui")
 
 class Window(Builder, Gtk.Window):
-    def __init__(self, content = Gtk.Box(), wc_box = None):
+    def __init__(self, content = Gtk.HBox(), wc_box = None):
         Gtk.Window.__init__(self)
         Builder.__init__(self, UI_WC)
 
@@ -56,7 +56,6 @@ class Window(Builder, Gtk.Window):
         self.set_decorated(False)
         wc_box.end_pack(self.wc, False, False, 0)
         self.wc.show()
-        self.show()
 
     def do_then_init(self):
         pass
