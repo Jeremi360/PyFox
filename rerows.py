@@ -123,9 +123,9 @@ class Tab(helper.Builder):
 		self.webview.load_uri(url)
 
 	def title_chang(self, webview, frame, title):
-		self.window.set_title("RERows - " + title)
-		if self.tabbutton != None:
-			self.tabbutton.label.set_label(title)
+		self.group.parent.set_title("RERows - " + title)
+		if self.button != None:
+			self.button.label.set_label(title)
 
 	def load_icon(self, webview, url):
 		try:
