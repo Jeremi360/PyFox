@@ -23,7 +23,7 @@ class Window(Builder, Gtk.Window):
 
         if wc_box == None:
             try:
-                self.content.end_pack(self.wc, False, False, False, 0)
+                self.content.end_pack(self.wc, False, False, 0)
 
 
         self.set_size_request(400, 400)
