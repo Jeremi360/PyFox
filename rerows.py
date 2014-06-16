@@ -37,7 +37,7 @@ class Group(window.Builder):
         return self.ui.get_object("box")
 
     def new_tab(self):
-        t = Tab(self.parent)
+        t = Tab(self)
         self.tabs.append_page(t.get())
         self.box.add(t.button.get())
 
