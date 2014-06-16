@@ -24,13 +24,13 @@ class Window(Builder, Gtk.Window):
         self.do_then_init()
 
         if wc_box == None:
-            self.add_wc(self.content)
-            '''
             try:
                 self.add_wc(self.content)
+
             except:
+                self.set_decorated(True)
                 self.connect("destroy", lambda x: Gtk.main_quit())
-            '''
+
         else:
             self.add_wc(wc_box)
 
@@ -57,7 +57,7 @@ class Window(Builder, Gtk.Window):
         mini.connect("clicked", lambda x: self.iconify())
 
         self.set_decorated(False)
-        wc_box.end_pack(self.wc, False, False, 0)
+        wc_box.pack_end(self.wc, False, False, 0)
         self.wc.show()
 
     def do_then_init(self):
