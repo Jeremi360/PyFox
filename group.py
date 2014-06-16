@@ -45,7 +45,7 @@ class Window(helper.Window):
         super(Window, self).__init__()
 
     def do_then_init(self):
-        self.content = Group(self)
+        self.content = Group(self).get()
 
 if __name__ == "__main__":
     app = Window()
