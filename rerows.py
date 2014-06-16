@@ -2,7 +2,7 @@
 
 from gi.repository import Gtk
 import os
-from rerows import Tab, TabButton
+from tab import Tab, TabButton
 import helper
 
 UI_Group = os.path.join("ui", "Group.ui")
