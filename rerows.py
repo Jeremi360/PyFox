@@ -129,7 +129,7 @@ class Tab(helper.Builder):
 
 	def load_icon(self, webview, url):
 		try:
-			pixbuf = webview.try_get_favicon_pixbuf(url)
+			pixbuf = webview.get_favicon_pixbuf()
 			self.url.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
 
 			if self.button != None:
