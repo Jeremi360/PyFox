@@ -56,6 +56,7 @@ class Window(Builder, Gtk.Window):
         self.set_decorated(False)
         wc_box.end_pack(self.wc, False, False, 0)
         self.wc.show()
+        self.show()
 
     def do_then_init(self):
         pass
