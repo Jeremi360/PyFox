@@ -25,7 +25,7 @@ class Group(helper.Builder):
         #self.new_tab()
         self.get().add(self.Tabs)
 
-        self.get().show()
+        self.get().show_all()
 
     def set_title(self, text):
         self.parent.set_title(text)
