@@ -9,7 +9,7 @@ UI_Group = os.path.join("ui", "Group.ui")
 
 class Group(Builder):
     def __init__(self):
-
+        super(Group, self).__init__(UI_Group)
 
         #get objects from UI_FILE
         self.MenuButton = self.ui.get_object("MenuButton")
