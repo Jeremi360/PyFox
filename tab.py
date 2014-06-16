@@ -14,8 +14,7 @@ class TabButton(window.Builder):
 		self.tab = tab
 
 		#get objects from UI_TabButton
-		self.icon = self.ui.get_object("Icon")
-		self.label = self.ui.get_object("label")
+		self.button = self.ui.get_object("TabButton")
 		self.close = self.ui.get_object("Close")
 
 		#connect UI elements with methods
@@ -23,16 +22,14 @@ class TabButton(window.Builder):
 		self.close.connect("clicked", lambda x: self.des())
 
 	def get(self):
-		return self.ui.get_object("TabButton")
+		return self.ui.get_object("box")
 
 	def toggled(self):
 		t = self.group.tabs.page_num(self.tab.get())
 		self.group.tabs.set_current_page(t)
 
-
 	def des(self):
-		self.tab.destroy()
-		self.get().destroy()
+		pass
 
 
 UI_Tab = os.path.join("ui", "Tab.ui")
@@ -99,7 +96,7 @@ class Tab(window.Builder):
 		#last settings
 		self.webview.set_full_content_zoom(True)
 
-		self.button = TabButton(self, self.group)
+		self.button = TabButton(self, self.group).button
 
 		#show
 		self.webview.show()
@@ -141,17 +138,17 @@ class Tab(window.Builder):
 	def title_chang(self, webview, frame, title):
 		self.group.set_title("RERows - " + title)
 		if self.button != None:
-			self.button.label.set_label(title)
+			self.button.set_label(title)
 
 	def load_icon(self, webview, url):
 		try:
 			pixbuf = webview.get_favicon_pixbuf()
 			self.url.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
-			self.button.icon.set_from_pixbuf(pixbuf)
+			self.button.get_image().set_from_pixbuf(pixbuf)
 
 		except:
 			self.url.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
-			self.button.icon.set_from_icon_name("applications-internet", 4)
+			self.button.get_image().set_from_icon_name("applications-internet", 4)
 
 	def progress_load(self, webview, amount):
 		self.url.set_progress_fraction(amount / 100.0)
