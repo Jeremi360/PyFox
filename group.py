@@ -19,13 +19,11 @@ class Group(helper.Builder):
         self.Full = self.ui.get_object("Full")
         self.TabsBox = self.ui.get_object("TabsBox")
 
-        '''
         #add Tabs
         self.Tabs = Gtk.Notebook()
         self.Tabs.set_show_tabs(False)
         #self.new_tab()
         self.get().add(self.Tabs)
-        '''
 
         self.get().show_all()
 
