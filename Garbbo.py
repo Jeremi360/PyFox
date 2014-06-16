@@ -13,37 +13,43 @@ class Builder(object):
         self.ui = Gtk.Builder()
         self.ui.add_from_file(UI_FILE)
         self.ui.connect_signals(self)
-        
-        
+
+
 UI_ListE = os.path.join("ui", "ListElement.ui")
 UI_AR = os.path.join("ui", "AddRemove.ui")
 
 class List(PopOver):
     def __init__(self, pydict = {"title":"url"}, addable = False):
         self.list = pydict
-        
+
         self.scroll = Gtk.ScrolledWindow()
         self.vp = Gtk.Viewport()
+        self.box = Gtk.VBox()
+        self.vp.add(self.box)
         self.scroll.add(self.vp)
         #self.scroll.set_
-        
+
         if addable:
-            box = Gtk.HBox()
+            box = Gtk.VBox()
             ar = Builder(UI_AR)
             add = ar.ui.get_object("add")
             remove = ar.ui.get_object("remove")
-            
+
             ar.show()
             box.pack_start(ar, False, False, 0)
             box.pack_end(self.scroll, True, True, 0)
-            
-            
-        
-    def add_element(self, element):
-        self.add()
-         
-        
-        
+
+        else:
+            self.add(self.scroll)
+
+        self.show_all()
+
+    def add_element(self, element = ["title", "url"]):
+        self.list {}.
+        self.box.pack_start()
+
+
+
 
 class Window(Builder, Gtk.Window):
     def __init__(self, content = Gtk.Box()):
