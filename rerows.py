@@ -31,11 +31,11 @@ class TabButton(helper.Builder):
 UI_Tab = os.path.join("ui", "Tab.ui")
 
 class Tab(helper.Builder):
-	def __init__(self, tabbutton = None, window = None):
+	def __init__(self, window = None):
 		super(Tab, self).__init__(UI_Tab)
 
-		self.tabbutton = tabbutton
 		self.window = window
+		self.tabbutton = TabButton(self, self.window)
 
 		#get objects from UI_Tab
 		self.back = self.ui.get_object("back")
