@@ -3,6 +3,7 @@
 from gi.repository import Gtk
 import os
 from rerows import Tab, TabButton
+from helper import Window
 
 UI_Group = os.path.join("ui", "Group.ui")
 
@@ -36,15 +37,6 @@ class Group(object):
         self.TabsBox.add(b.get())
         t.get().show()
         b.get().show()
-
-class Window(Gtk.Window):
-    def __init__(self):
-        Gtk.Window.__init__(self)
-        self.set_size_request(400, 400)
-        self.connect("destroy", Gtk.main_quit)
-        G = Group()
-        self.add(G)
-        self.show()
 
 if __name__ == "__main__":
     app = Window()
