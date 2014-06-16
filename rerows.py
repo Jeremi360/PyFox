@@ -123,7 +123,7 @@ class Tab(helper.Builder):
 		self.webview.load_uri(url)
 
 	def title_chang(self, webview, frame, title):
-		self.group.parent.set_title("RERows - " + title)
+		self.group.set_title("RERows - " + title)
 		if self.button != None:
 			self.button.label.set_label(title)
 

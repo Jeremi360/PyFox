@@ -27,6 +27,9 @@ class Group(helper.Builder):
 
         self.get().show_all()
 
+    def set_title(self, text):
+        self.parent.set_title(text)
+
     def get(self):
         return self.ui.get_object("box")
 
