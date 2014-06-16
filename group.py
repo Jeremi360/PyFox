@@ -10,7 +10,7 @@ UI_Group = os.path.join("ui", "Group.ui")
 class Group(helper.Builder):
     def __init__(self, window):
         super(Group, self).__init__(UI_Group)
-        self.window = window
+        self.parent = window
 
         #get objects from UI_FILE
         self.MenuButton = self.ui.get_object("MenuButton")
@@ -25,7 +25,7 @@ class Group(helper.Builder):
         self.get().add(self.Tabs)
         self.new_tab()
 
-        self.window.show_all()
+        self.parent.show_all()
 
     def get(self):
         return self.ui.get_object("box")
