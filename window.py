@@ -23,7 +23,12 @@ class Window(Builder, Gtk.Window):
 
         if wc_box == None:
             try:
-                self.content.end_pack(self.wc, False, False, 0)
+                self.add_wc(self.content)
+            except:
+                pass
+        else:
+            self.add_wc(wc_box)
+
 
 
         self.set_size_request(400, 400)
@@ -32,6 +37,11 @@ class Window(Builder, Gtk.Window):
         self.maximize()
         self.set_icon_from_file(Logo)
         self.show()
+
+    def add_wc(self, wc_box):
+        self.set_decorated(False)
+        wc_box.end_pack(self.wc, False, False, 0)
+        self.wc.show()
 
     def do_then_init(self):
         pass
