@@ -174,13 +174,7 @@ class Tab(Garbbo.Builder):
 		else:
 			self.next.set_sensitive(False)
 
-class Window(Garbbo.Window):
-	def __init__(self):
-		super(Window, self).__init__()
-
-	def do_then_init(self):
-		self.content = Tab(self).get()
 
 if __name__ == "__main__":
-	app = Window()
+	app = Garbbo.Window(Tab(self).get())
 	Gtk.main()
