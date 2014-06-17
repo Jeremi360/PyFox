@@ -6,8 +6,10 @@ import Garbbo
 
 UI_Tab = os.path.join("ui", "Tab.ui")
 
-class Tab(Garbbo.Tab):
+class Tab(Garbbo.Tab, Garbbo.Builder):
 	def __init__(self):
+		Garbbo.Builder.__init__(UI_Tab)
+		Garbbo.Tab.__init__(self)
 
 		#show
 		self.webview.show()
