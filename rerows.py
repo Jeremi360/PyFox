@@ -18,7 +18,7 @@ class Group(Garbbo.Builder):
         self.downs = self.ui.get_object("Downs")
         self.full = self.ui.get_object("Full")
         self.unfull = self.ui.get_object("UnFull")
-        self.box = self.ui.get_object("TabsBox")
+        self.TabBox = self.ui.get_object("TabsBox")
 
         self.unfull.hide()
 
@@ -53,8 +53,8 @@ class Group(Garbbo.Builder):
     def new_tab(self):
         t = Tab(self)
         self.tabs.append_page(t.get())
-        self.box.add(t..get())
-        t.TB.toggled()
+        self.TabBox.add(t.TabButton.get())
+        t.TabButton.toggled()
 
 class Window(Garbbo.Window):
     def do_then_init(self):
