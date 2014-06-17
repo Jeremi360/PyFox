@@ -46,7 +46,7 @@ class Tab(Garbbo.Builder):
 	def __init__(self, group = None):
 		super(Tab, self).__init__(UI_Tab)
 
-		self.book_list = Garbbo.List({"somebookmark": "someurl"})
+		self.book_list = Garbbo.List({"some bookmark": "some url"})
 		self.group = group
 
 		#get objects from UI_Tab
