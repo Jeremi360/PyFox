@@ -47,7 +47,7 @@ class Tab(Garbbo.Builder):
 		super(Tab, self).__init__(UI_Tab)
 
 		self.book_list = Garbbo.List()
-		self.book_list.hide()
+		self.book_list.set_visible(False)
 		self.group = group
 
 		#get objects from UI_Tab
@@ -128,8 +128,7 @@ class Tab(Garbbo.Builder):
 		self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False)
 
 	def on_book(self):
-		self.book_list.show()
-
+		self.book_list.set_visible(True)
 
 	def findbox_show(self):
 		self.find.hide()
