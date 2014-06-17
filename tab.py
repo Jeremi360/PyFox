@@ -9,7 +9,7 @@ UI_Tab = os.path.join("ui", "Tab.ui")
 class Tab(Garbbo.Tab, Garbbo.Builder):
 	def __init__(self, group):
 		Garbbo.Builder.__init__(UI_Tab)
-		Garbbo.Tab.__init__(self)
+		Garbbo.Tab.__init__(self, group)
 
 		#show
 		self.webview.show()
