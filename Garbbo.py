@@ -18,11 +18,12 @@ class Builder(object):
 UI_TabButton = os.path.join("ui", "TabButton.ui")
 
 class TabButton(Builder):
-    def __init__(self, tab, group, place):
+    def __init__(self, tab, group, tabbox):
         super(TabButton, self).__init__(UI_TabButton)
 
         self.group = group
         self.tab = tab
+        self.TabBox = tabbox
 
         #get objects from UI_TabButton
         self.button = self.ui.get_object("TabButton")
@@ -49,14 +50,15 @@ class TabButton(Builder):
 
     def des(self):
         self.group.tabs.remove(self.tab)
-        self.place.remove(self.button)
+        self.TabBox.remove(self.button)
         del self
 
 class Tab(object):
-    def __init__(self, group = None):
+    def __init__(self, group, tabbox):
         self.group = group
+        self.TabBox = tabbox
         self.do_then_init()
-        self.TabButton = TabButton(self, self.group)
+        self.TabButton = TabButton(self, self.group, self.TabBox)
 
 
 class Notebook(Gtk.Notebook):
