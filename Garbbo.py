@@ -65,13 +65,13 @@ class Notebook(Gtk.Notebook):
         self.TabBox = Gtk.HBox()
         self.set_show_tabs(False)
 
-    def new_page(self , content):
-        if content == None:
-            content = Tab(self, self.TabBox)
+    def new_page(self, t):
+        if t == None:
+            t = Tab(self, self.TabBox)
 
-        self.tabs.append_page(content.get())
-        self.TabBox.add(content.TabButton.get())
-        content.TabButton.toggled()
+        self.tabs.append_page(t.get())
+        self.TabBox.add(t.TabButton.get())
+        t.TabButton.toggled()
 
 
 UI_ListE = os.path.join("ui", "ListElement.ui")
