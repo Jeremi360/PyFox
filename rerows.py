@@ -27,7 +27,7 @@ class Group(Garbbo.Builder):
         self.unfull.connect("clicked", lambda x: self.on_unfull())
 
         #add Tabs
-        self.tabs = Garbbo.Notebook(self.tabs, False)
+        self.tabs = Garbbo.Notebook(self.TabBox False)
         self.new_page()
         self.get().pack_start(self.tabs, True, True, 0)
         self.tabs.show()
