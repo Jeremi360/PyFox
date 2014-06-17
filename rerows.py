@@ -18,17 +18,18 @@ class Group(Garbbo.Builder):
         self.downs = self.ui.get_object("Downs")
         self.full = self.ui.get_object("Full")
         self.unfull = self.ui.get_object("UnFull")
-        self.TabBox = self.ui.get_object("TabsBox")
+        self.box = self.ui.get_object("TabsBox")
 
         self.unfull.hide()
 
-        self.add.connect("clicked", lambda x: self.new_page())
+        self.add.connect("clicked", lambda x: self.new_tab())
         self.full.connect("clicked", lambda x: self.on_full())
         self.unfull.connect("clicked", lambda x: self.on_unfull())
 
         #add Tabs
-        self.tabs = Garbbo.Notebook(self.TabBox, False)
-        self.new_page()
+        self.tabs = Gtk.Notebook()
+        self.tabs.set_show_tabs(False)
+        self.new_tab()
         self.get().pack_start(self.tabs, True, True, 0)
         self.tabs.show()
         self.get().show()
@@ -49,11 +50,16 @@ class Group(Garbbo.Builder):
         self.parent.unfullscreen()
         self.full.show()
 
-    def new_page(self):
-        t = Tab(self.tabs, self.TabBox)
-        self.tabs.new_page(t)
+    def new_tab(self):
+        t = Tab(self)
+        self.tabs.append_page(t.get())
+        self.box.add(t.TB.get())
+        t.TB.toggled()
 
 class Window(Garbbo.Window):
+    def __init__(self):
+        super(Window, self).__init__()
+
     def do_then_init(self):
         self.content = Group(self).get()
 

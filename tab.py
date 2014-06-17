@@ -4,11 +4,50 @@ from gi.repository import Gtk, WebKit
 import os
 import Garbbo
 
+UI_TabButton = os.path.join("ui", "TabButton.ui")
+
+class TabButton(Garbbo.Builder):
+	def __init__(self, tab, group):
+		super(TabButton, self).__init__(UI_TabButton)
+
+		self.group = group
+		self.tab = tab
+
+		#get objects from UI_TabButton
+		self.button = self.ui.get_object("TabButton")
+		self.close = self.ui.get_object("Close")
+
+		#connect UI elements with methods
+		self.button.connect("toggled", lambda x: self.toggled())
+		self.close.connect("clicked", lambda x: self.des())
+
+	def get(self):
+		return self.ui.get_object("box")
+
+	def toggled(self):
+		n = self.group.tabs.get_current_page()
+		t = self.group.tabs.page_num(self.tab.get())
+
+		if n != t:
+			self.button.set_active(False)
+		else:
+			self.group.tabs.set_current_page(t)
+
+		if self.button.set_active(True):
+			self.group.tabs.set_current_page(t)
+
+	def des(self):
+		pass
+
+
 UI_Tab = os.path.join("ui", "Tab.ui")
 
-class Tab(Garbbo.Tab, Garbbo.Builder):
-	def __init__(self, group, tabbox):
-		Garbbo.Builder.__init__(self, UI_Tab)
+class Tab(Garbbo.Builder):
+	def __init__(self, group = None):
+		super(Tab, self).__init__(UI_Tab)
+
+		self.group = group
+
 		#get objects from UI_Tab
 		#main tab toolbar
 		self.back = self.ui.get_object("back")
@@ -61,9 +100,11 @@ class Tab(Garbbo.Tab, Garbbo.Builder):
 		self.backfb.connect("clicked", lambda x: self.find_back())
 		self.nextfb.connect("clicked", lambda x: self.find_next())
 
+
 		#last settings
 		self.webview.set_full_content_zoom(True)
-		Garbbo.Tab.__init__(self, group, tabbox)
+
+		self.TB = TabButton(self, self.group)
 
 		#show
 		self.webview.show()
@@ -104,8 +145,8 @@ class Tab(Garbbo.Tab, Garbbo.Builder):
 
 	def title_chang(self, webview, frame, title):
 		self.group.set_title("RERows - " + title)
-		if self.TabButton.button != None:
-			self.TabButton.button.set_label(title)
+		if self.TB.button != None:
+			self.TB.button.set_label(title)
 
 	def load_icon(self, webview, url):
 		try:
@@ -134,8 +175,11 @@ class Tab(Garbbo.Tab, Garbbo.Builder):
 			self.next.set_sensitive(False)
 
 class Window(Garbbo.Window):
+	def __init__(self):
+		super(Window, self).__init__()
+
 	def do_then_init(self):
-		self.content = Tab(self, None).get()
+		self.content = Tab(self).get()
 
 if __name__ == "__main__":
 	app = Window()
