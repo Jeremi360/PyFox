@@ -15,6 +15,52 @@ class Builder(object):
         self.ui.connect_signals(self)
 
 
+UI_TabButton = os.path.join("ui", "TabButton.ui")
+
+class TabButton(Builder):
+    def __init__(self, tab, group):
+        super(TabButton, self).__init__(UI_TabButton)
+
+        self.group = group
+        self.tab = tab
+
+        #get objects from UI_TabButton
+        self.button = self.ui.get_object("TabButton")
+        self.close = self.ui.get_object("Close")
+
+        #connect UI elements with methods
+        self.button.connect("toggled", lambda x: self.toggled())
+        self.close.connect("clicked", lambda x: self.des())
+
+    def get(self):
+        return self.ui.get_object("box")
+
+    def toggled(self):
+        n = self.group.tabs.get_current_page()
+        t = self.group.tabs.page_num(self.tab.get())
+
+        if n != t:
+            self.button.set_active(False)
+        else:
+            self.group.tabs.set_current_page(t)
+
+        if self.button.set_active(True):
+            self.group.tabs.set_current_page(t)
+
+    def des(self):
+        pass
+
+
+UI_Tab = os.path.join("ui", "Tab.ui")
+
+class Tab(Builder):
+    def __init__(self, group = None):
+        super(Tab, self).__init__(UI_Tab)
+        self.group = group
+        self.do_then_init()
+        self.TB = TabButton(self, self.group)
+
+
 UI_ListE = os.path.join("ui", "ListElement.ui")
 UI_AR = os.path.join("ui", "AddRemove.ui")
 
@@ -64,7 +110,6 @@ class List(PopOver):
         r.connect("clicked", lambda x: self.on_remove(box, element))
         self.box.pack_start(box, False, False, 0)
         self.box.show()
-
 
 class Window(Builder, Gtk.Window):
     def __init__(self, content = Gtk.Box()):
