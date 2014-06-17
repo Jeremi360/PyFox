@@ -22,7 +22,7 @@ class Group(Garbbo.Builder):
 
         self.unfull.hide()
 
-        self.add.connect("clicked", lambda x: self.new_tab())
+        self.add.connect("clicked", lambda x: self.new_page())
         self.full.connect("clicked", lambda x: self.on_full())
         self.unfull.connect("clicked", lambda x: self.on_unfull())
 
