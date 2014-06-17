@@ -27,7 +27,6 @@ class List(PopOver):
         self.box = Gtk.VBox()
         self.vp.add(self.box)
         self.scroll.add(self.vp)
-        #self.scroll.set_
 
         if addable:
             box = Gtk.VBox()
@@ -44,11 +43,26 @@ class List(PopOver):
 
         self.show_all()
 
+    def on_element(self, element):
+        pass
+
+    def do_set_icon(self, element):
+        pass
+
+    def on_remove(self, element):
+        pass
+
     def add_element(self, element = ["title", "url"]):
-        self.list {}.
-        self.box.pack_start()
-
-
+        self.list[element[0]:element[1]]
+        box = Builder(UI_ListE)
+        e = box.ui.get_object("element")
+        e.do_set_label('title')
+        e.connect("clicked", lambda x: self.on_element(element))
+        self.set_icon(element)
+        r = box.ui.get_object("remove")
+        r.connect("clicked", lambda x: self.on_remove(element))
+        self.box.pack_start(box, False, False, 0)
+        self.box.show()
 
 
 class Window(Builder, Gtk.Window):
