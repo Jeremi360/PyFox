@@ -9,12 +9,6 @@ UI_Tab = os.path.join("ui", "Tab.ui")
 class Tab(Garbbo.Tab, Garbbo.Builder):
 	def __init__(self, group, tabbox):
 		Garbbo.Builder.__init__(self, UI_Tab)
-		Garbbo.Tab.__init__(self, group, self.TabBox)
-
-		#show
-		self.webview.show()
-
-	def do_then_init(self):
 		#get objects from UI_Tab
 		#main tab toolbar
 		self.back = self.ui.get_object("back")
@@ -67,9 +61,14 @@ class Tab(Garbbo.Tab, Garbbo.Builder):
 		self.backfb.connect("clicked", lambda x: self.find_back())
 		self.nextfb.connect("clicked", lambda x: self.find_next())
 
-
 		#last settings
 		self.webview.set_full_content_zoom(True)
+		Garbbo.Tab.__init__(self, group, self.TabBox)
+
+		#show
+		self.webview.show()
+
+
 
 	def get(self):
 		return self.ui.get_object("box")
