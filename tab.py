@@ -7,7 +7,7 @@ import Garbbo
 UI_Tab = os.path.join("ui", "Tab.ui")
 
 class Tab(Garbbo.Tab, Garbbo.Builder):
-	def __init__(self, group):
+	def __init__(self, group, tabbox):
 		Garbbo.Builder.__init__(self, UI_Tab)
 		Garbbo.Tab.__init__(self, group)
 
