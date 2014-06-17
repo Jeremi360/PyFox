@@ -51,7 +51,7 @@ class Group(Garbbo.Builder):
 
     def new_page(self):
         t = Tab(self, self.TabBox)
-        Garbbo.Notebook.new_page(t)
+        self.tabs.new_page(t)
 
 class Window(Garbbo.Window):
     def do_then_init(self):
