@@ -63,7 +63,7 @@ class Tab(Garbbo.Tab, Garbbo.Builder):
 
 		#last settings
 		self.webview.set_full_content_zoom(True)
-		Garbbo.Tab.__init__(self, group, self.TabBox)
+		Garbbo.Tab.__init__(self, group, tabbox)
 
 		#show
 		self.webview.show()
