@@ -6,12 +6,14 @@ from gi.repository import Gtk, Gdk
 
 #from gi.repository.Granite import WidgetsPopOver as Pop
 
-Pop = Gtk.Window()
-Pop.set_decorated(False)
-Pop.set_size_request(400, 600)
-Pop.set_gravity(Gdk.Gravity.NORTH_EAST)
-Pop.set_position(Gtk.WindowPosition.MOUSE)
-Pop.set_type_hint(Gdk.WindowTypeHint.POPUP_MENU)
+class Pop(Gtk.Window):
+    def __init__(self):
+        Gtk.Window.__init__(self)
+        self.set_decorated(False)
+        self.set_size_request(400, 600)
+        self.set_gravity(Gdk.Gravity.NORTH_EAST)
+        self.set_position(Gtk.WindowPosition.MOUSE)
+        self.set_type_hint(Gdk.WindowTypeHint.selfUP_MENU)
 
 import os
 
