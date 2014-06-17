@@ -18,7 +18,7 @@ class Builder(object):
 UI_TabButton = os.path.join("ui", "TabButton.ui")
 
 class TabButton(Builder):
-    def __init__(self, tab, group):
+    def __init__(self, tab, group, place):
         super(TabButton, self).__init__(UI_TabButton)
 
         self.group = group
@@ -49,8 +49,7 @@ class TabButton(Builder):
 
     def des(self):
         self.group.tabs.remove(self.tab)
-        self.group.
-        del self.tab
+        self.place.remove(self.button)
         del self
 
 class Tab(object):
