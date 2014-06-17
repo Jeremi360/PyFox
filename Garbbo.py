@@ -48,13 +48,16 @@ class TabButton(Builder):
             self.group.tabs.set_current_page(t)
 
     def des(self):
-        pass
+        self.group.tabs.remove(self.tab)
+        self.group.
+        del self.tab
+        del self
 
 class Tab(object):
     def __init__(self, group = None):
         self.group = group
         self.do_then_init()
-        self.TB = TabButton(self, self.group)
+        self.TabButton = TabButton(self, self.group)
 
 
 UI_ListE = os.path.join("ui", "ListElement.ui")
