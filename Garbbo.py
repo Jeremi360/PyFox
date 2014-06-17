@@ -50,9 +50,6 @@ class TabButton(Builder):
     def des(self):
         pass
 
-
-UI_Tab = os.path.join("ui", "Tab.ui")
-
 class Tab(Builder):
     def __init__(self, group = None):
         super(Tab, self).__init__(UI_Tab)
