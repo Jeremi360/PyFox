@@ -27,8 +27,7 @@ class Group(Garbbo.Builder):
         self.unfull.connect("clicked", lambda x: self.on_unfull())
 
         #add Tabs
-        self.tabs = Gtk.Notebook()
-        self.tabs.set_show_tabs(False)
+        self.tabs = Garbbo.Notebook()
         self.new_tab()
         self.get().pack_start(self.tabs, True, True, 0)
         self.tabs.show()
@@ -52,9 +51,7 @@ class Group(Garbbo.Builder):
 
     def new_tab(self):
         t = Tab(self, self.TabBox)
-        self.tabs.append_page(t.get())
-        self.TabBox.add(t.TabButton.get())
-        t.TabButton.toggled()
+        Garbbo.Builder.new_tab(t)
 
 class Window(Garbbo.Window):
     def do_then_init(self):
