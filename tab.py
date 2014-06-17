@@ -150,7 +150,7 @@ class Tab(Garbbo.Builder):
 
 	def load_icon(self, webview, url):
 		try:
-			pixbuf = webview.get_favicon_pixbuf()
+			pixbuf = self.webview.get_favicon_pixbuf(self.url.get_text())
 			self.url.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
 			self.TB.button.get_image().set_from_pixbuf(pixbuf)
 
@@ -162,7 +162,7 @@ class Tab(Garbbo.Builder):
 		self.url.set_progress_fraction(amount / 100.0)
 
 	def finish_load(self, webview, frame):
-		self.url.set_text(webview.get_uri())
+		self.url.set_text(self.webview.get_uri())
 		self.url.set_progress_fraction(0.0)
 
 		if self.webview.can_go_back():
