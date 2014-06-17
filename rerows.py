@@ -28,7 +28,7 @@ class Group(Garbbo.Builder):
 
         #add Tabs
         self.tabs = Garbbo.Notebook()
-        self.new_tab()
+        self.new_page()
         self.get().pack_start(self.tabs, True, True, 0)
         self.tabs.show()
         self.get().show()
