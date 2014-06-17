@@ -24,7 +24,11 @@ class TabButton(Builder):
         self.group = group
         self.tab = tab
         self.TabBox = tabbox
-        self.tabs = self.group.tabs.tabs
+
+        try:
+            self.tabs = self.group.tabs.tabs
+        except:
+            self.tabs = self.group.tabs
 
         #get objects from UI_TabButton
         self.button = self.ui.get_object("TabButton")
