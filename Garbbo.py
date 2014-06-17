@@ -24,7 +24,7 @@ class Builder(object):
 UI_ListE = os.path.join("ui", "ListElement.ui")
 UI_AR = os.path.join("ui", "AddRemove.ui")
 
-class List(PopOver):
+class List(Pop):
     def __init__(self, pydict = {"title":"url"}, addable = False):
         self.list = pydict
 
