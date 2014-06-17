@@ -24,6 +24,7 @@ class TabButton(Builder):
         self.group = group
         self.tab = tab
         self.TabBox = tabbox
+        self.tabs = self.group.tabs.tabs
 
         #get objects from UI_TabButton
         self.button = self.ui.get_object("TabButton")
@@ -37,19 +38,19 @@ class TabButton(Builder):
         return self.ui.get_object("box")
 
     def toggled(self):
-        n = self.group.tabs.get_current_page()
-        t = self.group.tabs.page_num(self.tab.get())
+        n = self.tabs.get_current_page()
+        t = self.tabs.page_num(self.tab.get())
 
         if n != t:
             self.button.set_active(False)
         else:
-            self.group.tabs.set_current_page(t)
+            self.tabs.set_current_page(t)
 
         if self.button.set_active(True):
-            self.group.tabs.set_current_page(t)
+            self.tabs.set_current_page(t)
 
     def des(self):
-        self.group.tabs.remove(self.tab)
+        self.tabs.remove(self.tab)
         self.TabBox.remove(self.button)
         del self
 
