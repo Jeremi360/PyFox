@@ -57,9 +57,6 @@ class Group(Garbbo.Builder):
         t.TB.toggled()
 
 class Window(Garbbo.Window):
-    def __init__(self):
-        super(Window, self).__init__()
-
     def do_then_init(self):
         self.content = Group(self).get()
 

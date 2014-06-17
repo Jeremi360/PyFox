@@ -45,69 +45,14 @@ UI_Tab = os.path.join("ui", "Tab.ui")
 class Tab(Garbbo.Builder):
 	def __init__(self, group = None):
 		super(Tab, self).__init__(UI_Tab)
-
 		self.group = group
-
-		#get objects from UI_Tab
-		#main tab toolbar
-		self.back = self.ui.get_object("back")
-		self.next = self.ui.get_object("next")
-		self.url = self.ui.get_object("url")
-		self.fresh = self.ui.get_object("fresh")
-		#self.top = self.ui.get_object("top")
-		self.zoomin = self.ui.get_object("zoomin")
-		self.zoomres = self.ui.get_object("zoomres")
-		self.zoomout = self.ui.get_object("zoomout")
-		self.find = self.ui.get_object("find")
-		self.book = self.ui.get_object("book")
-
-		#findbox
-		self.findbox = self.ui.get_object("findbox")
-		self.closefb = self.ui.get_object("closefb")
-		self.findfb = self.ui.get_object("findfb")
-		self.backfb = self.ui.get_object("backfb")
-		self.nextfb = self.ui.get_object("nextfb")
-
-
-		#this UI elements are hide until is not in use
-		self.findbox.hide()
-
-		#create WEBVIEW
-		self.webview = WebKit.WebView()
-		self.scroll = self.ui.get_object("scroll")
-		self.scroll.add(self.webview)
-
-		#connect WEBVIEW signals with methods
-		self.webview.connect("title-changed", self.title_chang)
-		self.webview.connect("icon-loaded", self.load_icon)
-		self.webview.connect("load-finished", self.finish_load)
-		self.webview.connect("load-progress-changed", self.progress_load)
-
-		#connect UI elements with methods
-		#main tab toolbar
-		self.back.connect("clicked", lambda x: self.webview.go_back())
-		self.next.connect("clicked", lambda x: self.webview.go_forward())
-		self.fresh.connect("clicked", lambda x: self.webview.reload())
-		#self.top.connect("clicked", lambda x: self.scroll_to_top())
-		self.find.connect("clicked", lambda x: self.findbox_show())
-		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
-		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
-		self.zoomres.connect("clicked", lambda x: self.webview.set_zoom_level(1.0))
-
-		#findbox
-		self.closefb.connect("clicked", lambda x: self.findbox_hide())
-		self.findfb.connect("activate", lambda x: self.on_find())
-		self.backfb.connect("clicked", lambda x: self.find_back())
-		self.nextfb.connect("clicked", lambda x: self.find_next())
-
-
-		#last settings
-		self.webview.set_full_content_zoom(True)
-
+		self.do_then_init()
 		self.TB = TabButton(self, self.group)
 
 		#show
 		self.webview.show()
+
+	def do_then_init(self):
 
 	def get(self):
 		return self.ui.get_object("box")
@@ -175,9 +120,6 @@ class Tab(Garbbo.Builder):
 			self.next.set_sensitive(False)
 
 class Window(Garbbo.Window):
-	def __init__(self):
-		super(Window, self).__init__()
-
 	def do_then_init(self):
 		self.content = Tab(self).get()
 
