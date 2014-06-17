@@ -68,8 +68,6 @@ class Tab(Garbbo.Tab, Garbbo.Builder):
 		#show
 		self.webview.show()
 
-
-
 	def get(self):
 		return self.ui.get_object("box")
 
