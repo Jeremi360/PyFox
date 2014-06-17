@@ -135,7 +135,7 @@ class Tab(Garbbo.Tab, Garbbo.Builder):
 
 class Window(Garbbo.Window):
 	def do_then_init(self):
-		self.content = Tab(self).get()
+		self.content = Tab(self, None).get()
 
 if __name__ == "__main__":
 	app = Window()
