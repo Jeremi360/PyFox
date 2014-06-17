@@ -57,7 +57,6 @@ class Tab(object):
     def __init__(self, group, tabbox):
         self.group = group
         self.TabBox = tabbox
-        self.do_then_init()
         self.TabButton = TabButton(self, self.group, self.TabBox)
 
 
