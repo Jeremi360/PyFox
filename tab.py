@@ -104,8 +104,8 @@ class Tab(Garbbo.Tab, Garbbo.Builder):
 
 	def title_chang(self, webview, frame, title):
 		self.group.set_title("RERows - " + title)
-		if self.TB.button != None:
-			self.TB.button.set_label(title)
+		if self.TabButton.button != None:
+			self.TabButton.button.set_label(title)
 
 	def load_icon(self, webview, url):
 		try:

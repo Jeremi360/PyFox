@@ -81,8 +81,6 @@ class Notebook(Gtk.VBox):
         self.TabBox.add(t.TabButton.get())
         t.TabButton.toggled()
 
-    def __getattribute__(self, *args, **kwargs):
-        return self.tabs.__getattribute__(self, *args, **kwargs)
 
 
 UI_ListE = os.path.join("ui", "ListElement.ui")
