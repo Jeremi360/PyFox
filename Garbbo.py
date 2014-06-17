@@ -71,7 +71,7 @@ class Notebook(Gtk.Notebook):
 
         self.tabs.append_page(content.get())
         self.TabBox.add(content.TabButton.get())
-        t.TabButton.toggled()
+        content.TabButton.toggled()
 
 
 UI_ListE = os.path.join("ui", "ListElement.ui")
