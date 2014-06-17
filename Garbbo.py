@@ -3,7 +3,12 @@
 # Grabbo def: http://en.wikipedia.org/wiki/Gabbro
 
 from gi.repository import Gtk
-from gi.repository.Granite import WidgetsPopOver as PopOver
+
+try:
+    from gi.repository.Granite import WidgetsPopOver as Pop
+except:
+    pass
+
 import os
 
 Logo = os.path.join("icons", "logo.svg")
