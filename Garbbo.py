@@ -61,11 +61,18 @@ class Tab(object):
         self.TabButton = TabButton(self, self.group, self.TabBox)
 
 
-class Notebook(Gtk.Notebook):
-    def __init__(self):
-        Gtk.Notebook.__init__(self)
-        self.TabBox = Gtk.HBox()
+class Notebook(Gtk.VBox):
+    def __init__(self, tabs = Gtk.Notebook(), tabbox = Gtk.HBox(), full_init = True):
+        self.tabs = tabs
+        self.TabBox = tabbox
         self.set_show_tabs(False)
+
+        if full_init:
+            self.pack_start(self.TabBox, False, False, 0)
+            self.pack_end(self.tabs, False, False, 0)
+            self.new_page(None)
+
+        self.show()
 
     def new_page(self, t):
         if t == None:
