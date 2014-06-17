@@ -49,9 +49,9 @@ class Group(Garbbo.Builder):
         self.parent.unfullscreen()
         self.full.show()
 
-    def new_tab(self):
+    def new_page(self):
         t = Tab(self, self.TabBox)
-        Garbbo.Builder.new_tab(t)
+        Garbbo.Builder.new_page(t)
 
 class Window(Garbbo.Window):
     def do_then_init(self):
