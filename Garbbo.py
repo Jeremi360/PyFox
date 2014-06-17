@@ -1,4 +1,5 @@
 # small lib to make Gtk in my way
+# warning this is special frok of Grabbo for RERows
 # Grabbo def: http://en.wikipedia.org/wiki/Gabbro
 
 from gi.repository import Gtk
