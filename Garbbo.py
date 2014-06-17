@@ -62,9 +62,16 @@ class Tab(object):
 class Notebook(Gtk.Notebook):
     def __init__(self):
         Gtk.Notebook.__init__(self)
-        self.tabs.set_show_tabs(False)
+        self.TabBox = Gtk.HBox()
+        self.set_show_tabs(False)
 
-    def new_page(self):
+    def new_page(self , content):
+        if content == None:
+            content = Tab(self, self.TabBox)
+
+        self.tabs.append_page(content.get())
+        self.TabBox.add(content.TabButton.get())
+        t.TabButton.toggled()
 
 
 UI_ListE = os.path.join("ui", "ListElement.ui")
