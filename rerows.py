@@ -51,7 +51,7 @@ class Group(Garbbo.Builder):
         self.full.show()
 
     def new_tab(self):
-        t = Tab(self)
+        t = Tab(self, self.TabBox)
         self.tabs.append_page(t.get())
         self.TabBox.add(t.TabButton.get())
         t.TabButton.toggled()
