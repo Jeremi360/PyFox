@@ -4,7 +4,10 @@ from gi.repository import Gtk, WebKit
 import os
 import Garbbo
 
+UI_Tab = os.path.join("ui", "Tab.ui")
+
 class Tab(Garbbo.Tab):
+	def __init__(self):
 
 		#show
 		self.webview.show()

@@ -50,9 +50,8 @@ class TabButton(Builder):
     def des(self):
         pass
 
-class Tab(Builder):
+class Tab(object):
     def __init__(self, group = None):
-        super(Tab, self).__init__(UI_Tab)
         self.group = group
         self.do_then_init()
         self.TB = TabButton(self, self.group)
