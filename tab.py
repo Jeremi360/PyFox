@@ -46,7 +46,8 @@ class Tab(Garbbo.Builder):
 	def __init__(self, group = None):
 		super(Tab, self).__init__(UI_Tab)
 
-		self.book_list = Garbbo.List().hide()
+		self.book_list = Garbbo.List()
+		self.book_list.hide()
 		self.group = group
 
 		#get objects from UI_Tab
