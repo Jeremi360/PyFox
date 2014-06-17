@@ -62,8 +62,8 @@ class Tab(object):
 
 
 class Notebook(Gtk.VBox):
-    def __init__(self, tabs = Gtk.Notebook(), tabbox = Gtk.HBox(), full_init = True):
-        self.tabs = tabs
+    def __init__(self, tabbox = Gtk.HBox(), full_init = True):
+        self.tabs = Gtk.Notebook()
         self.TabBox = tabbox
         self.set_show_tabs(False)
 
