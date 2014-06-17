@@ -46,6 +46,7 @@ class Tab(Garbbo.Builder):
 	def __init__(self, group = None):
 		super(Tab, self).__init__(UI_Tab)
 
+		self.book_list = Garbbo.List({"somebookmark": "someurl"})
 		self.group = group
 
 		#get objects from UI_Tab
@@ -89,6 +90,7 @@ class Tab(Garbbo.Builder):
 		self.next.connect("clicked", lambda x: self.webview.go_forward())
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
 		#self.top.connect("clicked", lambda x: self.scroll_to_top())
+		self.book.connect("clicked", lambda x: self.on_book())
 		self.find.connect("clicked", lambda x: self.findbox_show())
 		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
 		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
@@ -125,7 +127,7 @@ class Tab(Garbbo.Builder):
 		self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False)
 
 	def on_book(self):
-		print("to dev")
+
 
 	def findbox_show(self):
 		self.find.hide()
