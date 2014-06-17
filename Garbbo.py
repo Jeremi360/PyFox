@@ -2,12 +2,17 @@
 # warning this is special frok of Grabbo for RERows
 # Grabbo def: http://en.wikipedia.org/wiki/Gabbro
 
-from gi.repository import Gtk
+from gi.repository import Gtk, Gdk
 
 try:
     from gi.repository.Granite import WidgetsPopOver as Pop
 except:
-    pass
+    Pop = Gtk.Window()
+    Pop.set_decorated(False)
+    Pop.set_size_request(400, 600)
+    Pop.set_gravity(Gdk.Gravity.NORTH_EAST)
+    Pop.set_position(Gtk.WindowPosition.MOUSE)
+    Pop.set_type_hint(Gdk.WindowTypeHint.POPUP_MENU)
 
 import os
 
