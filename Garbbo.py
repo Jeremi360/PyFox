@@ -44,13 +44,14 @@ class List(PopOver):
         self.show_all()
 
     def on_element(self, element):
+        print(element[1])
+
+    def do_set_icon(self, e, element):
         pass
 
-    def do_set_icon(self, element):
-        pass
-
-    def on_remove(self, element):
-        pass
+    def on_remove(self, box, element):
+        del self.list[element[0]]
+        del box
 
     def add_element(self, element = ["title", "url"]):
         self.list[element[0]:element[1]]
@@ -58,9 +59,9 @@ class List(PopOver):
         e = box.ui.get_object("element")
         e.do_set_label('title')
         e.connect("clicked", lambda x: self.on_element(element))
-        self.set_icon(element)
+        self.set_icon(e, element)
         r = box.ui.get_object("remove")
-        r.connect("clicked", lambda x: self.on_remove(element))
+        r.connect("clicked", lambda x: self.on_remove(box, element))
         self.box.pack_start(box, False, False, 0)
         self.box.show()
 
