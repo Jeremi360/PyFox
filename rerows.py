@@ -50,7 +50,7 @@ class Group(Garbbo.Builder):
         self.full.show()
 
     def new_page(self):
-        t = Tab(self, self.TabBox)
+        t = Tab(self.tabs, self.TabBox)
         self.tabs.new_page(t)
 
 class Window(Garbbo.Window):
