@@ -129,6 +129,7 @@ class Tab(Garbbo.Builder):
 	def on_book(self):
 		self.book_list.show()
 
+
 	def findbox_show(self):
 		self.find.hide()
 		self.findbox.show()
