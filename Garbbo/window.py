@@ -4,7 +4,6 @@ from builder import Builder
 
 Logo = os.path.join("..", "icons", "logo.png" )
 
-
 class Window(Builder, Gtk.Window):
     def __init__(self, content = Gtk.Box()):
         Gtk.Window.__init__(self)
