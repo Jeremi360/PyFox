@@ -18,7 +18,7 @@ class TabButton(Garbbo.Builder):
 		self.close = self.ui.get_object("Close")
 
 		#connect UI elements with methods
-		self.button.connect("toggled", self.toggled)
+		self.button.connect("toggled", lambda x: self.toggled())
 		self.close.connect("clicked", self.des)
 
 	def get(self):
