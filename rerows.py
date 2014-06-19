@@ -56,7 +56,7 @@ class Group(Garbbo.Builder):
         n = self.tabs.page_num(t.get())
         self.tabs.set_current_page(n)
         self.box.add(t.TB.get())
-        t.TB.set_active(True)
+        t.TB.button.set_active(True)
 
 class Window(Garbbo.Window):
     def __init__(self):
