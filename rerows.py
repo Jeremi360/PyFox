@@ -22,9 +22,9 @@ class Group(Garbbo.Builder):
 
         self.unfull.hide()
 
-        self.add.connect("clicked", lambda x: self.new_tab())
-        self.full.connect("clicked", lambda x: self.on_full())
-        self.unfull.connect("clicked", lambda x: self.on_unfull())
+        self.add.connect("clicked", self.new_tab)
+        self.full.connect("clicked", self.on_full)
+        self.unfull.connect("clicked", self.on_unfull)
 
         #add Tabs
         self.tabs = Gtk.Notebook()
@@ -53,7 +53,7 @@ class Group(Garbbo.Builder):
     def new_tab(self):
         t = Tab(self)
         self.tabs.append_page(t.get())
-        self.tabs.set_current_page(t.get())
+        self.tabs.set_current_page()
         self.box.add(t.TB.get())
         t.TB.set_active(True)
 
