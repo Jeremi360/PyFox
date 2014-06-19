@@ -54,7 +54,7 @@ class Group(Garbbo.Builder):
         t = Tab(self)
         self.tabs.append_page(t.get())
         self.box.add(t.TB.get())
-        t.TB.toggled(self)
+        t.TB.toggled()
 
 class Window(Garbbo.Window):
     def __init__(self):
