@@ -24,7 +24,7 @@ class TabButton(Garbbo.Builder):
 	def get(self):
 		return self.ui.get_object("box")
 
-	def toggled(self):
+	def toggled(self, , button, name):
 		n = self.group.tabs.get_current_page()
 		t = self.group.tabs.page_num(self.tab.get())
 
