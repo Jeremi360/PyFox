@@ -22,7 +22,7 @@ class Group(Garbbo.Builder):
 
         self.unfull.hide()
 
-        self.add.connect("clicked", self.new_tab)
+        self.add.connect("clicked", lambda x: self.new_tab())
         self.full.connect("clicked", self.on_full)
         self.unfull.connect("clicked", self.on_unfull)
 
@@ -50,7 +50,7 @@ class Group(Garbbo.Builder):
         self.parent.unfullscreen()
         self.full.show()
 
-    def new_tab(self, button, name):
+    def new_tab(self):
         t = Tab(self)
         self.tabs.append_page(t.get())
         n = self.tabs.page_num(t.get())
