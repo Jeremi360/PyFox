@@ -57,7 +57,6 @@ class Group(Garbbo.Builder):
         self.box.add(t.TB.get())
         t.TB.set_active(True)
 
-
 class Window(Garbbo.Window):
     def __init__(self):
         super(Window, self).__init__()
