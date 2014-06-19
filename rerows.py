@@ -40,17 +40,17 @@ class Group(Garbbo.Builder):
     def get(self):
         return self.ui.get_object("box")
 
-    def on_full(self):
+    def on_full(self, button, name):
         self.full.hide()
         self.parent.fullscreen()
         self.unfull.show()
 
-    def on_unfull(self):
+    def on_unfull(self, button, name):
         self.unfull.hide()
         self.parent.unfullscreen()
         self.full.show()
 
-    def new_tab(self):
+    def new_tab(self, button, name):
         t = Tab(self)
         self.tabs.append_page(t.get())
         n = self.tabs.page_num(t.get())
