@@ -1,5 +1,7 @@
 from gi.repository import Gtk
-from Builder import Builder 
+from builder import Builder
+
+
 
 class Window(Builder, Gtk.Window):
     def __init__(self, content = Gtk.Box()):
