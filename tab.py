@@ -46,7 +46,6 @@ class Tab(Garbbo.Builder):
 	def __init__(self, group = None):
 		super(Tab, self).__init__(UI_Tab)
 
-		#self.book_list = Garbbo.List()
 		self.group = group
 
 		#get objects from UI_Tab
@@ -90,7 +89,6 @@ class Tab(Garbbo.Builder):
 		self.next.connect("clicked", lambda x: self.webview.go_forward())
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
 		#self.top.connect("clicked", lambda x: self.scroll_to_top())
-		self.book.connect("clicked", lambda x: self.on_book())
 		self.find.connect("clicked", lambda x: self.findbox_show())
 		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
 		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
@@ -127,7 +125,7 @@ class Tab(Garbbo.Builder):
 		self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False)
 
 	def on_book(self):
-		pass
+		print("to dev")
 
 	def findbox_show(self):
 		self.find.hide()
@@ -152,7 +150,7 @@ class Tab(Garbbo.Builder):
 
 	def load_icon(self, webview, url):
 		try:
-			pixbuf = self.webview.get_favicon_pixbuf(self.url.get_text())
+			pixbuf = webview.get_favicon_pixbuf()
 			self.url.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
 			self.TB.button.get_image().set_from_pixbuf(pixbuf)
 
@@ -164,7 +162,7 @@ class Tab(Garbbo.Builder):
 		self.url.set_progress_fraction(amount / 100.0)
 
 	def finish_load(self, webview, frame):
-		self.url.set_text(self.webview.get_uri())
+		self.url.set_text(webview.get_uri())
 		self.url.set_progress_fraction(0.0)
 
 		if self.webview.can_go_back():
