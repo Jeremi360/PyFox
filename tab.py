@@ -37,7 +37,7 @@ class TabButton(Garbbo.Builder):
 		if self.button.set_active(True):
 			self.group.tabs.set_current_page(t)
 
-	def des(self):
+	def des(self, button, name):
 		pass
 
 UI_Tab = os.path.join("ui", "Tab.ui")
@@ -84,13 +84,13 @@ class Tab(Garbbo.Builder):
 
 		#connect UI elements with methods
 		#main tab toolbar
-		self.back.connect("clicked", self.webview.go_back)
-		self.next.connect("clicked", self.webview.go_forward)
-		self.fresh.connect("clicked", self.webview.reload)
-		#self.top.connect("clicked", self.scroll_to_top)
-		self.find.connect("clicked", self.findbox_show)
-		self.zoomin.connect("clicked", self.webview.zoom_in)
-		self.zoomout.connect("clicked", self.webview.zoom_out)
+		self.back.connect("clicked", lambda x: self.webview.go_back())
+		self.next.connect("clicked", lambda x: self.webview.go_forward())
+		self.fresh.connect("clicked", lambda x: self.webview.reload())
+		#self.top.connect("clicked", lambda x: self.scroll_to_top())
+		self.find.connect("clicked", lambda x: self.findbox_show())
+		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
+		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
 		self.zoomres.connect("clicked", lambda x: self.webview.set_zoom_level(1.0))
 
 		#findbox
@@ -109,26 +109,26 @@ class Tab(Garbbo.Builder):
 	def get(self):
 		return self.ui.get_object("box")
 
-	def on_find(self):
+	def on_find(self, button, name):
 		self.webview.search_text(self.findfb.get_text(), False, True, True)
 
-	def find_back(self):
+	def find_back(self, button, name):
 		self.webview.search_text(self.findfb.get_text(), False, False, True)
 
-	def find_next(self):
+	def find_next(self, button, name):
 		self.webview.search_text(self.findfb.get_text(), False, True, True)
 
-	def scroll_to_top(self):
+	def scroll_to_top(self, button, name):
 		self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False)
 
-	def on_book(self):
-		print("to dev")
+	def on_book(self, button, name):
+		pass
 
-	def findbox_show(self):
+	def findbox_show(self, button, name):
 		self.find.hide()
 		self.findbox.show()
 
-	def findbox_hide(self):
+	def findbox_hide(self, button, name):
 		self.findbox.hide()
 		self.find.show()
 
