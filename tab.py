@@ -28,7 +28,6 @@ class TabButton(Garbbo.Builder):
 		n = self.group.tabs.get_current_page()
 		t = self.group.tabs.page_num(self.tab.get())
 
-		#with self.button.freeze_notify():
 		if n != t:
 			self.button.set_active(False)
 		else:

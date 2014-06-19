@@ -53,8 +53,8 @@ class Group(Garbbo.Builder):
     def new_tab(self):
         t = Tab(self)
         self.tabs.append_page(t.get())
-        n = self.tabs.page_num(t.get())
-        self.tabs.set_current_page(n)
+        #n = self.tabs.page_num(t.get())
+        #self.tabs.set_current_page(n)
         self.box.add(t.TB.get())
         t.TB.button.set_active(True)
 
