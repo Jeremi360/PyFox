@@ -12,7 +12,7 @@ class Builder(object):
         self.ui.connect_signals(self)
 
 
-Logo = os.path.join("..", "icons", "logo.png" )
+Logo = os.path.join( "icons", "logo.png" )
 
 class Window(Builder, Gtk.Window):
     def __init__(self, content = Gtk.Box()):
