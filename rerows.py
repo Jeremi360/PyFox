@@ -7,7 +7,7 @@ import grabbo
 
 UI_Group = os.path.join("ui", "Group.ui")
 
-class Group(garbbo.Builder):
+class Group(grabbo.Builder):
     def __init__(self, parent):
         super(Group, self).__init__(UI_Group)
         self.parent = parent
@@ -56,7 +56,7 @@ class Group(garbbo.Builder):
         self.box.add(t.TB.get())
         t.TB.toggled()
 
-class Window(garbbo.Window):
+class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
 
