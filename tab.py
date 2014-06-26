@@ -38,7 +38,7 @@ class TabButton(grabbo.Builder):
 	def des(self, button, name):
 		pass
 
-UI_Tab = os.path.join("ui", "Tab.ui")
+UI_Tab = grabbo.getfile("ui", "Tab.ui")
 
 class Tab(grabbo.Builder):
 	def __init__(self, group = None):
