@@ -2,7 +2,7 @@
 
 from gi.repository import Gtk, WebKit
 import os
-import Garbbo
+import garbbo
 
 UI_TabButton = os.path.join("ui", "TabButton.ui")
 
