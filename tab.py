@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 
 from gi.repository import Gtk, WebKit
-import os
 import grabbo
 
-UI_TabButton = "ui", "TabButton.ui"))
+UI_TabButton =  grabbo.getfile("ui", "TabButton.ui")
 
 class TabButton(grabbo.Builder):
 	def __init__(self, tab, group):
