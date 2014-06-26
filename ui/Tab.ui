@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.16.1 -->
+<interface>
+  <requires lib="gtk+" version="3.10"/>
+  <object class="GtkImage" id="BackIcon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">go-previous</property>
+  </object>
+  <object class="GtkImage" id="BackIcon2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">go-previous</property>
+  </object>
+  <object class="GtkImage" id="BookIcon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-index</property>
+  </object>
+  <object class="GtkImage" id="CloseIcon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">window-close</property>
+  </object>
+  <object class="GtkImage" id="FindIcon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">edit-find</property>
+  </object>
+  <object class="GtkImage" id="FreshIcon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">view-refresh</property>
+  </object>
+  <object class="GtkImage" id="HistIcon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">document-open-recent</property>
+  </object>
+  <object class="GtkImage" id="NextIcon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">go-next</property>
+  </object>
+  <object class="GtkImage" id="NextIcon2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">go-next</property>
+  </object>
+  <object class="GtkImage" id="ZoominIcon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">zoom-in</property>
+  </object>
+  <object class="GtkImage" id="ZoomoutIcon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-zoom-out</property>
+  </object>
+  <object class="GtkImage" id="ZoomresIcon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">zoom-original</property>
+  </object>
+  <object class="GtkBox" id="box">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="orientation">vertical</property>
+    <property name="baseline_position">top</property>
+    <child>
+      <object class="GtkBox" id="toolbox">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkButton" id="find">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="image">FindIcon</property>
+            <property name="relief">none</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="findbox">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkSearchEntry" id="findfb">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="primary_icon_name">edit-find-symbolic</property>
+                <property name="primary_icon_activatable">False</property>
+                <property name="primary_icon_sensitive">False</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="backfb">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">BackIcon</property>
+                <property name="relief">none</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="nextfb">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">NextIcon</property>
+                <property name="relief">none</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="closefb">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">CloseIcon</property>
+                <property name="relief">none</property>
+                <property name="yalign">0.50999999046325684</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">5</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="back">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="image">BackIcon2</property>
+            <property name="relief">none</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="hist">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="image">HistIcon</property>
+            <property name="relief">none</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="next">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="image">NextIcon2</property>
+            <property name="relief">none</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="url">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="invisible_char">●</property>
+            <property name="progress_pulse_step">0.20000000000000001</property>
+            <property name="primary_icon_name">applications-internet</property>
+            <property name="secondary_icon_activatable">False</property>
+            <property name="secondary_icon_sensitive">False</property>
+            <property name="input_purpose">url</property>
+            <signal name="activate" handler="url_active" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="fresh">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="image">FreshIcon</property>
+            <property name="relief">none</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">6</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="book">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="image">BookIcon</property>
+            <property name="relief">none</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">7</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="zoomout">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="image">ZoomoutIcon</property>
+            <property name="relief">none</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">11</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="zoomres">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="image">ZoomresIcon</property>
+            <property name="relief">none</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">12</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="zoomin">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="image">ZoominIcon</property>
+            <property name="relief">none</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">13</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkScrolledWindow" id="scroll">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="shadow_type">in</property>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">2</property>
+      </packing>
+    </child>
+  </object>
+</interface>
