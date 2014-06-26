@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 
 from gi.repository import Gtk
-import os
 from tab import Tab
 import grabbo
 
-UI_Group = os.path.join("ui", "Group.ui")
+UI_Group =grabbo.getfile("ui", "Group.ui")
 
 class Group(grabbo.Builder):
     def __init__(self, parent):
