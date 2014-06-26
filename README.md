@@ -30,5 +30,5 @@ Features:
 * fix address mistake
 * zoom in & out & and reset to 100%
 * go to top - turn of for now
-* show favicon
+* show favicon - stop working
 * progress in url bar
