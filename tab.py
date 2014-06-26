@@ -170,7 +170,7 @@ class Tab(garbbo.Builder):
 		else:
 			self.next.set_sensitive(False)
 
-class Window(Garbbo.Window):
+class Window(garbbo.Window):
 	def __init__(self):
 		super(Window, self).__init__()
 
