@@ -13,8 +13,7 @@ REROWS(REthinked bROWSer)[code name] is simple web browser inspired by:
  * Google Chrome - ominbox
  * Opera 12 Addons
 
-If you won to compile this your self
-You need [python version 2.7 or 3.x]() and Gtk and Webkit from gi repository.
+If you won to compile this your self you need [python version 2.7 or 3.x]() and Gtk and Webkit from gi repository.
 And My [Grabbo lib]("https://github.com/jeremi360/Grabbo").
 To run: python rerows.py
 
