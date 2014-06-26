@@ -15,7 +15,7 @@ REROWS(REthinked bROWSer)[code name] is simple web browser inspired by:
 
 If you won to compile this your self you will need:
 - [python version 2.7 or 3.x](https://www.python.org/)
-- Gtk and Webkit from gi repository.
+- Gtk and Webkit from gi repository
 - My [Grabbo lib](https://github.com/jeremi360/Grabbo).
 To run: python rerows.py
 
