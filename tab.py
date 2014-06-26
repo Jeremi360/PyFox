@@ -6,7 +6,7 @@ import garbbo
 
 UI_TabButton = os.path.join("ui", "TabButton.ui")
 
-class TabButton(Garbbo.Builder):
+class TabButton(garbbo.Builder):
 	def __init__(self, tab, group):
 		super(TabButton, self).__init__(UI_TabButton)
 
