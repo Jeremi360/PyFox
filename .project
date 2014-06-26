@@ -3,6 +3,7 @@
 	<name>RERows</name>
 	<comment></comment>
 	<projects>
+		<project>Grabbo (2)</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
