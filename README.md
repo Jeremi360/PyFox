@@ -14,7 +14,7 @@ REROWS(REthinked bROWSer)[code name] is simple web browser inspired by:
  * Opera 12 Addons
 
 You need python version 2.7 or 3.x and Gtk and Webkit from gi repository.
-And My [Grabbo lib]("https://github.com/jeremi360/Grabbo")
+And My [Grabbo lib]("https://github.com/jeremi360/Grabbo").
 To run: python rerows.py
 
 "Warning: This program is not finshed"
