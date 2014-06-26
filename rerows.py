@@ -3,7 +3,7 @@
 from gi.repository import Gtk
 import os
 from tab import Tab
-import grabbo
+import garbbo
 
 UI_Group = os.path.join("ui", "Group.ui")
 
