@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.python.pydev.pythonNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>grabbo</name>
-			<type>2</type>
-			<location>/home/jeremi/Projects/Grabbo (2)/grabbo</location>
-		</link>
-	</linkedResources>
 </projectDescription>
