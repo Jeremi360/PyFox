@@ -41,7 +41,7 @@ class TabButton(garbbo.Builder):
 
 UI_Tab = os.path.join("ui", "Tab.ui")
 
-class Tab(Garbbo.Builder):
+class Tab(garbbo.Builder):
 	def __init__(self, group = None):
 		super(Tab, self).__init__(UI_Tab)
 
