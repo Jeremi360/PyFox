@@ -2,8 +2,9 @@
 
 from gi.repository import Gtk, WebKit
 import grabbo
+import os
 
-UI_TabButton =  grabbo.getfile("ui", "TabButton.ui")
+UI_TabButton =  os.path.join("ui", "TabButton.ui")
 
 class TabButton(grabbo.Builder):
 	def __init__(self, tab, group):
@@ -38,7 +39,7 @@ class TabButton(grabbo.Builder):
 	def des(self, button, name):
 		pass
 
-UI_Tab = grabbo.getfile("ui", "Tab.ui")
+UI_Tab = os.path.join("ui", "Tab.ui")
 
 class Tab(grabbo.Builder):
 	def __init__(self, group = None):
