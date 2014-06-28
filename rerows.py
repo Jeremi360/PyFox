@@ -3,8 +3,9 @@
 from gi.repository import Gtk
 from tab import Tab
 import grabbo
+import os
 
-UI_Group = grabbo.getfile("ui", "Group.ui")
+UI_Group = os.path.join("ui", "Group.ui")
 
 class Group(grabbo.Builder):
     def __init__(self, parent):
