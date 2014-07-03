@@ -1,8 +1,10 @@
-REROWS(REthinked bROWSer)[code name] is simple web browser inspired by:
+**cRoWBaR** - Rethink Web BRowser is simple web browser inspired by:
+
  *  Firefox:
     * Aurialis UI
     * Paronama
     * Addons:
+    
         * BackToTop
         * FlashBlock
         * AddToSearchBar
@@ -14,10 +16,13 @@ REROWS(REthinked bROWSer)[code name] is simple web browser inspired by:
  * Opera 12 Addons
 
 If you won to compile this your self you will need:
+
 - [python version 3.x](https://www.python.org/)
 - Gtk and Webkit from gi repository:
-   - Linux check your dist repos
+   
+- Linux check your dist repos
    - [Windows](http://sourceforge.net/projects/pygobjectwin32/files/) - download "pygi-aio-*-setup.exe"
+
 - My [Grabbo lib](https://github.com/jeremi360/Grabbo)
 
 To run: python tab.py
@@ -25,6 +30,7 @@ To run: python tab.py
 "Warning: This program is not finshed"
 
 Features:
+
 * google search in adrees bar
 * history back and forward buttons
 * fix address mistake
