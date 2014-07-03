@@ -140,7 +140,7 @@ class Tab(grabbo.Builder):
 		self.webview.load_uri(url)
 
 	def title_chang(self, webview, frame, title):
-		self.group.set_title("RERows - " + title)
+		self.group.set_title("cRoWBaR - " + title)
 		if self.TB.button != None:
 			self.TB.button.set_label(title)
 
