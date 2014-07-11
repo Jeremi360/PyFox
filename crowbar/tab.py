@@ -114,7 +114,7 @@ class Tab(grabbo.Builder):
 
 	def load_icon(self, webview, url):
 		try:
-			pixbuf = webview.get_favicon_pixbuf()
+			pixbuf = webview.get_icon_pixbuf()
 			self.urlen.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
 			img = Gtk.Image()
 			img.set_from_pixbuf(pixbuf)
