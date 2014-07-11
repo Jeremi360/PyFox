@@ -52,7 +52,10 @@ class Group(grabbo.Builder):
 class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
-        self.add(Group(self).get())
+        G = Group(self).get()
+        G.show()
+        self.add(G)
+        self.show()
 
 if __name__ == "__main__":
     app = Window()
