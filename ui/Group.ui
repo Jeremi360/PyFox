@@ -45,21 +45,6 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="Full">
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <property name="image">FullIcon</property>
-            <property name="relief">none</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="pack_type">end</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
           <object class="GtkButton" id="UnFull">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
@@ -75,7 +60,19 @@
           </packing>
         </child>
         <child>
-          <placeholder/>
+          <object class="GtkButton" id="Full">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="image">FullIcon</property>
+            <property name="relief">none</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
         </child>
         <child>
           <object class="GtkButton" id="Downs">
@@ -92,10 +89,13 @@
             <property name="position">2</property>
           </packing>
         </child>
+        <child>
+          <placeholder/>
+        </child>
       </object>
       <packing>
-        <property name="expand">True</property>
-        <property name="fill">False</property>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
         <property name="position">0</property>
       </packing>
     </child>
