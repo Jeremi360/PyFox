@@ -51,6 +51,7 @@ class Group(grabbo.Builder):
         #add Tabs
         self.tabs = Tabs(self)
         self.box.add(self.tabs.get())
+        self.tabs.get().show()
         self.get().pack_end(self.tabs.pages, True, True, 0)
         self.get().show()
 
