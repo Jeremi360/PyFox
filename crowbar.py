@@ -9,7 +9,8 @@ UI_Group = os.path.join("ui", "Group.ui")
 
 class Group(grabbo.Builder, grabbo.Notebook):
     def __init__(self, parent):
-        super(Group, self).__init__(UI_Group)
+        grabbo.Builder.__init__(self, UI_Group)
+        grabbo.Notebook.__init__(
 
         self.parent = parent
 
