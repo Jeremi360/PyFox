@@ -7,10 +7,10 @@ import os
 
 UI_Group = os.path.join("ui", "Group.ui")
 
-class Group(grabbo.Builder, grabbo.Notebook):
+class Group(grabbo.Builder):
     def __init__(self, parent):
         grabbo.Builder.__init__(self, UI_Group)
-        grabbo.Notebook.__init__(content = {Tab(self):"New Tab"}, addable_content = (Tab(self), "New Tab"))
+
 
         self.parent = parent
         #get objects from UI_FILE
@@ -28,11 +28,9 @@ class Group(grabbo.Builder, grabbo.Notebook):
         self.unfull.connect("clicked", self.on_unfull)
 
         #add Tabs
-        self.tabs = Gtk.Notebook()
-        self.tabs.set_show_tabs(False)
-        self.new_tab()
-        self.get().pack_start(self.tabs, True, True, 0)
-        self.tabs.show()
+       self.notebook = grabbo.Notebook(content = {Tab(self):"New Tab"}, addable_content = (Tab(self), "New Tab"))
+        self.get().pack_start(self.notebook.pages, True, True, 0)
+        self.notebook.show()
         self.get().show()
 
     def set_title(self, text):
