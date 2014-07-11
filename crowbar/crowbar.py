@@ -11,18 +11,15 @@ class Tabs(grabbo.Notebook):
     def __init__(self, group):
         super(Tabs, self).__init__()
         self.group = group
+
     def add_tab(self):
         bt = grabbo.TabButton(self, 0, "New Tab", True)
         content = Tab()
         self.pages.append_page(content)
         n = self.pages.page_num(content)
-
-        if label == None:
-            label = "Page " + str(n)
-
-
+        content.num = n
+        content.notebook = self
         content.show()
-
         self.buttons_box.add(bt.get())
 
 class Group(grabbo.Builder):

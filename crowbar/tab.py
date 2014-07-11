@@ -67,6 +67,9 @@ class Tab(grabbo.Builder):
 		#last settings
 		self.webview.set_full_content_zoom(True)
 
+		if url != None:
+			self.on_url(url)
+
 		#show
 		self.webview.show()
 
@@ -95,6 +98,10 @@ class Tab(grabbo.Builder):
 	def findbox_hide(self):
 		self.findbox.hide()
 		self.find.show()
+
+	def on_url(self, url):
+		self.url.set_text(url)
+		self.webview.load_uri(url)
 
 	def url_active(self, widget):
 		url = widget.get_text()
