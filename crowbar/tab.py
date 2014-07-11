@@ -112,7 +112,7 @@ class Tab(grabbo.Builder):
 		try:
 			pixbuf = webview.get_favicon_pixbuf()
 			self.url.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
-			self.TB.button.get_image().set_from_pixbuf(pixbuf)
+			self.TB.button. Gtk.Button.set_image(Gtk.Image().set_from_pixbuf(pixbuf))
 
 		except:
 			self.url.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
