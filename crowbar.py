@@ -10,8 +10,7 @@ UI_Group = os.path.join("ui", "Group.ui")
 class Group(grabbo.Builder, grabbo.Notebook):
     def __init__(self, parent):
         grabbo.Builder.__init__(self, UI_Group)
-        grabbo.Notebook.__init__( content = {Tab():"New Page"}, addable_content = (Gtk.Label("New Content"), "New Page"),
-                    addable = True, closeable = True, orientation = Gtk.Orientation.HORIZONTAL):
+        grabbo.Notebook.__init__(content = {Tab():"New Page"}, addable_content = (Gtk.Label("New Content"), "New Page"), addable = True, closeable = True, orientation = Gtk.Orientation.HORIZONTAL):
 
         self.parent = parent
 
