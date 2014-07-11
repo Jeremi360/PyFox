@@ -7,9 +7,10 @@ import os
 
 UI_Group = os.path.join("ui", "Group.ui")
 
-class Group(grabbo.Builder):
+class Group(grabbo.Builder, grabbo.Notebook):
     def __init__(self, parent):
         super(Group, self).__init__(UI_Group)
+
         self.parent = parent
 
         #get objects from UI_FILE
@@ -49,12 +50,6 @@ class Group(grabbo.Builder):
         self.unfull.hide()
         self.parent.unfullscreen()
         self.full.show()
-
-    def new_tab(self):
-        t = Tab(self)
-        self.tabs.append_page(t.get())
-        self.box.add(t.TB.get())
-        t.TB.toggled()
 
 class Window(grabbo.Window):
     def __init__(self):

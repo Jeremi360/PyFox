@@ -4,41 +4,6 @@ from gi.repository import Gtk, WebKit
 import grabbo
 import os
 
-UI_TabButton =  os.path.join("ui", "TabButton.ui")
-
-class TabButton(grabbo.Builder):
-	def __init__(self, tab, group):
-		super(TabButton, self).__init__(UI_TabButton)
-
-		self.group = group
-		self.tab = tab
-
-		#get objects from UI_TabButton
-		self.button = self.ui.get_object("TabButton")
-		self.close = self.ui.get_object("Close")
-
-		#connect UI elements with methods
-		self.button.connect("toggled", lambda x: self.toggled)
-		self.close.connect("clicked", self.des)
-
-	def get(self):
-		return self.ui.get_object("box")
-
-	def toggled(self):
-		n = self.group.tabs.get_current_page()
-		t = self.group.tabs.page_num(self.tab.get())
-
-		if n != t:
-			self.button.set_active(False)
-		else:
-			self.group.tabs.set_current_page(t)
-
-		if self.button.set_active(True):
-			self.group.tabs.set_current_page(t)
-
-	def des(self, button, name):
-		pass
-
 UI_Tab = os.path.join("ui", "Tab.ui")
 
 class Tab(grabbo.Builder):
@@ -100,7 +65,6 @@ class Tab(grabbo.Builder):
 
 		#last settings
 		self.webview.set_full_content_zoom(True)
-		self.TB = TabButton(self, self.group)
 
 		#show
 		self.webview.show()
