@@ -10,7 +10,7 @@ UI_Group = os.path.join("ui", "Group.ui")
 class Group(grabbo.Builder, grabbo.Notebook):
     def __init__(self, parent):
         grabbo.Builder.__init__(self, UI_Group)
-        grabbo.Notebook.__init__(content = {Tab():"New Tab"}, addable_content = (Tab(), "New Tab"))
+        grabbo.Notebook.__init__(content = {Tab(self):"New Tab"}, addable_content = (Tab(self), "New Tab"))
 
         self.parent = parent
         #get objects from UI_FILE
