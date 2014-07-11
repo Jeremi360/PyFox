@@ -118,7 +118,7 @@ class Tab(grabbo.Builder):
 			self.urlen.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
 			img = Gtk.Image()
 			img.set_from_pixbuf(pixbuf)
-			img.set_size_request(16, 16)
+			img.set_size_request(8, 8)
 			self.TB.button.set_image(img)
 
 		except:
