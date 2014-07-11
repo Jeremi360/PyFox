@@ -17,7 +17,7 @@ class Tab(grabbo.Builder):
 		#main tab toolbar
 		self.back = self.ui.get_object("back")
 		self.next = self.ui.get_object("next")
-		self.url = self.ui.get_object("url")
+		self.urlen = self.ui.get_object("url")
 		self.fresh = self.ui.get_object("fresh")
 		#self.top = self.ui.get_object("top")
 		self.zoomin = self.ui.get_object("zoomin")
@@ -102,7 +102,7 @@ class Tab(grabbo.Builder):
 		self.find.show()
 
 	def on_url(self, url):
-		self.url.set_text(url)
+		self.urlen.set_text(url)
 		self.webview.load_uri(url)
 
 	def url_active(self, widget):
@@ -128,11 +128,11 @@ class Tab(grabbo.Builder):
 			self.TB.button.set_image(Gtk.Image().set_from_icon_name("applications-internet", 4))
 
 	def progress_load(self, webview, amount):
-		self.url.set_progress_fraction(amount / 100.0)
+		self.urlen.set_progress_fraction(amount / 100.0)
 
 	def finish_load(self, webview, frame):
-		self.url.set_text(webview.get_uri())
-		self.url.set_progress_fraction(0.0)
+		self.urlen.set_text(webview.get_uri())
+		self.urlen.set_progress_fraction(0.0)
 
 		if self.webview.can_go_back():
 			self.back.set_sensitive(True)
