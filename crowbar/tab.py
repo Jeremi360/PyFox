@@ -7,7 +7,7 @@ import os
 UI_Tab = os.path.join('..', 'ui', 'Tab.ui')
 
 class Tab(grabbo.Builder):
-	def __init__(self, group = None, TB, url = None):
+	def __init__(self, group = None, TB = None, url = None):
 		super(Tab, self).__init__(UI_Tab)
 
 		self.group = group
