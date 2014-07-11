@@ -7,7 +7,7 @@ import os
 UI_Tab = os.path.join('..', 'ui', 'Tab.ui')
 
 class Tab(grabbo.Builder):
-	def __init__(self, TB, group = None):
+	def __init__(self, TB, group = None, url):
 		super(Tab, self).__init__(UI_Tab)
 
 		self.group = group
@@ -66,6 +66,10 @@ class Tab(grabbo.Builder):
 
 		#last settings
 		self.webview.set_full_content_zoom(True)
+
+		if url:
+			self.urlen.set_text(url)
+			self.webview.load_uri(url)
 
 		#show
 		self.webview.show()
