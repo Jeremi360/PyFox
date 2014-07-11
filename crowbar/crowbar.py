@@ -12,14 +12,14 @@ class Tabs(grabbo.Notebook):
         super(Tabs, self).__init__()
         self.group = group
 
-        self.add_tab()
+        self.add_tab("https://github.com/jeremi360/cRoWBaR")
 
         self.buttons_box.show()
         self.pages.show()
 
-    def add_tab(self):
+    def add_tab(self, url):
         bt = grabbo.TabButton(self, 0, "New Tab", True)
-        content = Tab(bt, self.group).gtk()
+        content = Tab(bt, self.group, url).get()
 
         self.pages.append_page(content)
         n = self.pages.page_num(content)
