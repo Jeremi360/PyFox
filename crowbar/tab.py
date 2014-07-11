@@ -7,7 +7,7 @@ import os
 UI_Tab = os.path.join('..', 'ui', 'Tab.ui')
 
 class Tab(grabbo.Builder):
-	def __init__(self, group = None, TB = None, url = None):
+	def __init__(self, TB, group = None, url = None):
 		super(Tab, self).__init__(UI_Tab)
 
 		self.group = group
@@ -118,8 +118,7 @@ class Tab(grabbo.Builder):
 
 		except:
 			self.url.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
-			if self.TB != None:
-				self.TB.button.set_image(Gtk.Image().set_from_icon_name("applications-internet", 4))
+			self.TB.button.set_image(Gtk.Image().set_from_icon_name("applications-internet", 4))
 
 	def progress_load(self, webview, amount):
 		self.url.set_progress_fraction(amount / 100.0)
