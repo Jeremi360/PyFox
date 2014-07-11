@@ -22,7 +22,6 @@ class Group(grabbo.Builder):
 
         self.unfull.hide()
 
-        self.add.connect("clicked", lambda x: self.new_tab())
         self.full.connect("clicked", self.on_full)
         self.unfull.connect("clicked", self.on_unfull)
 
