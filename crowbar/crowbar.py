@@ -47,13 +47,9 @@ class Group(grabbo.Builder):
         self.unfull.connect("clicked", self.on_unfull)
 
         #add Tabs
-        #t = Tab(self).get()
-        self.notebook = grabbo.Notebook(content = {Tab(self).get():"New Tab"}, addable_content = (Tab(self).get(), "New Tab"))
-        self.get().pack_start(self.notebook.pages, True, True, 0)
-        self.box.add(self.notebook.get())
-        #self.box.reorder_child(self.notebook.buttons_box, 4)
-        self.notebook.pages.show()
-        self.notebook.get().show()
+        self.notebook = Tabs()
+        self.box.add(self.tabs.get())
+        self.get().add(self.tabs.pages)
         self.get().show()
 
     def set_title(self, text):
