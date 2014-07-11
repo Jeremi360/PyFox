@@ -28,8 +28,8 @@ class Group(grabbo.Builder):
 
         #add Tabs
         self.notebook = grabbo.Notebook(content = {Tab(self):"New Tab"}, addable_content = (Tab(self), "New Tab"))
-        self.get().pack_start(self.notebook.pages, True, True, 0)
-        self.
+        self.get().pack_start(self.notebook.pages, False, True, 0)
+        self.box.pack_start()
         self.notebook.show()
         self.get().show()
 
