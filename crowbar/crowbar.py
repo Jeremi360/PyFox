@@ -25,8 +25,8 @@ class Group(grabbo.Builder):
         self.unfull.connect("clicked", self.on_unfull)
 
         #add Tabs
-        t = Tab(self).get()
-        self.notebook = grabbo.Notebook(content = {t:"New Tab"}, addable_content = (t, "New Tab"))
+        #t = Tab(self).get()
+        self.notebook = grabbo.Notebook(content = {Tab(self).get():"New Tab"}, addable_content = (Tab(self).get(), "New Tab"))
         self.get().pack_start(self.notebook.pages, True, True, 0)
         self.box.add(self.notebook.get())
         #self.box.reorder_child(self.notebook.buttons_box, 4)
