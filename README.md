@@ -4,7 +4,7 @@
     * Aurialis UI
     * Paronama
     * Addons:
-    
+
         * BackToTop
         * FlashBlock
         * AddToSearchBar
@@ -19,13 +19,13 @@ If you won to compile this your self you will need:
 
 - [python version 3.x](https://www.python.org/)
 - Gtk and Webkit from gi repository:
-   
+
 - Linux check your dist repos
    - [Windows](http://sourceforge.net/projects/pygobjectwin32/files/) - download "pygi-aio-*-setup.exe"
 
 - My [Grabbo lib](https://github.com/jeremi360/Grabbo)
 
-To run: python tab.py
+To run: python crowbar.py in corwbar folder
 
 "Warning: This program is not finshed"
 
