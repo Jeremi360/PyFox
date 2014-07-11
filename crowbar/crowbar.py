@@ -29,7 +29,7 @@ class Group(grabbo.Builder):
         self.notebook = grabbo.Notebook(content = {t:"New Tab"}, addable_content = (t, "New Tab"))
         self.get().pack_start(self.notebook.pages, True, True, 0)
         self.box.add(self.notebook.buttons_box)
-        self.reorder_child(self.notebook.buttons_box, 4)
+        #self.box.reorder_child(self.notebook.buttons_box, 4)
         self.notebook.pages.show()
         self.notebook.get().show()
         self.get().show()
