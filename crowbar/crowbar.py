@@ -14,7 +14,8 @@ class Tabs(grabbo.Notebook):
 
         self.add_tab('https://github.com/jeremi360/cRoWBaR')
 
-        self
+        self.buttons_box.show()
+        self.pages.show()
 
     def add_tab(self, url = None):
         bt = grabbo.TabButton(self, 0, "New Tab", True)
