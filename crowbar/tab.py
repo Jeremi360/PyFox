@@ -67,8 +67,10 @@ class Tab(grabbo.Builder):
 		#last settings
 		self.webview.set_full_content_zoom(True)
 
-		if url != None:
+		try:
 			self.on_url(url)
+		except:
+			pass
 
 		#show
 		self.webview.show()
