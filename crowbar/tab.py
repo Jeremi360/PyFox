@@ -7,7 +7,7 @@ import os
 UI_Tab = os.path.join('..', 'ui', 'Tab.ui')
 
 class Tab(grabbo.Builder):
-	def __init__(self, TB, group = None, url = None):
+	def __init__(self, TB, group = None):
 		super(Tab, self).__init__(UI_Tab)
 
 		self.group = group
@@ -67,10 +67,6 @@ class Tab(grabbo.Builder):
 		#last settings
 		self.webview.set_full_content_zoom(True)
 
-
-		if url != None:
-			self.on_url(url)
-
 		#show
 		self.webview.show()
 
@@ -99,10 +95,6 @@ class Tab(grabbo.Builder):
 	def findbox_hide(self):
 		self.findbox.hide()
 		self.find.show()
-
-	def on_url(self, url):
-		self.urlen.set_text(url)
-		self.webview.load_uri(url)
 
 	def url_active(self, widget):
 		url = widget.get_text()
