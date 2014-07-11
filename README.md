@@ -30,7 +30,7 @@ To run: python crowbar.py in corwbar folder
 "Warning: This program is not finshed"
 
 Features:
-* Tabs :D !
+* Tabs on Top :D !
 * google search in adrees bar
 * history back and forward buttons
 * fix address mistake
