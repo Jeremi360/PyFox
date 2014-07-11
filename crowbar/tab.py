@@ -106,17 +106,20 @@ class Tab(grabbo.Builder):
 
 	def title_chang(self, webview, frame, title):
 		self.group.set_title("cRoWBaR - " + title)
-		self.TB.button.set_label(title)
+		if self.TB != None:
+			self.TB.button.set_label(title)
 
 	def load_icon(self, webview, url):
 		try:
 			pixbuf = webview.get_favicon_pixbuf()
 			self.url.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
-			self.TB.button. Gtk.Button.set_image(Gtk.Image().set_from_pixbuf(pixbuf))
+			if self.TB != None:
+				self.TB.button. Gtk.Button.set_image(Gtk.Image().set_from_pixbuf(pixbuf))
 
 		except:
 			self.url.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
-			self.TB.button.set_image(Gtk.Image().set_from_icon_name("applications-internet", 4))
+			if self.TB != None:
+				self.TB.button.set_image(Gtk.Image().set_from_icon_name("applications-internet", 4))
 
 	def progress_load(self, webview, amount):
 		self.url.set_progress_fraction(amount / 100.0)
