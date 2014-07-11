@@ -117,7 +117,7 @@ class Tab(grabbo.Builder):
 			pixbuf = webview.get_icon_pixbuf()
 			self.urlen.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
 			img = Gtk.Image()
-			img.set_from_pixbuf(pixbuf)
+			img.set_from_pixbuf(pixbuf, 4)
 			self.TB.button.set_image(img)
 
 		except:
