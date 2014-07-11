@@ -108,26 +108,26 @@ class Tab(grabbo.Builder):
 	def get(self):
 		return self.ui.get_object("box")
 
-	def on_find(self, button, name):
+	def on_find(self):
 		self.webview.search_text(self.findfb.get_text(), False, True, True)
 
-	def find_back(self, button, name):
+	def find_back(self):
 		self.webview.search_text(self.findfb.get_text(), False, False, True)
 
-	def find_next(self, button, name):
+	def find_next(self):
 		self.webview.search_text(self.findfb.get_text(), False, True, True)
 
-	def scroll_to_top(self, button, name):
+	def scroll_to_top(self):
 		self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False)
 
-	def on_book(self, button, name):
+	def on_book(self):
 		pass
 
-	def findbox_show(self, button, name):
+	def findbox_show(self):
 		self.find.hide()
 		self.findbox.show()
 
-	def findbox_hide(self, button, name):
+	def findbox_hide(self):
 		self.findbox.hide()
 		self.find.show()
 
