@@ -4,7 +4,7 @@ from gi.repository import Gtk, WebKit
 import grabbo
 import os
 
-UI_Tab = os.path.join("ui", "Tab.ui")
+UI_Tab = os.path.join('..', 'ui', 'Tab.ui')
 
 class Tab(grabbo.Builder):
 	def __init__(self, group = None, url = None):
