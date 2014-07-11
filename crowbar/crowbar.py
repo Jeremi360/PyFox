@@ -7,6 +7,19 @@ import os
 
 UI_Group = os.path.join('..', 'ui', 'Group.ui')
 
+class Tabs(grabbo.Notebook):
+    def add_tab(self, content=Gtk.Label("Content"), label=None, closeable=True):
+        self.pages.append_page(content)
+        n = self.pages.page_num(content)
+
+        if label == None:
+            label = "Page " + str(n)
+
+        bt = _TabButton(self, n, label, closeable)
+        content.show()
+
+        self.buttons_box.add(bt.get())
+
 class Group(grabbo.Builder):
     def __init__(self, parent):
         grabbo.Builder.__init__(self, UI_Group)
