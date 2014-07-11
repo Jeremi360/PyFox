@@ -14,7 +14,6 @@ class Group(grabbo.Builder):
         self.parent = parent
         #get objects from UI_FILE
         self.menub = self.ui.get_object("MenuButton")
-        self.add = self.ui.get_object("Add")
         self.downs = self.ui.get_object("Downs")
         self.full = self.ui.get_object("Full")
         self.unfull = self.ui.get_object("UnFull")
