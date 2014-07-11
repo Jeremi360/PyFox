@@ -114,7 +114,7 @@ class Tab(grabbo.Builder):
 			pixbuf = webview.get_favicon_pixbuf()
 			self.url.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
 			if self.TB != None:
-				self.TB.button. Gtk.Button.set_image(Gtk.Image().set_from_pixbuf(pixbuf))
+				self.TB.button.set_image(Gtk.Image().set_from_pixbuf(pixbuf))
 
 		except:
 			self.url.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
@@ -136,13 +136,3 @@ class Tab(grabbo.Builder):
 			self.next.set_sensitive(True)
 		else:
 			self.next.set_sensitive(False)
-
-class Window(grabbo.Window):
-	def __init__(self):
-		super(Window, self).__init__()
-		self.add(Tab(self).get())
-		self.show()
-
-if __name__ == "__main__":
-	app = Window()
-	Gtk.main()
