@@ -17,7 +17,7 @@ class Tab(grabbo.Builder):
 		#main tab toolbar
 		self.back = self.ui.get_object("back")
 		self.next = self.ui.get_object("next")
-		self.urlen = self.ui.get_object("url")
+		self.urlen = self.ui.get_object("urlen")
 		self.fresh = self.ui.get_object("fresh")
 		#self.top = self.ui.get_object("top")
 		self.zoomin = self.ui.get_object("zoomin")
@@ -67,10 +67,8 @@ class Tab(grabbo.Builder):
 		#last settings
 		self.webview.set_full_content_zoom(True)
 
-		try:
+		if url != None:
 			self.on_url(url)
-		except:
-			pass
 
 		#show
 		self.webview.show()
