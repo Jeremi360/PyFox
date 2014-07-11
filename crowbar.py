@@ -11,7 +11,6 @@ class Group(grabbo.Builder):
     def __init__(self, parent):
         grabbo.Builder.__init__(self, UI_Group)
 
-
         self.parent = parent
         #get objects from UI_FILE
         self.menub = self.ui.get_object("MenuButton")
@@ -19,7 +18,7 @@ class Group(grabbo.Builder):
         self.downs = self.ui.get_object("Downs")
         self.full = self.ui.get_object("Full")
         self.unfull = self.ui.get_object("UnFull")
-        self.box = self.ui.get_object("TabsBox")
+        self.box = self.ui.get_object("MainBox")
 
         self.unfull.hide()
 
@@ -30,6 +29,7 @@ class Group(grabbo.Builder):
         #add Tabs
         self.notebook = grabbo.Notebook(content = {Tab(self):"New Tab"}, addable_content = (Tab(self), "New Tab"))
         self.get().pack_start(self.notebook.pages, True, True, 0)
+        self.
         self.notebook.show()
         self.get().show()
 
