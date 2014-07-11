@@ -15,7 +15,7 @@ class Tabs(grabbo.Notebook):
         if label == None:
             label = "Page " + str(n)
 
-        bt = TabButton(self, n, label, closeable)
+        bt = grabbo.TabButton(self, n, label, closeable)
         content.show()
 
         self.buttons_box.add(bt.get())
