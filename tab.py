@@ -174,7 +174,7 @@ class Window(grabbo.Window):
 	def __init__(self):
 		super(Window, self).__init__()
 		self.add(Tab(self).get())
-		self.show_all()
+		self.show()
 
 if __name__ == "__main__":
 	app = Window()
