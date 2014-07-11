@@ -83,11 +83,11 @@ class Tab(grabbo.Builder):
 
 		#connect UI elements with methods
 		#main tab toolbar
-		self.back.connect("clicked", self.webview.go_back)
-		self.next.connect("clicked", self.webview.go_forward)
-		self.fresh.connect("clicked", self.webview.reload)
-		#self.top.connect("clicked", self.scroll_to_top)
-		self.find.connect("clicked", self.findbox_show)
+		self.back.connect("clicked", lambda x: self.webview.go_back())
+		self.next.connect("clicked", lambda x: self.webview.go_forward())
+		self.fresh.connect("clicked", lambda x: self.webview.reload())
+		#self.top.connect("clicked", lambda x: self.scroll_to_top())
+		self.find.connect("clicked", lambda x: self.findbox_show())
 		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
 		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
 		self.zoomres.connect("clicked", lambda x: self.webview.set_zoom_level(1.0))
