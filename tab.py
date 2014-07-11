@@ -105,8 +105,6 @@ class Tab(grabbo.Builder):
 
 	def title_chang(self, webview, frame, title):
 		self.group.set_title("cRoWBaR - " + title)
-		if self.TB.button != None:
-			self.TB.button.set_label(title)
 
 	def load_icon(self, webview, url):
 		try:
