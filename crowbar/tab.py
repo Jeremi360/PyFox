@@ -106,15 +106,13 @@ class Tab(grabbo.Builder):
 
 	def title_chang(self, webview, frame, title):
 		self.group.set_title("cRoWBaR - " + title)
-		if self.TB != None:
-			self.TB.button.set_label(title)
+		self.TB.button.set_label(title)
 
 	def load_icon(self, webview, url):
 		try:
 			pixbuf = webview.get_favicon_pixbuf()
 			self.url.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
-			if self.TB != None:
-				self.TB.button.set_image(Gtk.Image().set_from_pixbuf(pixbuf))
+			self.TB.button.set_image(Gtk.Image().set_from_pixbuf(pixbuf))
 
 		except:
 			self.url.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
