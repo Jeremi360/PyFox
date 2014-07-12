@@ -53,13 +53,12 @@ class Tab(grabbo.Builder):
 		self.next.connect("clicked", lambda x: self.webview.go_forward())
 		self.fresh.connect("clicked", lambda x: self.webview.reload())
 		#self.top.connect("clicked", lambda x: self.scroll_to_top())
-		self.find.connect("clicked", lambda x: self.findbox_show())
+		self.find.connect("toggled", lambda x: self.on_findbox())
 		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
 		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
 		self.zoomres.connect("clicked", lambda x: self.webview.set_zoom_level(1.0))
 
 		#findbox
-		self.closefb.connect("clicked", lambda x: self.findbox_hide())
 		self.findfb.connect("activate", lambda x: self.on_find())
 		self.backfb.connect("clicked", lambda x: self.find_back())
 		self.nextfb.connect("clicked", lambda x: self.find_next())
@@ -92,13 +91,11 @@ class Tab(grabbo.Builder):
 	def on_book(self):
 		pass
 
-	def findbox_show(self):
-		self.find.hide()
-		self.findbox.show()
-
-	def findbox_hide(self):
-		self.findbox.hide()
-		self.find.show()
+	def on_findbox(self):
+		if self.find.get_active():
+			self.findbox.show()
+		else:
+			self.findbox.hide()
 
 	def url_active(self, widget):
 		url = widget.get_text()
