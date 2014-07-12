@@ -119,7 +119,7 @@ class Tab(grabbo.Builder):
 			except:
 				pass
 
-		for i in range 3:
+		for i in range(3):
 			short[-i] = "."
 
 		self.TB.button.set_label(short)
