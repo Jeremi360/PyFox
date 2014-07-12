@@ -118,7 +118,8 @@ class Tab(grabbo.Builder):
 			self.urlen.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
 			img = Gtk.Image()
 			img.set_from_pixbuf(pixbuf)
-			print("Favicon size ", img.get_pixel_size ())
+			print("Favicon size ", img.get_pixel_size())
+			img.set_pixel_size(1)
 			self.TB.button.set_image(img)
 
 		except:
