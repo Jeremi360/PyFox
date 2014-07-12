@@ -31,10 +31,10 @@ To run: python crowbar.py in corwbar folder
 
 Features:
 * Tabs on Top :D !
-* google search in adrees bar
+* google search in url bar
 * history back and forward buttons
 * fix address mistake
 * zoom in & out & and reset to 100%
 * go to top - turn of for now
-* show favicon - stop working
+* show favicon
 * progress in url bar
