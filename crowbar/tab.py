@@ -119,6 +119,9 @@ class Tab(grabbo.Builder):
 			except:
 				pass
 
+		for i in range 3:
+			short[-i] = "."
+
 		self.TB.button.set_label(short)
 		self.TB.button.set_tooltip_text(title)
 
