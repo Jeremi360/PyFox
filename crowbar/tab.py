@@ -111,7 +111,6 @@ class Tab(grabbo.Builder):
 	def title_chang(self, webview, frame, title):
 		self.group.set_title("cRoWBaR - " + title)
 
-		#t = title.split("")
 		short = ""
 		for i in range(26):
 			try:
