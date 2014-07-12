@@ -111,16 +111,13 @@ class Tab(grabbo.Builder):
 	def title_chang(self, webview, frame, title):
 		self.group.set_title("cRoWBaR - " + title)
 
-		t = title.split(" ")
+		t = title.split("")
 		short = ""
-		for i in range(4):
+		for i in range(26):
 			try:
-				short += " " + t[i]
+				short += t[i]
 			except:
 				pass
-
-		for i in range(3):
-			short[-i] = "."
 
 		self.TB.button.set_label(short)
 		self.TB.button.set_tooltip_text(title)
