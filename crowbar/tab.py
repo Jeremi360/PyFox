@@ -110,7 +110,10 @@ class Tab(grabbo.Builder):
 
 	def title_chang(self, webview, frame, title):
 		self.group.set_title("cRoWBaR - " + title)
-		self.TB.button.set_label(title)
+		t = title.split(" ")
+		short = str(t[0] + " " + t[1])
+		self.TB.button.set_label(short)
+		self.TB.button.set_tooltip_text(title)
 
 	def load_icon(self, webview, url):
 		try:
