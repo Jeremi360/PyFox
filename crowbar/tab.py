@@ -119,7 +119,7 @@ class Tab(grabbo.Builder):
 			img = Gtk.Image()
 			img.set_from_pixbuf(pixbuf)
 			print("Favicon size ", img.get_pixel_size())
-			img.set_pixel_size(1)
+			img.set_pixel_size(2)
 			print("Favicon size ", img.get_pixel_size())
 			self.TB.button.set_image(img)
 
