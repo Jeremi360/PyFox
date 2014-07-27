@@ -8,9 +8,9 @@ import os
 UI_Group = os.path.join('..', 'ui', 'Group.ui')
 
 class Tabs(grabbo.Notebook):
-    def __init__(self, group):
+    def __init__(self, paronama):
         super(Tabs, self).__init__()
-        self.group = group
+        self.paronama = paronama
 
         self.first_tab("https://github.com/jeremi360/cRoWBaR")
 
