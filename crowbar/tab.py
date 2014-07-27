@@ -75,6 +75,7 @@ class Tab(grabbo.Builder):
 
 		#show
 		self.webview.show()
+		print('show "' + url + '"')
 
 	def get(self):
 		return self.ui.get_object("box")
