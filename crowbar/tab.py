@@ -67,15 +67,11 @@ class Tab(grabbo.Builder):
 		self.webview.set_full_content_zoom(True)
 
 		if url:
-			print('got: "' + url + '"')
 			self.urlen.set_text(url)
-			print('set "' + url + '"', 'in urlen')
 			self.webview.load_uri(url)
-			print('load "' + url + '"')
 
 		#show
 		self.webview.show()
-		print('show "' + url + '"')
 
 	def get(self):
 		return self.ui.get_object("box")
