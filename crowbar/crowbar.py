@@ -12,7 +12,8 @@ class Tabs(grabbo.Notebook):
         super(Tabs, self).__init__()
         self.group = group
 
-        self.add_tab("https://github.com/jeremi360/cRoWBaR")
+        self.first_tab("https://github.com/jeremi360/cRoWBaR")
+
 
         self.buttons_box.show()
         self.pages.show()
