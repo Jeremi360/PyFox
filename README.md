@@ -1,7 +1,9 @@
-**cRoWBaR** - Rethink Web BRowser is simple web browser inspired by:
+**cRoWBaR** - Rethink Web BRowser
 
 Screenshot:
 ![cRoWBaR in Action][1]
+
+**cRowBaR** is simple web browser inspired by:
 
  *  Firefox:
     * Aurialis UI
