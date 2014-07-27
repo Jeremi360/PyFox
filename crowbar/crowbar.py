@@ -19,7 +19,8 @@ class Tabs(grabbo.Notebook):
         self.pages.show()
 
     def add_tab(self, url = None):
-        bt = grabbo.TabButton(self, 0, "New Tab", True)
+        bt = grabbo.TabButton()
+        bt.set(self, 0, "New Tab", True)
         content = Tab(bt, self.group, url).get()
         super(Tabs, self).add_tab(self, content, bt)
 
