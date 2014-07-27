@@ -1,5 +1,8 @@
 **cRoWBaR** - Rethink Web BRowser is simple web browser inspired by:
 
+Screenshot:
+![cRoWBaR in Action][1]
+
  *  Firefox:
     * Aurialis UI
     * Paronama
@@ -15,15 +18,15 @@
  * Google Chrome - ominbox
  * Opera 12 Addons
 
-If you won to compile this your self you will need:
+If you won to compile/run this you will need:
 
-- [python version 3.x](https://www.python.org/)
+- [python version 3.x][2]
 - Gtk and Webkit from gi repository:
 
-- Linux check your dist repos
-   - [Windows](http://sourceforge.net/projects/pygobjectwin32/files/) - download "pygi-aio-*-setup.exe"
+   - Linux check your dist repos
+   - [Windows][3] - download "pygi-aio-*-setup.exe"
 
-- My [Grabbo lib](https://github.com/jeremi360/Grabbo)
+- My [Grabbo lib][4]
 
 To run: python crowbar.py in corwbar folder
 
@@ -39,3 +42,7 @@ Features:
 * go to top - turn of for now
 * show favicon
 
+[1]:https://raw.githubusercontent.com/jeremi360/cRoWBaR/master/shots/CrowBar%2012%2007%202014.png
+[2]:https://www.python.org/
+[3]:http://sourceforge.net/projects/pygobjectwin32/files/
+[4]:https://github.com/jeremi360/Grabbo
