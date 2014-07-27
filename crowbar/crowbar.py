@@ -12,17 +12,16 @@ class Tabs(grabbo.Notebook):
         super(Tabs, self).__init__()
         self.group = group
 
-        self.add_tab("https://github.com/jeremi360/cRoWBaR")
-
+        self.first_tab("https://github.com/jeremi360/cRoWBaR")
 
         self.buttons_box.show()
         self.pages.show()
 
-    def add_tab(self, url = None):
+    def _add_tab(self, url = None):
         bt = grabbo.TabButton()
         bt.set(self, 0, "New Tab", True)
         content = Tab(bt, self.group, url).get()
-        super(Tabs, self).add_tab(content, bt)
+        super(Tabs, self)._add_tab(content, bt)
 
 class Group(grabbo.Builder):
     def __init__(self, parent):
