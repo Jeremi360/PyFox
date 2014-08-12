@@ -66,7 +66,7 @@ class Window(grabbo.Window):
         G.show()
 
         tabs = Tabs(self)
-        self.tabs.get().show()
+        tabs.get().show()
 
 
         hb = Gtk.HeaderBar()
@@ -78,7 +78,7 @@ class Window(grabbo.Window):
         self.set_titlebar(hb)
         hb.show()
 
-        self.add(self.tabs.pages)
+        self.add(tabs.pages)
 
         self.show()
 
