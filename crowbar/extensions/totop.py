@@ -13,7 +13,10 @@ Icon = Gtk.STOCK_GOTO_TOP
 class ToTop(Extension):
     def __init__(self):
         super(ToTop, self).__init__(
+                                    Crowbar,
                                     Name, shortDes,
                                     Descrption, Author,
                                     url, Icon
                                     )
+
+
