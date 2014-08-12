@@ -110,7 +110,7 @@ class Tab(grabbo.Builder):
 		self.webview.load_uri(url)
 
 	def title_chang(self, webview, frame, title):
-		self.paronama.set_name("cRoWBaR - " + title)
+		self.paronama.set_title("cRoWBaR - " + title)
 
 		short = ""
 		for i in range(26):
