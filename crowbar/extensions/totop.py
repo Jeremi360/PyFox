@@ -33,7 +33,7 @@ class ToTop(Extension):
                                     url
                                     )
 
-        self.get_icon().set_from_icon_name(Icon)
+        self.get_icon().set_from_icon_name(Icon, Gtk.i)
 
 
     def work(self):
