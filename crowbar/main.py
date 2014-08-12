@@ -66,7 +66,6 @@ class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
         self.G = Group(self)
-        self.G.get().show()
 
         self.tabs = Tabs(self, self.G)
         self.tabs.get().show()
