@@ -72,7 +72,7 @@ class Window(grabbo.Window):
         hb = Gtk.HeaderBar()
         hb.props.show_close_button = True
         hb.props.title = ""
-        hb.pack_start(G)
+        hb.pack_start(G, True, True, True)
         self.set_titlebar(hb)
         hb.show()
 
