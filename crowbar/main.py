@@ -28,7 +28,8 @@ class Tabs(grabbo.Notebook):
     def add_tab(self, url = None):
         bt = grabbo.TabButton()
         bt.set(self, 0, "New Tab", True)
-        content = exTab(bt, url, self.paronama).get()
+        #content = exTab(bt, url, self.paronama).get()
+        content = Tab(bt, url, self.paronama).get()
         super(Tabs, self).add_tab(content, bt)
 
 UI_Group = os.path.join('..', 'ui', 'Group.ui')
