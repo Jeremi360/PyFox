@@ -115,7 +115,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkBox" id="box2">
+      <object class="GtkBox" id="DesBox">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
