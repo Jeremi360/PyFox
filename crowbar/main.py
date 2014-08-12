@@ -34,7 +34,7 @@ class Group(grabbo.Builder):
         self.full = self.ui.get_object("Full")
         self.unfull = self.ui.get_object("UnFull")
         self.box = self.ui.get_object("MainBox")
-        self.EndBox= self.ui.get_object("EndBox")
+        self.TabBox= self.ui.get_object("TabBox")
 
         self.unfull.hide()
 
@@ -62,19 +62,15 @@ class Group(grabbo.Builder):
 class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
-        G = Group(self)
-        G.box.show()
+        G = Group(self).box
+        G.show()
 
         tabs = Tabs(self)
         tabs.get().show()
 
-
         hb = Gtk.HeaderBar()
         hb.props.show_close_button = True
-        hb.pack_start(G.menub)
-        hb.set_custom_title(tabs.get())
-        hb.pack_end(G.EndBox)
-
+        hb.set_custom_title(G)
         self.set_titlebar(hb)
         hb.show()
 
