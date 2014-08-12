@@ -57,7 +57,7 @@ class ExtBox(Builder):
 
 
 class Extension(object):
-    def __init__(self, Name, shortDes, Descrption, Author, url, Icon):
+    def __init__(self, Tab, Name, shortDes, Descrption, Author, url, Icon):
         self._name = Name
         self._des = Descrption
         self._short = shortDes
