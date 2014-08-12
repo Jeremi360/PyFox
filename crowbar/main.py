@@ -34,19 +34,13 @@ class Group(grabbo.Builder):
         self.full = self.ui.get_object("Full")
         self.unfull = self.ui.get_object("UnFull")
         self.box = self.ui.get_object("MainBox")
+        self.EndBox= self.ui.get_object("EndBox")
 
         self.unfull.hide()
 
         self.full.connect("clicked", self.on_full)
         self.unfull.connect("clicked", self.on_unfull)
 
-        #add Tabs
-        self.tabs = Tabs(self)
-        self.box.add(self.tabs.get())
-        self.tabs.get().set_vexpand(True)
-        self.tabs.get().set_vexpand_set(True)
-        self.tabs.get().show()
-        self.parent.add(self.tabs.pages)
         self.box.show()
 
     def set_title(self, text):
@@ -71,14 +65,20 @@ class Window(grabbo.Window):
         G = Group(self).box
         G.show()
 
+        tabs = Tabs(self)
+        self.tabs.get().show()
+
+
         hb = Gtk.HeaderBar()
         hb.props.show_close_button = True
-        hb.props.title = ""
-        hb.set_custom_title(G)
-        hb.get_custom_title().set_vexpand(True)
-        hb.get_custom_title().set_vexpand_set(True)
+        hb.pack_start(G.menub)
+        hb.set_custom_title(tabs.get())
+        hb.pack_end(G.EndBox)
+
         self.set_titlebar(hb)
         hb.show()
+
+        self.add(self.tabs.pages)
 
         self.show()
 
