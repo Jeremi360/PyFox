@@ -223,7 +223,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="Extbox">
+          <object class="GtkBox" id="ExtBox">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
