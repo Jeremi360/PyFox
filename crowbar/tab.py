@@ -1,9 +1,6 @@
-#!/usr/bin/env python
-
 from gi.repository import Gtk, WebKit
 import grabbo
 import os
-from crowbar.extensions import on_list
 
 UI_Tab = os.path.join('..', 'ui', 'Tab.ui')
 
@@ -71,16 +68,8 @@ class Tab(grabbo.Builder):
 			self.urlen.set_text(url)
 			self.webview.load_uri(url)
 
-		self.load_exts()
-
 		#show
 		self.webview.show()
-
-
-	def load_exts(self):
-		for e in on_list:
-			e = e(self)
-			e.work()
 
 	def get(self):
 		return self.ui.get_object("box")

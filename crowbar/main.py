@@ -5,6 +5,13 @@ from crowbar.tab import Tab
 import grabbo
 import os
 
+class exTab(Tab):
+    def __init__(self, bt, url, paronama):
+        super(exTab, self).__init__(bt, url, paronama)
+
+        for e in on_list:
+            e = e(self)
+            e.work()
 
 class Tabs(grabbo.Notebook):
     def __init__(self, paronama):
@@ -19,7 +26,7 @@ class Tabs(grabbo.Notebook):
     def add_tab(self, url = None):
         bt = grabbo.TabButton()
         bt.set(self, 0, "New Tab", True)
-        content = Tab(bt, url, self.paronama).get()
+        content = exTab(bt, url, self.paronama).get()
         super(Tabs, self).add_tab(content, bt)
 
 UI_Group = os.path.join('..', 'ui', 'Group.ui')
