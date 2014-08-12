@@ -11,12 +11,13 @@ url = "".join(url_1, url_2)
 Icon = Gtk.STOCK_GOTO_TOP
 
 class ToTop(Extension):
-    def __init__(self):
+    def __init__(self, Tab):
         super(ToTop, self).__init__(
-                                    Crowbar,
-                                    Name, shortDes,
+                                    Tab, Name, shortDes,
                                     Descrption, Author,
                                     url, Icon
                                     )
+
+
 
 
