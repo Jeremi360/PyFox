@@ -71,16 +71,9 @@ class Window(grabbo.Window):
         self.tabs.get().show()
 
         #self.modern() #don't work as i want :(
-        #self.old()
-        self.modern_zwie()
+        self.old()
 
         self.show()
-
-
-    def modern_zwie(self):
-        self.set_decorated(False)
-        self.set_titlebar(self.G.get())
-        self.add(self.tabs.pages)
 
     def modern(self):
         hb = Gtk.HeaderBar()
