@@ -72,6 +72,7 @@ class Window(grabbo.Window):
 
         #self.modern() #don't work as i want :(
         self.old()
+        self.set_decorated(False)
 
         self.show()
 
