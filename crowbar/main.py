@@ -69,7 +69,6 @@ class Window(grabbo.Window):
         hb.pack_start(G, )
         self.set_titlebar(hb)
 
-
         self.tabs = Tabs(self)
         self.tabs.get().show()
 
