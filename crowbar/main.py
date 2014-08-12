@@ -14,6 +14,7 @@ class Tabs(grabbo.Notebook):
 
         self.add_tab("https://github.com/jeremi360/cRoWBaR")
 
+        self.buttons_box = self.paronama.TabBox
         self.buttons_box.show()
         self.pages.show()
 
