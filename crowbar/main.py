@@ -61,7 +61,7 @@ class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
 
-        G = Group()
+        G = Group(self)
 
         hb = Gtk.HeaderBar()
         hb.props.show_close_button = True
