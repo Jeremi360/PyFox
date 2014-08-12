@@ -64,15 +64,15 @@ class Group(grabbo.Builder):
 class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
-        G = Group(self).box
-        G.show()
+        G = Group(self)
+        G.box.show()
 
-        tabs = Tabs(self)
+        tabs = Tabs(G)
         tabs.get().show()
 
         hb = Gtk.HeaderBar()
         hb.props.show_close_button = True
-        hb.set_custom_title(G)
+        hb.set_custom_title(G.box)
         self.set_titlebar(hb)
         hb.show()
 
