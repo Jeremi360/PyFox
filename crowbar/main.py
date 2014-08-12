@@ -8,12 +8,13 @@ import os
 UI_Group = os.path.join('..', 'ui', 'Group.ui')
 
 class Tabs(grabbo.Notebook):
-    def __init__(self, paronama):
+    def __init__(self, paronama , group):
         super(Tabs, self).__init__()
         self.paronama = paronama
+        self.group = group
 
-        self.buttons_box = self.paronama.TabBox
-        self.add_button.reparent(self.paronama.box)
+        self.buttons_box = self.group.TabBox
+        self.add_button.reparent(self.group.box)
 
         self.add_tab("https://github.com/jeremi360/cRoWBaR")
 
@@ -68,7 +69,7 @@ class Window(grabbo.Window):
         G = Group(self)
         G.box.show()
 
-        tabs = Tabs(G)
+        tabs = Tabs(self, G)
         tabs.get().show()
 
         hb = Gtk.HeaderBar()
