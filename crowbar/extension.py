@@ -7,6 +7,7 @@ ExtBox_UI = os.path.join('..', 'ui', 'ExtBox.ui')
 class ExtBox(Builder):
     def __init__(self, ext):
         super(ExtBox, self).__init__(ExtBox_UI)
+        self._ext = ext
         self._label = self.ui.get_object("label")
         self._icon = self.ui.get_object("image")
         self._switch = self.ui.get_object("switch")
@@ -25,7 +26,8 @@ class ExtBox(Builder):
         self._link.set_link(ext.get_url())
 
         self._zwi.connect("clicked", lambda x: self.on_zwi())
-        self._roz.connect("clicked", lambda x:self.on_roz())
+        self._roz.connect("clicked", lambda x: self.on_roz())
+        self.switch.connect("toggled", lambda x: self.on_switch())
 
         self._zwi.hide()
         self._DesBox.hide()
@@ -42,8 +44,16 @@ class ExtBox(Builder):
         self._zwi.show()
         self._DesBox.show()
 
+    def on_switch(self):
+        if self.switch.get_active():
+            self._ext.work(self)
+
+        else:
+            pass
+
     def get(self):
         return self.ui.get_object("box")
+
 
 class Extension(object):
     def __init__(self, Name, shortDes, Descrption, Author, url, Icon):
@@ -72,6 +82,9 @@ class Extension(object):
 
     def get_icon(self):
         return self._icon
+
+    def work(self):
+        pass
 
 
 
