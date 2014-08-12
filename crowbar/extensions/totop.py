@@ -1,4 +1,5 @@
 from crowbar.extension import Extension
+from crowbar.tab import Tab
 from gi.repository import Gtk
 
 Name = "ToTop"
@@ -12,17 +13,19 @@ Icon = Gtk.STOCK_GOTO_TOP
 
 class _Button(Gtk.Button):
     def __init__(self, ui):
+        self._ui = ui
         self.set_image(Icon)
         self.connect("clicked", lambda x: self.on_bu)
 
     def on_bu(self):
+        self._ui Tab.s
 
 
 
 class ToTop(Extension):
-    def __init__(self, Tab):
+    def __init__(self, UI):
         super(ToTop, self).__init__(
-                                    Tab, Name, shortDes,
+                                    UI, Name, shortDes,
                                     Descrption, Author,
                                     url, Icon
                                     )

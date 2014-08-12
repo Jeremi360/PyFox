@@ -84,9 +84,6 @@ class Tab(grabbo.Builder):
 	def find_next(self):
 		self.webview.search_text(self.findfb.get_text(), False, True, True)
 
-	def scroll_to_top(self):
-		self.scroll.do_scroll_child(self.scroll, Gtk.ScrollType.START, False)
-
 	def on_book(self):
 		pass
 
