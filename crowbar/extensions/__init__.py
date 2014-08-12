@@ -1,1 +1,1 @@
-from totop import
+from totop import ToTop
