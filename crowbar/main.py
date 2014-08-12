@@ -66,7 +66,7 @@ class Group(grabbo.Builder):
 class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
-        G = Group(self).get()
+        G = Group(self).box
         G.show()
         self.add(G)
         self.show()
