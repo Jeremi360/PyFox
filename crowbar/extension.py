@@ -16,7 +16,9 @@ class ExtBox(Builder):
         self._roz = self.ui.get_object("roz")
         self._zwi = self.ui.get_object("zwi")
         self._DesBox = self.ui.get_object("DesBox")
+        self._Author = self.ui.get_object("Author")
 
+        self._Author.set_text(ext.get_author())
         self._label.set_text(ext.get_name())
         self._des.set_test(ext.get_short_descrption())
         self._desEX.set_text(ext.get_descrption())
