@@ -86,13 +86,22 @@ class Tab(grabbo.Builder):
 		return self.ui.get_object("box")
 
 	def on_find(self):
-		self.webview.search_text(self.findfb.get_text(), False, True, True)
+		self.webview.search_text(
+								self.findfb.get_text(),
+								False, True, True
+								)
 
 	def find_back(self):
-		self.webview.search_text(self.findfb.get_text(), False, False, True)
+		self.webview.search_text(
+								self.findfb.get_text(),
+								False, False, True
+								)
 
 	def find_next(self):
-		self.webview.search_text(self.findfb.get_text(), False, True, True)
+		self.webview.search_text(
+								self.findfb.get_text(),
+								False, True, True
+								)
 
 	def on_book(self):
 		pass
