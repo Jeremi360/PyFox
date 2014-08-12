@@ -38,8 +38,8 @@ class Group(grabbo.Builder):
 
         self.unfull.hide()
 
-        self.full.connect("clicked", self.on_full)
-        self.unfull.connect("clicked", self.on_unfull)
+        self.full.connect("clicked", lambda x: self.on_full())
+        self.unfull.connect("clicked", lambda x: self.on_unfull())
 
         #add Tabs
         self.tabs = Tabs(self)
