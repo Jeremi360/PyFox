@@ -1,4 +1,4 @@
-import Extension
+from extension import Extension
 from gi.repository import Gtk
 
 Name = "ToTop"
