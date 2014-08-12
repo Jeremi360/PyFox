@@ -5,7 +5,6 @@ from tab import Tab
 import grabbo
 import os
 
-UI_Group = os.path.join('..', 'ui', 'Group.ui')
 
 class Tabs(grabbo.Notebook):
     def __init__(self, paronama):
@@ -22,6 +21,8 @@ class Tabs(grabbo.Notebook):
         bt.set(self, 0, "New Tab", True)
         content = Tab(bt, url, self.paronama).get()
         super(Tabs, self).add_tab(content, bt)
+
+UI_Group = os.path.join('..', 'ui', 'Group.ui')
 
 class Group(grabbo.Builder):
     def __init__(self, parent):
