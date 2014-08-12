@@ -35,8 +35,14 @@ class ToTop(Extension):
                                     )
 
     def work(self):
-        bu = _Button(self.get_ui())
-        self.get_ui().ExtBox.add(bu)
+        self._bu = _Button(self.get_ui())
+        self.get_ui().ExtBox.add(self._bu)
+
+    def off(self):
+        try:
+            self.get_ui().ExtBox.remove(self._bu)
+        except:
+            pass
 
 
 
