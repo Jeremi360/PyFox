@@ -75,12 +75,11 @@ class Window(grabbo.Window):
         hb.props.show_close_button = True
         hb.props.title = ""
         hb.add(G)
-        G.set_vexpand(True)
-        G.set_vexpand_set(True)
+        hb.set_vexpand(True)
+        hb.set_vexpand_set(True)
         self.set_titlebar(hb)
         hb.show()
 
-        self.add(G)
         self.show()
 
 if __name__ == "__main__":
