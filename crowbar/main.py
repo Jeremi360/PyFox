@@ -44,7 +44,7 @@ class Group(grabbo.Builder):
         self.tabs = Tabs(self)
         self.box.add(self.tabs.get())
         self.tabs.get().show()
-        self.parent.add(self.tabs.pages, True, True, 0)
+        self.parent.add(self.tabs.pages)
         self.box.show()
 
     def set_title(self, text):
