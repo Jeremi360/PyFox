@@ -45,7 +45,6 @@ class ExtBox(Builder):
     def get(self):
         return self.ui.get_object("box")
 
-
 class Extension(object):
     def __init__(self, Name, shortDes, Descrption, Author, url, Icon):
         self._name = Name
