@@ -17,6 +17,11 @@
     <property name="can_focus">False</property>
     <property name="icon_name">document-properties</property>
   </object>
+  <object class="GtkImage" id="UnFullIcon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">view-restore</property>
+  </object>
   <object class="GtkBox" id="MainBox">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -38,7 +43,6 @@
       <object class="GtkScrolledWindow" id="scrolledwindow1">
         <property name="visible">True</property>
         <property name="can_focus">True</property>
-        <property name="shadow_type">in</property>
         <child>
           <object class="GtkViewport" id="viewport1">
             <property name="visible">True</property>
@@ -57,7 +61,7 @@
       </object>
       <packing>
         <property name="expand">True</property>
-        <property name="fill">False</property>
+        <property name="fill">True</property>
         <property name="position">1</property>
       </packing>
     </child>
@@ -106,10 +110,5 @@
         <property name="position">4</property>
       </packing>
     </child>
-  </object>
-  <object class="GtkImage" id="UnFullIcon">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="icon_name">view-restore</property>
   </object>
 </interface>
