@@ -48,7 +48,7 @@ class Group(grabbo.Builder):
         self.box.show()
 
     def set_title(self, text):
-        self.parent.set_title(text)
+        self.parent.set_name(text)
 
     def get(self):
         return self.ui.get_object("box")
