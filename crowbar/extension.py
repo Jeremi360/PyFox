@@ -1,4 +1,5 @@
 from grabbo import Builder
+from gi.repository import Gtk
 import os
 
 ExtBox_UI = os.path.join('..', 'ui', 'ExtBox.ui')
@@ -56,14 +57,14 @@ class ExtBox(Builder):
 
 
 class Extension(object):
-    def __init__(self, ui, Name, shortDes, Descrption, Author, url, Icon):
+    def __init__(self, ui, Name, shortDes, Descrption, Author, url):
         self._ui = ui
         self._name = Name
         self._des = Descrption
         self._short = shortDes
         self._aur = Author
         self._url = url
-        self._icon = Icon
+        self._icon = Gtk.Image()
         self._box = ExtBox(self)
 
     def get_ui(self):
