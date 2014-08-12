@@ -77,8 +77,8 @@ class Window(grabbo.Window):
         self.tabs.get().show()
 
         #self.try_both()
-        self.modern()
-        #self.old()
+        #self.modern()
+        self.old()
 
         self.show()
 
