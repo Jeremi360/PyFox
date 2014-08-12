@@ -24,6 +24,7 @@ class Tab(grabbo.Builder):
 		self.zoomout = self.ui.get_object("zoomout")
 		self.find = self.ui.get_object("find")
 		self.book = self.ui.get_object("book")
+		self.ExtBox = self.ui.get_object("ExtBox")
 
 		#findbox
 		self.findbox = self.ui.get_object("findbox")
