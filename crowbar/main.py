@@ -44,7 +44,6 @@ class Group(grabbo.Builder):
         self.tabs = Tabs(self)
         self.box.add(self.tabs.get())
         self.tabs.get().show()
-        #self.box.pack_end(self.tabs.pages, True, True, 0)
         self.box.show()
 
     def set_title(self, text):
@@ -66,7 +65,7 @@ class Group(grabbo.Builder):
 class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
-        G = Group(self).get()
+        G = Group(self).box
         G.show()
 
         T = Tabs(G)
