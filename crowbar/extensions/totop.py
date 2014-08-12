@@ -30,8 +30,11 @@ class ToTop(Extension):
         super(ToTop, self).__init__(
                                     UI, Name, shortDes,
                                     Descrption, Author,
-                                    url, Icon
+                                    url
                                     )
+
+        self.get_icon().set_from_icon_name("go-top")
+
 
     def work(self):
         self._bu = _Button(self.get_ui())
