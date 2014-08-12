@@ -2,19 +2,8 @@
 
 from gi.repository import Gtk
 from crowbar.tab import Tab
-#from crowbar.extensions import on_list
 import grabbo
 import os
-
-'''
-class exTab(Tab):
-    def __init__(self, bt, url, paronama):
-        super(exTab, self).__init__(bt, url, paronama)
-
-        for e in on_list:
-            e = e(self)
-            e.work()
-'''
 
 class Tabs(grabbo.Notebook):
     def __init__(self, paronama):
