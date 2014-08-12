@@ -12,10 +12,11 @@ class Tabs(grabbo.Notebook):
         super(Tabs, self).__init__()
         self.paronama = paronama
 
-        self.add_tab("https://github.com/jeremi360/cRoWBaR")
-
         self.buttons_box = self.paronama.TabBox
         self.add_button.reparent(self.paronama.box)
+
+        self.add_tab("https://github.com/jeremi360/cRoWBaR")
+
         self.buttons_box.show()
         self.pages.show()
 
