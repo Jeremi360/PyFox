@@ -13,12 +13,16 @@ Icon = Gtk.STOCK_GOTO_TOP
 
 class _Button(Gtk.Button):
     def __init__(self, ui):
-        self._ui = ui
+        self._ui = ui.scroll
         self.set_image(Icon)
         self.connect("clicked", lambda x: self.on_bu)
 
     def on_bu(self):
-        self._ui Tab.s
+        self._ui.do_scroll_child(
+                                 self.ui.scroll,
+                                 Gtk.ScrollType.START,
+                                 False
+                                 )
 
 
 
