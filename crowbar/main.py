@@ -71,17 +71,25 @@ class Window(grabbo.Window):
         super(Window, self).__init__()
 
         G = Group(self)
-
-        hb = Gtk.HeaderBar()
-        hb.props.show_close_button = True
-        hb.props.title = ""
-        hb.pack_start(G)
-        self.set_titlebar(hb)
-
         self.tabs = Tabs(self)
+        G.box.show()
         self.tabs.get().show()
 
-        self.add(Tabs)
+        try:
+            hb = Gtk.HeaderBar()
+            hb.props.show_close_button = True
+            hb.props.title = ""
+            hb.pack_start(G)
+            self.set_titlebar(hb)
+            hb.show()
+            self.add(Tabs)
+
+        except:
+            box = Gtk.Box()
+            box.pack_start(G, True, True, True)
+            box.pack_start(Tabs, True, True, True)
+            self.add(box)
+
         self.show()
 
 if __name__ == "__main__":
