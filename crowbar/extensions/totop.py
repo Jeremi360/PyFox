@@ -10,6 +10,15 @@ url_2 = "/blob/master/crowbar/extensions/totop.py"
 url = "".join(url_1, url_2)
 Icon = Gtk.STOCK_GOTO_TOP
 
+class _Button(Gtk.Button):
+    def __init__(self, ui):
+        self.set_image(Icon)
+        self.connect("clicked", lambda x: self.on_bu)
+
+    def on_bu(self):
+
+
+
 class ToTop(Extension):
     def __init__(self, Tab):
         super(ToTop, self).__init__(
@@ -17,6 +26,12 @@ class ToTop(Extension):
                                     Descrption, Author,
                                     url, Icon
                                     )
+
+    def work(self):
+        self._bu = _Button(self.)
+
+
+
 
 
 

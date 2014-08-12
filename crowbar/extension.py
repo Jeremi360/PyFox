@@ -67,6 +67,9 @@ class Extension(object):
         self._icon = Icon
         self._box = ExtBox(self)
 
+    def get_tab(self):
+        return self._Tab
+
     def get_name(self):
         return self._name
 
