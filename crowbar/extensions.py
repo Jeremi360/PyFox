@@ -15,16 +15,32 @@ class ExtBox(Builder):
         self._link = self.ui.get_object("link")
         self._roz = self.ui.get_object("roz")
         self._zwi = self.ui.get_object("zwi")
-        self._
+        self._DesBox = self.ui.get_object("DesBox")
 
         self._label.set_text(ext.get_name())
         self._des.set_test(ext.get_short_descrption())
         self._desEX.set_text(ext.get_descrption())
         self._icon.set_image(ext.get_icon())
-        self._link.set_text("Autor's page")
+        self._link.set_text("Author's page")
         self._link.set_link(ext.get_url())
 
+        self._zwi.connect("clicked", self.on_zwi)
+        self._roz.connect("clicked", self.on_roz)
 
+        self._zwi.hide()
+        self._DesBox.hide()
+
+        self.get().show()
+
+    def on_zwi(self):
+        self._roz.show()
+        self._zwi.hide()
+        self._DesBox.hide()
+
+    def on_roz(self):
+        self._roz.hide()
+        self._zwi.show()
+        self._DesBox.show()
 
     def get(self):
         return self.ui.get_object("box")
