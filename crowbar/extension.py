@@ -21,7 +21,7 @@ class ExtBox(Builder):
         self._Author.set_text(ext.get_author())
         self._label.set_text(ext.get_name())
         self._des.set_text(ext.get_short_descrption())
-        self._desEX.set_text(ext.get_descrption())
+        self._desEx.set_text(ext.get_descrption())
         self._icon.set_image(ext.get_icon())
         self._link.set_text("Author's page")
         self._link.set_link(ext.get_url())
