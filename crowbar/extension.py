@@ -28,7 +28,7 @@ class ExtBox(Builder):
 
         self._zwi.connect("clicked", lambda x: self.on_zwi())
         self._roz.connect("clicked", lambda x: self.on_roz())
-        self.switch.connect("toggled", lambda x: self.on_switch())
+        self._switch.connect("toggled", lambda x: self.on_switch())
 
         self._zwi.hide()
         self._DesBox.hide()
