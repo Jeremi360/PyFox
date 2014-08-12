@@ -57,8 +57,8 @@ class ExtBox(Builder):
 
 
 class Extension(object):
-    def __init__(self, Tab, Name, shortDes, Descrption, Author, url, Icon):
-        self._Tab = Tab
+    def __init__(self, ui, Name, shortDes, Descrption, Author, url, Icon):
+        self._ui = ui
         self._name = Name
         self._des = Descrption
         self._short = shortDes
@@ -67,8 +67,8 @@ class Extension(object):
         self._icon = Icon
         self._box = ExtBox(self)
 
-    def get_tab(self):
-        return self._Tab
+    def get_ui(self):
+        return self._ui
 
     def get_name(self):
         return self._name
