@@ -8,7 +8,7 @@ Author = "Jeremi 'jeremi360' Biernacki"
 url_1 = "https://github.com/jeremi360/cRoWBaR"
 url_2 = "/blob/master/crowbar/extensions/totop.py"
 url = "".join((url_1, url_2))
-Icon = Gtk.STOCK_GOTO_TOP
+Icon = Gtk.Image.set_from_icon_name
 
 class _Button(Gtk.Button):
     def __init__(self, ui):
