@@ -33,7 +33,7 @@ class ToTop(Extension):
                                     url
                                     )
 
-        self.get_icon().set_from_icon_name("go-top")
+        self.get_icon().set_from_icon_name(Icon)
 
 
     def work(self):
