@@ -71,11 +71,15 @@ class Tab(grabbo.Builder):
 			self.urlen.set_text(url)
 			self.webview.load_uri(url)
 
-		for e in on_list:
-			e.work()
+		self.load_exts()
 
 		#show
 		self.webview.show()
+
+
+	def load_exts(self):
+		for e in on_list:
+			e.work()
 
 	def get(self):
 		return self.ui.get_object("box")
