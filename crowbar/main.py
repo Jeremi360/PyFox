@@ -76,13 +76,18 @@ class Window(grabbo.Window):
         self.G.box.show()
         self.tabs.get().show()
 
+        #self.try_both()
+        self.modern()
+        #self.old()
+
+        self.show()
+
+    def try_both(self):
         try:
             self.modern()
 
         except:
             self.old()
-
-        self.show()
 
     def modern(self):
         hb = Gtk.HeaderBar()
