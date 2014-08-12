@@ -19,7 +19,6 @@ class Tab(grabbo.Builder):
 		self.next = self.ui.get_object("next")
 		self.urlen = self.ui.get_object("urlen")
 		self.fresh = self.ui.get_object("fresh")
-		#self.top = self.ui.get_object("top")
 		self.zoomin = self.ui.get_object("zoomin")
 		self.zoomres = self.ui.get_object("zoomres")
 		self.zoomout = self.ui.get_object("zoomout")
