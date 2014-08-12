@@ -54,12 +54,12 @@ class Group(grabbo.Builder):
     def get(self):
         return self.ui.get_object("box")
 
-    def on_full(self, button, name):
+    def on_full(self):
         self.full.hide()
         self.parent.fullscreen()
         self.unfull.show()
 
-    def on_unfull(self, button, name):
+    def on_unfull(self):
         self.unfull.hide()
         self.parent.unfullscreen()
         self.full.show()
