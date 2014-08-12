@@ -79,6 +79,7 @@ class Tab(grabbo.Builder):
 
 	def load_exts(self):
 		for e in on_list:
+			e = e(self)
 			e.work()
 
 	def get(self):
