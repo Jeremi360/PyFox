@@ -2,8 +2,8 @@ from crowbar.extension import Extension
 from gi.repository import Gtk
 
 Name = "ToTop"
-shortDes = "Go To Top of page",
-Descrption = "and nothing more :P",
+shortDes = "Go To Top of page"
+Descrption = "and nothing more :P"
 Author = "Jeremi 'jeremi360' Biernacki"
 url_1 = "https://github.com/jeremi360/cRoWBaR"
 url_2 = "/blob/master/crowbar/extensions/totop.py"
