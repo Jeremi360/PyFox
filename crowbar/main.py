@@ -44,7 +44,7 @@ class Group(grabbo.Builder):
         self.full.connect("clicked", self.on_full)
         self.unfull.connect("clicked", self.on_unfull)
 
-        self.box.show()
+        self.get().show()
 
     def set_title(self, text):
         self.parent.set_name(text)
