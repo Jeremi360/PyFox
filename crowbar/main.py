@@ -44,7 +44,8 @@ class Group(grabbo.Builder):
         self.tabs = Tabs(self)
         self.box.add(self.tabs.get())
         self.tabs.get().show()
-        self.box.show()
+        self.get().pack_end(self.tabs.pages, True, True, 0)
+        self.get().show()
 
     def set_title(self, text):
         self.parent.set_title(text)
@@ -65,19 +66,9 @@ class Group(grabbo.Builder):
 class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
-        G = Group(self).box
+        G = Group(self).get()
         G.show()
-
-        T = Tabs(G)
-
-        hb = Gtk.HeaderBar()
-        hb.props.show_close_button = True
-        hb.props.title = ""
-        hb.pack_start(G)
-        self.set_titlebar(hb)
-        hb.show()
-        self.add(T)
-
+        self.add(G)
         self.show()
 
 if __name__ == "__main__":
