@@ -24,7 +24,7 @@ class ExtBox(Builder):
         self._des.set_text(ext.get_short_descrption())
         self._desEx.set_text(ext.get_descrption())
         self._link.set_label("Author's page")
-        self._link.set_link(ext.get_url())
+        self._link.set_uri(ext.get_url())
 
         self._zwi.connect("clicked", lambda x: self.on_zwi())
         self._roz.connect("clicked", lambda x: self.on_roz())
