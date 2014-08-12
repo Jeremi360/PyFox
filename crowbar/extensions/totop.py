@@ -1,5 +1,4 @@
 from crowbar.extension import Extension
-from crowbar.tab import Tab
 from gi.repository import Gtk
 
 Name = "ToTop"
