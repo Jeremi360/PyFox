@@ -47,10 +47,10 @@ class ExtBox(Builder):
 
     def on_switch(self):
         if self.switch.get_active():
-            self._ext.work(self)
+            self._ext.work()
 
         else:
-            pass
+            self._ext.off()
 
     def get(self):
         return self.ui.get_object("box")
