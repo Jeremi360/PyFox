@@ -3,7 +3,7 @@
 from gi.repository import Gtk, WebKit
 import grabbo
 import os
-from crowbar import extensions as ext
+from crowbar.extensions import on_list
 
 UI_Tab = os.path.join('..', 'ui', 'Tab.ui')
 
@@ -71,7 +71,8 @@ class Tab(grabbo.Builder):
 			self.urlen.set_text(url)
 			self.webview.load_uri(url)
 
-
+		for e in on_list:
+			e.work()
 
 		#show
 		self.webview.show()
