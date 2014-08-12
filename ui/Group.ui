@@ -12,6 +12,16 @@
     <property name="can_focus">False</property>
     <property name="icon_name">view-fullscreen</property>
   </object>
+  <object class="GtkImage" id="MenuIcon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">document-properties</property>
+  </object>
+  <object class="GtkImage" id="UnFullIcon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">view-restore</property>
+  </object>
   <object class="GtkBox" id="MainBox">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -45,9 +55,6 @@
       </packing>
     </child>
     <child>
-      <placeholder/>
-    </child>
-    <child>
       <object class="GtkButton" id="Full">
         <property name="visible">True</property>
         <property name="can_focus">True</property>
@@ -77,15 +84,5 @@
         <property name="position">4</property>
       </packing>
     </child>
-  </object>
-  <object class="GtkImage" id="MenuIcon">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="icon_name">document-properties</property>
-  </object>
-  <object class="GtkImage" id="UnFullIcon">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="icon_name">view-restore</property>
   </object>
 </interface>
