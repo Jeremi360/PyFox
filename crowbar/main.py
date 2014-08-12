@@ -37,7 +37,6 @@ class Group(grabbo.Builder):
         self.downs = self.ui.get_object("Downs")
         self.full = self.ui.get_object("Full")
         self.unfull = self.ui.get_object("UnFull")
-        self.box = self.ui.get_object("MainBox")
         self.TabBox= self.ui.get_object("TabBox")
 
         self.unfull.hide()
@@ -51,7 +50,7 @@ class Group(grabbo.Builder):
         self.parent.set_name(text)
 
     def get(self):
-        return self.ui.get_object("box")
+        return self.ui.get_object("MainBox")
 
     def on_full(self, button, name):
         self.full.hide()
@@ -66,21 +65,33 @@ class Group(grabbo.Builder):
 class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
-        G = Group(self)
-        G.box.show()
+        self.G = Group(self)
+        self.G.get().show()
 
-        tabs = Tabs(self, G)
-        tabs.get().show()
+        self.tabs = Tabs(self, self.G)
+        self.tabs.get().show()
 
+        #self.modern() #don't work as i want :(
+        self.old()
+
+        self.show()
+
+    def modern(self):
         hb = Gtk.HeaderBar()
         hb.props.show_close_button = True
-        hb.set_custom_title(G.box)
+        hb.set_custom_title(self.G.get())
         self.set_titlebar(hb)
         hb.show()
 
-        self.add(tabs.pages)
+        self.add(self.tabs.pages)
 
-        self.show()
+    def old(self):
+        box = Gtk.Box()
+        box.set_orientation(Gtk.Orientation.VERTICAL)
+        box.pack_start(self.G.get(), True, True, True)
+        box.pack_end(self.tabs.pages, True, True, True)
+
+
 
 if __name__ == "__main__":
     app = Window()
