@@ -38,7 +38,6 @@ class Group(grabbo.Builder):
         self.full = self.ui.get_object("Full")
         self.unfull = self.ui.get_object("UnFull")
         self.TabBox = self.ui.get_object("TabBox")
-        self.scroll = self.ui.get_object("scroll")
 
         self.unfull.hide()
 
@@ -84,8 +83,6 @@ class Window(grabbo.Window):
         self.G.get().set_hexpand_set(True)
         self.G.TabBox.set_hexpand(True)
         self.G.TabBox.set_hexpand_set(True)
-        self.G.scroll.set_hexpand(True)
-        self.G.scroll.set_hexpand_set(True)
         hb.set_has_subtitle(False)
         self.set_titlebar(hb)
         hb.show()
