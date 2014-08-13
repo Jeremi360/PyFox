@@ -38,6 +38,8 @@ class Group(grabbo.Builder):
         self.full = self.ui.get_object("Full")
         self.unfull = self.ui.get_object("UnFull")
         self.TabBox = self.ui.get_object("TabBox")
+        self.StartBox = self.ui.get_object("StartBox")
+        self.EndBox = self.ui.get_object("EndBox")
 
         self.unfull.hide()
 
@@ -48,9 +50,6 @@ class Group(grabbo.Builder):
 
     def set_title(self, text):
         self.parent.set_name(text)
-
-    def get(self):
-        return self.ui.get_object("MainBox")
 
     def on_full(self, button, name):
         self.full.hide()
@@ -78,11 +77,8 @@ class Window(grabbo.Window):
     def modern(self):
         hb = Gtk.HeaderBar()
         hb.props.show_close_button = True
-        hb.set_custom_title(self.G.get())
-        self.G.get().set_hexpand(True)
-        self.G.get().set_hexpand_set(True)
-        self.G.TabBox.set_hexpand(True)
-        self.G.TabBox.set_hexpand_set(True)
+        hb.set_custom_title(None)
+        hb.pack_start()
         hb.set_has_subtitle(False)
         self.set_titlebar(hb)
         hb.show()
