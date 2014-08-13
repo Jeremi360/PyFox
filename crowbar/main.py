@@ -32,7 +32,6 @@ class Group(grabbo.Builder):
         grabbo.Builder.__init__(self, UI_Group)
 
         self.parent = parent
-        #get objects from UI_FILE
         self.menub = self.ui.get_object("MenuButton")
         self.downs = self.ui.get_object("Downs")
         self.full = self.ui.get_object("Full")
@@ -50,7 +49,7 @@ class Group(grabbo.Builder):
         self.EndBox.show()
 
     def set_title(self, text):
-        self.parent.set_name(text)
+        self.set_composite_name(text)
 
     def on_full(self, button, name):
         self.full.hide()
