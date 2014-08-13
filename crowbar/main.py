@@ -78,7 +78,7 @@ class Window(grabbo.Window):
         hb.props.border_width = 0
         hb.props.margin = 0
         hb.pack_start(self.G.StartBox)
-        self.G.TabBox.props.resize_mode = Gtk.ResizeMode.QUEUE
+        self.G.TabBox.props.resize_mode
         hb.pack_end(self.G.EndBox)
         hb.set_has_subtitle(False)
         self.set_titlebar(hb)
