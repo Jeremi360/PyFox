@@ -49,7 +49,7 @@ class Group(grabbo.Builder):
         self.EndBox.show()
 
     def set_title(self, text):
-        self.set_composite_name(text)
+        pass
 
     def on_full(self, button, name):
         self.full.hide()
