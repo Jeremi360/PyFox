@@ -88,7 +88,7 @@ class Window(grabbo.Window):
     def old(self):
         box = Gtk.Box()
         box.set_orientation(Gtk.Orientation.HORIZONTAL)
-        box.pack_start(self.G.StartBox, False, True, True)
+        box.pack_start(self.G.StartBox, True, True, True)
         box.pack_start(self.G.EndBox, False, True, True)
         box.show()
 
