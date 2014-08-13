@@ -81,6 +81,8 @@ class Window(grabbo.Window):
         hb.props.border_width = 0
         hb.props.vexpand = False
         hb.props.vexpand_set = False
+        hb.props.expand = True
+        hb.props.margin = 0
         hb.pack_start(self.G.StartBox)
         hb.pack_end(self.G.EndBox)
         hb.set_has_subtitle(False)
