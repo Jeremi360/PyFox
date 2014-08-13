@@ -89,13 +89,16 @@ class Window(grabbo.Window):
         box = Gtk.Box()
         box.set_orientation(Gtk.Orientation.HORIZONTAL)
         box.pack_start(self.G.StartBox, False, True, True)
-        box.pack_end(self.tabs.pages, True, True, True)
         box.pack_start(self.G.EndBox, False, True, True)
         box.show()
 
-        self.add(box)
+        box_zwei = Gtk.Box()
+        box_zwei.set_orientation(Gtk.Orientation.VERTICAL)
+        box_zwei.pack_start(box, False, True, True)
+        box_zwei.pack_end(self.tabs.pages, True, True, True)
+        box_zwei.show()
 
-
+        self.add(box_zwei)
 
 if __name__ == "__main__":
     app = Window()
