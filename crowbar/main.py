@@ -14,7 +14,7 @@ class Tabs(grabbo.Notebook):
         self.group = group
 
         self.buttons_box = self.group.TabBox
-        self.add_button.reparent(self.group.get())
+        self.add_button.reparent(self.group.StartBox)
 
         self.add_tab("https://github.com/jeremi360/cRoWBaR")
 
