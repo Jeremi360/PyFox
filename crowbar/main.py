@@ -78,7 +78,7 @@ class Window(grabbo.Window):
     def modern(self):
         hb = Gtk.HeaderBar()
         hb.props.show_close_button = True
-        hb.set_custom_title(None)
+        hb.set_custom_title(Gtk.Separator)
         hb.pack_start(self.G.StartBox)
         hb.pack_end(self.G.EndBox)
         hb.set_has_subtitle(False)
