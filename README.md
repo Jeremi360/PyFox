@@ -30,12 +30,12 @@ If you won to compile/run this you will need:
 
 - My [Grabbo lib][4]
 
-To run: python main.py in corwbar folder
+To run: python3 main.py in corwbar folder
 
 "Warning: This program is not finshed"
 
 Features:
-* Tabs on Top :D !
+* Tabs on Top - now on title bar :D!
 * google search in url bar
 * progress in url bar
 * history back and forward buttons
