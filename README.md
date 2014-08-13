@@ -44,7 +44,7 @@ Features:
 * go to top - turn of for now
 * show favicon
 
-[1]:https://raw.githubusercontent.com/jeremi360/cRoWBaR/master/shots/CrowBar%2012%2007%202014.png
+[1]:https://raw.githubusercontent.com/jeremi360/cRoWBaR/master/shot.png
 [2]:https://www.python.org/
 [3]:http://sourceforge.net/projects/pygobjectwin32/files/
 [4]:https://github.com/jeremi360/Grabbo
