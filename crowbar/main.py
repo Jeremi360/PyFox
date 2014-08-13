@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 
 from gi.repository import Gtk
-from crowbar.tab import Tab
+
+try:
+	from crowbar.tab import Tab
+except:
+	from tab import Tab
+
 import grabbo
 import os
 
