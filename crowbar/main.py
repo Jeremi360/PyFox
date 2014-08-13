@@ -79,7 +79,7 @@ class Window(grabbo.Window):
         hb.set_show_close_button(True)
         hb.set_title("")
         hb.props.border_width = 0
-        hb.props.vexpand = True
+        hb.props.vexpand = False
         hb.props.vexpand_set = True
         hb.pack_start(self.G.StartBox)
         hb.pack_end(self.G.EndBox)
