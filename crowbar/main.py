@@ -78,7 +78,7 @@ class Window(grabbo.Window):
     def modern(self):
         hb = Gtk.HeaderBar()
         hb.set_show_close_button(True)
-        hb.set_title(None)
+        hb.set_title("")
         hb.props.border_width = 0
         hb.props.vexpand = True
         hb.props.vexpand_set = True
