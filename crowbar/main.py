@@ -48,9 +48,6 @@ class Group(grabbo.Builder):
         self.StartBox.show()
         self.EndBox.show()
 
-    def set_title(self, text):
-        pass
-
     def on_full(self, button, name):
         self.full.hide()
         self.parent.fullscreen()
