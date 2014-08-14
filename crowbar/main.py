@@ -22,7 +22,8 @@ class Tabs(grabbo.Notebook):
         self.pages.show()
 
     def add_tab(self, url = None):
-        bt = grabbo.TabButton(self, 0, "New Tab", True)
+        bt = grabbo.TabButton()
+        bt.set(self, 0, "New Tab", True)
         content = Tab(bt, url, self.paronama).get()
         super(Tabs, self).add_tab(content, bt)
 
@@ -41,18 +42,18 @@ class Group(grabbo.Builder):
 
         self.unfull.hide()
 
-        self.full.connect("clicked", lambda x: self.on_full())
-        self.unfull.connect("clicked", lambda x: self.on_unfull())
+        self.full.connect("clicked", self.on_full)
+        self.unfull.connect("clicked", self.on_unfull)
 
         self.StartBox.show()
         self.EndBox.show()
 
-    def on_full(self):
+    def on_full(self, button, name):
         self.full.hide()
         self.parent.fullscreen()
         self.unfull.show()
 
-    def on_unfull(self):
+    def on_unfull(self, button, name):
         self.unfull.hide()
         self.parent.unfullscreen()
         self.full.show()
