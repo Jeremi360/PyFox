@@ -46,12 +46,12 @@ class Tab(grabbo.Builder):
 		#connect UI elements with methods
 
 		#main tab toolbar
-		self.back.connect("clicked", lambda x: self.webview.go_back())
-		self.next.connect("clicked", lambda x: self.webview.go_forward())
-		self.fresh.connect("clicked", lambda x: self.webview.reload())
+		self.back.connect("clicked", self.go_back)
+		self.next.connect("clicked", self.go_next)
+		self.fresh.connect("clicked", self.fresh)
 		self.find.connect("toggled", self.on_findbox)
-		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
-		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
+		self.zoomin.connect("clicked", self.zoom_in)
+		self.zoomout.connect("clicked", self.zoom_out)
 		self.zoomres.connect("clicked",  self.reset_zoom)
 
 		#findbox
@@ -74,6 +74,22 @@ class Tab(grabbo.Builder):
 
 	def reset_zoom(self, button):
 		self.webview.set_zoom_level(1.0)
+
+	def go_back(self, button):
+		self.webview.go_back()
+		b = self.webview.get_uri()
+		self.urlen.set_text(b)
+
+	def go_next(self, button):
+		self.webview.go_forward()
+		n = self.webview.get_uri()
+		self.urlen.set_text(n)
+
+	def on_fresh(self, button):
+		self.fresh.connect("clicked", self.reload)
+		self.find.connect("toggled", self.on_findbox)
+		self.zoomin.connect("clicked", self.zoom_in)
+		self.zoomout.connect("clicked", self.zoom_out)
 
 
 	def on_find(self, button):
