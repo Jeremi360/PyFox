@@ -8,7 +8,7 @@ class Tab(grabbo.Builder):
 	def __init__(self, TB, url = None):
 		super(Tab, self).__init__(UI_Tab)
 		self.TB = TB
-		self.url = url
+		self.title = ""
 
 		#get objects from UI_Tab
 		#main tab toolbar
@@ -120,6 +120,7 @@ class Tab(grabbo.Builder):
 			except:
 				pass
 
+		self.title = title
 		self.TB.button.set_label(short)
 		self.TB.button.set_tooltip_text(title)
 
