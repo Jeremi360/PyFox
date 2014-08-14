@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from gi.repository import Gtk
-from crowbar.tab import Tab
+from crowbar.tab import
 import grabbo
 import os
 
