@@ -78,15 +78,16 @@ class Tab(grabbo.Builder):
 		self.webview.set_zoom_level(1.0)
 
 	def go_back(self, button):
+		self.next_url = self.webview.get_uri()
 		self.webview.go_back()
 		b = self.webview.get_uri()
-		self.webview.go_back()
 		self.urlen.set_text(b)
 
 	def go_next(self, button):
+		self.back_url = self.webview.get_uri()
 		self.webview.go_forward()
-		#n = self.webview.get_uri()
-		#self.urlen.set_text(n)
+		n = self.webview.get_uri()
+		self.urlen.set_text(n)
 
 	def on_fresh(self, button):
 		self.webview.reload()
