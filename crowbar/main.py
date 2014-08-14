@@ -42,8 +42,8 @@ class Group(grabbo.Builder):
 
         self.unfull.hide()
 
-        self.full.connect("clicked", self.on_full)
-        self.unfull.connect("clicked", self.on_unfull)
+        #self.full.connect("clicked", self.on_full)
+        #self.unfull.connect("clicked", self.on_unfull)
 
         self.StartBox.show()
         self.EndBox.show()
