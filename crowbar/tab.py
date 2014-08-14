@@ -68,6 +68,8 @@ class Tab(grabbo.Builder):
 			self.webview.load_uri(url)
 			t = self.webview.get_title()
 			self.title = self.make_short(t)
+			self.TB.set_label(self.title)
+			self.TB.set_tooltip(t)
 
 		#show
 		self.webview.show()
