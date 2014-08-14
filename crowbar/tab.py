@@ -54,7 +54,7 @@ class Tab(grabbo.Builder):
 		self.find.connect("toggled", self.on_findbox)
 		self.zoomin.connect("clicked", self.webview.zoom_in)
 		self.zoomout.connect("clicked", self.webview.zoom_out)
-		self.zoomres.connect("clicked", self.webview.set_zoom_level(1.0))
+		self.zoomres.connect("clicked",  self.reset_zoom)
 
 		#findbox
 		self.findfb.connect("activate", self.on_find())
@@ -73,6 +73,9 @@ class Tab(grabbo.Builder):
 
 	def get(self):
 		return self.ui.get_object("box")
+
+	def reset_zoom(self, button):
+		self.webview.set_zoom_level(1.0)
 
 	def on_find(self, button):
 		self.webview.search_text(
