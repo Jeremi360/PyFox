@@ -8,7 +8,6 @@ class Tab(grabbo.Builder):
 	def __init__(self, TB, url = None):
 		super(Tab, self).__init__(UI_Tab)
 		self.TB = TB
-		self.title = "New Tab"
 
 		#get objects from UI_Tab
 		#main tab toolbar
@@ -66,10 +65,12 @@ class Tab(grabbo.Builder):
 		if url:
 			self.urlen.set_text(url)
 			self.webview.load_uri(url)
+			'''
 			t = self.webview.get_title()
 			self.title = self.make_short(t)
 			self.TB.button.set_label(self.title)
 			self.TB.button.set_tooltip_text(t)
+			'''
 
 		#show
 		self.webview.show()
