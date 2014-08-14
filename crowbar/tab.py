@@ -77,13 +77,13 @@ class Tab(grabbo.Builder):
 
 	def go_back(self, button):
 		self.webview.go_back()
-		b = self.webview.get_uri()
-		self.urlen.set_text(b)
+		#b = self.webview.get_uri()
+		#self.urlen.set_text(b)
 
 	def go_next(self, button):
 		self.webview.go_forward()
-		n = self.webview.get_uri()
-		self.urlen.set_text(n)
+		#n = self.webview.get_uri()
+		#self.urlen.set_text(n)
 
 	def on_fresh(self, button):
 		self.webview.reload()
