@@ -8,7 +8,7 @@ class Tab(grabbo.Builder):
 	def __init__(self, TB, url = None):
 		super(Tab, self).__init__(UI_Tab)
 		self.TB = TB
-		self.title = ""
+		self.title = "New Tab"
 
 		#get objects from UI_Tab
 		#main tab toolbar
@@ -66,6 +66,8 @@ class Tab(grabbo.Builder):
 		if url:
 			self.urlen.set_text(url)
 			self.webview.load_uri(url)
+			t = self.webview.get_title()
+			self.title = self.make_short(t)
 
 		#show
 		self.webview.show()
@@ -111,7 +113,7 @@ class Tab(grabbo.Builder):
 			url = "http://" + url
 		self.webview.load_uri(url)
 
-	def title_chang(self, webview, frame, title):
+	def make_short(self, title):
 		short = ""
 
 		for i in range(26):
@@ -120,6 +122,10 @@ class Tab(grabbo.Builder):
 			except:
 				pass
 
+		return short
+
+	def title_chang(self, webview, frame, title):
+		short = self.make_short(title)
 		self.title = title
 		self.TB.button.set_label(short)
 		self.TB.button.set_tooltip_text(title)
