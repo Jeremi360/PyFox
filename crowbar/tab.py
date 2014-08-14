@@ -8,6 +8,8 @@ class Tab(grabbo.Builder):
 	def __init__(self, TB, url = None):
 		super(Tab, self).__init__(UI_Tab)
 		self.TB = TB
+		self.back_url = None
+		self.next_url = None
 
 		#get objects from UI_Tab
 		#main tab toolbar
@@ -77,8 +79,9 @@ class Tab(grabbo.Builder):
 
 	def go_back(self, button):
 		self.webview.go_back()
-		#b = self.webview.get_uri()
-		#self.urlen.set_text(b)
+		b = self.webview.get_uri()
+		self.webview.go_back()
+		self.urlen.set_text(b)
 
 	def go_next(self, button):
 		self.webview.go_forward()
