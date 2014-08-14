@@ -24,7 +24,7 @@ class Tabs(grabbo.Notebook):
     def add_tab(self, url = None):
         bt = grabbo.TabButton()
         bt.set(self, 0, "New Tab", True)
-        content = Tab(bt, url).get()
+        content = Tab(url, bt).get()
         super(Tabs, self).add_tab(content, bt)
 
 class Group(grabbo.Builder):
