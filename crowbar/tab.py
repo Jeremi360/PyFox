@@ -112,12 +112,13 @@ class Tab(grabbo.Builder):
 
 	def title_chang(self, webview, frame, title):
 		short = ""
+		'''
 		for i in range(26):
 			try:
 				short += title[i]
 			except:
 				pass
-
+		'''
 		self.TB.button.set_label(short)
 		self.TB.button.set_tooltip_text(title)
 
