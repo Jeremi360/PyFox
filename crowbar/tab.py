@@ -172,6 +172,7 @@ class Tab(grabbo.Builder):
 		self.urlen.set_text(webview.get_uri())
 		self.urlen.set_progress_fraction(0.0)
 
+		'''
 		if self.back_url != None:
 			self.back.set_sensitive(True)
 		else:
@@ -181,3 +182,4 @@ class Tab(grabbo.Builder):
 			self.next.set_sensitive(True)
 		else:
 			self.next.set_sensitive(False)
+		'''
