@@ -48,12 +48,12 @@ class Group(grabbo.Builder):
         self.StartBox.show()
         self.EndBox.show()
 
-    def on_full(self, button, name):
+    def on_full(self, button):
         self.full.hide()
         self.parent.fullscreen()
         self.unfull.show()
 
-    def on_unfull(self, button, name):
+    def on_unfull(self, button):
         self.unfull.hide()
         self.parent.unfullscreen()
         self.full.show()
