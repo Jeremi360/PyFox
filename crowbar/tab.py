@@ -86,10 +86,14 @@ class Tab(grabbo.Builder):
 		self.urlen.set_text(n)
 
 	def on_fresh(self, button):
-		self.fresh.connect("clicked", self.reload)
-		self.find.connect("toggled", self.on_findbox)
-		self.zoomin.connect("clicked", self.zoom_in)
-		self.zoomout.connect("clicked", self.zoom_out)
+		self.webview.reload()
+
+
+	def zoom_in(self, button):
+		self.webview.zoom_in()
+
+	def zoom_out(self, button):
+		self.webview.zoom_out()
 
 
 	def on_find(self, button):
