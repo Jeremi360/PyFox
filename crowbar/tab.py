@@ -46,20 +46,20 @@ class Tab(grabbo.Builder):
 		self.webview.connect("load-progress-changed", self.progress_load)
 
 		#connect UI elements with methods
+
 		#main tab toolbar
-		self.back.connect("clicked", lambda x: self.webview.go_back())
-		self.next.connect("clicked", lambda x: self.webview.go_forward())
-		self.fresh.connect("clicked", lambda x: self.webview.reload())
-		#self.top.connect("clicked", lambda x: self.scroll_to_top())
-		self.find.connect("toggled", lambda x: self.on_findbox())
-		self.zoomin.connect("clicked", lambda x: self.webview.zoom_in())
-		self.zoomout.connect("clicked", lambda x: self.webview.zoom_out())
-		self.zoomres.connect("clicked", lambda x: self.webview.set_zoom_level(1.0))
+		self.back.connect("clicked", self.webview.go_back)
+		self.next.connect("clicked", self.webview.go_forward)
+		self.fresh.connect("clicked", self.webview.reload)
+		self.find.connect("toggled", self.on_findbox)
+		self.zoomin.connect("clicked", self.webview.zoom_in)
+		self.zoomout.connect("clicked", self.webview.zoom_out)
+		self.zoomres.connect("clicked", self.webview.set_zoom_level(1.0))
 
 		#findbox
-		self.findfb.connect("activate", lambda x: self.on_find())
-		self.backfb.connect("clicked", lambda x: self.find_back())
-		self.nextfb.connect("clicked", lambda x: self.find_next())
+		self.findfb.connect("activate", self.on_find())
+		self.backfb.connect("clicked", self.find_back())
+		self.nextfb.connect("clicked", self.find_next())
 
 		#last settings
 		self.webview.set_full_content_zoom(True)
@@ -74,28 +74,28 @@ class Tab(grabbo.Builder):
 	def get(self):
 		return self.ui.get_object("box")
 
-	def on_find(self):
+	def on_find(self, button):
 		self.webview.search_text(
 								self.findfb.get_text(),
 								False, True, True
 								)
 
-	def find_back(self):
+	def find_back(self, button):
 		self.webview.search_text(
 								self.findfb.get_text(),
 								False, False, True
 								)
 
-	def find_next(self):
+	def find_next(self, button):
 		self.webview.search_text(
 								self.findfb.get_text(),
 								False, True, True
 								)
 
-	def on_book(self):
+	def on_book(self, button):
 		pass
 
-	def on_findbox(self):
+	def on_findbox(self, button):
 		if self.find.get_active():
 			self.findbox.show()
 		else:
@@ -110,8 +110,6 @@ class Tab(grabbo.Builder):
 		self.webview.load_uri(url)
 
 	def title_chang(self, webview, frame, title):
-		#self.paronama.set_title("cRoWBaR - " + title)
-
 		short = ""
 		for i in range(26):
 			try:
