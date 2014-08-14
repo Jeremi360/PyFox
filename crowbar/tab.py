@@ -5,10 +5,8 @@ import os
 UI_Tab = os.path.join('..', 'ui', 'Tab.ui')
 
 class Tab(grabbo.Builder):
-	def __init__(self, TB, url = None, paronama = None):
+	def __init__(self, TB, url = None):
 		super(Tab, self).__init__(UI_Tab)
-
-		self.paronama = paronama
 		self.TB = TB
 
 		#get objects from UI_Tab
