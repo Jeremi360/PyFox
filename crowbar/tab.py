@@ -85,9 +85,8 @@ class Tab(grabbo.Builder):
 
 	def go_next(self, button):
 		self.back_url = self.webview.get_uri()
-		self.webview.go_forward()
-		n = self.webview.get_uri()
-		self.urlen.set_text(n)
+		self.webview.load_uri(self.next_url)
+		self.urlen.set_text(self.next_url)
 
 	def on_fresh(self, button):
 		self.webview.reload()
