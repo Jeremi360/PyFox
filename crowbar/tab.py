@@ -88,7 +88,6 @@ class Tab(grabbo.Builder):
 	def on_fresh(self, button):
 		self.webview.reload()
 
-
 	def zoom_in(self, button):
 		self.webview.zoom_in()
 
