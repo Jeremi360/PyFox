@@ -8,6 +8,7 @@ class Tab(grabbo.Builder):
 	def __init__(self, TB, url = None):
 		super(Tab, self).__init__(UI_Tab)
 		self.TB = TB
+		self.url = url
 
 		#get objects from UI_Tab
 		#main tab toolbar
