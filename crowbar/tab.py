@@ -48,7 +48,7 @@ class Tab(grabbo.Builder):
 		#main tab toolbar
 		self.back.connect("clicked", self.go_back)
 		self.next.connect("clicked", self.go_next)
-		self.fresh.connect("clicked", self.fresh)
+		self.fresh.connect("clicked", self.on_fresh)
 		self.find.connect("toggled", self.on_findbox)
 		self.zoomin.connect("clicked", self.zoom_in)
 		self.zoomout.connect("clicked", self.zoom_out)
