@@ -57,9 +57,9 @@ class Tab(grabbo.Builder):
 		self.zoomres.connect("clicked",  self.reset_zoom)
 
 		#findbox
-		self.findfb.connect("activate", self.on_find())
-		self.backfb.connect("clicked", self.find_back())
-		self.nextfb.connect("clicked", self.find_next())
+		self.findfb.connect("activate", self.on_find)
+		self.backfb.connect("clicked", self.find_back)
+		self.nextfb.connect("clicked", self.find_next)
 
 		#last settings
 		self.webview.set_full_content_zoom(True)
