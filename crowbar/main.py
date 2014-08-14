@@ -22,8 +22,7 @@ class Tabs(grabbo.Notebook):
         self.pages.show()
 
     def add_tab(self, url = None):
-        bt = grabbo.TabButton()
-        bt.set(self, 0, "New Tab", True)
+        bt = grabbo.TabButton(self, 0, "New Tab", True)
         content = Tab(bt, url, self.paronama).get()
         super(Tabs, self).add_tab(content, bt)
 
