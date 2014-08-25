@@ -1,8 +1,20 @@
 #!/usr/bin/env python
 
 from gi.repository import Gtk
-from crowbar.tab import Tab
-import grabbo
+
+try:
+    from crowbar.tab import Tab
+    print("Eclipse way")
+except:
+    from tab import Tab
+    print("Normal way")
+
+try:
+    import grabbo
+except:
+    print("Please first install Grabbo in your python path or copy to crowbar dir")
+    print("Grabbo can be download from https://github.com/jeremi360/Grabbo")
+
 import os
 
 UI_Group = os.path.join('..', 'ui', 'Group.ui')
