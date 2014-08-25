@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from gi.repository import Gtk
+import os
 
 try:
     from crowbar.tab import Tab
@@ -16,7 +17,7 @@ except:
     print("Grabbo can be download from https://github.com/jeremi360/Grabbo")
     os.exit()
 
-import os
+
 
 UI_Group = os.path.join('..', 'ui', 'Group.ui')
 
