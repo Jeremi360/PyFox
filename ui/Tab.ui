@@ -301,7 +301,6 @@
             <property name="receives_default">True</property>
             <property name="image">image2</property>
             <property name="relief">none</property>
-            <property name="image_position">top</property>
           </object>
         </child>
       </object>
