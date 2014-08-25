@@ -30,7 +30,7 @@ If you won to compile/run this you will need:
 
 - My [Grabbo lib][4]
 
-To run: python3 main.py in corwbar folder
+To run just double click on main.py in corwbar folder.
 
 "Warning: This program is not finshed"
 
