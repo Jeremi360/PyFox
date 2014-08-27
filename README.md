@@ -44,6 +44,19 @@ Done:
 * go to top - turn of for now
 * show favicon
 
+ToDo:
+* History browsing
+* Bookmarks
+* newtab page
+* connect open in new tab with addtab
+* Addons
+* Paronoma as list
+* Downloads
+* Settings
+* restore previous session
+* menu
+* fullscreen mode
+
 [1]:https://raw.githubusercontent.com/jeremi360/cRoWBaR/master/shot.png
 [2]:https://www.python.org/
 [3]:http://sourceforge.net/projects/pygobjectwin32/files/
