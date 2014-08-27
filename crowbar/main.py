@@ -74,7 +74,7 @@ class Group(grabbo.Builder):
         self.full.show()
 
     def set_width(self, width):
-        width = width*0.9
+        width = width*0.85
         self._scroll.set_min_content_width(width)
 
 class Window(grabbo.Window):
