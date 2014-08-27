@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from gi.repository import Gtk
+from gi.repository import Gtk,Gdk
 import os
 
 try:
@@ -55,7 +55,7 @@ class Group(grabbo.Builder):
         self.EndBox = self.ui.get_object("EndBox")
         self.Scroll = self.ui.get_object("Scroll")
 
-        width = 1100
+        width = Gdk.Geometry.max_width - 100
         self.Scroll.set_min_content_width(width)
 
 
