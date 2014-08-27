@@ -35,7 +35,7 @@ To run just double click on main.py in corwbar folder.
 "Warning: This program is not finshed"
 
 Features:
-* Tabs on Top - now on title bar :D!
+* Tabs on Top - now on title bar - fixed!
 * google search in url bar
 * progress in url bar
 * history back and forward buttons
