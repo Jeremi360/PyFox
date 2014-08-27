@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 from gi.repository import Gtk
-from gi.repository import Granite
 import os
 
 try:
