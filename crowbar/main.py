@@ -89,6 +89,7 @@ class Window(grabbo.Window):
         hb = Gtk.HeaderBar()
         hb.set_show_close_button(True)
         hb.set_title("")
+        hb.set_custom_title(Gtk.Separator())
         hb.props.border_width = 0
         hb.props.margin = 0
         hb.pack_start(self.G.StartBox)
