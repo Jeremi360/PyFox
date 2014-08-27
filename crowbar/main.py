@@ -53,11 +53,7 @@ class Group(grabbo.Builder):
         self.TabBox = self.ui.get_object("TabBox")
         self.StartBox = self.ui.get_object("StartBox")
         self.EndBox = self.ui.get_object("EndBox")
-        self.Scroll = self.ui.get_object("Scroll")
-
-        width = 1000 #Gdk.
-        self.Scroll.set_min_content_width(width)
-
+        self._scroll = self.ui.get_object("Scroll")
 
         self.unfull.hide()
         self.full.hide()
@@ -77,6 +73,10 @@ class Group(grabbo.Builder):
         self.parent.unfullscreen()
         self.full.show()
 
+    def set_width(self, width):
+        width = width - 100
+        self._scroll.set_min_content_width(width)
+
 class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
@@ -91,6 +91,8 @@ class Window(grabbo.Window):
         self.show()
 
     def modern(self):
+
+        G.set_width()
         hb = Gtk.HeaderBar()
         hb.set_show_close_button(True)
         hb.set_title("")
