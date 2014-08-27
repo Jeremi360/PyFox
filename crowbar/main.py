@@ -92,6 +92,7 @@ class Window(grabbo.Window):
 
     def modern(self):
         w = self.get_screen().get_width()
+        print(w)
         self.G.set_width(w)
         hb = Gtk.HeaderBar()
         hb.set_show_close_button(True)
