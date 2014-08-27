@@ -92,9 +92,6 @@ class Window(grabbo.Window):
         hb.set_custom_title(Gtk.Separator())
         hb.props.border_width = 0
         hb.props.margin = 0
-        hb.props.expand = True
-        hb.props.hexpand = True
-        hb.props.hexpand_set = True
         hb.pack_start(self.G.StartBox)
         hb.pack_end(self.G.EndBox)
         hb.set_has_subtitle(False)
