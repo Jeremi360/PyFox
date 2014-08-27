@@ -54,8 +54,10 @@ class Group(grabbo.Builder):
         self.StartBox = self.ui.get_object("StartBox")
         self.EndBox = self.ui.get_object("EndBox")
         self.Scroll = self.ui.get_object("Scroll")
-        
-        
+
+        width = 1100
+        self.Scroll.set_min_content_width(width)
+
 
         self.unfull.hide()
         self.full.hide()
