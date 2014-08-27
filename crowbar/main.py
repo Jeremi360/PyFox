@@ -53,6 +53,7 @@ class Group(grabbo.Builder):
         self.TabBox = self.ui.get_object("TabBox")
         self.StartBox = self.ui.get_object("StartBox")
         self.EndBox = self.ui.get_object("EndBox")
+        self.Scroll = self.ui.get_object("Scroll")
 
         self.unfull.hide()
         self.full.hide()
