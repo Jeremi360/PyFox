@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from gi.repository import Gtk#,Gdk
+from gi.repository import Gtk
 import os
 
 try:
@@ -91,8 +91,8 @@ class Window(grabbo.Window):
         self.show()
 
     def modern(self):
-
-        G.set_width()
+        w = self.get_screen().get_width()
+        G.set_width(w)
         hb = Gtk.HeaderBar()
         hb.set_show_close_button(True)
         hb.set_title("")
