@@ -55,7 +55,7 @@ class Group(grabbo.Builder):
         self.EndBox = self.ui.get_object("EndBox")
         self.Scroll = self.ui.get_object("Scroll")
 
-        width = Gdk.Geometry.max_width - 100
+        width = 1100 #Gdk.
         self.Scroll.set_min_content_width(width)
 
 
