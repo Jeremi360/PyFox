@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from gi.repository import Gtk,Gdk
+from gi.repository import Gtk#,Gdk
 import os
 
 try:
