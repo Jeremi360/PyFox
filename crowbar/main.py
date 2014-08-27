@@ -91,7 +91,7 @@ class Window(grabbo.Window):
         self.show()
 
     def modern(self):
-        w = self.get_size()
+        w = self.get_size()(0)
         print(w)
         self.G.set_width(w)
         hb = Gtk.HeaderBar()
