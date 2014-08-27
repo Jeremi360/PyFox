@@ -55,8 +55,9 @@ class Group(grabbo.Builder):
         self.EndBox = self.ui.get_object("EndBox")
 
         self.unfull.hide()
+        self.full.hide()
 
-        self.full.connect("clicked", self.on_full)
+        #self.full.connect("clicked", self.on_full)
         #self.unfull.connect("clicked", self.on_unfull)
 
         self.StartBox.show()
