@@ -22,10 +22,8 @@ except:
 UI_Group = os.path.join('..', 'ui', 'Group.ui')
 
 class Tabs(grabbo.Notebook):
-    def __init__(self, paronama , group):
+    def __init__(self):
         super(Tabs, self).__init__()
-        self.paronama = paronama
-        self.group = group
 
         self.add_tab("https://github.com/jeremi360/cRoWBaR")
 
@@ -77,7 +75,7 @@ class Window(grabbo.Window):
         super(Window, self).__init__()
         self.G = Group(self)
 
-        self.tabs = Tabs(self, self.G)
+        self.tabs = Tabs()
         self.tabs.show()
 
         self.modern()
