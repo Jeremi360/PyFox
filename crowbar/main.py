@@ -93,10 +93,10 @@ class Window(grabbo.Window):
         hb.set_has_subtitle(False)
         self.set_titlebar(hb)
         self.tabs.switcher.show()
-        self.tabs.AddButtonButton.show()
+        self.tabs.AddButton.show()
         hb.show()
 
-        self.AddButton(self.tabs.stack)
+        self.add(self.tabs.stack)
         self.tabs.stack.show()
 
     def old(self):
@@ -112,7 +112,7 @@ class Window(grabbo.Window):
         box_zwei.pack_end(self.tabs.pages, True, True, True)
         box_zwei.show()
 
-        self.AddButton(box_zwei)
+        self.add(box_zwei)
 
 if __name__ == "__main__":
     app = Window()
