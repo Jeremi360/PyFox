@@ -78,7 +78,7 @@ class Window(grabbo.Window):
         self.modern()
         #self.old()
 
-        self.show_all()
+        self.show()
 
     def modern(self):
         w = self.get_screen().get_width()
