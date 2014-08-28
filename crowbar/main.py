@@ -30,7 +30,7 @@ class Tabs(grabbo.Notebook):
         self.add_tab("https://github.com/jeremi360/cRoWBaR")
 
         self.ButtonBox.show()
-        self.stock.show()
+        self.stack.show()
 
     def add_tab(self, url = None):
         con = Tab(url)
