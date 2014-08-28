@@ -76,7 +76,7 @@ class Window(grabbo.Window):
         self.tabs.switcher.show()
         self.tabs.AddButton.show()
         self.tabs.show()
-        self.G.StartBox.pack_end(self.tabs, True, True, True)
+        self.G.StartBox.pack_end(self.tabs, True, True, 0)
 
         self.modern()
         #self.old()
@@ -108,13 +108,13 @@ class Window(grabbo.Window):
     def old(self):
         box = Gtk.Box()
         box.set_orientation(Gtk.Orientation.HORIZONTAL)
-        box.pack_start(self.G.StartBox, True, True, True)
-        box.pack_start(self.G.EndBox, False, True, True)
+        box.pack_start(self.G.StartBox, True, True, 0)
+        box.pack_start(self.G.EndBox, False, True, 0)
 
         box_zwei = Gtk.Box()
         box_zwei.set_orientation(Gtk.Orientation.VERTICAL)
-        box_zwei.pack_start(box, False, True, True)
-        box_zwei.pack_end(self.tabs.stack, True, True, True)
+        box_zwei.pack_start(box, False, True, 0)
+        box_zwei.pack_end(self.tabs.stack, True, True, 0)
 
         self.add(box_zwei)
 
