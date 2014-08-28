@@ -29,6 +29,7 @@ class Tabs(grabbo.Notebook):
 
         self.switcher.show()
         self.Add.show()
+        self.ButtonBox.show()
         self.stack.show()
 
     def add_tab(self, url = None):
