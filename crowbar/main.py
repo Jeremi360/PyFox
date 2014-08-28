@@ -101,7 +101,7 @@ class Window(grabbo.Window):
         self.set_titlebar(hb)
         hb.show()
 
-        self.add(self.tabs.stack)
+        self.reparent(self.tabs.stack)
 
     def old(self):
         box = Gtk.Box()
