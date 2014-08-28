@@ -11,9 +11,9 @@ except:
 UI_Tab = os.path.join('..', 'ui', 'Tab.ui')
 
 class Tab(grabbo.Builder):
-	def __init__(self, TB, url = None):
+	def __init__(self, url = None):
 		super(Tab, self).__init__(UI_Tab)
-		self.TB = TB
+
 		self.back_url = None
 		self.next_url = None
 
@@ -153,8 +153,6 @@ class Tab(grabbo.Builder):
 	def title_chang(self, webview, frame, title):
 		short = self.make_short(title)
 		self.title = title
-		self.TB.button.set_label(short)
-		self.TB.button.set_tooltip_text(title)
 
 	def load_icon(self, webview, url):
 		try:
