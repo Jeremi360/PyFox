@@ -73,8 +73,8 @@ class Window(grabbo.Window):
 
         self.tabs = Tabs_Manager(self.G)
 
-        self.modern()
-        #self.old()
+        #self.modern()
+        self.old()
 
         self.show_all()
 
