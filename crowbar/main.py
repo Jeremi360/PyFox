@@ -25,11 +25,11 @@ class Tabs_Manager(grabbo.Notebook):
         super(Tabs_Manager, self).__init__()
         group.StartBox.pack_end(self.ButtonBox, True, True, True)
 
-        self.add_tab("https://github.com/jeremi360/cRoWBaR")
+        self.AddButton_tab("https://github.com/jeremi360/cRoWBaR")
 
-    def add_tab(self, url = None):
+    def AddButton_tab(self, url = None):
         con = Tab(url)
-        super(Tabs_Manager, self).add_tab(con.get(), "New tab")
+        super(Tabs_Manager, self).AddButton_tab(con.get(), "New tab")
 
 
 class Group(grabbo.Builder):
@@ -92,9 +92,11 @@ class Window(grabbo.Window):
         hb.pack_end(self.G.EndBox)
         hb.set_has_subtitle(False)
         self.set_titlebar(hb)
+        self.tabs.switcher.show()
+        self.tabs.AddButtonButton.show()
         hb.show()
 
-        self.add(self.tabs.stack)
+        self.AddButton(self.tabs.stack)
         self.tabs.stack.show()
 
     def old(self):
@@ -110,7 +112,7 @@ class Window(grabbo.Window):
         box_zwei.pack_end(self.tabs.pages, True, True, True)
         box_zwei.show()
 
-        self.add(box_zwei)
+        self.AddButton(box_zwei)
 
 if __name__ == "__main__":
     app = Window()
