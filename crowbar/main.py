@@ -116,6 +116,9 @@ class Window(grabbo.Window):
 
         self.add(box_zwei)
 
+        box.show()
+        box_zwei.show()
+
 if __name__ == "__main__":
     app = Window()
     Gtk.main()
