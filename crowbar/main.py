@@ -20,21 +20,16 @@ except:
 
 UI_Group = os.path.join('..', 'ui', 'Group.ui')
 
-class Tabs(grabbo.Notebook):
+class Tabs_Manager(grabbo.Notebook):
     def __init__(self, group):
-        super(Tabs, self).__init__()
+        super(Tabs_Manager, self).__init__()
         group.StartBox.pack_end(self.ButtonBox, True, True, True)
 
         self.add_tab("https://github.com/jeremi360/cRoWBaR")
 
-        self.switcher.show()
-        self.Add.show()
-        self.ButtonBox.show()
-        self.stack.show()
-
     def add_tab(self, url = None):
         con = Tab(url)
-        super(Tabs, self).add_tab(con.get(), "New tab")
+        super(Tabs_Manager, self).add_tab(con.get(), "New tab")
 
 
 class Group(grabbo.Builder):
@@ -78,7 +73,11 @@ class Window(grabbo.Window):
         super(Window, self).__init__()
         self.G = Group(self)
 
-        self.tabs = Tabs(self.G)
+        self.tabs = Tabs_Manager(self.G)
+        self.tabs.switcher.show()
+        self.tabs.Add.show()
+        self.tabs.ButtonBox.show()
+        self.tabs.stack.show()
         self.tabs.show()
 
         self.modern()
