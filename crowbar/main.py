@@ -24,7 +24,7 @@ class Tabs_Manager(grabbo.Notebook):
     def __init__(self, group):
         super(Tabs_Manager, self).__init__(group.stack)
 
-        self.AddButton_tab("https://github.com/jeremi360/cRoWBaR")
+        self.add_tab("https://github.com/jeremi360/cRoWBaR")
 
     def on_add(self, button):
         self.add_tab()
