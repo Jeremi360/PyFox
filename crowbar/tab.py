@@ -16,6 +16,7 @@ class Tab(grabbo.Builder):
 	def __init__(self, url = None):
 		super(Tab, self).__init__(UI_Tab)
 
+		self.title = None
 		self.short = None
 		self.back_url = None
 		self.next_url = None
@@ -77,6 +78,7 @@ class Tab(grabbo.Builder):
 			self.urlen.set_text(url)
 			self.webview.load_uri(url)
 			self.short = self.make_short(self.webview.get_title())
+			self.title = self.webview.get_title()
 
 		#show
 		self.webview.show()
