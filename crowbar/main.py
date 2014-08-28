@@ -94,6 +94,8 @@ class Window(grabbo.Window):
         self.set_titlebar(hb)
         self.tabs.switcher.show()
         self.tabs.AddButton.show()
+        self.G.StartBox.show()
+        self.G.EndBox.show()
         hb.show()
 
         self.add(self.tabs.stack)
