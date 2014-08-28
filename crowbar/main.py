@@ -58,8 +58,8 @@ class Group(grabbo.Builder):
         #self.full.connect("clicked", self.on_full)
         #self.unfull.connect("clicked", self.on_unfull)
 
-        self.StartBox.show_all()
-        self.EndBox.show_all()
+        self.StartBox.show()
+        self.EndBox.show()
 
     def on_full(self, button):
         self.full.hide()
@@ -80,12 +80,12 @@ class Window(grabbo.Window):
         self.G = Group(self)
 
         self.tabs = Tabs(self.G)
-        self.tabs.show_all()
+        self.tabs.show()
 
         self.modern()
         #self.old()
 
-        self.show_all()
+        self.show()
 
     def modern(self):
         w = self.get_screen().get_width()
