@@ -100,7 +100,7 @@ class Window(grabbo.Window):
 
         self.G.StartBox.show()
         self.G.EndBox.show()
-        self.hb.show()
+        hb.show()
         self.G.stack.show()
 
     def old(self):
