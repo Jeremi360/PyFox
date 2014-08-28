@@ -78,7 +78,7 @@ class Window(grabbo.Window):
         self.modern()
         #self.old()
 
-        self.show()
+        self.show_all()
 
     def modern(self):
         w = self.get_screen().get_width()
@@ -93,12 +93,6 @@ class Window(grabbo.Window):
         hb.pack_start(self.G.StartBox)
         hb.pack_end(self.G.EndBox)
         hb.set_has_subtitle(False)
-        self.set_titlebar(hb)
-        self.tabs.switcher.show()
-        self.tabs.Add.show()
-        self.tabs.ButtonBox.show()
-        self.tabs.stack.show()
-        hb.show()
 
         self.add(self.tabs.stack)
 
