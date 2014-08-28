@@ -79,7 +79,7 @@ class Window(grabbo.Window):
         self.tabs.switcher.show()
         self.tabs.AddButton.show()
         self.tabs.show()
-        self.G.StartBox.pack_end(self.tabs, False, False, 0)
+        self.G.StartBox.pack_end(self.tabs, True, False, 0)
 
         self.modern()
         #self.old()
