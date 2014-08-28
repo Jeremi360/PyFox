@@ -76,7 +76,7 @@ class Window(grabbo.Window):
         self.modern()
         #self.old()
 
-        self.show()
+        self.show_all()
 
     def modern(self):
         w = self.get_screen().get_width()
@@ -95,25 +95,16 @@ class Window(grabbo.Window):
 
         self.add(self.tabs.stack)
 
-        self.tabs.stack.show()
-        self.tabs.switcher.show()
-        self.tabs.AddButton.show()
-        self.G.StartBox.show()
-        self.G.EndBox.show()
-        hb.show()
-
     def old(self):
         box = Gtk.Box()
         box.set_orientation(Gtk.Orientation.HORIZONTAL)
         box.pack_start(self.G.StartBox, True, True, True)
         box.pack_start(self.G.EndBox, False, True, True)
-        box.show()
 
         box_zwei = Gtk.Box()
         box_zwei.set_orientation(Gtk.Orientation.VERTICAL)
         box_zwei.pack_start(box, False, True, True)
-        box_zwei.pack_end(self.tabs.pages, True, True, True)
-        box_zwei.show()
+        box_zwei.pack_end(self.tabs.stack, True, True, True)
 
         self.add(box_zwei)
 
