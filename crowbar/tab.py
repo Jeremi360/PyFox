@@ -1,12 +1,14 @@
 from gi.repository import Gtk, WebKit
 import os
-
+import grabbo
+'''
 try:
 	import grabbo
 except:
 	print("Please first install Grabbo in your python path or copy to crowbar dir")
 	print("Grabbo can be download from https://github.com/jeremi360/Grabbo")
 	exit()
+'''
 
 UI_Tab = os.path.join('..', 'ui', 'Tab.ui')
 
@@ -160,13 +162,13 @@ class Tab(grabbo.Builder):
 			self.urlen.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
 			img = Gtk.Image()
 			img.set_from_pixbuf(self.urlen.get_icon_pixbuf(Gtk.EntryIconPosition.PRIMARY))
-			self.TB.button.set_image(img)
+			#self.TB.button.set_image(img)
 
 		except:
 			self.urlen.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
 			img = Gtk.Image()
 			img.set_from_icon_name("applications-internet", 4)
-			self.TB.button.set_image(img)
+			#self.TB.button.set_image(img)
 
 	def progress_load(self, webview, amount):
 		self.urlen.set_progress_fraction(amount / 100.0)
