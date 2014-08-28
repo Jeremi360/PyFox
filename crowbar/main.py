@@ -92,14 +92,15 @@ class Window(grabbo.Window):
         hb.pack_end(self.G.EndBox)
         hb.set_has_subtitle(False)
         self.set_titlebar(hb)
+
+        self.add(self.tabs.stack)
+
+        self.tabs.stack.show()
         self.tabs.switcher.show()
         self.tabs.AddButton.show()
         self.G.StartBox.show()
         self.G.EndBox.show()
         hb.show()
-
-        self.add(self.tabs.stack)
-        self.tabs.stack.show()
 
     def old(self):
         box = Gtk.Box()
