@@ -93,6 +93,7 @@ class Window(grabbo.Window):
         hb.pack_start(self.G.StartBox)
         hb.pack_end(self.G.EndBox)
         hb.set_has_subtitle(False)
+        self.set_titlebar(hb)
         hb.show_all()
 
         self.add(self.tabs.stack)
