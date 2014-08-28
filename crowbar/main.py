@@ -27,12 +27,9 @@ class Tabs(grabbo.Notebook):
         self.paronama = paronama
         self.group = group
 
-        self.buttons_box = self.group.TabBox
-        self.Add.reparent(self.group.StartBox)
-
         self.add_tab("https://github.com/jeremi360/cRoWBaR")
 
-        self.buttons_box.show()
+        self.ButtonBox.show()
         self.stock.show()
 
     def add_tab(self, url = None):
@@ -91,7 +88,7 @@ class Window(grabbo.Window):
     def modern(self):
         w = self.get_screen().get_width()
         print(w)
-        self.G.set_width(w)
+        #self.G.set_width(w)
         hb = Gtk.HeaderBar()
         hb.set_show_close_button(True)
         hb.set_title("")
@@ -104,7 +101,7 @@ class Window(grabbo.Window):
         self.set_titlebar(hb)
         hb.show()
 
-        self.add(self.tabs.pages)
+        self.add(self.tabs.stock)
 
     def old(self):
         box = Gtk.Box()
