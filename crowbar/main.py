@@ -74,11 +74,6 @@ class Window(grabbo.Window):
         self.G = Group(self)
 
         self.tabs = Tabs_Manager(self.G)
-        self.tabs.switcher.show()
-        self.tabs.Add.show()
-        self.tabs.ButtonBox.show()
-        self.tabs.stack.show()
-        self.tabs.show()
 
         self.modern()
         #self.old()
@@ -99,6 +94,10 @@ class Window(grabbo.Window):
         hb.pack_end(self.G.EndBox)
         hb.set_has_subtitle(False)
         self.set_titlebar(hb)
+        self.tabs.switcher.show()
+        self.tabs.Add.show()
+        self.tabs.ButtonBox.show()
+        self.tabs.stack.show()
         hb.show()
 
         self.add(self.tabs.stack)
