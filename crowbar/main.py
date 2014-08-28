@@ -24,10 +24,13 @@ except:
 UI_Group = os.path.join('..', 'ui', 'Group.ui')
 
 class Tabs(grabbo.Notebook):
-    def __init__(self):
+    def __init__(self, group):
         super(Tabs, self).__init__()
 
         self.add_tab("https://github.com/jeremi360/cRoWBaR")
+
+        group.StartBox.pack_start(self.ButtonBox, True, True, True)
+
 
         self.ButtonBox.show()
         self.stack.show()
