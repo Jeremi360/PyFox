@@ -73,6 +73,7 @@ class Window(grabbo.Window):
         self.G = Group(self)
 
         self.tabs = Tabs_Manager(self.G)
+        self.tabs.switcher.show()
         self.tabs.show()
         self.G.StartBox.pack_end(self.tabs, True, True, True)
 
