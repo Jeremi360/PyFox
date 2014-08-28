@@ -52,9 +52,6 @@ class Group(grabbo.Builder):
         #self.full.connect("clicked", self.on_full)
         #self.unfull.connect("clicked", self.on_unfull)
 
-        self.StartBox.show()
-        self.EndBox.show()
-
     def on_full(self, button):
         self.full.hide()
         self.parent.fullscreen()
