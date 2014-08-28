@@ -1,14 +1,14 @@
 from gi.repository import Gtk, WebKit
 import os
-import grabbo
-'''
+
+
 try:
 	import grabbo
 except:
 	print("Please first install Grabbo in your python path or copy to crowbar dir")
 	print("Grabbo can be download from https://github.com/jeremi360/Grabbo")
 	exit()
-'''
+
 
 UI_Tab = os.path.join('..', 'ui', 'Tab.ui')
 
