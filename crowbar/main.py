@@ -35,6 +35,8 @@ class Group(grabbo.Builder):
     def __init__(self, parent):
         grabbo.Builder.__init__(self, UI_Group)
 
+        self.stack = Gtk.Stack()
+
         self.parent = parent
         self.menub = self.ui.get_object("MenuButton")
         self.downs = self.ui.get_object("Downs")
@@ -71,6 +73,7 @@ class Window(grabbo.Window):
         self.G = Group(self)
 
         self.tabs = Tabs_Manager(self.G)
+        self.G.StartBox.pack_end(self.tabs, True, True, True)
 
         self.modern()
         #self.old()
@@ -92,7 +95,7 @@ class Window(grabbo.Window):
         hb.set_has_subtitle(False)
         self.set_titlebar(hb)
 
-        self.add(self.tabs.stack)
+        self.add(self.G.stack)
 
     def old(self):
         box = Gtk.Box()
