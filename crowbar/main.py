@@ -41,16 +41,17 @@ class Group(grabbo.Builder):
         self.downs = self.ui.get_object("Downs")
         self.full = self.ui.get_object("Full")
         self.unfull = self.ui.get_object("UnFull")
-        self.TabBox = self.ui.get_object("TabBox")
         self.StartBox = self.ui.get_object("StartBox")
         self.EndBox = self.ui.get_object("EndBox")
-        self._scroll = self.ui.get_object("Scroll")
 
         self.unfull.hide()
         self.full.hide()
 
         #self.full.connect("clicked", self.on_full)
         #self.unfull.connect("clicked", self.on_unfull)
+
+        self.StartBox.show()
+        self.EndBox.show()
 
     def on_full(self, button):
         self.full.hide()
@@ -91,9 +92,10 @@ class Window(grabbo.Window):
         hb.pack_end(self.G.EndBox)
         hb.set_has_subtitle(False)
         self.set_titlebar(hb)
-        hb.show_all()
+        hb.show()
 
         self.add(self.tabs.stack)
+        self.tabs.stack.show()
 
     def old(self):
         box = Gtk.Box()
