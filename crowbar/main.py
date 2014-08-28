@@ -33,13 +33,11 @@ class Tabs(grabbo.Notebook):
         self.add_tab("https://github.com/jeremi360/cRoWBaR")
 
         self.buttons_box.show()
-        self.pages.show()
+        self.stock.show()
 
     def add_tab(self, url = None):
-        bt = grabbo.TabButton()
-        bt.set(self, 0, "New Tab", True)
-        con = Tab(bt, url)
-        super(Tabs, self).add_tab(con.get(), bt)
+        con = Tab(url)
+        super(Tabs, self).add_tab(con.get(), "New tab")
 
 class Group(grabbo.Builder):
     def __init__(self, parent):
