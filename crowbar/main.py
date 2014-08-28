@@ -26,7 +26,10 @@ class Tabs_Manager(grabbo.Notebook):
 
         self.AddButton_tab("https://github.com/jeremi360/cRoWBaR")
 
-    def AddButton_tab(self, url = None):
+    def on_add(self, button):
+        self.add_tab()
+
+    def add_tab(self, url = None):
         con = Tab(url)
         super(Tabs_Manager, self).add_tab(con.get(), "New tab")
 
