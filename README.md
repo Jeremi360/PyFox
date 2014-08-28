@@ -1,5 +1,7 @@
 **cRoWBaR** - Rethink Web BRowser
 
+Warning: I start rewrite using Gtk.Stock nad Gtk.StockSwitcher - Don't work for now!
+
 Screenshot:
 ![cRoWBaR in Action][1]
 
