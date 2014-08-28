@@ -10,6 +10,8 @@ except:
     from tab import Tab
     print("Normal way")
 
+import grabbo
+
 try:
     import grabbo
 except:
