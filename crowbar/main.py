@@ -39,6 +39,7 @@ class Tabs(grabbo.Notebook):
         con = Tab(url)
         super(Tabs, self).add_tab(con.get(), "New tab")
 
+
 class Group(grabbo.Builder):
     def __init__(self, parent):
         grabbo.Builder.__init__(self, UI_Group)
