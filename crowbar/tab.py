@@ -16,8 +16,8 @@ class Tab(grabbo.Builder):
 	def __init__(self, url = None):
 		super(Tab, self).__init__(UI_Tab)
 
-		self.title = None
-		self.short = None
+		self.title = "title"
+		self.short = "short"
 		self.back_url = None
 		self.next_url = None
 
