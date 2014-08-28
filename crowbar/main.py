@@ -32,8 +32,8 @@ class Tabs(grabbo.Notebook):
         group.StartBox.pack_start(self.ButtonBox, True, True, True)
 
 
-        self.ButtonBox.show()
-        self.stack.show()
+        self.ButtonBox.show_all()
+        self.stack.show_all()
 
     def add_tab(self, url = None):
         con = Tab(url)
