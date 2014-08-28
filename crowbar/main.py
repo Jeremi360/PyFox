@@ -73,6 +73,7 @@ class Window(grabbo.Window):
         self.G = Group(self)
 
         self.tabs = Tabs_Manager(self.G)
+        self.tabs.show()
         self.G.StartBox.pack_end(self.tabs, True, True, True)
 
         self.modern()
@@ -96,7 +97,11 @@ class Window(grabbo.Window):
         self.set_titlebar(hb)
 
         self.add(self.G.stack)
+
+        self.G.StartBox.show()
+        self.G.EndBox.show()
         self.hb.show()
+        self.G.stack.show()
 
     def old(self):
         box = Gtk.Box()
