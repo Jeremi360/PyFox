@@ -98,12 +98,10 @@ class Window(grabbo.Window):
 
         self.add(self.G.stack)
 
-    def show_app(self):
         self.hb.show()
         self.G.stack.show()
         self.show()
 
 if __name__ == "__main__":
     app = Window()
-    app.show_app()
     Gtk.main()
