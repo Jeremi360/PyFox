@@ -79,11 +79,11 @@ class Tab(grabbo.Builder):
 		self.webview.show()
 		self.stack = stack
 
-	def set_stack_property(self, property, value):
-		self.stack.child_set_property(self.get(), property, value)
+	def set_stack_property(self, p, value):
+		self.stack.child_set_property(self.get(), p, value)
 
-	def get_stack_property(self, property):
-		return self.stack.child_get_property(self.get(), property)
+	def get_stack_property(self, p):
+		return self.stack.child_get_property(self.get(), p)
 
 	def get(self):
 		return self.ui.get_object("box")
