@@ -10,7 +10,6 @@ except:
 	exit()
 
 
-
 UI_Tab = os.path.join('..', 'ui', 'Tab.xml')
 
 class Tab(grabbo.Builder):
