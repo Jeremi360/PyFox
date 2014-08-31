@@ -98,10 +98,8 @@ class Window(grabbo.Window):
 
         self.add(self.G.stack)
 
-        #self.G.StartBox.show()
-        #self.G.EndBox.show()
         hb.show()
-        self.G.stack.show()
+        #self.G.stack.show()
         self.show()
 
 if __name__ == "__main__":
