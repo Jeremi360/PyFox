@@ -147,7 +147,7 @@ class Tab(grabbo.Builder):
 			url = "http://" + url
 		self.webview.load_uri(url)
 
-	def make_short(self, title):
+	def title_chang(self, webview, frame, title):
 		short = ""
 
 		for i in range(26):
@@ -156,10 +156,6 @@ class Tab(grabbo.Builder):
 			except:
 				pass
 
-		return short
-
-	def title_chang(self, webview, frame, title):
-		short = self.make_short(title)
 		self.set_stack_property("title", short)
 		self.set_stack_property("name", title)
 
