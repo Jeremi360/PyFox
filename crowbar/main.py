@@ -76,7 +76,6 @@ class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
         self.G = Group(self)
-        self.set_title = "cRoWBaR"
 
         i = os.path.join(r, 'icons', 'icon.png')
         self.set_icon_from_file(i)
