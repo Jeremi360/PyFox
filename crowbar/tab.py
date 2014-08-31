@@ -155,8 +155,6 @@ class Tab(grabbo.Builder):
 		else:
 			self.tb.button.set_label(title)
 
-
-
 	def load_icon(self, webview, url):
 		try:
 			pixbuf = webview.get_icon_pixbuf()
