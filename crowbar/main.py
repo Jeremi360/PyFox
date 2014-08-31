@@ -78,10 +78,7 @@ class Window(grabbo.Window):
         super(Window, self).__init__()
         self.G = Group(self)
 
-        self.tabs = Tabs_Manager(self.G)
-        self.tabs.switcher.show()
-        self.tabs.AddButton.show()
-        self.tabs.show()
+        self.tabs = Tabs_Manager(self.G))
         self.G.StartBox.pack_end(self.tabs, True, False, 0)
 
         w = self.get_screen().get_width()
@@ -100,11 +97,13 @@ class Window(grabbo.Window):
 
         self.add(self.G.stack)
 
+        self.tabs.switcher.show()
+        self.tabs.AddButton.show()
+        self.tabs.show(
         self.G.StartBox.show()
         self.G.EndBox.show()
         hb.show()
         self.G.stack.show()
-
         self.show()
 
 if __name__ == "__main__":
