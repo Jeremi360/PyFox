@@ -158,7 +158,8 @@ class Tab(grabbo.Builder):
 
 	def title_chang(self, webview, frame, title):
 		short = self.make_short(title)
-		self.set("label", short)
+		self.set("title", short)
+		self.set("name", title)
 
 	def load_icon(self, webview, url):
 		try:
