@@ -31,9 +31,8 @@ class Tabs_Manager(grabbo.Notebook):
 
     def add_tab(self, url = None):
         con = Tab(self.stack, url)
-        super(Tabs_Manager, self).add_tab(con.get(), con.tb)
+        super(Tabs_Manager, self).add_tab(con.get())
         con.get().show()
-        con.tb.show()
         self._sc.show_all()
 
     def set_width(self, width):
