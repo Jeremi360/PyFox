@@ -80,7 +80,6 @@ class Window(grabbo.Window):
         self.G.StartBox.pack_end(self.tabs.get(), True, False, 0)
 
         w = self.get_screen().get_width()
-        print(w)
         self.tabs.set_width(w)
         hb = Gtk.HeaderBar()
         hb.set_show_close_button(True)
