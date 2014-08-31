@@ -31,7 +31,7 @@ class Tabs_Manager(grabbo.Notebook):
 
     def add_tab(self, url = None):
         con = Tab(url)
-        super(Tabs_Manager, self).add_tab(con.get(), con.short)
+        super(Tabs_Manager, self).add_tab(con.get(), "New Tab")
 
 
 class Group(grabbo.Builder):
