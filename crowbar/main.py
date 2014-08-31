@@ -83,8 +83,8 @@ class Window(grabbo.Window):
         self.tabs.show()
         self.G.StartBox.pack_end(self.tabs, True, False, 0)
 
-        self.modern()
-        #self.old()
+        #self.modern()
+        self.old()
 
         self.show()
 
