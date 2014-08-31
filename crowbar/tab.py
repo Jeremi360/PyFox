@@ -82,9 +82,6 @@ class Tab(grabbo.Builder):
 	def get(self):
 		return self.ui.get_object("box")
 
-	def set_tb(self, tb):
-		self.tb = tb
-
 	def reset_zoom(self, button):
 		self.webview.set_zoom_level(1.0)
 
