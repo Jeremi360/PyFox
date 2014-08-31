@@ -144,14 +144,18 @@ class Tab(grabbo.Builder):
 	def title_chang(self, webview, frame, title):
 		short = ""
 
-		for i in range(26):
-			try:
-				short += title[i]
-			except:
-				pass
+		if len(title) > 26:
+			for i in range(26):
+				try:
+					short += title[i]
+				except:
+					pass
 
-		self.set_stack_property("title", short)
-		self.set_stack_property("name", title)
+			self.tb.button.set_label(short)
+		else:
+			self.tb.button.set_label(title)
+
+
 
 	def load_icon(self, webview, url):
 		try:
