@@ -85,23 +85,25 @@ class Window(grabbo.Window):
 
         w = self.get_screen().get_width()
         self.tabs.set_width(w)
-        hb = Gtk.HeaderBar()
-        hb.set_show_close_button(True)
-        hb.set_title("")
-        hb.set_custom_title(Gtk.Separator())
-        hb.props.border_width = 0
-        hb.props.margin = 0
-        hb.pack_start(self.G.StartBox)
-        hb.pack_end(self.G.EndBox)
-        hb.set_has_subtitle(False)
-        self.set_titlebar(hb)
+        self.hb = Gtk.HeaderBar()
+        self.hb.set_show_close_button(True)
+        self.hb.set_title("")
+        self.hb.set_custom_title(Gtk.Separator())
+        self.hb.props.border_width = 0
+        self.hb.props.margin = 0
+        self.hb.pack_start(self.G.StartBox)
+        self.hb.pack_end(self.G.EndBox)
+        self.hb.set_has_subtitle(False)
+        self.set_titlebar(self.hb)
 
         self.add(self.G.stack)
 
-        hb.show()
-        #self.G.stack.show()
+    def show_app(self):
+        self.hb.show()
+        self.G.stack.show()
         self.show()
 
 if __name__ == "__main__":
     app = Window()
+
     Gtk.main()
