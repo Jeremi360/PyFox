@@ -77,7 +77,7 @@ class Tab(grabbo.Builder):
 
 		#show
 		self.webview.show()
-		self.stack = stack
+		self.tb = grabbo.TabButton(self, stack)
 
 	def get(self):
 		return self.ui.get_object("box")
