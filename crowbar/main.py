@@ -35,6 +35,10 @@ class Tabs_Manager(grabbo.Notebook):
         con.set_tb(tb)
         super(Tabs_Manager, self).add_tab(con.get(), tb)
 
+    def set_width(self, width):
+        width = width*0.8
+        self._sc.set_min_content_width(width)
+
 
 class Group(grabbo.Builder):
     def __init__(self, parent):
@@ -67,10 +71,6 @@ class Group(grabbo.Builder):
         self.unfull.hide()
         self.parent.unfullscreen()
         self.full.show()
-
-    def set_width(self, width):
-        width = width*0.8
-        self._scroll.set_min_content_width(width)
 
 class Window(grabbo.Window):
     def __init__(self):
