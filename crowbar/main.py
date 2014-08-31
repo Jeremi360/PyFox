@@ -78,7 +78,7 @@ class Window(grabbo.Window):
         super(Window, self).__init__()
         self.G = Group(self)
 
-        self.tabs = Tabs_Manager(self.G))
+        self.tabs = Tabs_Manager(self.G)
         self.G.StartBox.pack_end(self.tabs, True, False, 0)
 
         w = self.get_screen().get_width()
