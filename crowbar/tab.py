@@ -13,7 +13,7 @@ except:
 '''
 
 
-UI_Tab = os.path.join('..', 'ui', 'Tab.ui')
+UI_Tab = os.path.join('..', 'ui', 'Tab.xml')
 
 class Tab(grabbo.Builder):
 	def __init__(self, stack, url = None):
