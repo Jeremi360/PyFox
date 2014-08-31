@@ -18,7 +18,7 @@ except:
     exit()
 
 
-UI_Group = os.path.join('..', 'ui', 'Group.ui')
+UI_Group = os.path.join('..', 'ui', 'Group.xml')
 
 class Tabs_Manager(grabbo.Notebook):
     def __init__(self, group):
