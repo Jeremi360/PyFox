@@ -98,10 +98,8 @@ class Window(grabbo.Window):
 
         self.add(self.G.stack)
 
-       # self.tabs.switcher.show()
-        #self.tabs.get().show()
-        self.G.StartBox.show()
-        self.G.EndBox.show()
+        #self.G.StartBox.show()
+        #self.G.EndBox.show()
         hb.show()
         self.G.stack.show()
         self.show()
