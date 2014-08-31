@@ -78,8 +78,8 @@ class Window(grabbo.Window):
         self.G = Group(self)
         self.set_title = "cRoWBaR"
 
-        i = os.path.join(a)
-        self.set_icon_from_file()
+        i = os.path.join(r, 'icons', 'icon.png')
+        self.set_icon_from_file(i)
 
         self.tabs = Tabs_Manager(self.G)
         self.G.StartBox.pack_end(self.tabs.get(), True, False, 0)
