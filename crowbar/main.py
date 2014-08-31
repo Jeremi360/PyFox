@@ -33,7 +33,7 @@ class Tabs_Manager(grabbo.Notebook):
         con = Tab(url)
         tb = grabbo.TabButton(self.stack, con)
         con.set_tb(tb)
-        super(Tabs_Manager, self).add_tab(con.get(), "New Tab")
+        super(Tabs_Manager, self).add_tab(con.get(), tb)
 
 
 class Group(grabbo.Builder):
