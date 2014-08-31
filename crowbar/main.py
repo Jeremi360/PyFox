@@ -105,5 +105,5 @@ class Window(grabbo.Window):
 
 if __name__ == "__main__":
     app = Window()
-
+    app.show_app()
     Gtk.main()
