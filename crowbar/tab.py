@@ -80,7 +80,7 @@ class Tab(grabbo.Builder):
 		self.stack = stack
 
 	def set(self, p, value):
-		self.stack.child_set_property(self, p, value)
+		self.stack.child_set_property(self.get(), p, value)
 
 	def get(self):
 		return self.ui.get_object("box")
