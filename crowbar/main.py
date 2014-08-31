@@ -3,6 +3,10 @@
 from gi.repository import Gtk
 import os
 
+r = os.path.realpath(__file__)
+r = os.path.dirname(r)
+r = os.path.dirname(r)
+
 try:
     from crowbar.tab import Tab
     print("Eclipse way")
@@ -72,6 +76,10 @@ class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
         self.G = Group(self)
+        self.set_title = "cRoWBaR"
+
+        i = os.path.join(a)
+        self.set_icon_from_file()
 
         self.tabs = Tabs_Manager(self.G)
         self.G.StartBox.pack_end(self.tabs.get(), True, False, 0)
