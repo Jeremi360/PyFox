@@ -13,7 +13,7 @@ except:
 UI_Tab = os.path.join('..', 'ui', 'Tab.xml')
 
 class Tab(grabbo.Builder):
-	def __init__(self, stack, url = None):
+	def __init__(self, notebook, url = None):
 		super(Tab, self).__init__(UI_Tab)
 		self.back_url = None
 		self.next_url = None
@@ -77,7 +77,7 @@ class Tab(grabbo.Builder):
 
 		#show
 		self.webview.show()
-		self.tb = grabbo.TabButton(self, stack)
+		self.tb = grabbo.TabButton(notebook, self.get())
 
 	def get(self):
 		return self.ui.get_object("box")
