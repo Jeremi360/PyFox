@@ -77,7 +77,9 @@ class Tab(grabbo.Builder):
 
 		#show
 		self.webview.show()
-		self.tb = grabbo.TabButton(notebook, self.get())
+		self.notebook = notebook
+		self.tb = grabbo.TabButton(self.notebook, self.get())
+
 
 	def get(self):
 		return self.ui.get_object("box")
@@ -154,6 +156,8 @@ class Tab(grabbo.Builder):
 			self.tb.button.set_label(short)
 		else:
 			self.tb.button.set_label(title)
+
+		self.
 
 	def load_icon(self, webview, url):
 		try:
