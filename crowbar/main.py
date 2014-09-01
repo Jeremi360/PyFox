@@ -88,7 +88,7 @@ class Window(grabbo.Window):
         self.hb = Gtk.HeaderBar()
         self.hb.set_show_close_button(True)
         self.hb.set_title("Crowbar")
-        self.hb.set_custom_title(self.tabs.get())
+        self.hb.set_custom_title(self.tabs.switcher)
         self.hb.get_custom_title().set_hexpand(True)
         self.hb.get_custom_title().set_hexpand_set(True)
         self.hb.props.border_width = 0
