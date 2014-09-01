@@ -26,6 +26,7 @@ UI_Group = os.path.join('..', 'ui', 'Group.xml')
 
 class Tabs_Manager(grabbo.Notebook):
     def __init__(self, group):
+        self.group = group
         super(Tabs_Manager, self).__init__(group.stack)
 
         self.add_tab("https://github.com/jeremi360/cRoWBaR")
