@@ -159,11 +159,11 @@ class Tab(grabbo.Builder):
 		try:
 			pixbuf = webview.get_icon_pixbuf()
 			self.urlen.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
-			self.self.tb.button.get_image().set_from_pixbuf(self.urlen.get_icon_pixbuf(Gtk.EntryIconPosition.PRIMARY))
+			self.tb.button.get_image().set_from_pixbuf(self.urlen.get_icon_pixbuf(Gtk.EntryIconPosition.PRIMARY))
 
 		except:
 			self.urlen.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
-			self.self.tb.button.get_image().set_from_name("applications-internet")
+			self.tb.button.get_image().set_from_name("applications-internet")
 
 	def progress_load(self, webview, amount):
 		self.urlen.set_progress_fraction(amount / 100.0)
