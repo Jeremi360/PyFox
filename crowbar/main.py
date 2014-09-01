@@ -90,6 +90,7 @@ class Window(grabbo.Window):
         self.hb.set_title("Crowbar")
         self.hb.set_custom_title(self.tabs.get())
         self.hb.get_custom_title().set_hexpand(True)
+        self.hb.get_custom_title().set_hexpand_set(True)
         self.hb.props.border_width = 0
         self.hb.props.margin = 0
         self.hb.pack_start(self.G.StartBox)
