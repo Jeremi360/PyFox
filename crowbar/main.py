@@ -83,12 +83,12 @@ class Window(grabbo.Window):
         self.tabs = Tabs_Manager(self.G)
         self.G.StartBox.pack_end(self.tabs.get(), True, False, 0)
 
-        w = self.get_screen().get_width()
-        self.tabs.set_width(w)
+        #w = self.get_screen().get_width()
+        #self.tabs.set_width(w)
         self.hb = Gtk.HeaderBar()
         self.hb.set_show_close_button(True)
-        self.hb.set_title("")
-        self.hb.set_custom_title(Gtk.Separator())
+        self.hb.set_title(None)
+        #self.hb.set_custom_title(Gtk.Separator())
         self.hb.props.border_width = 0
         self.hb.props.margin = 0
         self.hb.pack_start(self.G.StartBox)
