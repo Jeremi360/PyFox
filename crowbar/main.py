@@ -72,6 +72,9 @@ class Group(grabbo.Builder):
         self.parent.unfullscreen()
         self.full.show()
 
+    def set_title(self, title):
+        self.parent.hb.set_title("Crowbar: " + title)
+
 class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
