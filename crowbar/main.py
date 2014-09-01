@@ -82,12 +82,12 @@ class Window(grabbo.Window):
 
         self.tabs = Tabs_Manager(self.G)
         self.tabs.unpack()
-        #self.G.StartBox.pack_end(self.tabs.get(), True, False, 0)
+        self.G.StartBox.pack_end(self.tabs.get(), True, False, 0)
 
         self.hb = Gtk.HeaderBar()
         self.hb.set_show_close_button(True)
         self.hb.set_title("Crowbar")
-        self.hb.set_custom_title(Gtk.Separator())
+        self.hb.set_custom_title(self.G.StartBox)
         self.hb.props.border_width = 0
         self.hb.props.margin = 0
         self.hb.pack_start(self.G.StartBox)
