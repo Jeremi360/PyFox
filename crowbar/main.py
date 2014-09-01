@@ -81,7 +81,6 @@ class Window(grabbo.Window):
         self.set_icon_from_file(i)
 
         self.tabs = Tabs_Manager(self.G)
-        self.tabs.pack(False)
         self.G.StartBox.pack_end(self.tabs.get(), True, False, 0)
 
         self.hb = Gtk.HeaderBar()
