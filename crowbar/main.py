@@ -85,7 +85,7 @@ class Window(grabbo.Window):
         self.set_icon_from_file(i)
 
         self.tabs = Tabs_Manager(self.G)
-        w = self.get_size_request()[0]
+        w = self.get_size()[0]
         self.tabs.set_width(w)
 
         self.hb = Gtk.HeaderBar()
