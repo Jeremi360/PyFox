@@ -45,7 +45,6 @@ Done:
 * history back and forward buttons
 * fix address mistake
 * zoom in & out & and reset to 100%
-* go to top - turn of for now
 * show favicon
 
 ToDo:
