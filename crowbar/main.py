@@ -40,7 +40,7 @@ class Tabs_Manager(grabbo.Notebook):
         con.get().show()
 
     def set_width(self, width):
-        #width = width*0.8
+        width = width*0.8
         self._sc.set_min_content_width(width)
 
 
@@ -91,9 +91,9 @@ class Window(grabbo.Window):
         self.hb.set_show_close_button(True)
         self.hb.set_title("Crowbar")
         self.hb.set_custom_title(self.tabs.get())
-        self.hb.get_custom_title().set_hexpand(True)
-        self.hb.get_custom_title().set_hexpand_set(True)
-        self.hb.get_custom_title().set_homogeneous(True)
+        self.tabs._sc.set_hexpand(True)
+        self.tabs._sc.set_hexpand_set(True)
+        self.tabs._sc.set_homogeneous(True)
         self.tabs.set_width(-1)
         self.hb.props.border_width = 0
         self.hb.props.margin = 0
