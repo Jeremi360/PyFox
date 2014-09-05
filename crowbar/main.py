@@ -26,7 +26,7 @@ UI_Group = os.path.join('..', 'ui', 'Group.xml')
 class Tabs_Manager(grabbo.HB_Notebook):
     def __init__(self, group):
         self.group = group
-        grabbo.HB_Notebook.__init__(self, group.stack)
+        super(Tabs_Manager, self).__init__(group.stack)
 
         self.add_tab("https://github.com/jeremi360/cRoWBaR")
 
@@ -46,8 +46,6 @@ class Group(grabbo.Builder):
         grabbo.Builder.__init__(self, UI_Group)
 
         self.stack = Gtk.Stack()
-        self.stack.set_transition_type(Gtk.StackTransitionType.CROSSFADE)
-        self.stack.set_transition_duration(500)
 
         self.parent = parent
         self.menub = self.ui.get_object("MenuButton")
