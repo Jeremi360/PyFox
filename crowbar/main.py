@@ -38,10 +38,14 @@ class Tabs_Manager(grabbo.Notebook):
         con = Tab(self, url)
         super(Tabs_Manager, self).add_tab(content = con.get(),tb = con.tb)
         con.get().show()
-
+        w = self.get_width() + 200
+        self.set_width(w)
 
     def set_width(self, width):
-        self._sc.props.width_request = -1
+        self._sc.set_min_content_width(width)
+
+    def get_width(self):
+        return self._sc.get_min_content_width()
 
 
 class Group(grabbo.Builder):
