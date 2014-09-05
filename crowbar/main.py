@@ -22,6 +22,11 @@ except:
     exit()
 
 
+class Hb_TabButton(grabbo.TabButton):
+    def on_button(self, button):
+        grabbo.TabButton.on_button(self, button)
+
+
 UI_Group = os.path.join('..', 'ui', 'Group.xml')
 
 class Tabs_Manager(grabbo.Notebook):
@@ -43,10 +48,10 @@ class Tabs_Manager(grabbo.Notebook):
 
     def set_width(self, width):
         if self.group.parent.w*8.0 < width:
-            self._sc.set_min_content_width(width)
+            self.sc.set_min_content_width(width)
 
     def get_width(self):
-        return self._sc.get_min_content_width()
+        return self.sc.get_min_content_width()
 
 
 class Group(grabbo.Builder):
