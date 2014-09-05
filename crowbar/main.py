@@ -25,6 +25,8 @@ except:
 class Hb_TabButton(grabbo.TabButton):
     def on_button(self, button):
         grabbo.TabButton.on_button(self, button)
+        w = self.n.get_width() - 200
+        self.n.set_width(w)
 
 
 UI_Group = os.path.join('..', 'ui', 'Group.xml')
