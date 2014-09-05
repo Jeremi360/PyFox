@@ -131,7 +131,7 @@ class Window(grabbo.Window):
             os.mkdir(conf)
 
         f = os.path.join(conf,"session.save")
-        pickle.dump(self.G.stack, open(f, "wb"))
+        pickle.dump(, open(f, "wb"))
         grabbo.Window.on_close(self, button)
 
 if __name__ == "__main__":
