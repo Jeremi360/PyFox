@@ -12,7 +12,7 @@ except:
 class Hb_TabButton(grabbo.TabButton):
 	def on_close(self, button):
 		grabbo.TabButton.on_close(self, button)
-		w = self.n.get_width() - 200
+		w = self.n.get_width() - 205
 		self.n.set_width(w)
 
 UI_Tab = os.path.join('..', 'ui', 'Tab.xml')
