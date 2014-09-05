@@ -40,7 +40,7 @@ class Tabs_Manager(grabbo.Notebook):
         con.get().show()
 
     def set_width(self, width):
-        width = width*0.9
+        #width = width*0.9
         self._sc.set_min_content_width(width)
 
 
@@ -85,7 +85,8 @@ class Window(grabbo.Window):
         self.set_icon_from_file(i)
 
         self.tabs = Tabs_Manager(self.G)
-        w = self.get_screen().get_width()
+        w = 400
+        #w = self.get_screen().get_width()
         self.tabs.set_width(w)
 
         self.hb = Gtk.HeaderBar()
