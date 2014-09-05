@@ -46,7 +46,7 @@ class Group(grabbo.Builder):
         grabbo.Builder.__init__(self, UI_Group)
 
         self.stack = Gtk.Stack()
-        self.stack.set_transition_type(Gtk.StackTransitionType.SLIDE_LEFT_RIGHT)
+        self.stack.set_transition_type(Gtk.StackTransitionType.CROSSFADE)
         self.stack.set_transition_duration(500)
 
         self.parent = parent
