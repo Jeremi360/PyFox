@@ -38,9 +38,6 @@ class Tabs_Manager(grabbo.HB_Notebook):
         grabbo.Notebook.add_tab(self,content = con.get(),tb = con.tb)
         con.get().show()
 
-    def get_screen_width(self):
-        return self.group.parent.get_screen().get_width()
-
 class Group(grabbo.Builder):
     def __init__(self, parent):
         grabbo.Builder.__init__(self, UI_Group)
