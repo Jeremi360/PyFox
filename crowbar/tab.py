@@ -10,8 +10,8 @@ except:
 	exit()
 
 class Hb_TabButton(grabbo.TabButton):
-	def on_button(self, button):
-		grabbo.TabButton.on_button(self, button)
+	def on_close(self, button):
+		grabbo.TabButton.on_close(self, button)
 		w = self.n.get_width() - 200
 		self.n.set_width(w)
 
