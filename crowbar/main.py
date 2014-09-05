@@ -47,7 +47,7 @@ class Group(grabbo.Builder):
 
         self.stack = Gtk.Stack()
         self.stack.set_transition_type(Gtk.StackTransitionType.SLIDE_LEFT_RIGHT)
-        self.stack.set_transition_duration(1000)
+        self.stack.set_transition_duration(500)
 
         self.parent = parent
         self.menub = self.ui.get_object("MenuButton")
