@@ -34,7 +34,8 @@ class Tabs_Manager(grabbo.Notebook):
 
         if os.path.exists(conf):
             save = pickle.load(open( "session.save", "rb" ))
-            for t in save
+            for c in save:
+                self.add_content(c)
         else:
             self.add_tab("https://github.com/jeremi360/cRoWBaR")
 
