@@ -39,6 +39,7 @@ class Tabs_Manager(grabbo.Notebook):
         con.get().show()
         w = self.get_width() + 400
         self.set_width(w)
+        self.sc.show()
 
     def set_width(self, width):
         w = self.group.parent.get_screen().get_width()
