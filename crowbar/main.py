@@ -23,7 +23,7 @@ except:
 
 UI_Group = os.path.join('..', 'ui', 'Group.xml')
 
-class Tabs_Manager(grabbo.Notebook):
+class Tabs_Manager(grabbo.HB_Notebook):
     def __init__(self, group):
         self.group = group
         super(Tabs_Manager, self).__init__(group.stack)
@@ -37,6 +37,9 @@ class Tabs_Manager(grabbo.Notebook):
         con = Tab(self, url)
         grabbo.Notebook.add_tab(self,content = con.get(),tb = con.tb)
         con.get().show()
+
+    def get_screen_width(self):
+        return self.group.parent.get_screen().get_width()
 
 class Group(grabbo.Builder):
     def __init__(self, parent):
