@@ -42,7 +42,8 @@ class Tabs_Manager(grabbo.Notebook):
         self.set_width(w)
 
     def set_width(self, width):
-        self._sc.set_min_content_width(width)
+        if self.group.parent.w*8.0 < width:
+            self._sc.set_min_content_width(width)
 
     def get_width(self):
         return self._sc.get_min_content_width()
@@ -80,6 +81,7 @@ class Group(grabbo.Builder):
     def set_title(self, title):
         self.parent.hb.set_title("Crowbar: " + title)
 
+
 class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
@@ -89,7 +91,7 @@ class Window(grabbo.Window):
         self.set_icon_from_file(i)
 
         self.tabs = Tabs_Manager(self.G)
-
+        self.w = self.get_screen().get_width()
         self.hb = Gtk.HeaderBar()
         self.hb.set_show_close_button(True)
         self.hb.set_title("Crowbar")
