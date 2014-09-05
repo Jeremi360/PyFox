@@ -41,7 +41,7 @@ class Tabs_Manager(grabbo.Notebook):
 
 
     def set_width(self, width):
-        self._sc Gtk.ScrolledWindow.props.width_request = -1
+        self._sc.props.width_request = -1
 
 
 class Group(grabbo.Builder):
