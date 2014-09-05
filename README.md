@@ -38,7 +38,8 @@ Done:
 
 * Tabs on Top - now on title bar:
 	 - rewrite using Gtk.Stock and Gtk.StockSwitcher
-	 - fixed!(very bad way)
+	 - fixed!
+	 - like dock!
 
 * google search in url bar
 * progress in url bar
