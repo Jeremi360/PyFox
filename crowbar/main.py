@@ -123,7 +123,9 @@ class Window(grabbo.Window):
         self.G.stack.show()
         self.show()
 
-    def
+    def on_close(self, button):
+
+        grabbo.Window.on_close(self, button)
 
 if __name__ == "__main__":
     app = Window()
