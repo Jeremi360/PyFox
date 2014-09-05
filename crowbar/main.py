@@ -35,26 +35,8 @@ class Tabs_Manager(grabbo.Notebook):
 
     def add_tab(self, url = None):
         con = Tab(self, url)
-        super(Tabs_Manager, self).add_tab(content = con.get(),tb = con.tb)
+        grabbo.Notebook.add_tab(self,content = con.get(),tb = con.tb)
         con.get().show()
-        w = self.get_width() + 220
-        self.set_width(w)
-        self.sc.show()
-
-    def set_width(self, width):
-        try:
-            w = self.get_screen_width()
-            if width < w*0.85:
-                self.sc.set_min_content_width(width)
-        except:
-            print("you must implement 'get_screen_width()' method")
-
-    def get_width(self):
-        return self.sc.get_min_content_width()
-
-    def get_screen_width(self):
-        return self.group.parent.get_screen().get_width()
-
 
 class Group(grabbo.Builder):
     def __init__(self, parent):
