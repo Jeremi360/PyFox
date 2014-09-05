@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 from gi.repository import Gtk
 import os
@@ -23,7 +23,7 @@ except:
 
 UI_Group = os.path.join('..', 'ui', 'Group.xml')
 
-class Tabs_Manager(grabbo.HB_Notebook):
+class Tabs_Manager(grabbo.Notebook):
     def __init__(self, group):
         self.group = group
         super(Tabs_Manager, self).__init__(group.stack)
@@ -35,11 +35,20 @@ class Tabs_Manager(grabbo.HB_Notebook):
 
     def add_tab(self, url = None):
         con = Tab(self, url)
-        grabbo.Notebook.add_tab(self,content = con.get(),tb = con.tb)
+        super(Tabs_Manager, self).add_tab(content = con.get(),tb = con.tb)
         con.get().show()
+        w = self.get_width() + 220
+        self.set_width(w)
+        self.sc.show()
 
-    def get_screen_width(self):
-        return self.group.parent.get_screen().get_width()
+    def set_width(self, width):
+        w = self.group.parent.get_screen().get_width()
+        if width < w*0.85:
+            self.sc.set_min_content_width(width)
+
+    def get_width(self):
+        return self.sc.get_min_content_width()
+
 
 class Group(grabbo.Builder):
     def __init__(self, parent):
