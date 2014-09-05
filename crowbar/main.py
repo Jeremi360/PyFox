@@ -79,7 +79,7 @@ class Window(grabbo.Window):
         i = os.path.join(r, 'icons', 'icon.png')
         self.set_icon_from_file(i)
 
-        self.tabs = Tabs_Manager(self.G)
+        self.tabs = Tabs_Manager(self, self.G)
 
         self.hb = Gtk.HeaderBar()
         self.hb.set_show_close_button(True)
