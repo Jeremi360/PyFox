@@ -21,14 +21,6 @@ except:
     print("Grabbo can be download from https://github.com/jeremi360/Grabbo")
     exit()
 
-
-class Hb_TabButton(grabbo.TabButton):
-    def on_button(self, button):
-        grabbo.TabButton.on_button(self, button)
-        w = self.n.get_width() - 200
-        self.n.set_width(w)
-
-
 UI_Group = os.path.join('..', 'ui', 'Group.xml')
 
 class Tabs_Manager(grabbo.Notebook):
