@@ -10,10 +10,10 @@ except:
 	exit()
 
 class Hb_TabButton(grabbo.TabButton):
-    def on_button(self, button):
-        grabbo.TabButton.on_button(self, button)
-        w = self.n.get_width() - 200
-        self.n.set_width(w)
+	def on_button(self, button):
+		grabbo.TabButton.on_button(self, button)
+		w = self.n.get_width() - 200
+		self.n.set_width(w)
 
 UI_Tab = os.path.join('..', 'ui', 'Tab.xml')
 
