@@ -42,9 +42,12 @@ class Tabs_Manager(grabbo.Notebook):
         self.sc.show()
 
     def set_width(self, width):
-        w = self.get_screen_width()
-        if width < w*0.85:
-            self.sc.set_min_content_width(width)
+        try:
+            w = self.get_screen_width()
+            if width < w*0.85:
+                self.sc.set_min_content_width(width)
+        except:
+            print("you must implement 'get_screen_width()' method")
 
     def get_width(self):
         return self.sc.get_min_content_width()
