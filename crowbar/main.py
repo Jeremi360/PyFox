@@ -30,6 +30,8 @@ class Tabs_Manager(grabbo.Notebook):
         super(Tabs_Manager, self).__init__(group.stack)
 
         self.add_tab("https://github.com/jeremi360/cRoWBaR")
+        self._vp.set_hexpand(True)
+
 
     def on_add(self, button):
         self.add_tab()
@@ -39,8 +41,8 @@ class Tabs_Manager(grabbo.Notebook):
         super(Tabs_Manager, self).add_tab(content = con.get(),tb = con.tb)
         con.get().show()
 
+
     def set_width(self, width):
-        #width = width*0.9
         self._sc.set_min_content_width(width)
 
 
@@ -85,9 +87,6 @@ class Window(grabbo.Window):
         self.set_icon_from_file(i)
 
         self.tabs = Tabs_Manager(self.G)
-        w = 400
-        #w = self.get_screen().get_width()
-        self.tabs.set_width(w)
 
         self.hb = Gtk.HeaderBar()
         self.hb.set_show_close_button(True)
