@@ -84,13 +84,14 @@ class Group(grabbo.Builder):
 class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
+        self.w = self.get_screen().get_width()
         self.G = Group(self)
 
         i = os.path.join(r, 'icons', 'icon.png')
         self.set_icon_from_file(i)
 
         self.tabs = Tabs_Manager(self.G)
-        self.w = self.get_screen().get_width()
+
         self.hb = Gtk.HeaderBar()
         self.hb.set_show_close_button(True)
         self.hb.set_title("Crowbar")
