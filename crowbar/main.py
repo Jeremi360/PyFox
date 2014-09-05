@@ -123,6 +123,8 @@ class Window(grabbo.Window):
         self.G.stack.show()
         self.show()
 
+    def
+
 if __name__ == "__main__":
     app = Window()
     Gtk.main()
