@@ -24,8 +24,9 @@ except:
 UI_Group = os.path.join('..', 'ui', 'Group.xml')
 
 class Tabs_Manager(grabbo.HB_Notebook):
-    def __init__(self, window, stack):
-        super(Tabs_Manager, self).__init__(window, stack)
+    def __init__(self, window, group):
+        self.group = group
+        super(Tabs_Manager, self).__init__(window, group.stack)
 
         self.add_tab("https://github.com/jeremi360/cRoWBaR")
 
@@ -78,7 +79,7 @@ class Window(grabbo.Window):
         i = os.path.join(r, 'icons', 'icon.png')
         self.set_icon_from_file(i)
 
-        self.tabs = Tabs_Manager(self, self.G.stack)
+        self.tabs = Tabs_Manager(self.G)
 
         self.hb = Gtk.HeaderBar()
         self.hb.set_show_close_button(True)
