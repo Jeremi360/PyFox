@@ -41,7 +41,8 @@ class Tabs_Manager(grabbo.Notebook):
         self.set_width(w)
 
     def set_width(self, width):
-        if self.group.parent.w*8.0 < width:
+        w = get_screen().get_width()
+        if w*8.0 < width:
             self.sc.set_min_content_width(width)
 
     def get_width(self):
@@ -84,7 +85,6 @@ class Group(grabbo.Builder):
 class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
-        self.w = self.get_screen().get_width()
         self.G = Group(self)
 
         i = os.path.join(r, 'icons', 'icon.png')
