@@ -34,7 +34,7 @@ class Tabs_Manager(grabbo.Notebook):
 
         if os.path.exists(conf):
             f = os.path.join(conf,"session.save")
-            save = pickle.load(open(f, "rb" ))
+            save = pickle.load(open(f, "rb"))
             for c in save:
                 self.add_content(c)
         else:
