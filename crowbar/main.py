@@ -33,7 +33,8 @@ class Tabs_Manager(grabbo.Notebook):
         super(Tabs_Manager, self).__init__(group.stack)
 
         if os.path.exists(conf):
-            save = pickle.load(open( "session.save", "rb" ))
+            f = os.path.join(conf,"session.save")
+            save = pickle.load(open(f, "rb" ))
             for c in save:
                 self.add_content(c)
         else:
@@ -129,7 +130,8 @@ class Window(grabbo.Window):
         else:
             os.mkdir(conf)
 
-        pickle.dump(open( "session.save", "wb"))
+
+        pickle.dump(open("session.save", "wb"))
         grabbo.Window.on_close(self, button)
 
 if __name__ == "__main__":
