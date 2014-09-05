@@ -124,6 +124,9 @@ class Window(grabbo.Window):
         self.show()
 
     def on_close(self, button):
+         if os.path.exists(conf):
+            pickle.dump(open( "session.save", "wb" ))
+
 
         grabbo.Window.on_close(self, button)
 
