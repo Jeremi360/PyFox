@@ -2,6 +2,7 @@
 
 from gi.repository import Gtk
 import os
+import pickle
 
 r = os.path.realpath(__file__)
 r = os.path.dirname(r)
@@ -21,6 +22,9 @@ except:
     print("Grabbo can be download from https://github.com/jeremi360/Grabbo")
     exit()
 
+home = os.path.expanduser("~")
+conf = os.path.join(home,'.crowbar')
+
 UI_Group = os.path.join('..', 'ui', 'Group.xml')
 
 class Tabs_Manager(grabbo.Notebook):
@@ -28,18 +32,26 @@ class Tabs_Manager(grabbo.Notebook):
         self.group = group
         super(Tabs_Manager, self).__init__(group.stack)
 
-        self.add_tab("https://github.com/jeremi360/cRoWBaR")
+        if os.path.exists(conf):
+            save = pickle.load(open( "session.save", "rb" ))
+            for t in save
+        else:
+            self.add_tab("https://github.com/jeremi360/cRoWBaR")
 
     def on_add(self, button):
         self.add_tab()
 
     def add_tab(self, url = None):
         con = Tab(self, url)
-        super(Tabs_Manager, self).add_tab(content = con.get(),tb = con.tb)
-        con.get().show()
+        self.add_content(con)
+
+    def add_content(self, content):
+        grabbo.Notebook.add_tab(self, content = content.get(), tb = content.tb)
+        content.get().show()
         w = self.get_width() + 205
         self.set_width(w)
         self.sc.show()
+
 
     def set_width(self, width):
         w = self.group.parent.get_screen().get_width()
