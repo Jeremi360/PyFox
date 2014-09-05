@@ -30,8 +30,6 @@ class Tabs_Manager(grabbo.Notebook):
         super(Tabs_Manager, self).__init__(group.stack)
 
         self.add_tab("https://github.com/jeremi360/cRoWBaR")
-        self._vp.set_hexpand(True)
-
 
     def on_add(self, button):
         self.add_tab()
@@ -43,7 +41,7 @@ class Tabs_Manager(grabbo.Notebook):
 
 
     def set_width(self, width):
-        self._sc.set_min_content_width(width)
+        self._sc Gtk.ScrolledWindow.props.width_request = -1
 
 
 class Group(grabbo.Builder):
