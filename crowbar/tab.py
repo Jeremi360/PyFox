@@ -9,13 +9,17 @@ except:
 	print("Grabbo can be download from https://github.com/jeremi360/Grabbo")
 	exit()
 
+r = os.path.realpath(__file__)
+r = os.path.dirname(r)
+r = os.path.dirname(r)
+
 class Hb_TabButton(grabbo.TabButton):
 	def on_close(self, button):
-		grabbo.TabButton.on_close(self, button)
-		w = self.n.get_width() - 205
+		w = self.n.get_width() - 210
 		self.n.set_width(w)
+		grabbo.TabButton.on_close(self, button)
 
-UI_Tab = os.path.join('..', 'ui', 'Tab.xml')
+UI_Tab = os.path.join(r, 'ui', 'Tab.xml')
 
 class Tab(grabbo.Builder):
 	def __init__(self, notebook, url = None):
@@ -35,6 +39,7 @@ class Tab(grabbo.Builder):
 		self.find = self.ui.get_object("find")
 		self.book = self.ui.get_object("book")
 		self.ExtBox = self.ui.get_object("ExtBox")
+		self.fullb = self.ui.get_object("Full")
 
 		#findbox
 		self.findbox = self.ui.get_object("findbox")
@@ -67,6 +72,7 @@ class Tab(grabbo.Builder):
 		self.zoomin.connect("clicked", self.zoom_in)
 		self.zoomout.connect("clicked", self.zoom_out)
 		self.zoomres.connect("clicked",  self.reset_zoom)
+		self.fullb.connect("clicked", self.on_full)
 
 		#findbox
 		self.findfb.connect("activate", self.on_find)
@@ -85,6 +91,11 @@ class Tab(grabbo.Builder):
 		self.notebook = notebook
 		self.tb = Hb_TabButton(self.notebook, self.get())
 
+	def on_full(self, button):
+		if button.get_active():
+			self.notebook.MC.parent.fullscreen()
+		else:
+			self.notebook.MC.parent.unfullscreen()
 
 	def get(self):
 		return self.ui.get_object("box")
@@ -162,7 +173,8 @@ class Tab(grabbo.Builder):
 		else:
 			self.tb.button.set_label(title)
 
-		self.notebook.group.set_title(title)
+		self.notebook.MC.set_title(title)
+		self.tb.button.set_tooltip_text(title)
 
 	def load_icon(self, webview, url):
 		try:

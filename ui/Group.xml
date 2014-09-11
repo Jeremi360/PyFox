@@ -7,11 +7,6 @@
     <property name="can_focus">False</property>
     <property name="icon_name">emblem-downloads</property>
   </object>
-  <object class="GtkImage" id="FullIcon">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="icon_name">view-fullscreen</property>
-  </object>
   <object class="GtkImage" id="MenuIcon">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -38,15 +33,16 @@
       <placeholder/>
     </child>
   </object>
-  <object class="GtkImage" id="UnFullIcon">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="icon_name">view-restore</property>
-  </object>
   <object class="GtkImage" id="image1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">user-trash</property>
+  </object>
+  <object class="GtkImage" id="image2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixel_size">20</property>
+    <property name="icon_name">emblem-documents</property>
   </object>
   <object class="GtkBox" id="EndBox">
     <property name="visible">True</property>
@@ -67,32 +63,16 @@
       </packing>
     </child>
     <child>
-      <object class="GtkButton" id="Full">
+      <object class="GtkButton" id="Groups">
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="receives_default">True</property>
-        <property name="image">FullIcon</property>
+        <property name="image">image2</property>
         <property name="relief">none</property>
       </object>
       <packing>
         <property name="expand">False</property>
-        <property name="fill">False</property>
-        <property name="pack_type">end</property>
-        <property name="position">0</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkButton" id="UnFull">
-        <property name="visible">True</property>
-        <property name="can_focus">True</property>
-        <property name="receives_default">True</property>
-        <property name="image">UnFullIcon</property>
-        <property name="relief">none</property>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">False</property>
-        <property name="pack_type">end</property>
+        <property name="fill">True</property>
         <property name="position">1</property>
       </packing>
     </child>

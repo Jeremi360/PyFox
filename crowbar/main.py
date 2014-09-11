@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 
-from gi.repository import Gtk
+from gi.repository import Gtk, WebKit
 import os
-import pickle
 
 r = os.path.realpath(__file__)
 r = os.path.dirname(r)
@@ -25,20 +24,12 @@ except:
 home = os.path.expanduser("~")
 conf = os.path.join(home,'.crowbar')
 
-UI_Group = os.path.join('..', 'ui', 'Group.xml')
+UI_Group = os.path.join(r, 'ui', 'Group.xml')
 
 class Tabs_Manager(grabbo.Notebook):
-    def __init__(self, group):
-        self.group = group
-        super(Tabs_Manager, self).__init__(group.stack)
-
-        if os.path.exists(conf):
-            f = os.path.join(conf,"session.save")
-            save = pickle.load(open(f, "rb"))
-            for c in save:
-                self.add_content(c)
-        else:
-            self.add_tab("https://github.com/jeremi360/cRoWBaR")
+    def __init__(self, mc):
+        self.MC = mc
+        super(Tabs_Manager, self).__init__(Gtk.Stack())
 
     def on_add(self, button):
         self.add_tab()
@@ -48,15 +39,14 @@ class Tabs_Manager(grabbo.Notebook):
         self.add_content(con)
 
     def add_content(self, content):
-        grabbo.Notebook.add_tab(self, content = content.get(), tb = content.tb)
+        grabbo.Notebook.add_tab(self, content.get(), content.tb)
         content.get().show()
-        w = self.get_width() + 205
+        w = self.get_width() + 210
         self.set_width(w)
         self.sc.show()
 
-
     def set_width(self, width):
-        w = self.group.parent.get_screen().get_width()
+        w = self.MC.parent.get_screen().get_width()
         if width < w*0.85:
             self.sc.set_min_content_width(width)
 
@@ -64,48 +54,32 @@ class Tabs_Manager(grabbo.Notebook):
         return self.sc.get_min_content_width()
 
 
-class Group(grabbo.Builder):
+class Main_Controls(grabbo.Builder):
     def __init__(self, parent):
         grabbo.Builder.__init__(self, UI_Group)
-
-        self.stack = Gtk.Stack()
 
         self.parent = parent
         self.menub = self.ui.get_object("MenuButton")
         self.downs = self.ui.get_object("Downs")
         self.full = self.ui.get_object("Full")
-        self.unfull = self.ui.get_object("UnFull")
         self.StartBox = self.ui.get_object("StartBox")
         self.EndBox = self.ui.get_object("EndBox")
-
-        self.unfull.hide()
-        self.full.hide()
-
-        #self.full.connect("clicked", self.on_full)
-        #self.unfull.connect("clicked", self.on_unfull)
-
-    def on_full(self, button):
-        self.full.hide()
-        self.parent.fullscreen()
-
-    def on_unfull(self, button):
-        self.unfull.hide()
-        self.parent.unfullscreen()
-        self.full.show()
 
     def set_title(self, title):
         self.parent.hb.set_title("Crowbar: " + title)
 
-
 class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
-        self.G = Group(self)
+        self.MC = Main_Controls(self)
 
         i = os.path.join(r, 'icons', 'icon.png')
         self.set_icon_from_file(i)
 
-        self.tabs = Tabs_Manager(self.G)
+        self.tabs = Tabs_Manager(self.MC)
+
+        self.tabs.add_tab("https://github.com/jeremi360/cRoWBaR")
+
 
         self.hb = Gtk.HeaderBar()
         self.hb.set_show_close_button(True)
@@ -113,25 +87,18 @@ class Window(grabbo.Window):
         self.hb.set_custom_title(self.tabs.get())
         self.hb.props.border_width = 0
         self.hb.props.margin = 0
-        self.hb.pack_start(self.G.StartBox)
-        self.hb.pack_end(self.G.EndBox)
+        self.hb.pack_start(self.MC.StartBox)
+        self.hb.pack_end(self.MC.EndBox)
         self.hb.set_has_subtitle(False)
         self.set_titlebar(self.hb)
 
-        self.add(self.G.stack)
+        self.add(self.tabs.stack)
 
         self.hb.show()
-        self.G.stack.show()
+        self.tabs.stack.show()
         self.show()
 
     def on_close(self, button):
-        if os.path.exists(conf):
-            pass
-        else:
-            os.mkdir(conf)
-
-        f = os.path.join(conf,"session.save")
-        pickle.dump(, open(f, "wb"))
         grabbo.Window.on_close(self, button)
 
 if __name__ == "__main__":
