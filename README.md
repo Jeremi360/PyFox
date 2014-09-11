@@ -1,4 +1,6 @@
-**cRoWBaR** - Rethink Web BRowser
+![Logo][5] **cRoWBaR** - Rethink Web BRowser
+
+Icon/Logo based on *Vinegard* icon from icon theme [*Faenza* by tiheum][6]
 
 Screenshot:
 ![cRoWBaR in Action][1]
@@ -36,6 +38,7 @@ To run just double click on main.py in corwbar folder.
 
 Done:
 
+* Fullscreen mode
 * Tabs on Top - now on title bar:
 	 - rewrite using Gtk.Stock and Gtk.StockSwitcher
 	 - fixed!
@@ -49,6 +52,7 @@ Done:
 * show favicon
 
 ToDo:
+
 * History browsing
 * Bookmarks
 * newtab page
@@ -59,9 +63,11 @@ ToDo:
 * Settings
 * restore previous session
 * menu
-* fullscreen mode
+
 
 [1]:https://raw.githubusercontent.com/jeremi360/cRoWBaR/master/shot.png
 [2]:https://www.python.org/
 [3]:http://sourceforge.net/projects/pygobjectwin32/files/
 [4]:https://github.com/jeremi360/Grabbo
+[5]:https://raw.githubusercontent.com/jeremi360/cRoWBaR/master/icons/icon.png
+[6]:http://tiheum.deviantart.com/art/Faenza-Icons-173323228
