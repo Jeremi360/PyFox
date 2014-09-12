@@ -124,7 +124,7 @@ class Tab(grabbo.Builder):
 		self.webview.zoom_out()
 
 
-	def on_find(self, button):
+	def on_find(self, widget):
 		self.webview.search_text(
 								self.findfb.get_text(),
 								False, True, True
