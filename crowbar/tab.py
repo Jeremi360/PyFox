@@ -72,7 +72,7 @@ class Tab(grabbo.Builder):
 		self.zoomout.connect("clicked", self.zoom_out)
 		self.zoomres.connect("clicked",  self.reset_zoom)
 		self.fullb.connect("clicked", self.on_full)
-		self.urlen.connect("active", self.url_active)
+		self.urlen.connect("activate", self.url_active)
 
 		#findbox
 		self.findfb.connect("activate", self.on_find)
