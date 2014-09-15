@@ -80,7 +80,6 @@ class Window(grabbo.Window):
 
         self.tabs.add_tab("https://github.com/jeremi360/cRoWBaR")
 
-
         self.hb = Gtk.HeaderBar()
         self.hb.set_show_close_button(True)
         self.hb.set_title("Crowbar")
