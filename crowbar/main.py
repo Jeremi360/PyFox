@@ -86,10 +86,7 @@ class Window(grabbo.Window):
         self.hb.set_title("Crowbar")
         self.hb.set_custom_title(self.tabs.get())
         self.hb.props.border_width = 0
-        self.hb.props.margin_end = 0
-        self.hb.props.margin_start = 0
         self.hb.props.margin = 0
-        self.hb.props.margin_top = 20
         self.hb.pack_start(self.MC.StartBox)
         self.hb.pack_end(self.MC.EndBox)
         self.hb.set_has_subtitle(False)
