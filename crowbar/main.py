@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from gi.repository import Gtk, WebKit
+from gi.repository import Gtk
 import os
 
 r = os.path.realpath(__file__)
