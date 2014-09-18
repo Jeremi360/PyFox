@@ -99,7 +99,7 @@ class Tab(grabbo.Builder):
 
 		if self.webview.can_go_forward():
 			l = Gtk.Label("forward:")
-			box.add(l)
+
 			bl = fbl.get_forward_list_with_limit(5)
 			for i in bl:
 				b = Gtk.Button(i.get_title())
@@ -124,7 +124,7 @@ class Tab(grabbo.Builder):
 
 		if self.webview.can_go_back():
 			l = Gtk.Label("back:")
-			box.add(l)
+
 			bl = fbl.get_back_list_with_limit(5)
 			for i in bl:
 				b = Gtk.Button(i.get_title())
