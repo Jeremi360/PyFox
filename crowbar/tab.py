@@ -1,4 +1,5 @@
-from gi.repository import Gtk, WebKit, Granite
+from gi.repository import Gtk, WebKit
+from gi.repository.Granite import WidgetsPopOver as PopOver
 import os
 
 
@@ -95,7 +96,7 @@ class Tab(grabbo.Builder):
 
 	def on_hist(self, button):
 		if self.webview.can_go_forward() or self.webview.can_go_back():
-			HList = Granite.WidgetsPopOver()
+			HList = PopOver()
 			HList.get_action_area().set_orientation(Gtk.Orientation.VERTICAL)
 
 			fbl = self.webview.get_back_forward_list()
@@ -111,9 +112,9 @@ class Tab(grabbo.Builder):
 
 					try:
 						pixbuf = self.webview.get_icon_pixbuf()
-						b.get_image().new_from_pixbuf(pixbuf)
+						b.get_image().set_from_pixbuf(pixbuf)
 					except:
-						b.get_image().new_from_icon_name("applications-internet")
+						b.get_image().set_from_icon_name("applications-internet")
 
 					def on_button(button):
 						s = self.make_short(i.get_uri())
@@ -133,9 +134,9 @@ class Tab(grabbo.Builder):
 
 					try:
 						pixbuf = self.webview.get_icon_pixbuf()
-						b.get_image().new_from_pixbuf(pixbuf)
+						b.get_image().set_from_pixbuf(pixbuf)
 					except:
-						b.get_image().new_from_icon_name("applications-internet")
+						b.get_image().set_from_icon_name("applications-internet")
 
 					def on_button(button):
 						self.webview.load_uri(i.get_uri())
@@ -148,7 +149,24 @@ class Tab(grabbo.Builder):
 
 	def on_full(self, button):
 		self.notebook.MC.parent.fullscreen()
-		self.t
+		self.ToolBox.hide()
+		unfullpop = PopOver()
+		button = Gtk.Button()
+		img = Gtk.Image()
+		button.set_image(img)
+		button.get_image().set_from_icon_name("view-restore")
+
+		def on_button(button):
+			unfullpop.hide()
+			self.notebook.MC.parent.unfullscreen()
+			self.ToolBox.show()
+
+		button.connect("clicked", on_button)
+
+		unfullpop.add_action_widget(button, 1)
+		unfullpop.move_to_widget(self.fullb, True)
+
+
 
 		self.notebook.MC.parent.unfullscreen()
 
