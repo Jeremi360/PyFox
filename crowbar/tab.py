@@ -84,8 +84,9 @@ class Tab(grabbo.Builder):
 			self.urlen.set_text(url)
 			self.webview.load_uri(url)
 
-		self.next.set_sensitive(False)
-		self.back.set_sensitive(False)
+		if self.webview.can_go_back_or_forward() == False:
+			self.next.set_sensitive(False)
+			self.back.set_sensitive(False)
 
 		#show
 		self.webview.show()
@@ -105,14 +106,14 @@ class Tab(grabbo.Builder):
 		self.webview.set_zoom_level(1.0)
 
 	def go_back(self, button):
-		if self.webview.can_go_back:
+		if self.webview.can_go_back():
 			self.back.set_sensitive(True)
 			self.webview.go_back()
 		else:
 			self.back.set_sensitive(False)
 
 	def go_next(self, button):
-		if self.webview.can_go_back:
+		if self.webview.can_go_forward():
 			self.next.set_sensitive(True)
 			self.webview.go_forward()
 		else:
