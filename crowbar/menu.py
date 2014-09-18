@@ -22,27 +22,56 @@ except:
     exit()
 
 Menu_UI = os.path.join(r, 'ui', 'Menu.xml')
+
 class Menu(grabbo.Builder):
-    def __init__(self, current_tab):
+    def __init__(self, po): #, current_tab):
         grabbo.Builder.__init__(self, Menu_UI)
-        self.ctab = current_tab
+
+        #self.ctab = current_tab
+        self.po = po
         self.Home = self.ui.get_object("Home")
-        self.NewWin =  self.ui.get_object("NewWin")
-        self.NewPriv = self.ui.get_object("NewPriv")
+        self.About =  self.ui.get_object("About")
         self.Open = self.ui.get_object("Open")
         self.Save = self.ui.get_object("Save")
         self.Print = self.ui.get_object("Print")
         self.Settings = self.ui.get_object("Settings")
         self.Addons = self.ui.get_object("Addons")
         self.Tools = self.ui.get_object("Tools")
+        self.RBug = self.ui.get_object("RaportBug")
 
         self.Home.connect("clicked", self.on_home)
+        self.About.connect("clicked", self.on_about)
 
     def on_home(self, button):
-        self.ctab.load_url(variable.home)
+        #self.ctab.load_url(variable.home)
+        self.po.hide()
+
+    def on_about(self, button):
+        ad = AboutD()
+        ad.show_all()
+        self.po.hide()
 
     def get(self):
         return self.ui.get_object("grid")
+
+class AboutD(Gtk.AboutDialog):
+    def __init__(self):
+        Gtk.AboutDialog.__init__(self)
+
+        img = Gtk.Image()
+        img.set_from_file(variable.icon)
+        pb = img.get_pixbuf()
+
+        self.set_name(variable.appname)
+        self.set_version(variable.version)
+        self.set_authors(variable.authors)
+        self.set_logo(pb)
+        self.set_icon_from_file(variable.icon)
+        self.set_comments(variable.comment)
+        self.set_license_type(Gtk.License.GPL_3_0)
+
+        self.set_website(variable.home)
+
 
 
 

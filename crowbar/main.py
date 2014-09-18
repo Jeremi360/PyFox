@@ -10,10 +10,12 @@ r = os.path.dirname(r)
 try:
     from crowbar.tab import Tab
     from crowbar import variable
+    from crowbar import menu
     print("Eclipse way")
 except:
     from tab import Tab
     import variable
+    import menu
     print("Normal way")
 
 try:
@@ -26,7 +28,6 @@ except:
 home = os.path.expanduser("~")
 conf = os.path.join(home,'.crowbar')
 
-UI_Group = os.path.join(r, 'ui', 'Main.xml')
 
 class Tabs_Manager(grabbo.Notebook):
     def __init__(self, mc):
@@ -55,20 +56,28 @@ class Tabs_Manager(grabbo.Notebook):
     def get_width(self):
         return self.sc.get_min_content_width()
 
-
+UI_Main = os.path.join(r, 'ui', 'Main.xml')
 class Main_Controls(grabbo.Builder):
     def __init__(self, parent):
-        grabbo.Builder.__init__(self, UI_Group)
+        grabbo.Builder.__init__(self, UI_Main)
 
         self.parent = parent
         self.menub = self.ui.get_object("MenuButton")
         self.downs = self.ui.get_object("Downs")
-        self.full = self.ui.get_object("Full")
         self.StartBox = self.ui.get_object("StartBox")
         self.EndBox = self.ui.get_object("EndBox")
 
+        self.menub.connect("clicked", self.on_menu)
+
     def set_title(self, title):
         self.parent.hb.set_title(variable.appname + ": " + title)
+
+    def on_menu(self, button):
+        po = Gtk.Popover.new(self.menub)
+        po.set_pointing_to(self.menub.get_allocation())
+        m = menu.Menu(po).get()
+        po.add(m)
+        po.show()
 
 class Window(grabbo.Window):
     def __init__(self):
