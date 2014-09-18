@@ -148,7 +148,6 @@ class Tab(grabbo.Builder):
 					HList.add_action_widget(b, 2)
 
 
-			HList.draw(cairo.Content)
 			HList.move_to_widget(self.hist, True)
 
 	def on_full(self, button):
