@@ -1,10 +1,10 @@
 from gi.repository import Gtk, WebKit
-from gi.repository.Granite import WidgetsPopOver as PopOver
 import os
 
 
 try:
 	import grabbo
+	from grabbo import granite
 except:
 	print("Please first install Grabbo in your python path or copy to crowbar dir")
 	print("Grabbo can be download from https://github.com/jeremi360/Grabbo")
@@ -96,7 +96,7 @@ class Tab(grabbo.Builder):
 
 	def on_hist(self, button):
 		if self.webview.can_go_forward() or self.webview.can_go_back():
-			HList = PopOver()
+			HList = granite.PopOver()
 			HList.get_action_area().set_orientation(Gtk.Orientation.VERTICAL)
 
 			fbl = self.webview.get_back_forward_list()
