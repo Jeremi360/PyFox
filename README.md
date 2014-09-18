@@ -34,11 +34,13 @@ If you won to compile/run this you will need:
 
 To run just double click on main.py in corwbar folder.
 
-version: 0.1.8
+version: 0.1.10
 "Warning: This program is not finished"
 
 Done:
 
+* AboutDialog
+* Menu - only about button work now
 * history mini list
 * Full screen mode
 * Tabs on Top - now on title bar:
