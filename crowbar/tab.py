@@ -95,13 +95,14 @@ class Tab(grabbo.Builder):
 
 	def on_hist(self, button):
 		fbl = self.webview.get_back_forward_list()
+		print(fbl.get_back_list_with_limit(5))
 
 		if self.webview.can_go_forward():
 			l = Gtk.Label("forward:")
 			self.HList.add(l)
-			bl = fbl.get_back_list_with_limit(5)
+			bl = fbl.get_forward_list_with_limit(5)
 			for b in bl:
-				i = grabbo
+				i = grabbo.ListItem(b.)
 
 	def on_full(self, button):
 		if button.get_active():
