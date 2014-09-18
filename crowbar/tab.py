@@ -106,8 +106,6 @@ class Tab(grabbo.Builder):
 			HList.set_margin_right(0)
 			HList.set_margin_start(0)
 			HList.set_margin_top(0)
-			HList.set_style(Gtk.StyleContext())
-			
 
 			fbl = self.webview.get_back_forward_list()
 
@@ -154,7 +152,7 @@ class Tab(grabbo.Builder):
 
 					b.connect("clicked", on_button)
 					HList.add_action_widget(b, 2)
-			
+
 			HList.move_to_widget(self.hist, True)
 
 	def on_full(self, button):
