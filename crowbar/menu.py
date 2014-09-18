@@ -7,9 +7,11 @@ r = os.path.dirname(r)
 
 try:
     from crowbar.tab import Tab
+    from crowbar import variable
     print("Eclipse way")
 except:
     from tab import Tab
+    import variable
     print("Normal way")
 
 try:
@@ -36,7 +38,7 @@ class Menu(grabbo.Builder):
         self.Tools = self.ui.get_object("Tools")
 
     def on_home(self, button):
-        self.ctab.load_url("https://github.com/jeremi360/cRoWBaR")
+        self.ctab.load_url(variable.home)
 
     def get(self):
         return self.ui.get_object("grid")
