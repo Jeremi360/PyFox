@@ -84,6 +84,9 @@ class Tab(grabbo.Builder):
 			self.urlen.set_text(url)
 			self.webview.load_uri(url)
 
+		self.next.set_sensitive(False)
+		self.back.set_sensitive(False)
+
 		#show
 		self.webview.show()
 		self.notebook = notebook
