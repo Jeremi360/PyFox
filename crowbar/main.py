@@ -24,7 +24,7 @@ except:
 home = os.path.expanduser("~")
 conf = os.path.join(home,'.crowbar')
 
-UI_Group = os.path.join(r, 'ui', 'Group.xml')
+UI_Group = os.path.join(r, 'ui', 'Main.xml')
 
 class Tabs_Manager(grabbo.Notebook):
     def __init__(self, mc):
