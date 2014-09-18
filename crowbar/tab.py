@@ -102,19 +102,9 @@ class Tab(grabbo.Builder):
 		self.webview.set_zoom_level(1.0)
 
 	def go_back(self, button):
-		if self.webview.can_go_back():
-			self.back.set_sensitive(True)
-		else:
-			self.back.set_sensitive(False)
-
 		self.webview.go_back()
 
 	def go_next(self, button):
-		if self.webview.can_go_forward():
-			self.next.set_sensitive(True)
-		else:
-			self.next.set_sensitive(False)
-
 		self.webview.go_forward()
 
 	def on_fresh(self, button):
