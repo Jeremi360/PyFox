@@ -36,10 +36,13 @@ class Menu(grabbo.Builder):
         self.Addons = self.ui.get_object("Addons")
         self.Tools = self.ui.get_object("Tools")
 
+        self.Home.connect("clicked", self.on_home)
+
     def on_home(self, button):
         self.ctab.load_url(variable.home)
 
     def get(self):
         return self.ui.get_object("grid")
+
 
 
