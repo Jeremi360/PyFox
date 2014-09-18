@@ -79,7 +79,7 @@ class Tab(grabbo.Builder):
 		self.backfb.connect("clicked", self.find_back)
 		self.nextfb.connect("clicked", self.find_next)
 
-		self.HList = Granite.WidgetsPopOver.new()
+		self.HList = Granite.WidgetsPopOver()
 
 		#last settings
 		self.webview.set_full_content_zoom(True)
@@ -105,7 +105,8 @@ class Tab(grabbo.Builder):
 
 				def on_button(button):
 					self.webview.load_uri(b.get_uri())
-					self.urlen.set_text(b.get_uri())
+					#self.urlen.set_text(b.get_uri())
+					self.HList.hide()
 
 
 
