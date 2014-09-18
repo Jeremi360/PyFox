@@ -73,7 +73,7 @@ class Tab(grabbo.Builder):
 		self.zoomin.connect("clicked", self.zoom_in)
 		self.zoomout.connect("clicked", self.zoom_out)
 		self.zoomres.connect("clicked",  self.reset_zoom)
-		self.fullb.connect("clicked", self.on_full)
+		self.fullb.connect("toggled", self.on_full)
 		self.urlen.connect("activate", self.url_active)
 		self.hist.connect("clicked", self.on_hist)
 
@@ -148,24 +148,10 @@ class Tab(grabbo.Builder):
 			HList.move_to_widget(self.hist, True)
 
 	def on_full(self, button):
-		self.notebook.MC.parent.fullscreen()
-		self.ToolBox.hide()
-		unfullpop = PopOver()
-		button = Gtk.Button()
-		img = Gtk.Image()
-		button.set_image(img)
-		button.get_image().set_from_icon_name("view-restore", Gtk.IconSize.BUTTON)
-
-		def on_button(button):
-			unfullpop.hide()
+		if self.fullb.get_active():
+			self.notebook.MC.parent.fullscreen()
+		else:
 			self.notebook.MC.parent.unfullscreen()
-			self.ToolBox.show()
-
-		button.connect("clicked", on_button)
-		unfullpop.add_action_widget(button, 2)
-		r = self.webview.get_allocation()
-		unfullpop.move_to_coords(r.width, -50, True)
-
 
 	def get(self):
 		return self.ui.get_object("box")
