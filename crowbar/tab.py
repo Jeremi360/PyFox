@@ -81,6 +81,7 @@ class Tab(grabbo.Builder):
 		self.nextfb.connect("clicked", self.find_next)
 
 		self.HList = Granite.WidgetsPopOver()
+		self.HList.get_content_area().set_orientation(Gtk.Orientation.VERTICAL)
 
 		#last settings
 		self.webview.set_full_content_zoom(True)
