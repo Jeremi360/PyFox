@@ -81,7 +81,7 @@ class Tab(grabbo.Builder):
 		self.nextfb.connect("clicked", self.find_next)
 
 		self.HList = Granite.WidgetsPopOver()
-		self.HList.get_content_area().set_orientation(Gtk.Orientation.VERTICAL)
+		self.HList.get_action_area().set_orientation(Gtk.Orientation.VERTICAL)
 
 		#last settings
 		self.webview.set_full_content_zoom(True)
@@ -100,6 +100,7 @@ class Tab(grabbo.Builder):
 
 		if self.webview.can_go_forward():
 			bl = fbl.get_forward_list_with_limit(5)
+
 			for i in bl:
 				s = self.make_short(i.get_title())
 				b = Gtk.Button(s)
@@ -117,6 +118,7 @@ class Tab(grabbo.Builder):
 					s = self.make_short(i.get_uri())
 					self.webview.load_uri(s)
 					self.HList.hide()
+
 
 				b.connect("clicked", on_button)
 				self.HList.add_action_widget(b, 2)
