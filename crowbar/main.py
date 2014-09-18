@@ -9,9 +9,11 @@ r = os.path.dirname(r)
 
 try:
     from crowbar.tab import Tab
+    from crowbar import variable
     print("Eclipse way")
 except:
     from tab import Tab
+    import variable
     print("Normal way")
 
 try:
