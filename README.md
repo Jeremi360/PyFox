@@ -26,8 +26,9 @@ If you won to compile/run this you will need:
 
 - [python version 3.x][2]
 - Gtk(3.12 or higher) and Webkit from gi repository:
+
 	- Linux see your dist repo
-	- Windows download [from hear][3] 
+	- Windows download [from hear][3]
 
 - My [Grabbo lib][4]
 
