@@ -13,8 +13,6 @@ r = os.path.realpath(__file__)
 r = os.path.dirname(r)
 r = os.path.dirname(r)
 
-
-
 class Hb_TabButton(grabbo.TabButton):
 	def on_close(self, button):
 		w = self.n.get_width() - 210
@@ -37,8 +35,9 @@ class Tab(grabbo.Builder):
 		self.zoomres = self.ui.get_object("zoomres")
 		self.zoomout = self.ui.get_object("zoomout")
 		self.find = self.ui.get_object("find")
-		self.book = self.ui.get_object("book")
-		self.ExtBox = self.ui.get_object("ExtBox")
+		self.book = self.ui.get_object("book") #todo
+		self.hist = self.ui.get_object("hist") #todo
+		self.ExtBox = self.ui.get_object("ExtBox") #todo
 		self.fullb = self.ui.get_object("Full")
 
 		#findbox
@@ -78,6 +77,8 @@ class Tab(grabbo.Builder):
 		self.findfb.connect("activate", self.on_find)
 		self.backfb.connect("clicked", self.find_back)
 		self.nextfb.connect("clicked", self.find_next)
+
+		self.HList = Granite.WidgetsPopOver.new()
 
 		#last settings
 		self.webview.set_full_content_zoom(True)
