@@ -155,6 +155,7 @@ class Tab(grabbo.Builder):
 		img = Gtk.Image()
 		button.set_image(img)
 		button.get_image().set_from_icon_name("view-restore", Gtk.IconSize.BUTTON)
+		unfullpop.move_to_widget(self.fullb)
 
 		def on_button(button):
 			unfullpop.hide()
@@ -164,7 +165,7 @@ class Tab(grabbo.Builder):
 		button.connect("clicked", on_button)
 
 		unfullpop.add_action_widget(button, 1)
-		unfullpop.move_to_widget(self.fullb, True)
+
 
 	def get(self):
 		return self.ui.get_object("box")
