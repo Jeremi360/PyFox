@@ -112,10 +112,9 @@ class Tab(grabbo.Builder):
 				b.set_image(img)
 
 				def on_button(button):
-					self.webview.load_uri(i.get_uri())
-					#self.urlen.set_text(i.get_uri())
+					s = self.make_short(i.get_uri())
+					self.webview.load_uri(s)
 					self.HList.hide()
-					#self.HList.remove(box)
 
 				b.connect("clicked", on_button)
 				self.HList.add_action_widget(b, 1)
