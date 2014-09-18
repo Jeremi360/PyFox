@@ -165,7 +165,7 @@ class Tab(grabbo.Builder):
 
 		button.connect("clicked", on_button)
 
-		unfullpop.add_action_widget(button, 1)
+		unfullpop.add_action_widget(button, 2)
 		unfullpop.show()
 
 
