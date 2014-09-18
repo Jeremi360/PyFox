@@ -118,7 +118,7 @@ class Tab(grabbo.Builder):
 					self.HList.hide()
 
 				b.connect("clicked", on_button)
-				self.HList.add_action_widget(b, 1)
+				self.HList.add_action_widget(b, 2)
 
 		if self.webview.can_go_back():
 			bl = fbl.get_back_list_with_limit(5)
@@ -140,7 +140,7 @@ class Tab(grabbo.Builder):
 					self.HList.hide()
 
 				b.connect("clicked", on_button)
-				self.HList.add_action_widget(b, 1)
+				self.HList.add_action_widget(b, 2)
 
 		self.HList.move_to_widget(self.hist, True)
 
