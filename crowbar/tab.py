@@ -98,7 +98,8 @@ class Tab(grabbo.Builder):
 		fbl = self.webview.get_back_forward_list()
 		box = Gtk.Box()
 		box.set_orientation(Gtk.Orientation.VERTICAL)
-		self.HList.container = box
+		self.HList.remove(self.HList.container)
+		self.add(box)
 
 		if self.webview.can_go_forward():
 			l = Gtk.Label("forward:")
@@ -123,7 +124,7 @@ class Tab(grabbo.Builder):
 					self.HList.remove(box)
 
 				b.connect("clicked", on_button)
-				self.box.add(b)
+				box.add(b)
 
 		if self.webview.can_go_back():
 			l = Gtk.Label("back:")
