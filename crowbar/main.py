@@ -68,7 +68,7 @@ class Main_Controls(grabbo.Builder):
         self.EndBox = self.ui.get_object("EndBox")
 
     def set_title(self, title):
-        self.parent.hb.set_title(variable.appname ": " + title)
+        self.parent.hb.set_title(variable.appname + ": " + title)
 
 class Window(grabbo.Window):
     def __init__(self):
@@ -83,7 +83,7 @@ class Window(grabbo.Window):
 
         self.hb = Gtk.HeaderBar()
         self.hb.set_show_close_button(True)
-        self.hb.set_title("Crowbar")
+        self.hb.set_title(variable.appname)
         self.hb.set_custom_title(self.tabs.get())
         self.hb.props.border_width = 0
         self.hb.props.margin = 0
