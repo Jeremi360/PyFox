@@ -80,9 +80,6 @@ class Tab(grabbo.Builder):
 		self.backfb.connect("clicked", self.find_back)
 		self.nextfb.connect("clicked", self.find_next)
 
-		self.HList = Granite.WidgetsPopOver()
-		self.HList.get_action_area().set_orientation(Gtk.Orientation.VERTICAL)
-
 		#last settings
 		self.webview.set_full_content_zoom(True)
 
@@ -96,6 +93,9 @@ class Tab(grabbo.Builder):
 		self.tb = Hb_TabButton(self.notebook, self.get())
 
 	def on_hist(self, button):
+		HList = Granite.WidgetsPopOver()
+		HList.get_action_area().set_orientation(Gtk.Orientation.VERTICAL)
+
 		fbl = self.webview.get_back_forward_list()
 
 		if self.webview.can_go_forward():
@@ -104,46 +104,45 @@ class Tab(grabbo.Builder):
 			for i in bl:
 				s = self.make_short(i.get_title())
 				b = Gtk.Button(s)
-
 				img = Gtk.Image()
+				b.set_image(img)
+
 				try:
 					pixbuf = self.webview.get_icon_pixbuf()
-					img.new_from_pixbuf(pixbuf)
+					b.get_image().new_from_pixbuf(pixbuf)
 				except:
-					img.new_from_icon_name("applications-internet")
+					b.get_image().new_from_icon_name("applications-internet")
 
-				b.set_image(img)
+
 
 				def on_button(button):
 					s = self.make_short(i.get_uri())
 					self.webview.load_uri(s)
-					self.HList.hide()
-
+					HList.hide()
 
 				b.connect("clicked", on_button)
-				self.HList.add_action_widget(b, 2)
+				HList.add_action_widget(b, 2)
 
 		if self.webview.can_go_back():
 			bl = fbl.get_back_list_with_limit(5)
 			for i in bl:
 				s = self.make_short(i.get_title())
 				b = Gtk.Button(s)
-
 				img = Gtk.Image()
+				b.set_image(img)
+
 				try:
 					pixbuf = self.webview.get_icon_pixbuf()
-					img.new_from_pixbuf(pixbuf)
+					b.get_image().new_from_pixbuf(pixbuf)
 				except:
-					img.new_from_icon_name("applications-internet")
-
-				b.set_image(img)
+					b.get_image().new_from_icon_name("applications-internet")
 
 				def on_button(button):
 					self.webview.load_uri(i.get_uri())
-					self.HList.hide()
+					HList.hide()
 
 				b.connect("clicked", on_button)
-				self.HList.add_action_widget(b, 2)
+				HList.add_action_widget(b, 2)
 
 		self.HList.move_to_widget(self.hist, True)
 
