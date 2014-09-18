@@ -220,7 +220,7 @@ class Tab(grabbo.Builder):
 	def title_chang(self, webview, frame, title):
 
 		try:
-			self.make_short(title)
+			short = self.make_short(title)
 
 			self.tb.button.set_label(short)
 		else:
