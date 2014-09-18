@@ -1,4 +1,4 @@
-from gi.repository import Gtk, WebKit, cairo
+from gi.repository import Gtk, WebKit, cairo, Gdk
 import os
 
 try:
@@ -148,7 +148,7 @@ class Tab(grabbo.Builder):
 					HList.add_action_widget(b, 2)
 
 			w = self.notebook.MC.parent.get_window()
-			HList.move_to_coords(w.width, w.height, True)
+			HList.move_to_coords(w.get_width(), w.get_height(), True)
 
 	def on_full(self, button):
 		if self.fullb.get_active():
