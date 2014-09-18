@@ -124,7 +124,7 @@ class Tab(grabbo.Builder):
 		self.backfb.connect("clicked", self.find_back)
 		self.nextfb.connect("clicked", self.find_next)
 
-		self.HList =
+		self.HList = HList()
 
 		#last settings
 		self.webview.set_full_content_zoom(True)
