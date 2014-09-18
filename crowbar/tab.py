@@ -136,7 +136,7 @@ class Tab(grabbo.Builder):
 						pixbuf = self.webview.get_icon_pixbuf()
 						b.get_image().set_from_pixbuf(pixbuf)
 					except:
-						b.get_image().set_from_name("applications-internet")
+						b.get_image().set_from_name("applications-internet", Gtk.IconSize.BUTTON)
 
 					def on_button(button):
 						self.webview.load_uri(i.get_uri())
@@ -154,7 +154,7 @@ class Tab(grabbo.Builder):
 		button = Gtk.Button()
 		img = Gtk.Image()
 		button.set_image(img)
-		button.get_image().set_from_name("view-restore")
+		button.get_image().set_from_name("view-restore", Gtk.IconSize.BUTTON)
 
 		def on_button(button):
 			unfullpop.hide()
@@ -254,7 +254,7 @@ class Tab(grabbo.Builder):
 
 		except:
 			self.urlen.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
-			self.tb.button.get_image().set_from_name("applications-internet")
+			self.tb.button.get_image().set_from_icon_name("applications-internet", Gtk.IconSize.BUTTON)
 
 	def progress_load(self, webview, amount):
 		self.urlen.set_progress_fraction(amount / 100.0)
