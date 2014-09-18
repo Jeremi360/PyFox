@@ -166,10 +166,6 @@ class Tab(grabbo.Builder):
 		unfullpop.add_action_widget(button, 1)
 		unfullpop.move_to_widget(self.fullb, True)
 
-
-
-		self.notebook.MC.parent.unfullscreen()
-
 	def get(self):
 		return self.ui.get_object("box")
 
