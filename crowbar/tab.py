@@ -24,8 +24,6 @@ UI_Tab = os.path.join(r, 'ui', 'Tab.xml')
 class Tab(grabbo.Builder):
 	def __init__(self, notebook, url = None):
 		super(Tab, self).__init__(UI_Tab)
-		self.back_url = None
-		self.next_url = None
 
 		#get objects from UI_Tab
 		#main tab toolbar
@@ -104,10 +102,12 @@ class Tab(grabbo.Builder):
 		self.webview.set_zoom_level(1.0)
 
 	def go_back(self, button):
-		self.next_url = self.webview.get_uri()
-		self.webview.go_back()
-		b = self.webview.get_uri()
-		self.urlen.set_text(b)
+		if self.webview.can_go_back:
+			self.back.set_sensitive(True)
+			self.webview.go_back()
+		else:
+			self.self.back.set_sensitive(False)
+
 
 	def go_next(self, button):
 		self.back_url = self.webview.get_uri()
