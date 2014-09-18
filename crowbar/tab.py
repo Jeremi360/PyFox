@@ -1,9 +1,8 @@
-from gi.repository import Gtk, WebKit, cairo, Gdk
+from gi.repository import Gtk, WebKit
 import os
 
 try:
 	import grabbo
-	from grabbo import granite
 except:
 	print("Please first install Grabbo in your python path or copy to crowbar dir")
 	print("Grabbo can be download from https://github.com/jeremi360/Grabbo")
@@ -98,8 +97,9 @@ class Tab(grabbo.Builder):
 
 	def on_hist(self, button):
 		if self.webview.can_go_forward() or self.webview.can_go_back():
-			HList = granite.PopOver()
-			HList.get_action_area().set_orientation(Gtk.Orientation.VERTICAL)
+			HList = Gtk.Popover()
+			HList.set_pointing_to(self.hist.get_allocation())
+			#HList.get.set_orientation(Gtk.Orientation.VERTICAL)
 
 			fbl = self.webview.get_back_forward_list()
 
@@ -124,7 +124,7 @@ class Tab(grabbo.Builder):
 						HList.hide()
 
 					b.connect("clicked", on_button)
-					HList.add_action_widget(b, 2)
+					HList.add(b)
 
 			if self.webview.can_go_back():
 				bl = fbl.get_back_list_with_limit(5)
@@ -145,10 +145,10 @@ class Tab(grabbo.Builder):
 						HList.hide()
 
 					b.connect("clicked", on_button)
-					HList.add_action_widget(b, 2)
+					HList.add(b)
 
-			w = self.notebook.MC.parent.get_window()
-			HList.move_to_coords(w.get_width()*0.1, w.get_height()*0.1, True)
+
+			HList.show_all()
 
 	def on_full(self, button):
 		if self.fullb.get_active():
