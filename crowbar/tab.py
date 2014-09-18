@@ -94,6 +94,9 @@ class Tab(grabbo.Builder):
 		self.notebook = notebook
 		self.tb = Hb_TabButton(self.notebook, self.get())
 
+	def load_url(self, url):
+		self.webview.load_uri(url)
+
 	def on_hist(self, button):
 		if self.webview.can_go_forward() or self.webview.can_go_back():
 			HList = granite.PopOver()
