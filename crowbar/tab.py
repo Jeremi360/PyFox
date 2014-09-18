@@ -126,7 +126,7 @@ class Tab(grabbo.Builder):
 						HList.hide()
 
 					b.connect("clicked", on_button)
-					HList.add(b)
+					box.add(b)
 
 			if self.webview.can_go_back():
 				bl = fbl.get_back_list_with_limit(5)
@@ -147,7 +147,7 @@ class Tab(grabbo.Builder):
 						HList.hide()
 
 					b.connect("clicked", on_button)
-					HList.add(b)
+					box.add(b)
 
 
 			HList.show_all()
