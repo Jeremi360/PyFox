@@ -34,12 +34,13 @@ If you won to compile/run this you will need:
 
 To run just double click on main.py in corwbar folder.
 
-"Warning: This program is not finshed"
+version: 0.1.8
+"Warning: This program is not finished"
 
 Done:
 
-* history min list
-* Fullscreen mode
+* history mini list
+* Full screen mode
 * Tabs on Top - now on title bar:
 	 - rewrite using Gtk.Stock and Gtk.StockSwitcher
 	 - fixed!
@@ -56,9 +57,9 @@ ToDo:
 
 * History browsing
 * Bookmarks
-* newtab page
+* new tab page
 * connect open in new tab with addtab
-* Addons
+* Addons(is planed for 2.x version)
 * Paronoma as list
 * Downloads
 * Settings
