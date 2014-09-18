@@ -109,7 +109,7 @@ class Tab(grabbo.Builder):
 				bl = fbl.get_forward_list_with_limit(5)
 
 				for i in bl:
-					s = self.make_short(i.get_title())
+					s = self.make_short(i.get_title(), 10)
 					b = Gtk.Button(s)
 					img = Gtk.Image()
 					b.set_image(img)
@@ -131,7 +131,7 @@ class Tab(grabbo.Builder):
 			if self.webview.can_go_back():
 				bl = fbl.get_back_list_with_limit(5)
 				for i in bl:
-					s = self.make_short(i.get_title())
+					s = self.make_short(i.get_title(), 10)
 					b = Gtk.Button(s)
 					img = Gtk.Image()
 					b.set_image(img)
@@ -215,11 +215,11 @@ class Tab(grabbo.Builder):
 			url = "http://" + url
 		self.webview.load_uri(url)
 
-	def make_short(self, title):
+	def make_short(self, title, lenght = 26):
 		short = ""
 
-		if len(title) > 26:
-			for i in range(26):
+		if len(title) > lenght:
+			for i in range(lenght):
 				try:
 					short += title[i]
 				except:
