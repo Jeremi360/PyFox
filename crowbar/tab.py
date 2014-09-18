@@ -136,7 +136,7 @@ class Tab(grabbo.Builder):
 						pixbuf = self.webview.get_icon_pixbuf()
 						b.get_image().set_from_pixbuf(pixbuf)
 					except:
-						b.get_image().set_from_icon_name("applications-internet")
+						b.get_image().set_from_name("applications-internet")
 
 					def on_button(button):
 						self.webview.load_uri(i.get_uri())
@@ -154,7 +154,7 @@ class Tab(grabbo.Builder):
 		button = Gtk.Button()
 		img = Gtk.Image()
 		button.set_image(img)
-		button.get_image().set_from_icon_name("view-restore")
+		button.get_image().set_from_name("view-restore")
 
 		def on_button(button):
 			unfullpop.hide()
