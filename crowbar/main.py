@@ -68,15 +68,14 @@ class Main_Controls(grabbo.Builder):
         self.EndBox = self.ui.get_object("EndBox")
 
     def set_title(self, title):
-        self.parent.hb.set_title("Crowbar: " + title)
+        self.parent.hb.set_title(variable.appname ": " + title)
 
 class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
         self.MC = Main_Controls(self)
 
-        i = os.path.join(r, 'icons', 'icon.png')
-        self.set_icon_from_file(i)
+        self.set_icon_from_file(variable.icon)
 
         self.tabs = Tabs_Manager(self.MC)
 
