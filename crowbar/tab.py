@@ -93,58 +93,59 @@ class Tab(grabbo.Builder):
 		self.tb = Hb_TabButton(self.notebook, self.get())
 
 	def on_hist(self, button):
-		HList = Granite.WidgetsPopOver()
-		HList.get_action_area().set_orientation(Gtk.Orientation.VERTICAL)
+		if self.webview.can_go_forward() or self.webview.can_go_back():
+			HList = Granite.WidgetsPopOver()
+			HList.get_action_area().set_orientation(Gtk.Orientation.VERTICAL)
 
-		fbl = self.webview.get_back_forward_list()
+			fbl = self.webview.get_back_forward_list()
 
-		if self.webview.can_go_forward():
-			bl = fbl.get_forward_list_with_limit(5)
+			if self.webview.can_go_forward():
+				bl = fbl.get_forward_list_with_limit(5)
 
-			for i in bl:
-				s = self.make_short(i.get_title())
-				b = Gtk.Button(s)
-				img = Gtk.Image()
-				b.set_image(img)
+				for i in bl:
+					s = self.make_short(i.get_title())
+					b = Gtk.Button(s)
+					img = Gtk.Image()
+					b.set_image(img)
 
-				try:
-					pixbuf = self.webview.get_icon_pixbuf()
-					b.get_image().new_from_pixbuf(pixbuf)
-				except:
-					b.get_image().new_from_icon_name("applications-internet")
+					try:
+						pixbuf = self.webview.get_icon_pixbuf()
+						b.get_image().new_from_pixbuf(pixbuf)
+					except:
+						b.get_image().new_from_icon_name("applications-internet")
 
 
 
-				def on_button(button):
-					s = self.make_short(i.get_uri())
-					self.webview.load_uri(s)
-					HList.hide()
+					def on_button(button):
+						s = self.make_short(i.get_uri())
+						self.webview.load_uri(s)
+						HList.hide()
 
-				b.connect("clicked", on_button)
-				HList.add_action_widget(b, 2)
+					b.connect("clicked", on_button)
+					HList.add_action_widget(b, 2)
 
-		if self.webview.can_go_back():
-			bl = fbl.get_back_list_with_limit(5)
-			for i in bl:
-				s = self.make_short(i.get_title())
-				b = Gtk.Button(s)
-				img = Gtk.Image()
-				b.set_image(img)
+			if self.webview.can_go_back():
+				bl = fbl.get_back_list_with_limit(5)
+				for i in bl:
+					s = self.make_short(i.get_title())
+					b = Gtk.Button(s)
+					img = Gtk.Image()
+					b.set_image(img)
 
-				try:
-					pixbuf = self.webview.get_icon_pixbuf()
-					b.get_image().new_from_pixbuf(pixbuf)
-				except:
-					b.get_image().new_from_icon_name("applications-internet")
+					try:
+						pixbuf = self.webview.get_icon_pixbuf()
+						b.get_image().new_from_pixbuf(pixbuf)
+					except:
+						b.get_image().new_from_icon_name("applications-internet")
 
-				def on_button(button):
-					self.webview.load_uri(i.get_uri())
-					HList.hide()
+					def on_button(button):
+						self.webview.load_uri(i.get_uri())
+						HList.hide()
 
-				b.connect("clicked", on_button)
-				HList.add_action_widget(b, 2)
+					b.connect("clicked", on_button)
+					HList.add_action_widget(b, 2)
 
-		HList.move_to_widget(self.hist, True)
+			HList.move_to_widget(self.hist, True)
 
 	def on_full(self, button):
 		if button.get_active():
