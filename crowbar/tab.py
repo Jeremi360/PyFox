@@ -154,7 +154,7 @@ class Tab(grabbo.Builder):
 		button = Gtk.Button()
 		img = Gtk.Image()
 		button.set_image(img)
-		button.get_image().set_from_name("view-restore", Gtk.IconSize.BUTTON)
+		button.get_image().set_from_icon_name("view-restore", Gtk.IconSize.BUTTON)
 
 		def on_button(button):
 			unfullpop.hide()
