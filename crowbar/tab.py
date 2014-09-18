@@ -215,16 +215,16 @@ class Tab(grabbo.Builder):
 					short += title[i]
 				except:
 					pass
+
+		else:
+			short = title
+
 		return short
 
 	def title_chang(self, webview, frame, title):
 
-		try:
 			short = self.make_short(title)
-
 			self.tb.button.set_label(short)
-		else:
-			self.tb.button.set_label(title)
 
 		self.notebook.MC.set_title(title)
 		self.tb.button.set_tooltip_text(title)
