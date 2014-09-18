@@ -100,6 +100,7 @@ class Tab(grabbo.Builder):
 			HList = Gtk.Popover.new(self.hist)
 			box = Gtk.Box()
 			box.set_orientation(Gtk.Orientation.VERTICAL)
+
 			HList.add(box)
 			HList.set_pointing_to(self.hist.get_allocation())
 
