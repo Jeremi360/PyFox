@@ -148,7 +148,7 @@ class Tab(grabbo.Builder):
 					HList.add_action_widget(b, 2)
 
 			r = self.hist.get_allocation()
-			HList.move_to_coords(r.width, r.height, True)
+			HList.move_to_coords(r.width, r.*2, True)
 
 	def on_full(self, button):
 		if self.fullb.get_active():
