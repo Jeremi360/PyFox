@@ -1,4 +1,4 @@
-from gi.repository import Gtk, WebKit, Cairo
+from gi.repository import Gtk, WebKit
 import os
 
 try:
