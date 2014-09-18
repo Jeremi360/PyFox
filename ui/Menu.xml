@@ -22,15 +22,15 @@
     <property name="can_focus">False</property>
     <property name="icon_name">document-open</property>
   </object>
-  <object class="GtkImage" id="IconPrev">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="icon_name">face-angel</property>
-  </object>
   <object class="GtkImage" id="IconPrint">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">document-print</property>
+  </object>
+  <object class="GtkImage" id="IconPriv">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">face-angel</property>
   </object>
   <object class="GtkImage" id="IconSave">
     <property name="visible">True</property>
@@ -88,7 +88,7 @@
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="receives_default">True</property>
-        <property name="image">IconPrev</property>
+        <property name="image">IconPriv</property>
         <property name="relief">none</property>
         <property name="image_position">top</property>
         <property name="always_show_image">True</property>
