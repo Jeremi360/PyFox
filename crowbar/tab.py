@@ -98,8 +98,6 @@ class Tab(grabbo.Builder):
 		fbl = self.webview.get_back_forward_list()
 
 		if self.webview.can_go_forward():
-			l = Gtk.Label("forward:")
-			#self.HList.add_action_widget(l, 1)
 			bl = fbl.get_forward_list_with_limit(5)
 			for i in bl:
 				b = Gtk.Button(i.get_title())
@@ -123,8 +121,6 @@ class Tab(grabbo.Builder):
 				self.HList.add_action_widget(b, 1)
 
 		if self.webview.can_go_back():
-			l = Gtk.Label("back:")
-			#self.HList.add_action_widget(l, 1)
 			bl = fbl.get_back_list_with_limit(5)
 			for i in bl:
 				b = Gtk.Button(i.get_title())
@@ -140,7 +136,6 @@ class Tab(grabbo.Builder):
 
 				def on_button(button):
 					self.webview.load_uri(i.get_uri())
-					#self.urlen.set_text(i.get_uri())
 					self.HList.hide()
 
 				b.connect("clicked", on_button)
@@ -211,7 +206,7 @@ class Tab(grabbo.Builder):
 			url = "http://" + url
 		self.webview.load_uri(url)
 
-	def title_chang(self, webview, frame, title):
+	def make_short(self, title):
 		short = ""
 
 		if len(title) > 26:
@@ -220,6 +215,12 @@ class Tab(grabbo.Builder):
 					short += title[i]
 				except:
 					pass
+		return short
+
+	def title_chang(self, webview, frame, title):
+
+		try:
+			self.make_short(title)
 
 			self.tb.button.set_label(short)
 		else:
