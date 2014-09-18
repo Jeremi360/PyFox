@@ -164,7 +164,7 @@ class Tab(grabbo.Builder):
 		button.connect("clicked", on_button)
 		unfullpop.add_action_widget(button, 2)
 		r = self.webview.get_allocation()
-		unfullpop.move_to_coords(-24, 100, True)
+		unfullpop.move_to_coords(r.width, -24, True)
 
 
 	def get(self):
