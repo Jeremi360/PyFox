@@ -1,4 +1,4 @@
-from gi.repository import Gtk, WebKit
+from gi.repository import Gtk, WebKit, Cario
 from gi.repository.Granite import WidgetsPopOver as PopOver
 import os
 
@@ -163,7 +163,7 @@ class Tab(grabbo.Builder):
 
 		button.connect("clicked", on_button)
 		unfullpop.add_action_widget(button, 2)
-		unfullpop.move_to_widget(self.scroll, True)
+		unfullpop.move_to_coords(Gtk.)
 
 
 	def get(self):
