@@ -83,7 +83,7 @@
       </packing>
     </child>
     <child>
-      <object class="GtkButton" id="NewPrev">
+      <object class="GtkButton" id="NewPriv">
         <property name="label" translatable="yes">New Privte Window</property>
         <property name="visible">True</property>
         <property name="can_focus">True</property>
