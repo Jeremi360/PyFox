@@ -148,7 +148,7 @@ class Tab(grabbo.Builder):
 					self.HList.remove(box)
 
 				b.connect("clicked", on_button)
-				self.box.add(b)
+				box.add(b)
 
 	def on_full(self, button):
 		if button.get_active():
