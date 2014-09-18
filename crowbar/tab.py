@@ -106,13 +106,14 @@ class Tab(grabbo.Builder):
 			self.back.set_sensitive(True)
 			self.webview.go_back()
 		else:
-			self.self.back.set_sensitive(False)
-
+			self.back.set_sensitive(False)
 
 	def go_next(self, button):
-		self.back_url = self.webview.get_uri()
-		self.webview.load_uri(self.next_url)
-		self.urlen.set_text(self.next_url)
+		if self.webview.can_go_back:
+			self.next.set_sensitive(True)
+			self.webview.go_forward()
+		else:
+			self.next.set_sensitive(False)
 
 	def on_fresh(self, button):
 		self.webview.reload()
