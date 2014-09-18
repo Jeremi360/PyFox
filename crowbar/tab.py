@@ -96,10 +96,6 @@ class Tab(grabbo.Builder):
 
 	def on_hist(self, button):
 		fbl = self.webview.get_back_forward_list()
-		box = Gtk.Box()
-		box.set_orientation(Gtk.Orientation.VERTICAL)
-		self.HList.remove(self.HList.container)
-		self.add(box)
 
 		if self.webview.can_go_forward():
 			l = Gtk.Label("forward:")
@@ -121,10 +117,10 @@ class Tab(grabbo.Builder):
 					self.webview.load_uri(i.get_uri())
 					#self.urlen.set_text(i.get_uri())
 					self.HList.hide()
-					self.HList.remove(box)
+					#self.HList.remove(box)
 
 				b.connect("clicked", on_button)
-				box.add(b)
+				self.HList.add_button(b, 1)
 
 		if self.webview.can_go_back():
 			l = Gtk.Label("back:")
@@ -146,10 +142,9 @@ class Tab(grabbo.Builder):
 					self.webview.load_uri(i.get_uri())
 					#self.urlen.set_text(i.get_uri())
 					self.HList.hide()
-					self.HList.remove(box)
 
 				b.connect("clicked", on_button)
-				box.add(b)
+				self.HList.add_button(b, 1)
 
 	def on_full(self, button):
 		if button.get_active():
