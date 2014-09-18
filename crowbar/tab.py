@@ -148,19 +148,20 @@ class Tab(grabbo.Builder):
 			HList.move_to_widget(self.hist, True)
 
 	def on_full(self, button):
-		self.notebook.MC.parent.fullscreen()
-		self.ToolBox.hide()
 		unfullpop = PopOver()
 		button = Gtk.Button()
 		img = Gtk.Image()
 		button.set_image(img)
 		button.get_image().set_from_icon_name("view-restore", Gtk.IconSize.BUTTON)
-		unfullpop.move_to_widget(self.fullb)
+		unfullpop.move_to_widget(self.fullb, True)
+		self.notebook.MC.parent.fullscreen()
+		self.ToolBox.hide()
 
 		def on_button(button):
 			unfullpop.hide()
 			self.notebook.MC.parent.unfullscreen()
 			self.ToolBox.show()
+
 
 		button.connect("clicked", on_button)
 
