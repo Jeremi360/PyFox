@@ -100,7 +100,8 @@ class Tab(grabbo.Builder):
 		if self.webview.can_go_forward():
 			bl = fbl.get_forward_list_with_limit(5)
 			for i in bl:
-				b = Gtk.Button(i.get_title())
+				s = self.make_short(i.get_title())
+				b = Gtk.Button(s)
 
 				img = Gtk.Image()
 				try:
@@ -122,7 +123,8 @@ class Tab(grabbo.Builder):
 		if self.webview.can_go_back():
 			bl = fbl.get_back_list_with_limit(5)
 			for i in bl:
-				b = Gtk.Button(i.get_title())
+				s = self.make_short(i.get_title())
+				b = Gtk.Button(s)
 
 				img = Gtk.Image()
 				try:
@@ -134,8 +136,7 @@ class Tab(grabbo.Builder):
 				b.set_image(img)
 
 				def on_button(button):
-					s = self.make_short(i.get_uri())
-					self.webview.load_uri(s)
+					self.webview.load_uri(i.get_uri())
 					self.HList.hide()
 
 				b.connect("clicked", on_button)
