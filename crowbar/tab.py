@@ -97,6 +97,8 @@ class Tab(grabbo.Builder):
 		fbl = self.webview.get_back_forward_list()
 
 		if self.webview.can_go_forward():
+			l = Gtk.Label("forward:")
+			self.HList.add(l)
 			bl = fbl.get_back_list_with_limit(5)
 			for b in bl:
 				i = grabbo
