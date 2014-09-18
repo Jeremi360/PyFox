@@ -13,50 +13,6 @@ r = os.path.realpath(__file__)
 r = os.path.dirname(r)
 r = os.path.dirname(r)
 
-class HList(Granite.WidgetsPopOver):
-	def __init__(self):
-		Granite.WidgetsPopOver.__init__(self)
-		self.make_box()
-
-	def make_box(self):
-		self.box = Gtk.Box()
-		self.box.set_orientation(Gtk.Orientation.VERTICAL)
-		self.add(self.box)
-
-	def clean(self):
-		self.remove(self.box)
-		self.make_box()
-
-	def show_using(self, fbl):
-		if self.webview.can_go_forward():
-			l = Gtk.Label("forward:")
-			self.box.add(l)
-			bl = fbl.get_forward_list_with_limit(5)
-			for b in bl:
-				i = grabbo.ListItem(b.get_title(), self.HList)
-
-				def on_button(button):
-					self.webview.load_uri(b.get_uri())
-					#self.urlen.set_text(b.get_uri())
-					self.HList.hide()
-
-				i.button.connect("clicked", on_button)
-				self.box.add(i.get())
-
-		if self.webview.can_go_back():
-			l = Gtk.Label("back:")
-			self.HList.add(l)
-			bl = fbl.get_back_list_with_limit(5)
-			for b in bl:
-				i = grabbo.ListItem(b.get_title(), self.HList)
-
-				def on_button(button):
-					self.webview.load_uri(b.get_uri())
-					#self.urlen.set_text(b.get_uri())
-					self.HList.hide()
-
-				i.button.connect("clicked", on_button)
-				self.box.add(i.get())
 
 class Hb_TabButton(grabbo.TabButton):
 	def on_close(self, button):
@@ -124,7 +80,7 @@ class Tab(grabbo.Builder):
 		self.backfb.connect("clicked", self.find_back)
 		self.nextfb.connect("clicked", self.find_next)
 
-		self.HList = HList()
+		self.HList = Granite.WidgetsPopOver()
 
 		#last settings
 		self.webview.set_full_content_zoom(True)
@@ -140,7 +96,51 @@ class Tab(grabbo.Builder):
 
 	def on_hist(self, button):
 		fbl = self.webview.get_back_forward_list()
+		box = Gtk.Box()
+		box.set_orientation(Gtk.Orientation.VERTICAL)
+		self.HList.add(box)
 
+		if self.webview.can_go_forward():
+			l = Gtk.Label("forward:")
+			self.box.add(l)
+			bl = fbl.get_forward_list_with_limit(5)
+			for i in bl:
+				b = Gtk.Button(i.get_title())
+
+				def on_button(button):
+					self.webview.load_uri(i.get_uri())
+					#self.urlen.set_text(i.get_uri())
+					self.HList.hide()
+					self.HList.remove(box)
+
+				b.connect("clicked", on_button)
+				self.box.add(b)
+
+		if self.webview.can_go_back():
+			l = Gtk.Label("back:")
+			self.HList.add(l)
+			bl = fbl.get_back_list_with_limit(5)
+			for i in bl:
+				b = Gtk.Button(i.get_title())
+				img = Gtk.Image()
+				try:
+					pixbuf = self.webview.get_icon_pixbuf()
+					img.new_from_pixbuf(pixbuf)
+				except:
+					img.new_from_icon_name("applications-internet")
+
+				b.set_image(img)
+
+
+				def on_button(button):
+					self.webview.load_uri(i.get_uri())
+					#self.urlen.set_text(i.get_uri())
+					self.HList.hide()
+					self.HList.remove(box)
+
+
+				b.connect("clicked", on_button)
+				self.box.add(b)
 
 	def on_full(self, button):
 		if button.get_active():
