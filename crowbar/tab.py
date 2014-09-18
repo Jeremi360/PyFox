@@ -163,7 +163,7 @@ class Tab(grabbo.Builder):
 
 		button.connect("clicked", on_button)
 		unfullpop.add_action_widget(button, 2)
-		unfullpop.move_to_widget(self.webview, True)
+		unfullpop.move_to_widget(self.scroll, True)
 
 
 	def get(self):
