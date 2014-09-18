@@ -223,8 +223,8 @@ class Tab(grabbo.Builder):
 
 	def title_chang(self, webview, frame, title):
 
-			short = self.make_short(title)
-			self.tb.button.set_label(short)
+		short = self.make_short(title)
+		self.tb.button.set_label(short)
 
 		self.notebook.MC.set_title(title)
 		self.tb.button.set_tooltip_text(title)
