@@ -73,7 +73,7 @@ class Main_Controls(grabbo.Builder):
 class Window(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
-        self.MC = Main_Controls(self.get_window())
+        self.MC = Main_Controls(self)
 
         self.set_icon_from_file(variable.icon)
 
