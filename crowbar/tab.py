@@ -1,4 +1,4 @@
-from gi.repository import Gtk, WebKit
+from gi.repository import Gtk, WebKit, Granite
 import os
 
 
@@ -12,6 +12,8 @@ except:
 r = os.path.realpath(__file__)
 r = os.path.dirname(r)
 r = os.path.dirname(r)
+
+
 
 class Hb_TabButton(grabbo.TabButton):
 	def on_close(self, button):
