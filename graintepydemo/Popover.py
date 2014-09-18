@@ -13,12 +13,14 @@ class PopOverWindow(Gtk.Window):
         def onSwitched(self):
             print(button2.get_active())
             popover.hide()
-            button2.connect("toggled", onSwitched)
-            popover.add_action_widget(button2, 1)
+
+        button2.connect("toggled", onSwitched)
+        popover.add_action_widget(button2, 1)
 
         def onClicked(self):
             popover.move_to_widget(button, True)
-            button.connect("clicked", onClicked)
+
+        button.connect("clicked", onClicked)
 
 win = PopOverWindow()
 win.connect("delete-event", Gtk.main_quit)
