@@ -18,7 +18,7 @@ class HList(Granite.WidgetsPopOver):
 		Granite.WidgetsPopOver.__init__(self)
 		self.make_box()
 
-	def make_box(self)
+	def make_box(self):
 		self.box = Gtk.Box()
 		self.box.set_orientation(Gtk.Orientation.VERTICAL)
 		self.add(self.box)
