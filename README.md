@@ -5,7 +5,7 @@ Icon/Logo based on *Vinegard* icon from icon theme [*Faenza* by tiheum][6]
 Screenshot:
 ![cRoWBaR in Action][1]
 
-**cRowBaR** is simple web browser inspired by:
+**cRowBaR** is simple web browser for Linux inspired by:
 
  *  Firefox:
     * Aurialis UI
@@ -25,12 +25,10 @@ Screenshot:
 If you won to compile/run this you will need:
 
 - [python version 3.x][2]
-- Gtk and Webkit from gi repository:
-
-   - Linux check your dist repos
-   - [Windows][3] - download "pygi-aio-*-setup.exe"
+- Gtk(3.10 or higher) and Webkit from gi repository
 
 - My [Grabbo lib][4]
+- Granite Lib from gi repository
 
 To run just double click on main.py in corwbar folder.
 
