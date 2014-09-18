@@ -36,6 +36,7 @@ To run just double click on main.py in corwbar folder.
 
 Done:
 
+* history min list
 * Fullscreen mode
 * Tabs on Top - now on title bar:
 	 - rewrite using Gtk.Stock and Gtk.StockSwitcher
@@ -44,7 +45,7 @@ Done:
 
 * google search in url bar
 * progress in url bar
-* history back and forward buttons
+* history back, forward buttons
 * fix address mistake
 * zoom in & out & and reset to 100%
 * show favicon
