@@ -6,6 +6,13 @@ r = os.path.dirname(r)
 r = os.path.dirname(r)
 
 try:
+    from crowbar.tab import Tab
+    print("Eclipse way")
+except:
+    from tab import Tab
+    print("Normal way")
+
+try:
     import grabbo
     from grabbo import granite
 except:
@@ -17,7 +24,8 @@ Menu_UI = os.path.join(r, 'ui', 'Menu.xml')
 class Menu(grabbo.Builder):
     def __init__(self, current_tab):
         grabbo.Builder.__init__(self, Menu_UI)
-        self.home = self.ui.get_object("Home")
+        self.ctab = current_tab
+        self.Home = self.ui.get_object("Home")
         self.NewWin =  self.ui.get_object("NewWin")
         self.NewPriv = self.ui.get_object("NewPriv")
         self.Open = self.ui.get_object("Open")
@@ -26,5 +34,11 @@ class Menu(grabbo.Builder):
         self.Settings = self.ui.get_object("Settings")
         self.Addons = self.ui.get_object("Addons")
         self.Tools = self.ui.get_object("Tools")
+
+    def on_home(self, button):
+        self.ctab
+
+    def get(self):
+        return self.ui.get_object("grid")
 
 
