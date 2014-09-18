@@ -36,7 +36,7 @@ class Menu(grabbo.Builder):
         self.Tools = self.ui.get_object("Tools")
 
     def on_home(self, button):
-        self.ctab
+        self.ctab.load_url("https://github.com/jeremi360/cRoWBaR")
 
     def get(self):
         return self.ui.get_object("grid")
