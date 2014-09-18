@@ -107,6 +107,15 @@ class Tab(grabbo.Builder):
 			for i in bl:
 				b = Gtk.Button(i.get_title())
 
+				img = Gtk.Image()
+				try:
+					pixbuf = self.webview.get_icon_pixbuf()
+					img.new_from_pixbuf(pixbuf)
+				except:
+					img.new_from_icon_name("applications-internet")
+
+				b.set_image(img)
+
 				def on_button(button):
 					self.webview.load_uri(i.get_uri())
 					#self.urlen.set_text(i.get_uri())
@@ -122,6 +131,7 @@ class Tab(grabbo.Builder):
 			bl = fbl.get_back_list_with_limit(5)
 			for i in bl:
 				b = Gtk.Button(i.get_title())
+
 				img = Gtk.Image()
 				try:
 					pixbuf = self.webview.get_icon_pixbuf()
@@ -131,13 +141,11 @@ class Tab(grabbo.Builder):
 
 				b.set_image(img)
 
-
 				def on_button(button):
 					self.webview.load_uri(i.get_uri())
 					#self.urlen.set_text(i.get_uri())
 					self.HList.hide()
 					self.HList.remove(box)
-
 
 				b.connect("clicked", on_button)
 				self.box.add(b)
