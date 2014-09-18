@@ -146,6 +146,8 @@ class Tab(grabbo.Builder):
 				b.connect("clicked", on_button)
 				self.HList.add_action_widget(b, 1)
 
+		self.HList.move_to_widget(self.hist)
+
 	def on_full(self, button):
 		if button.get_active():
 			self.notebook.MC.parent.fullscreen()
