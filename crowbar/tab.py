@@ -37,9 +37,10 @@ class Tab(grabbo.Builder):
 		self.zoomout = self.ui.get_object("zoomout")
 		self.find = self.ui.get_object("find")
 		self.book = self.ui.get_object("book") #todo
-		self.hist = self.ui.get_object("hist") #todo
+		self.hist = self.ui.get_object("hist")
 		self.ExtBox = self.ui.get_object("ExtBox") #todo
 		self.fullb = self.ui.get_object("Full")
+		self.ToolBox = self.ui.get_object("toolbox")
 
 		#findbox
 		self.findbox = self.ui.get_object("findbox")
@@ -114,8 +115,6 @@ class Tab(grabbo.Builder):
 					except:
 						b.get_image().new_from_icon_name("applications-internet")
 
-
-
 					def on_button(button):
 						s = self.make_short(i.get_uri())
 						self.webview.load_uri(s)
@@ -148,10 +147,10 @@ class Tab(grabbo.Builder):
 			HList.move_to_widget(self.hist, True)
 
 	def on_full(self, button):
-		if button.get_active():
-			self.notebook.MC.parent.fullscreen()
-		else:
-			self.notebook.MC.parent.unfullscreen()
+		self.notebook.MC.parent.fullscreen()
+		self.t
+
+		self.notebook.MC.parent.unfullscreen()
 
 	def get(self):
 		return self.ui.get_object("box")
