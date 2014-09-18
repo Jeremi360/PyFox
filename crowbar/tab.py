@@ -98,8 +98,9 @@ class Tab(grabbo.Builder):
 
 	def on_hist(self, button):
 		if self.webview.can_go_forward() or self.webview.can_go_back():
-			HList = granite.PopOver()
+			HList = granite.Widgets.PopOver()
 			HList.get_action_area().set_orientation(Gtk.Orientation.VERTICAL)
+			HList.
 
 			fbl = self.webview.get_back_forward_list()
 
