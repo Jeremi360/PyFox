@@ -147,8 +147,8 @@ class Tab(grabbo.Builder):
 					b.connect("clicked", on_button)
 					HList.add_action_widget(b, 2)
 
-			r = self.hist.get_allocation()
-			HList.move_to_coords(r.width, r.height, True)
+			w = self.notebook.MC.parent.get_window()
+			HList.move_to_coords(w.width, w.height, True)
 
 	def on_full(self, button):
 		if self.fullb.get_active():
