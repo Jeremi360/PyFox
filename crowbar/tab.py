@@ -72,6 +72,7 @@ class Tab(grabbo.Builder):
 		self.zoomres.connect("clicked",  self.reset_zoom)
 		self.fullb.connect("clicked", self.on_full)
 		self.urlen.connect("activate", self.url_active)
+		self.hist.connect("clicked", self.on_hist)
 
 		#findbox
 		self.findfb.connect("activate", self.on_find)
@@ -91,6 +92,14 @@ class Tab(grabbo.Builder):
 		self.webview.show()
 		self.notebook = notebook
 		self.tb = Hb_TabButton(self.notebook, self.get())
+
+	def on_hist(self, button):
+		fbl = self.webview.get_back_forward_list()
+
+		if self.webview.can_go_forward():
+			bl = fbl.get_back_list_with_limit(5)
+			for b in bl:
+				i = grabbo
 
 	def on_full(self, button):
 		if button.get_active():
