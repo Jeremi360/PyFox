@@ -1,7 +1,6 @@
 from gi.repository import Gtk, WebKit
 import os
 
-
 try:
 	import grabbo
 	from grabbo import granite
