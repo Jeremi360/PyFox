@@ -44,11 +44,11 @@ class Menu(grabbo.Builder):
         self.About.connect("clicked", self.on_about)
 
     def on_home(self, button):
-        self.notebook.add_tab(variable.home)
+        self.notebook.add_tab(variable.home, True)
         self.po.hide()
 
     def on_rbug(self, button):
-        self.notebook.add_tab(variable.rapport)
+        self.notebook.add_tab(variable.rapport, True)
         self.po.hide()
 
     def on_about(self, button):
