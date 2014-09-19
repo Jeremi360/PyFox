@@ -40,7 +40,7 @@ version: 0.2.1
 Done:
 
 * AboutDialog
-* Menu - only about button work now
+* Menu - only 3 bottom buttons work for now
 * history mini list
 * Full screen mode
 * Tabs on Top - now on title bar:
@@ -57,6 +57,7 @@ Done:
 
 ToDo:
 
+* menu
 * History browsing
 * Bookmarks
 * new tab page
@@ -66,7 +67,7 @@ ToDo:
 * Downloads
 * Settings
 * restore previous session
-* menu
+
 
 
 [1]:https://raw.githubusercontent.com/jeremi360/cRoWBaR/master/shot.png
