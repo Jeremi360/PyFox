@@ -6,8 +6,9 @@ r = os.path.dirname(r)
 
 appname = "cRoWBaR"
 version = "0.1.8"
-comment = " Rethink Web BRowser"
+comment = "Rethinked Web BRowser"
 home = "https://github.com/jeremi360/cRoWBaR"
+rapport = "https://github.com/jeremi360/cRoWBaR/issues"
 icon = os.path.join(r, 'icons', 'icon.png')
 
 authors = [
