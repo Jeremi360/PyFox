@@ -45,17 +45,17 @@ class Menu(grabbo.Builder):
         self.RBug.connect("clicked", self.on_rbug)
 
     def on_home(self, button):
-        self.notebook.add_tab(variable.home, True)
         self.po.hide()
+        self.notebook.add_tab(variable.home, True)
 
     def on_rbug(self, button):
-        self.notebook.add_tab(variable.rapport, True)
         self.po.hide()
+        self.notebook.add_tab(variable.rapport, True)
 
     def on_about(self, button):
+        self.po.hide()
         ad = AboutD()
         ad.show_all()
-        self.po.hide()
 
     def get(self):
         return self.ui.get_object("grid")
@@ -75,6 +75,7 @@ class AboutD(Gtk.AboutDialog):
         self.set_icon_from_file(variable.icon)
         self.set_comments(variable.comment)
         self.set_license_type(Gtk.License.GPL_3_0)
+        self.set_composite_name(variable.appname)
 
         self.set_website(variable.home)
 
