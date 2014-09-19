@@ -1,5 +1,6 @@
 from gi.repository import Gtk
 import os
+from crowbar.grabbo.notebook import Notebook
 
 r = os.path.realpath(__file__)
 r = os.path.dirname(r)
@@ -24,10 +25,10 @@ except:
 Menu_UI = os.path.join(r, 'ui', 'Menu.xml')
 
 class Menu(grabbo.Builder):
-    def __init__(self, po): #, current_tab):
+    def __init__(self, po, notebook):
         grabbo.Builder.__init__(self, Menu_UI)
 
-        #self.ctab = current_tab
+        self.notebook = notebook
         self.po = po
         self.Home = self.ui.get_object("Home")
         self.About =  self.ui.get_object("About")
@@ -43,7 +44,7 @@ class Menu(grabbo.Builder):
         self.About.connect("clicked", self.on_about)
 
     def on_home(self, button):
-        #self.ctab.load_url(variable.home)
+        self..ctab.load_url(variable.home)
         self.po.hide()
 
     def on_about(self, button):
