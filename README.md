@@ -61,7 +61,7 @@ ToDo:
 * Bookmarks
 * new tab page
 * connect open in new tab with addtab
-* Addons(are planed for 2.x version)
+* Addons(they are planed for 2.x version)
 * Paronoma as list
 * Downloads
 * Settings
