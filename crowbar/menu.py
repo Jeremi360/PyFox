@@ -42,7 +42,7 @@ class Menu(grabbo.Builder):
 
         self.Home.connect("clicked", self.on_home)
         self.About.connect("clicked", self.on_about)
-        self.RBug.connect()
+        self.RBug.connect("clicked". self.on_rbug)
 
     def on_home(self, button):
         self.notebook.add_tab(variable.home, True)
