@@ -32,8 +32,8 @@ conf = os.path.join(home,'.crowbar')
 class Tabs_Manager(grabbo.Notebook):
     def __init__(self, mc):
         self.MC = mc
-        self.MC.notebook = self
         super(Tabs_Manager, self).__init__(Gtk.Stack())
+        self.MC.notebook = self
 
     def on_add(self, button):
         self.add_tab()
