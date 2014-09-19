@@ -61,6 +61,7 @@ class Main_Controls(grabbo.Builder):
     def __init__(self, parent):
         grabbo.Builder.__init__(self, UI_Main)
 
+        self.notebook = None
         self.parent = parent
         self.menub = self.ui.get_object("MenuButton")
         self.downs = self.ui.get_object("Downs")
