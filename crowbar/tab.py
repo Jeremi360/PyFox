@@ -210,10 +210,12 @@ class Tab(grabbo.Builder):
 
 	def url_active(self, widget):
 		url = widget.get_text()
-		if not "://" or  not "." in url:
+
+		if (not "://") or ( not ".") in url:
 			url = "http://www.google.pl/search?q=" + url
-		elif not "://" in url:
+		elif (not "://") in url:
 			url = "http://" + url
+
 		self.webview.load_uri(url)
 
 	def make_short(self, title, lenght = 26):
