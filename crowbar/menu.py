@@ -44,7 +44,11 @@ class Menu(grabbo.Builder):
         self.About.connect("clicked", self.on_about)
 
     def on_home(self, button):
-        self..ctab.load_url(variable.home)
+        self.notebook.add_tab(variable.home)
+        self.po.hide()
+
+    def on_rbug(self, button):
+        self.notebook.add_tab(variable.rapport)
         self.po.hide()
 
     def on_about(self, button):
