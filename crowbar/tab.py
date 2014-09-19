@@ -112,6 +112,7 @@ class Tab(grabbo.Builder):
 				for i in bl:
 					s = self.make_short(i.get_title(), 10)
 					b = Gtk.Button(s)
+					b.set_tooltip_text(i.get_title())
 					img = Gtk.Image()
 					b.set_image(img)
 
@@ -134,6 +135,7 @@ class Tab(grabbo.Builder):
 				for i in bl:
 					s = self.make_short(i.get_title(), 10)
 					b = Gtk.Button(s)
+					b.set_tooltip_text(i.get_title())
 					img = Gtk.Image()
 					b.set_image(img)
 
