@@ -49,7 +49,7 @@ class Tabs_Manager(grabbo.Notebook):
         self.set_width(w)
 
         if active:
-            content.tb.button.set_active(True)
+            content.tb.button Gtk.ToggleButton.set_mode(True)
             self.stack.set_visible_child(content.get())
 
         content.get().show()
