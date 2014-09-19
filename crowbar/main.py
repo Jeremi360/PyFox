@@ -48,7 +48,7 @@ class Tabs_Manager(grabbo.Notebook):
         w = self.get_width() + 210
         self.set_width(w)
         if active:
-            self.sc.set_visible_child(content.get())
+            self.stack.set_visible_child(content.get())
 
         self.sc.show()
 
