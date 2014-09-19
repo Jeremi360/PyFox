@@ -75,10 +75,9 @@ class AboutD(Gtk.AboutDialog):
         self.set_icon_from_file(variable.icon)
         self.set_comments(variable.comment)
         self.set_license_type(Gtk.License.GPL_3_0)
-        self.set_composite_name("composite_name")
-        self.set_wrap_license(True)
+        self.set_wrap_license(False)
         self.set_title("About " + variable.appname)
-        self.set_role("role")
+        self.set_skip_taskbar_hint(True)
 
         self.set_website(variable.home)
 
