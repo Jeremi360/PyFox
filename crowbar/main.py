@@ -44,12 +44,14 @@ class Tabs_Manager(grabbo.Notebook):
 
     def add_content(self, content, active = False):
         grabbo.Notebook.add_tab(self, content.get(), content.tb)
-        content.get().show()
+
         w = self.get_width() + 210
         self.set_width(w)
+
         if active:
             self.stack.set_visible_child(content.get())
 
+        content.get().show()
         self.sc.show()
 
     def set_width(self, width):
