@@ -77,7 +77,7 @@ class Main_Controls(grabbo.Builder):
     def on_menu(self, button):
         po = Gtk.Popover.new(self.menub)
         po.set_pointing_to(self.menub.get_allocation())
-        m = menu.Menu(po).get()
+        m = menu.Menu(po, self.notebook).get()
         po.add(m)
         po.show()
 
