@@ -102,58 +102,46 @@ class Tab(grabbo.Builder):
 			box.set_orientation(Gtk.Orientation.VERTICAL)
 
 			HList.add(box)
-			HList.set_pointing_to(self.hist.get_allocation())
+			#HList.set_pointing_to(self.hist.get_allocation())
 
 			fbl = self.webview.get_back_forward_list()
 
 			if self.webview.can_go_forward():
+
 				bl = fbl.get_forward_list_with_limit(5)
 
 				for i in bl:
-					s = self.make_short(i.get_title(), 10)
-					b = Gtk.Button(s)
-					b.set_tooltip_text(i.get_title())
-					img = Gtk.Image()
-					b.set_image(img)
-
-					try:
-						pixbuf = self.webview.get_icon_pixbuf()
-						b.get_image().set_from_pixbuf(pixbuf)
-					except:
-						b.get_image().set_from_icon_name("applications-internet")
-
-					def on_button(button):
-						s = self.make_short(i.get_uri())
-						self.webview.load_uri(s)
-						HList.hide()
-
-					b.connect("clicked", on_button)
-					box.add(b)
+					self.HList_add(i, HList, box)
 
 			if self.webview.can_go_back():
+
 				bl = fbl.get_back_list_with_limit(5)
+
 				for i in bl:
-					s = self.make_short(i.get_title(), 10)
-					b = Gtk.Button(s)
-					b.set_tooltip_text(i.get_title())
-					img = Gtk.Image()
-					b.set_image(img)
-
-					try:
-						pixbuf = self.webview.get_icon_pixbuf()
-						b.get_image().set_from_pixbuf(pixbuf)
-					except:
-						b.get_image().set_from_name("applications-internet", Gtk.IconSize.BUTTON)
-
-					def on_button(button):
-						self.webview.load_uri(i.get_uri())
-						HList.hide()
-
-					b.connect("clicked", on_button)
-					box.add(b)
-
+					self.HList_add(i, HList, box)
 
 			HList.show_all()
+
+	def HList_add(self, i, HList, box):
+		s = self.make_short(i.get_title(), 10)
+		b = Gtk.Button(s)
+		b.set_tooltip_text(i.get_title())
+		img = Gtk.Image()
+		b.set_image(img)
+
+		try:
+			pixbuf = self.webview.get_icon_pixbuf()
+			b.get_image().set_from_pixbuf(pixbuf)
+		except:
+			b.get_image().set_from_icon_name("applications-internet")
+
+		def on_button(button):
+			s = self.make_short(i.get_uri())
+			self.webview.load_uri(s)
+			HList.hide()
+
+		b.connect("clicked", on_button)
+		box.add(b)
 
 	def on_full(self, button):
 		if self.fullb.get_active():
@@ -213,9 +201,9 @@ class Tab(grabbo.Builder):
 	def url_active(self, widget):
 		url = widget.get_text()
 
-		if (not "://") or ( not ".") in url:
+		if not "://" or  not "." in url:
 			url = "http://www.google.pl/search?q=" + url
-		elif (not "://") in url:
+		elif not "://" in url:
 			url = "http://" + url
 
 		self.webview.load_uri(url)
