@@ -1,6 +1,5 @@
 from gi.repository import Gtk
 import os
-from crowbar.grabbo.notebook import Notebook
 
 r = os.path.realpath(__file__)
 r = os.path.dirname(r)
