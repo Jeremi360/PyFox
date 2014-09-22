@@ -229,6 +229,8 @@ class Tab(grabbo.Builder):
 		self.tb.button.set_label(short)
 
 		self.notebook.MC.set_title(title)
+		w = self.notebook.switcher.get_allocation().width
+		self.notebook.set_width(w)
 		self.tb.button.set_tooltip_text(title)
 
 	def load_icon(self, webview, url):
