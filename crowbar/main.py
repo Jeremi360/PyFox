@@ -37,7 +37,8 @@ class Tabs_Manager(grabbo.Notebook):
         self.stack.set_transition_duration(200)
         tt = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
         self.stack.set_transition_type(tt)
-        self.sc.set_min_content_width(400)
+        self.minwidth = 270
+        self.sc.set_min_content_width(self.minwidth)
 
     def on_add(self, button):
         self.add_tab()
@@ -56,15 +57,17 @@ class Tabs_Manager(grabbo.Notebook):
         self.sc.show()
 
     def set_width(self, width):
-        w = self.MC.parent.get_screen().get_width()
+        wscreen = self.MC.parent.get_screen().get_width()*0.85
 
-        if width < w*0.85:
-            if width < 270:
-                self.sc.set_min_content_width(270)
+
+
+        if width < wscreen:
+            if width < self.minwidth:
+                self.sc.set_min_content_width(self.minwidth)
             else:
                 self.sc.set_min_content_width(width)
         else:
-            self.sc.set_min_content_width(w*0.85)
+            self.sc.set_min_content_width(wscreen)
 
 
     def get_width(self):
