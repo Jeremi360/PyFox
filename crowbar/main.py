@@ -48,7 +48,7 @@ class Tabs_Manager(grabbo.Notebook):
     def add_content(self, content, active = False):
         grabbo.Notebook.add_tab(self, content.get(), content.tb)
 
-        w = self.get_width() + 210
+        w = self.switcher.get_allocation().width
         self.set_width(w)
 
         if active:
