@@ -34,8 +34,8 @@ class Tabs_Manager(grabbo.Notebook):
         self.MC = mc
         super(Tabs_Manager, self).__init__(Gtk.Stack())
         self.MC.notebook = self
-        self.stack.set_transition_duration(500)
-        tt = Gtk.StackTransitionType.CROSSFADE
+        self.stack.set_transition_duration(200)
+        tt = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
         self.stack.set_transition_type(tt)
 
     def on_add(self, button):
