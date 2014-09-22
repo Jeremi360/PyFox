@@ -63,8 +63,8 @@ class Tabs_Manager(grabbo.Notebook):
         w = self.MC.parent.get_screen().get_width()
 
         if width < w*0.85:
-            if width < 250:
-                self.sc.set_min_content_width(250)
+            if width < 270:
+                self.sc.set_min_content_width(270)
             else:
                 self.sc.set_min_content_width(width)
 
