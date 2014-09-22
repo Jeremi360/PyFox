@@ -105,7 +105,7 @@ class Window(grabbo.Window):
 
         self.tabs = Tabs_Manager(self.MC)
 
-        self.tabs.add_tab(variable.home)
+        self.tabs.add_tab(variable.home, checked = True)
 
         self.hb = Gtk.HeaderBar()
         self.hb.set_show_close_button(True)
