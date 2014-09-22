@@ -15,7 +15,7 @@ r = os.path.dirname(r)
 
 class Hb_TabButton(grabbo.TabButton):
 	def on_close(self, button):
-		w = self.n.get_width() - 210
+		w = self.n.switcher.get_allocation().width
 		self.n.set_width(w)
 		grabbo.TabButton.on_close(self, button)
 
