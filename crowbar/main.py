@@ -37,6 +37,7 @@ class Tabs_Manager(grabbo.Notebook):
         self.stack.set_transition_duration(200)
         tt = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
         self.stack.set_transition_type(tt)
+        self.sc.set_min_content_width(400)
 
     def on_add(self, button):
         self.add_tab()
