@@ -90,7 +90,7 @@ class Main_Controls(grabbo.Builder):
         po.add(m)
         po.show()
 
-class Window(grabbo.Window):
+class Main(grabbo.Window):
     def __init__(self):
         super(Window, self).__init__()
         self.MC = Main_Controls(self)
@@ -122,5 +122,5 @@ class Window(grabbo.Window):
         grabbo.Window.on_close(self, button)
 
 if __name__ == "__main__":
-    app = Window()
+    app = Main()
     Gtk.main()
