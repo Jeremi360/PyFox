@@ -23,10 +23,10 @@ class Main_Controls(grabbo.Builder):
         self.menub.connect("clicked", self.on_menu)
 
     def set_title(self, title):
-        self.parent.hb.set_title(variable.appname + ": " + title)
+        self.parent.hb.set_title(crowbar.variable.appname + ": " + title)
 
     def on_menu(self, button):
         po = Gtk.Popover.new(self.menub)
-        m = Menu(po, self.notebook).get()
+        m = crowbar.Menu(po, self.notebook).get()
         po.add(m)
         po.show()
