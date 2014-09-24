@@ -78,8 +78,12 @@ class AboutD(Gtk.AboutDialog):
         self.set_title("About " + variable.appname)
         self.set_wrap_license(False)
         self.connect("activate-link", notebook.add_tab)
-
         self.set_website(variable.home)
+
+        if self.run() == Gtk.ResponseType.CLOSE:
+            self.close()
+
+
 
 
 
