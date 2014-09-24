@@ -94,11 +94,9 @@ class Main(grabbo.Window):
     def __init__(self):
         grabbo.Window.__init__(self)
         self.MC = Main_Controls(self)
-
         self.set_icon_from_file(variable.icon)
 
         self.tabs = Tabs_Manager(self.MC)
-
         self.tabs.add_tab(url = variable.home, active = True)
 
         self.hb = Gtk.HeaderBar()
