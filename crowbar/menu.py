@@ -54,13 +54,14 @@ class Menu(grabbo.Builder):
     def on_about(self, button):
         self.po.hide()
         ad = AboutD()
-        ad.show_all()
+        ad.show_all(self.notebook)
+        ad.destroy()
 
     def get(self):
         return self.ui.get_object("grid")
 
 class AboutD(Gtk.AboutDialog):
-    def __init__(self):
+    def __init__(self, notebook):
         Gtk.AboutDialog.__init__(self)
 
         img = Gtk.Image()
@@ -77,8 +78,7 @@ class AboutD(Gtk.AboutDialog):
         self.set_wrap_license(False)
         self.set_title("About " + variable.appname)
         self.set_wrap_license(False)
-        self.connect("activate-link", self)
-
+        self.connect("activate-link", notebook.add_tab)
 
         self.set_website(variable.home)
 
