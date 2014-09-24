@@ -1,25 +1,12 @@
 from gi.repository import Gtk
-import os
+import os, sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+import crowbar
+import grabbo
 
 r = os.path.realpath(__file__)
 r = os.path.dirname(r)
 r = os.path.dirname(r)
-
-try:
-    from crowbar.tab import Tab
-    from crowbar import variable
-    print("Eclipse way")
-except:
-    from tab import Tab
-    import variable
-    print("Normal way")
-
-try:
-    import grabbo
-except:
-    print("Please first install Grabbo in your python path or copy to crowbar dir")
-    print("Grabbo can be download from https://github.com/jeremi360/Grabbo")
-    exit()
 
 Menu_UI = os.path.join(r, 'ui', 'Menu.xml')
 

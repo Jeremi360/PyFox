@@ -1,12 +1,12 @@
 from gi.repository import Gtk
-import os
+import os, sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+import crowbar
+import grabbo
 
 r = os.path.realpath(__file__)
 r = os.path.dirname(r)
 r = os.path.dirname(r)
-
-import crowbar
-import grabbo
 
 UI_Main = os.path.join(r, 'ui', 'Main.xml')
 class Main_Controls(grabbo.Builder):
