@@ -6,7 +6,6 @@ r = os.path.realpath(__file__)
 r = os.path.dirname(r)
 r = os.path.dirname(r)
 
-
 class Hb_TabButton(grabbo.TabButton):
 	def on_close(self, button):
 		w = self.n.switcher.get_allocation().width
