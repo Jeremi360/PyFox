@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
 from gi.repository import Gtk
-import os
-import sys
+import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 r = os.path.realpath(__file__)
