@@ -5,21 +5,8 @@ r = os.path.realpath(__file__)
 r = os.path.dirname(r)
 r = os.path.dirname(r)
 
-try:
-    from crowbar import variable
-    from crowbar import Menu
-    print("Eclipse way")
-except:
-    import variable
-    import Menu
-    print("Normal way")
-
-try:
-    import grabbo
-except:
-    print("Please first install Grabbo in your python path or copy to crowbar dir")
-    print("Grabbo can be download from https://github.com/jeremi360/Grabbo")
-    exit()
+import crowbar
+import grabbo
 
 UI_Main = os.path.join(r, 'ui', 'Main.xml')
 class Main_Controls(grabbo.Builder):

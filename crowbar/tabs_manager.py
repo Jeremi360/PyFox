@@ -1,12 +1,6 @@
 from gi.repository import Gtk
 from crowbar import Tab
-
-try:
-    import grabbo
-except:
-    print("Please first install Grabbo in your python path or copy to crowbar dir")
-    print("Grabbo can be download from https://github.com/jeremi360/Grabbo")
-    exit()
+import grabbo
 
 class Tabs_Manager(grabbo.Notebook):
     def __init__(self, mc):
