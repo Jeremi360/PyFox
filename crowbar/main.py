@@ -27,8 +27,6 @@ except:
     print("Grabbo can be download from https://github.com/jeremi360/Grabbo")
     exit()
 
-
-
 class Main(grabbo.Window):
     def __init__(self):
         grabbo.Window.__init__(self)
