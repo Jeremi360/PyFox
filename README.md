@@ -34,11 +34,12 @@ If you won to compile/run this you will need:
 
 To run just double click on main.py in corwbar folder.
 
-version: 0.2.1
+version: 0.2.2
 "Warning: This program is not finished"
 
 Done:
 
+* Split to smallest files + make less imports
 * AboutDialog
 * Menu - only 3 bottom buttons work for now
 * history mini list
@@ -47,6 +48,7 @@ Done:
 	 - rewrite using Gtk.Stock and Gtk.StockSwitcher
 	 - fixed!
 	 - like dock!
+	 - use RadioButtons
 
 * google search in url bar
 * progress in url bar
