@@ -76,14 +76,11 @@ class AboutD(Gtk.AboutDialog):
         self.set_license_type(Gtk.License.GPL_3_0)
         self.set_wrap_license(False)
         self.set_title("About " + variable.appname)
-        self.set_skip_taskbar_hint(True)
+        self.set_wrap_license(False)
+        self.connect("activate-link", self)
+
 
         self.set_website(variable.home)
-
-        response = self.run()
-
-        if response == Gtk.ResponseType.CLOSE:
-            self.close()
 
 
 
