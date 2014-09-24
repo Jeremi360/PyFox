@@ -32,11 +32,11 @@ class Menu(grabbo.Builder):
 
     def on_home(self, button):
         self.po.hide()
-        self.notebook.add_tab(variable.home, True)
+        self.notebook.add_tab(crowbar.variable.home, True)
 
     def on_rbug(self, button):
         self.po.hide()
-        self.notebook.add_tab(variable.rapport, True)
+        self.notebook.add_tab(crowbar.variable.rapport, True)
 
     def on_about(self, button):
         self.po.hide()
