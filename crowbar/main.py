@@ -85,7 +85,7 @@ class Main_Controls(grabbo.Builder):
         self.parent.hb.set_title(variable.appname + ": " + title)
 
     def on_menu(self, button):
-        po = Gtk.Popover(self.menub)
+        po = Gtk.Popover()
         po.set_pointing_to(self.menub.get_allocation())
 
         m = menu.Menu(po, self.notebook).get()
