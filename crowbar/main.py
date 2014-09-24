@@ -11,11 +11,13 @@ try:
     from crowbar import Tab
     from crowbar import variable
     from crowbar import Main_Controls
+    from crowbar import Tabs_Manager
     print("Eclipse way")
 except:
     from tab import Tab
     import variable
     import Main_Controls
+    import Tabs_Manager
     print("Normal way")
 
 try:
