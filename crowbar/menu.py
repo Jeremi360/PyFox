@@ -53,8 +53,8 @@ class Menu(grabbo.Builder):
 
     def on_about(self, button):
         self.po.hide()
-        ad = AboutD()
-        ad.show_all(self.notebook)
+        ad = AboutD(self.notebook)
+        ad.run()
         ad.destroy()
 
     def get(self):
