@@ -55,7 +55,6 @@ class Menu(grabbo.Builder):
         self.po.hide()
         ad = AboutD(self.notebook)
         ad.run()
-        ad.destroy()
 
     def get(self):
         return self.ui.get_object("grid")
