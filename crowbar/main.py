@@ -25,9 +25,6 @@ except:
     print("Grabbo can be download from https://github.com/jeremi360/Grabbo")
     exit()
 
-home = os.path.expanduser("~")
-conf = os.path.join(home,'.crowbar')
-
 
 class Tabs_Manager(grabbo.Notebook):
     def __init__(self, mc):
@@ -67,28 +64,7 @@ class Tabs_Manager(grabbo.Notebook):
     def get_width(self):
         return self.sc.get_min_content_width()
 
-UI_Main = os.path.join(r, 'ui', 'Main.xml')
-class Main_Controls(grabbo.Builder):
-    def __init__(self, parent):
-        grabbo.Builder.__init__(self, UI_Main)
 
-        self.notebook = None
-        self.parent = parent
-        self.menub = self.ui.get_object("MenuButton")
-        self.downs = self.ui.get_object("Downs")
-        self.StartBox = self.ui.get_object("StartBox")
-        self.EndBox = self.ui.get_object("EndBox")
-
-        self.menub.connect("clicked", self.on_menu)
-
-    def set_title(self, title):
-        self.parent.hb.set_title(variable.appname + ": " + title)
-
-    def on_menu(self, button):
-        po = Gtk.Popover.new(self.menub)
-        m = menu.Menu(po, self.notebook).get()
-        po.add(m)
-        po.show()
 
 class Main(grabbo.Window):
     def __init__(self):

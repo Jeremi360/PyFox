@@ -7,11 +7,11 @@ r = os.path.dirname(r)
 
 try:
     from crowbar import variable
-    from crowbar import menu
+    from crowbar import Menu
     print("Eclipse way")
 except:
     import variable
-    import menu
+    import Menu
     print("Normal way")
 
 try:
@@ -40,6 +40,6 @@ class Main_Controls(grabbo.Builder):
 
     def on_menu(self, button):
         po = Gtk.Popover.new(self.menub)
-        m = menu.Menu(po, self.notebook).get()
+        m = Menu(po, self.notebook).get()
         po.add(m)
         po.show()
