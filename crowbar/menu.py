@@ -80,6 +80,11 @@ class AboutD(Gtk.AboutDialog):
 
         self.set_website(variable.home)
 
+        response = self.run()
+
+        if response == Gtk.ResponseType.CLOSE:
+            self.close()
+
 
 
 
