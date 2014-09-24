@@ -1,4 +1,3 @@
-from gi.repository import Gtk
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import crowbar
@@ -40,7 +39,7 @@ class Menu(grabbo.Builder):
 
     def on_about(self, button):
         self.po.hide()
-        ad = AboutD(self.notebook)
+        ad = crowbar.AboutD(self.notebook)
         ad.run()
 
     def get(self):
