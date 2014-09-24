@@ -44,15 +44,15 @@ class Menu(grabbo.Builder):
         self.RBug.connect("clicked", self.on_rbug)
 
     def on_home(self, button):
-        self.po.hide()
+        #self.po.hide()
         self.notebook.add_tab(variable.home, True)
 
     def on_rbug(self, button):
-        self.po.hide()
+        #self.po.hide()
         self.notebook.add_tab(variable.rapport, True)
 
     def on_about(self, button):
-        self.po.hide()
+        #self.po.hide()
         ad = AboutD(self.notebook)
         ad.run()
 
