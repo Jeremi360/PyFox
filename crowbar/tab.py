@@ -1,13 +1,6 @@
 from gi.repository import Gtk, WebKit
-import os, sys
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-
-try:
-	import grabbo
-except:
-	print("Please first install Grabbo in your python path or copy to crowbar dir")
-	print("Grabbo can be download from https://github.com/jeremi360/Grabbo")
-	exit()
+import os
+import grabbo
 
 r = os.path.realpath(__file__)
 r = os.path.dirname(r)
