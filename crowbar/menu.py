@@ -44,15 +44,15 @@ class Menu(grabbo.Builder):
         self.RBug.connect("clicked", self.on_rbug)
 
     def on_home(self, button):
-        #self.po.hide()
+        self.po.hide()
         self.notebook.add_tab(variable.home, True)
 
     def on_rbug(self, button):
-        #self.po.hide()
+        self.po.hide()
         self.notebook.add_tab(variable.rapport, True)
 
     def on_about(self, button):
-        #self.po.hide()
+        self.po.hide()
         ad = AboutD(self.notebook)
         ad.run()
 
@@ -79,9 +79,6 @@ class AboutD(Gtk.AboutDialog):
         self.set_wrap_license(False)
         self.connect("activate-link", notebook.add_tab)
         self.set_website(variable.home)
-
-        if self.run() == Gtk.ResponseType.CLOSE:
-            self.close()
 
 
 
