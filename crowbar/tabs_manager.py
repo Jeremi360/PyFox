@@ -1,11 +1,5 @@
 from gi.repository import Gtk
-
-try:
-    from crowbar import Tab
-    print("Eclipse way")
-except:
-    from tab import Tab
-    print("Normal way")
+from crowbar import Tab
 
 try:
     import grabbo
