@@ -3,19 +3,12 @@
 from gi.repository import Gtk
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+import crowbar
+import grabbo
 
 r = os.path.realpath(__file__)
 r = os.path.dirname(r)
 r = os.path.dirname(r)
-
-import crowbar
-
-try:
-    import grabbo
-except:
-    print("Please first install Grabbo in your python path or copy to crowbar dir")
-    print("Grabbo can be download from https://github.com/jeremi360/Grabbo")
-    exit()
 
 class Main(grabbo.Window):
     def __init__(self):
