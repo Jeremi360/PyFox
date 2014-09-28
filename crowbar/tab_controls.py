@@ -44,7 +44,7 @@ class TabControls(grabbo.Builder):
 		self.LeftScroll.hide()
 
 		#create Notebook
-		self.notebook
+		self.notebook = crowbar.Notebook()
 
 		#create WEBVIEW
 		self.webview = WebKit.WebView()
