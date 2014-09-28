@@ -45,7 +45,9 @@ class TabControls(grabbo.Builder):
 
 		#create Notebook
 		self.notebook = crowbar.Notebook()
+		self.get().add(self.notebook)
 
+		'''
 		#create WEBVIEW
 		self.webview = WebKit.WebView()
 		self.scroll = self.ui.get_object("scroll")
@@ -56,6 +58,7 @@ class TabControls(grabbo.Builder):
 		self.webview.connect("icon-loaded", self.load_icon)
 		self.webview.connect("load-finished", self.finish_load)
 		self.webview.connect("load-progress-changed", self.progress_load)
+		'''
 
 		#connect UI elements with methods
 
@@ -79,9 +82,11 @@ class TabControls(grabbo.Builder):
 		#last settings
 		self.webview.set_full_content_zoom(True)
 
+		'''
 		if url:
 			self.urlen.set_text(url)
 			self.webview.load_uri(url)
+		'''
 
 		#show
 		self.webview.show()
