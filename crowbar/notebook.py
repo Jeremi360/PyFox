@@ -4,7 +4,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import crowbar
 import grabbo
 
-TabL_UI = os.path.join(crowbar.appdir, "ui", "TabLabel.xml")
+TabL_UI = os.path.join(crowbar.get_appdir(), "ui", "TabLabel.xml")
 class TabLabel (grabbo.Builder):
     def __init__(self, notebook):
         grabbo.Builder.__init__(self, TabL_UI)
