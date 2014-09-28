@@ -13,7 +13,6 @@ class Main_Controls(grabbo.Builder):
         self.parent = parent
         self.menub = self.ui.get_object("MenuButton")
         self.downs = self.ui.get_object("Downs")
-        self.StartBox = self.ui.get_object("StartBox")
         self.EndBox = self.ui.get_object("EndBox")
 
         self.menub.connect("clicked", self.on_menu)
