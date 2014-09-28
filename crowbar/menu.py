@@ -3,7 +3,11 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import crowbar
 import grabbo
 
-Menu_UI = os.path.join(crowbar.get_appdir(), 'ui', 'Menu.xml')
+r = os.path.realpath(__file__)
+r = os.path.dirname(r)
+r = os.path.dirname(r)
+
+Menu_UI = os.path.join(r, 'ui', 'Menu.xml')
 class Menu(grabbo.Builder):
     def __init__(self, po, notebook):
         grabbo.Builder.__init__(self, Menu_UI)
