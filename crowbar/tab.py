@@ -1,5 +1,6 @@
 from gi.repository import Gtk, WebKit
 import os, sys
+
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import grabbo
 import crowbar
@@ -7,7 +8,7 @@ import crowbar
 
 UI_TabC = os.path.join(crowbar.appdir, 'ui', 'TabControls.xml')
 class TabControls(grabbo.Builder):
-	def __init__(self, notebook, url = None):
+	def __init__(self, mc, url = None):
 		grabbo.Builder.__init__(self, UI_TabC)
 
 		#get objects from UI_Tab
@@ -36,6 +37,11 @@ class TabControls(grabbo.Builder):
 
 		#this UI elements are hide until is not in use
 		self.findbox.hide()
+		self.RightScroll.hide()
+		self.LeftScroll.hide()
+
+		#create Notebook
+		self.notebook
 
 		#create WEBVIEW
 		self.webview = WebKit.WebView()
@@ -76,7 +82,7 @@ class TabControls(grabbo.Builder):
 
 		#show
 		self.webview.show()
-		self.notebook = notebook
+		self.mc = mc
 
 	def load_url(self, url):
 		self.webview.load_uri(url)
@@ -129,9 +135,9 @@ class TabControls(grabbo.Builder):
 
 	def on_full(self, button):
 		if self.fullb.get_active():
-			self.notebook.MC.parent.fullscreen()
+			self.mc.parent.fullscreen()
 		else:
-			self.notebook.MC.parent.unfullscreen()
+			self.mc.parent.unfullscreen()
 
 	def get(self):
 		return self.ui.get_object("box")
@@ -213,9 +219,6 @@ class TabControls(grabbo.Builder):
 		self.tb.button.set_label(short)
 
 		self.notebook.MC.set_title(title)
-		w = self.notebook.switcher.get_allocation().width
-		self.notebook.set_width(w)
-		self.tb.button.set_tooltip_text(title)
 
 	def load_icon(self, webview, url):
 		try:
