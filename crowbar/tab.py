@@ -76,7 +76,6 @@ class Tab(grabbo.Builder):
 		#show
 		self.webview.show()
 		self.notebook = notebook
-		self.tb = Hb_TabButton(self.notebook, self.get())
 
 	def load_url(self, url):
 		self.webview.load_uri(url)
