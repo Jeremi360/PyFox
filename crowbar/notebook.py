@@ -29,8 +29,16 @@ class TabLabel (grabbo.Builder):
 class Notebook(Gtk.Notebook):
     def __init__(self):
         Gtk.Notebook.__init__(self)
+        self.set_scrollable(True)
 
-    def append_page(self, url):
-        tl = TabLabel(self, )
+    def append_page(self, url = None):
+        tl = TabLabel(self)
+        sc = Gtk.ScrolledWindow()
+        wv = WebKit.WebView()
+        sc.add(wv)
+        Gtk.Notebook.append_page(self, tl, sc)
+        tl.num = Gtk.Notebook.page_num(sc)
+        wv.load_uri(url)
+        tl.Label.set_label(wv.get_title())
 
 
