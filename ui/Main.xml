@@ -12,26 +12,12 @@
     <property name="can_focus">False</property>
     <property name="icon_name">document-properties</property>
   </object>
-  <object class="GtkBox" id="StartBox">
+  <object class="GtkButton" id="MenuButton">
     <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <child>
-      <object class="GtkButton" id="MenuButton">
-        <property name="visible">True</property>
-        <property name="can_focus">True</property>
-        <property name="receives_default">True</property>
-        <property name="image">MenuIcon</property>
-        <property name="relief">none</property>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">False</property>
-        <property name="position">0</property>
-      </packing>
-    </child>
-    <child>
-      <placeholder/>
-    </child>
+    <property name="can_focus">True</property>
+    <property name="receives_default">True</property>
+    <property name="image">MenuIcon</property>
+    <property name="relief">none</property>
   </object>
   <object class="GtkImage" id="image1">
     <property name="visible">True</property>
