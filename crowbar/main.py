@@ -28,7 +28,7 @@ class Main(grabbo.Window):
         self.add(self.tabs)
 
         self.hb.show()
-        self.tabs.show_all()()
+        self.tabs.show_all()
         self.show()
 
     def on_close(self, button):
