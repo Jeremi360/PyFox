@@ -67,18 +67,7 @@ class TabControls(grabbo.Builder):
 		self.backfb.connect("clicked", self.find_back)
 		self.nextfb.connect("clicked", self.find_next)
 
-		'''
-		if url:
-			self.urlen.set_text(url)
-			self.webview.load_uri(url)
-		'''
-
-		#show
-		#self.webview.show()
 		self.mc = mc
-
-	def load_url(self, url):
-		self.webview.load_uri(url)
 
 	def on_hist(self, button):
 		if self.webview.can_go_forward() or self.webview.can_go_back():

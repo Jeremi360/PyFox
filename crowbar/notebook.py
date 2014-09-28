@@ -57,8 +57,10 @@ class Notebook(Gtk.Notebook):
 
         wv.set_full_content_zoom(True)
 
-        self.urlen.set_text(url)
-        self.webview.load_uri(url)
+        self.tabc.urlen.set_text(url)
+
+
+
 
 
 
