@@ -1,7 +1,8 @@
 from gi.repository import Gtk, WebKit
-import os
+import os, sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import grabbo
-from crowbar import crowbar
+import crowbar
 
 class Hb_TabButton(grabbo.TabButton):
 	def on_close(self, button):

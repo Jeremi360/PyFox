@@ -4,7 +4,6 @@ import crowbar
 import grabbo
 
 Menu_UI = os.path.join(crowbar.appdir, 'ui', 'Menu.xml')
-
 class Menu(grabbo.Builder):
     def __init__(self, po, notebook):
         grabbo.Builder.__init__(self, Menu_UI)
