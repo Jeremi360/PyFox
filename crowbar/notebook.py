@@ -31,9 +31,10 @@ class TabLabel (grabbo.Builder):
 
 
 class Notebook(Gtk.Notebook):
-    def __init__(self):
+    def __init__(self, tabcontrols):
         Gtk.Notebook.__init__(self)
         self.set_scrollable(True)
+        self.tabc = tabcontrols
 
     def append_page(self, url = None):
         tl = TabLabel(self)
@@ -42,9 +43,22 @@ class Notebook(Gtk.Notebook):
         sc.add(wv)
         Gtk.Notebook.append_page(self, tl, sc)
         tl.num = Gtk.Notebook.page_num(sc)
-        wv.load_uri(url)
+        self.set_webview(wv, url)
         tl.Label.set_label(wv.get_title())
         tl.show()
         sc.show_all()
+
+    def set_webview(self, wv, url:
+        #connect WEBVIEW signals with methods
+        wv.connect("title-changed", self.tabc.title_chang)
+        wv.connect("icon-loaded", self.tabc.load_icon)
+        wv.connect("load-finished", self.tabc.finish_load)
+        wv.connect("load-progress-changed", self.tabc.progress_load)
+
+        wv.set_full_content_zoom(True)
+
+        self.urlen.set_text(url)
+        self.webview.load_uri(url)
+
 
 
