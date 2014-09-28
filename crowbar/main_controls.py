@@ -4,7 +4,11 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import crowbar
 import grabbo
 
-UI_Main = os.path.join(crowbar.appdir, 'ui', 'Main.xml')
+r = os.path.realpath(__file__)
+r = os.path.dirname(r)
+r = os.path.dirname(r)
+
+UI_Main = os.path.join(r, 'ui', 'Main.xml')
 class MainControls(grabbo.Builder):
     def __init__(self, parent):
         grabbo.Builder.__init__(self, UI_Main)

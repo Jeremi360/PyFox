@@ -4,8 +4,12 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import grabbo
 import crowbar
 
+r = os.path.realpath(__file__)
+r = os.path.dirname(r)
+r = os.path.dirname(r)
 
-UI_TabC = os.path.join(crowbar.get_appdir(), 'ui', 'TabControls.xml')
+
+UI_TabC = os.path.join(r, 'ui', 'TabControls.xml')
 class TabControls(grabbo.Builder):
 	def __init__(self, mc, url = None):
 		grabbo.Builder.__init__(self, UI_TabC)
