@@ -34,7 +34,7 @@ If you won to compile/run this you will need:
 
 To run just double click on main.py in corwbar folder.
 
-version: 0.2.2
+version: 0.3.3 - don't work yet
 "Warning: This program is not finished"
 
 Done:
@@ -44,12 +44,7 @@ Done:
 * Menu - only 3 bottom buttons work for now
 * history mini list
 * Full screen mode
-* Tabs on Top - now on title bar:
-	 - rewrite using Gtk.Stock and Gtk.StockSwitcher
-	 - fixed!
-	 - like dock!
-	 - use RadioButtons
-
+* ~~Tabs on Top~~ - instead use Gtk.Notebook
 * google search in url bar
 * progress in url bar
 * history back, forward buttons
