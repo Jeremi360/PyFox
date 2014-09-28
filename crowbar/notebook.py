@@ -48,7 +48,7 @@ class Notebook(Gtk.Notebook):
         tl.show()
         sc.show_all()
 
-    def set_webview(self, wv, url:
+    def set_webview(self, wv, url):
         #connect WEBVIEW signals with methods
         wv.connect("title-changed", self.tabc.title_chang)
         wv.connect("icon-loaded", self.tabc.load_icon)
