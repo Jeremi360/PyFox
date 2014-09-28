@@ -48,19 +48,6 @@ class TabControls(grabbo.Builder):
 		self.get().add(self.notebook)
 		self.notebook.show()
 
-		'''
-		#create WEBVIEW
-		self.webview = WebKit.WebView()
-		self.scroll = self.ui.get_object("scroll")
-		self.scroll.add(self.webview)
-
-		#connect WEBVIEW signals with methods
-		self.webview.connect("title-changed", self.title_chang)
-		self.webview.connect("icon-loaded", self.load_icon)
-		self.webview.connect("load-finished", self.finish_load)
-		self.webview.connect("load-progress-changed", self.progress_load)
-		'''
-
 		#connect UI elements with methods
 
 		#main tab toolbar
@@ -79,9 +66,6 @@ class TabControls(grabbo.Builder):
 		self.findfb.connect("activate", self.on_find)
 		self.backfb.connect("clicked", self.find_back)
 		self.nextfb.connect("clicked", self.find_next)
-
-		#last settings
-		#self.webview.set_full_content_zoom(True)
 
 		'''
 		if url:
