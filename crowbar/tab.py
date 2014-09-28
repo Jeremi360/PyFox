@@ -5,11 +5,11 @@ import grabbo
 import crowbar
 
 
-UI_Tab = os.path.join(crowbar.appdir, 'ui', 'Tab.xml')
+UI_TabC = os.path.join(crowbar.appdir, 'ui', 'TabControls.xml')
 
-class Tab(grabbo.Builder):
+class TabControls(grabbo.Builder):
 	def __init__(self, notebook, url = None):
-		super(Tab, self).__init__(UI_Tab)
+		grabbo.Builder.__init__(self, UI_TabC)
 
 		#get objects from UI_Tab
 		#main tab toolbar
