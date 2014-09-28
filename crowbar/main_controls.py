@@ -4,11 +4,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import crowbar
 import grabbo
 
-r = os.path.realpath(__file__)
-r = os.path.dirname(r)
-r = os.path.dirname(r)
-
-UI_Main = os.path.join(r, 'ui', 'Main.xml')
+UI_Main = os.path.join(crowbar.appdir, 'ui', 'Main.xml')
 class Main_Controls(grabbo.Builder):
     def __init__(self, parent):
         grabbo.Builder.__init__(self, UI_Main)
@@ -23,7 +19,7 @@ class Main_Controls(grabbo.Builder):
         self.menub.connect("clicked", self.on_menu)
 
     def set_title(self, title):
-        self.parent.hb.set_title(crowbar.variable.appname + ": " + title)
+        self.parent.hb.set_title(crowbar.appname + ": " + title)
 
     def on_menu(self, button):
         po = Gtk.Popover.new(self.menub)

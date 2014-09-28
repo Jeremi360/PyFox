@@ -1,7 +1,7 @@
 from gi.repository import Gtk, WebKit
 import os
 import grabbo
-from crowbar import variable
+from crowbar import crowbar
 
 class Hb_TabButton(grabbo.TabButton):
 	def on_close(self, button):
@@ -9,7 +9,7 @@ class Hb_TabButton(grabbo.TabButton):
 		self.n.set_width(w)
 		grabbo.TabButton.on_close(self, button)
 
-UI_Tab = os.path.join(variable.appdir, 'ui', 'Tab.xml')
+UI_Tab = os.path.join(crowbar.appdir, 'ui', 'Tab.xml')
 
 class Tab(grabbo.Builder):
 	def __init__(self, notebook, url = None):

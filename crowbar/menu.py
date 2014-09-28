@@ -3,7 +3,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import crowbar
 import grabbo
 
-Menu_UI = os.path.join(crowbar.variable.appdir, 'ui', 'Menu.xml')
+Menu_UI = os.path.join(crowbar.appdir, 'ui', 'Menu.xml')
 
 class Menu(grabbo.Builder):
     def __init__(self, po, notebook):
@@ -27,11 +27,11 @@ class Menu(grabbo.Builder):
 
     def on_home(self, button):
         self.po.hide()
-        self.notebook.add_tab(crowbar.variable.home, True)
+        self.notebook.add_tab(crowbar.home, True)
 
     def on_rbug(self, button):
         self.po.hide()
-        self.notebook.add_tab(crowbar.variable.rapport, True)
+        self.notebook.add_tab(crowbar.rapport, True)
 
     def on_about(self, button):
         self.po.hide()
