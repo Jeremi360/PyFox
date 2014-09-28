@@ -5,7 +5,7 @@ import crowbar
 import grabbo
 
 UI_Main = os.path.join(crowbar.appdir, 'ui', 'Main.xml')
-class Main_Controls(grabbo.Builder):
+class MainControls(grabbo.Builder):
     def __init__(self, parent):
         grabbo.Builder.__init__(self, UI_Main)
 
