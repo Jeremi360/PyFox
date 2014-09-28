@@ -12,7 +12,7 @@ class Main(grabbo.Window):
         self.MC = crowbar.MainControls(self)
         self.set_icon_from_file(crowbar.icon)
 
-        self.tabs = crowbar.TabControls(self.MC)
+        self.tabs = crowbar.TabControls(self.MC).get()
         #self.tabs.add_tab(url = crowbar.home, active = True)
 
         self.hb = Gtk.HeaderBar()
