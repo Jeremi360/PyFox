@@ -6,10 +6,6 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import crowbar
 import grabbo
 
-r = os.path.realpath(__file__)
-r = os.path.dirname(r)
-r = os.path.dirname(r)
-
 class Main(grabbo.Window):
     def __init__(self):
         grabbo.Window.__init__(self)
