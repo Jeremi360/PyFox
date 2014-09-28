@@ -4,11 +4,6 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import grabbo
 import crowbar
 
-class Hb_TabButton(grabbo.TabButton):
-	def on_close(self, button):
-		w = self.n.switcher.get_allocation().width
-		self.n.set_width(w)
-		grabbo.TabButton.on_close(self, button)
 
 UI_Tab = os.path.join(crowbar.appdir, 'ui', 'Tab.xml')
 
