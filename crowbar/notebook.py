@@ -40,5 +40,7 @@ class Notebook(Gtk.Notebook):
         tl.num = Gtk.Notebook.page_num(sc)
         wv.load_uri(url)
         tl.Label.set_label(wv.get_title())
+        tl.show()
+        sc.show_all()
 
 
