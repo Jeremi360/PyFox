@@ -25,6 +25,8 @@ class TabControls(grabbo.Builder):
 		self.ExtBox = self.ui.get_object("ExtBox") #todo
 		self.fullb = self.ui.get_object("Full")
 		self.ToolBox = self.ui.get_object("toolbox")
+		self.RightScroll = self.ui.get_object("scrolledright")
+		self.LeftScroll = self.ui.get_object("scrolledleft")
 
 		#findbox
 		self.findbox = self.ui.get_object("findbox")
