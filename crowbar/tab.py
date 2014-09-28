@@ -6,7 +6,6 @@ import crowbar
 
 
 UI_TabC = os.path.join(crowbar.appdir, 'ui', 'TabControls.xml')
-
 class TabControls(grabbo.Builder):
 	def __init__(self, notebook, url = None):
 		grabbo.Builder.__init__(self, UI_TabC)
