@@ -46,6 +46,7 @@ class TabControls(grabbo.Builder):
 		#create Notebook
 		self.notebook = crowbar.Notebook()
 		self.get().add(self.notebook)
+		self.notebook.show()
 
 		'''
 		#create WEBVIEW
@@ -89,7 +90,7 @@ class TabControls(grabbo.Builder):
 		'''
 
 		#show
-		self.webview.show()
+		#self.webview.show()
 		self.mc = mc
 
 	def load_url(self, url):
