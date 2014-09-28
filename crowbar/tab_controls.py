@@ -80,7 +80,7 @@ class TabControls(grabbo.Builder):
 		self.nextfb.connect("clicked", self.find_next)
 
 		#last settings
-		self.webview.set_full_content_zoom(True)
+		#self.webview.set_full_content_zoom(True)
 
 		'''
 		if url:
