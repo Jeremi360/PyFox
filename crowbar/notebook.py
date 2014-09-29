@@ -8,10 +8,10 @@ r = os.path.realpath(__file__)
 r = os.path.dirname(r)
 r = os.path.dirname(r)
 
-TabL_UI = os.path.join(r, "ui", "TabLabel.xml")
-class TabLabel (grabbo.Builder):
+TabB_UI = os.path.join(r, "ui", "TabButton.xml")
+class TabButton (grabbo.Builder):
     def __init__(self, notebook):
-        grabbo.Builder.__init__(self, TabL_UI)
+        grabbo.Builder.__init__(self, TabB_UI)
         self.Label = self.ui.get_object("label")
         self.Icon = self.ui.get_object("icon")
         self.Button = self.ui.get_object("button")
@@ -29,6 +29,13 @@ class TabLabel (grabbo.Builder):
     def on_button(self, button):
         self.notebook.remove_page(self.num)
 
+class SwVpWv(Gtk.ScrolledWindow):
+    def __init__(self, url):
+        Gtk.ScrolledWindow.__init__(self)
+        self.webview = WebKit.WebView()
+        self.add(self.webview)
+        self.webview.load_uri(url)
+        self.show_all()
 
 class Notebook(Gtk.Notebook):
     def __init__(self, tabcontrols):
@@ -37,11 +44,8 @@ class Notebook(Gtk.Notebook):
         self.tabc = tabcontrols
 
     def append_page(self, url = None):
-        tl = TabLabel(self)
-        sc = Gtk.ScrolledWindow()
-        wv = WebKit.WebView()
-        sc.add(wv)
-        Gtk.Notebook.append_page(self, tl, sc)
+        sc = SwVpWv(url)
+        Gtk.Notebook.append_page(self, child = sc)
         sc.show_all()
 
 
