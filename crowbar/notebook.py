@@ -50,11 +50,16 @@ class TabSwitcher (grabbo.Builder):
         self.notebook.auto_show_switcher()
 
 class WebViewContiner(Gtk.ScrolledWindow):
-    def __init__(self, url):
+    def __init__(self, url = None):
         Gtk.ScrolledWindow.__init__(self)
         self.webview = WebKit.WebView()
         self.add(self.webview)
-        self.webview.load_uri(url)
+
+        try:
+            self.webview.load_uri(url)
+        except:
+            pass
+
         self.show_all()
 
 class Notebook(Gtk.Notebook):
