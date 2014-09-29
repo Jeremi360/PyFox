@@ -28,6 +28,9 @@ class TabSwitcher (grabbo.Builder):
     def join_group(self, group):
         self.Button.join_group(group)
 
+    def get_group(self):
+        return self.Button
+
     def set_label(self, label):
         self.Button.set_label(label)
 
@@ -64,7 +67,9 @@ class Notebook(Gtk.Notebook):
         self.maincotrols.TabsSwitcher.add(ts)
 
         try:
-            ts.join_group(group)
+            ts.join_group(self.rgroup[0])
+        except:
+            self.rgroup.append(ts.get_group())
 
         if active:
 
