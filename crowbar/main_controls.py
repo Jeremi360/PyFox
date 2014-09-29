@@ -22,6 +22,7 @@ class MainControls(grabbo.Builder):
         self.Title = self.ui.get_object("Title")
         self.sc = self.ui.get_object("scrolledwindow")
         self.addb = self.ui.get_object("AddButton")
+        self.TabsSwitcher = self.ui.get_object("TabsSwitcher")
 
         self.sc.hide()
 
