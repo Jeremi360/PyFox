@@ -84,7 +84,7 @@ class Notebook(Gtk.Notebook):
             self.rgroup.append(ts.get_group())
 
         if active:
-            sts.button.do_pressed()
+            ts.button.do_pressed()
 
         self.auto_show_switcher()
 
