@@ -44,7 +44,7 @@ class TabControls(grabbo.Builder):
 		self.LeftScroll.hide()
 
 		#create Notebook
-		self.notebook = crowbar.Notebook()
+		self.notebook = crowbar.Notebook(self)
 		self.get().add(self.notebook)
 		self.notebook.show()
 
