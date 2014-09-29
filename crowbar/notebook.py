@@ -12,32 +12,32 @@ TabS_UI = os.path.join(r, "ui", "TabSwitcher.xml")
 class TabSwitcher (grabbo.Builder):
     def __init__(self, notebook, num):
         grabbo.Builder.__init__(self, TabS_UI)
-        self.Button = self.ui.get_object("Button")
+        self.button = self.ui.get_object("button")
         self.removeB = self.ui.get_object("RemoveButton")
 
         self.num = num
         self.notebook = notebook
 
-        self.Button.connect("toggled", self.on_tab)
+        self.button.connect("toggled", self.on_tab)
         self.removeB.connect("clicked", self.on_remove)
 
     def get(self):
         return self.ui.get_object("box")
 
     def join_group(self, group):
-        self.Button.join_group(group)
+        self.button.join_group(group)
 
     def get_group(self):
-        return self.Button
+        return self.button
 
     def set_label(self, label):
-        self.Button.set_label(label)
+        self.button.set_label(label)
 
     def get_image(self):
-        return self.Button.get_image()
+        return self.button.get_image()
 
     def set_tooltip(self, tooltip):
-        self.Button.set_tooltip(tooltip)
+        self.button.set_tooltip(tooltip)
 
     def on_tab(self, button):
         self.notebook.set_current_page(self.num)
