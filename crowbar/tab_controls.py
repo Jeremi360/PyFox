@@ -31,6 +31,7 @@ class TabControls(grabbo.Builder):
 		self.ToolBox = self.ui.get_object("toolbox")
 		self.RightScroll = self.ui.get_object("scrolledright")
 		self.LeftScroll = self.ui.get_object("scrolledleft")
+		self.TabsBox = self.ui.get_object("TabsBox")
 
 		#findbox
 		self.findbox = self.ui.get_object("findbox")
@@ -45,7 +46,7 @@ class TabControls(grabbo.Builder):
 
 		#create Notebook
 		self.notebook = crowbar.Notebook(self, mc)
-		self.get().add(self.notebook)
+		self.TabsBox.add(self.notebook)
 		self.notebook.show()
 
 		#connect UI elements with methods
