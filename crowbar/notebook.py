@@ -1,7 +1,7 @@
 from gi.repository import Gtk, WebKit
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-#import crowbar
+import crowbar
 import grabbo
 
 r = os.path.realpath(__file__)
@@ -41,7 +41,6 @@ class TabSwitcher (grabbo.Builder):
         wv = self.notebook.get_nth_page(self.num).webwview
         self.notebook.tabcontrols.set_webview(wv)
 
-
     def on_remove(self, button):
         self.notebook.remove_page(self.num)
 
@@ -60,6 +59,11 @@ class Notebook(Gtk.Notebook):
         self.maincotrols = maincontrols
         self.get_show_tabs(False)
         self.rgroup = []
+
+        self.maincotrols.addb.connect("clicked", self.on_add)
+
+    def on_add(self, button):
+        self.add_tab()
 
     def add_tab(self, url = None, active = False):
         wvc = WebViewContiner(url)
