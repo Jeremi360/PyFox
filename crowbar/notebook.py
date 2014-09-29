@@ -10,22 +10,23 @@ r = os.path.dirname(r)
 r = os.path.dirname(r)
 
 TabS_UI = os.path.join(r, "ui", "TabSwitcher.xml")
-class TabButton (grabbo.Builder):
-    def __init__(self, notebook):
+class TabSwitcher (grabbo.Builder):
+    def __init__(self, notebook, num):
         grabbo.Builder.__init__(self, TabS_UI)
         self.Button = self.ui.get_object("Button")
         self.removeB = self.ui.get_object("RemoveButton")
 
-        self.num = 0
+        self.num = num
         self.notebook = notebook
 
-        self.TabB.connect("toggled", self.on_tab)
-
-    def set_num(self, num):
-        self.num = num
+        self.Button.connect("toggled", self.on_tab)
+        self.removeB.connect("clicked", self.on_remove)
 
     def get(self):
         return self.ui.get_object("box")
+
+    def join_group(self, group):
+        self.Button.join_group(group)
 
     def on_tab(self, button):
         self.notebook.set_current_page(self.num)
@@ -51,9 +52,14 @@ class Notebook(Gtk.Notebook):
     def add_tab(self, url = None, active = False):
         wv = WebView(url)
         self.append_page(child = wv)
+        num = self.page_num(wv)
 
-        TabB = TabButton(self)
-        self.maincotrols crowbar.MainControls.
+        ts = TabSwitcher(self, num)
+        self.maincotrols.TabsSwitcher.add(ts)
+
+        try:
+            ts.
+
         if active:
 
 
