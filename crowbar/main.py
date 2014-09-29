@@ -14,7 +14,7 @@ class Main(grabbo.Window):
         self.set_icon_from_file(crowbar.icon)
 
         self.tabs = crowbar.TabControls(self.MC).get()
-        self.tabs.add_tab(url = crowbar.home, active = True)
+        self.tabs.notebook.add_tab(url = crowbar.home, active = True)
 
         self.hb.set_show_close_button(True)
         self.hb.set_title(crowbar.appname)
