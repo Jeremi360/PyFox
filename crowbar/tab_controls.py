@@ -46,7 +46,7 @@ class TabControls(grabbo.Builder):
 
 		#create Notebook
 		self.notebook = crowbar.Notebook(self, mc)
-		self.TabsBox.add(self.notebook)
+		self.TabsBox.pack_start(self.notebook, True, True, 1)
 		self.notebook.show()
 
 		#connect UI elements with methods
