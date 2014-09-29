@@ -85,6 +85,7 @@ class Notebook(Gtk.Notebook):
 
         if active:
             ts.button.set_active(True)
+            self.tabcontrols.set_webview(wvc.webview)
 
         self.auto_show_switcher()
 
