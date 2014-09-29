@@ -72,6 +72,7 @@ class Notebook(Gtk.Notebook):
             self.rgroup.append(ts.get_group())
 
         if active:
+            self.ts.Button.do_pressed()
 
 
 
