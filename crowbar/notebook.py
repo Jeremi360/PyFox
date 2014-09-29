@@ -40,8 +40,8 @@ class SwVpWv(Gtk.ScrolledWindow):
 class Notebook(Gtk.Notebook):
     def __init__(self, tabcontrols):
         Gtk.Notebook.__init__(self)
-        self.set_scrollable(True)
         self.tabc = tabcontrols
+        self.get_show_tabs(False)
 
 
 
