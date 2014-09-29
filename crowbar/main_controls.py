@@ -26,9 +26,14 @@ class MainControls(grabbo.Builder):
         self.sc.hide()
 
         self.menub.connect("clicked", self.on_menu)
+        self.set_title()
 
-    def set_title(self, title):
-        t = crowbar.appname + ": " + title
+    def set_title(self, title = None):
+        if title is None:
+            t = crowbar.appname
+        else:
+            t = crowbar.appname + ": " + title
+
         self.parent.hb.set_title(t)
         self.Title.set_label(t)
 
