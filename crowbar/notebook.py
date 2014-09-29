@@ -42,9 +42,6 @@ class Notebook(Gtk.Notebook):
         wv = WebKit.WebView()
         sc.add(wv)
         Gtk.Notebook.append_page(self, tl, sc)
-        tl.num = Gtk.Notebook.page_num(sc)
-        tl.Label.set_label(wv.get_title())
-        tl.show()
         sc.show_all()
 
 

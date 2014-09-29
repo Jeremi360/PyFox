@@ -69,6 +69,18 @@ class TabControls(grabbo.Builder):
 
 		self.mc = mc
 
+	def set_webview(self, wv):
+		#connect WEBVIEW signals with methods
+		self.webview = wv
+		self.webview.connect("title-changed", self.tabc.title_chang)
+		self.webview.connect("icon-loaded", self.tabc.load_icon)
+		self.webview.connect("load-finished", self.tabc.finish_load)
+		self.webview.connect("load-progress-changed", self.tabc.progress_load)
+
+		self.webview.set_full_content_zoom(True)
+
+		self.urlen.set_text(self.webview.get_url())
+
 	def on_hist(self, button):
 		if self.webview.can_go_forward() or self.webview.can_go_back():
 			HList = Gtk.Popover.new(self.hist)
