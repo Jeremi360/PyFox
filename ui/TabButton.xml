@@ -16,7 +16,7 @@
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <child>
-      <object class="GtkRadioButton" id="TabButton">
+      <object class="GtkRadioButton" id="button">
         <property name="label" translatable="yes">radiobutton</property>
         <property name="visible">True</property>
         <property name="can_focus">True</property>
