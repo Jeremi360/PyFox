@@ -18,6 +18,12 @@ class MainControls(grabbo.Builder):
         self.menub = self.ui.get_object("MenuButton")
         self.downs = self.ui.get_object("Downs")
         self.EndBox = self.ui.get_object("EndBox")
+        self.TitleBox = self.ui.get_object("TitleBox")
+        self.Title = self.ui.get_object("Title")
+        self.sc = self.ui.get_object("scrolledwindow")
+        self.addb = self.ui.get_object("AddButton")
+
+        self.sc.hide()
 
         self.menub.connect("clicked", self.on_menu)
 
