@@ -43,11 +43,6 @@ class Notebook(Gtk.Notebook):
         self.set_scrollable(True)
         self.tabc = tabcontrols
 
-    def append_page(self, url = None):
-        sc = SwVpWv(url)
-        Gtk.Notebook.append_page(self, child = sc)
-        sc.show_all()
-
 
 
 
