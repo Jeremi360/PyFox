@@ -1,7 +1,7 @@
 from gi.repository import Gtk, WebKit
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-import crowbar
+#import crowbar
 import grabbo
 
 r = os.path.realpath(__file__)
