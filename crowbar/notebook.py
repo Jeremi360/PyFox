@@ -36,6 +36,9 @@ class TabSwitcher (grabbo.Builder):
     def get_image(self):
         return self.Button.get_image()
 
+    def set_tooltip(self, tooltip):
+        self.Button.set_tooltip(tooltip)
+
     def on_tab(self, button):
         self.notebook.set_current_page(self.num)
         wv = self.notebook.get_nth_page(self.num).webwview
