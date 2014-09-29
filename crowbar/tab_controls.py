@@ -80,7 +80,10 @@ class TabControls(grabbo.Builder):
 
 		self.webview.set_full_content_zoom(True)
 
-		self.urlen.set_text(self.webview.get_uri())
+		try:
+			self.urlen.set_text(self.webview.get_uri())
+		except:
+			pass
 
 	def on_hist(self, button):
 		if self.webview.can_go_forward() or self.webview.can_go_back():
