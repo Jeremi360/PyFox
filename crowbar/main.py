@@ -21,6 +21,7 @@ class Main(grabbo.Window):
         self.hb.props.border_width = 0
         self.hb.props.margin = 0
         self.hb.pack_start(self.MC.menub)
+        self.hb.set_custom_title(self.MC.TitleBox)
         self.hb.pack_end(self.MC.EndBox)
         self.hb.set_has_subtitle(False)
         self.set_titlebar(self.hb)
