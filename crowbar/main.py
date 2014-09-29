@@ -9,13 +9,13 @@ import grabbo
 class Main(grabbo.Window):
     def __init__(self):
         grabbo.Window.__init__(self)
+        self.hb = Gtk.HeaderBar()
         self.MC = crowbar.MainControls(self)
         self.set_icon_from_file(crowbar.icon)
 
         self.tabs = crowbar.TabControls(self.MC).get()
         #self.tabs.add_tab(url = crowbar.home, active = True)
 
-        self.hb = Gtk.HeaderBar()
         self.hb.set_show_close_button(True)
         self.hb.set_title(crowbar.appname)
         self.hb.props.border_width = 0
