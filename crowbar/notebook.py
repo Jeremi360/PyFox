@@ -43,6 +43,8 @@ class TabSwitcher (grabbo.Builder):
 
     def on_remove(self, button):
         self.notebook.remove_page(self.num)
+        self.notebook.maincotrols.remove(self)
+        self.notebook.auto_show_switcher()
 
 class WebViewContiner(Gtk.ScrolledWindow):
     def __init__(self, url):
@@ -80,6 +82,18 @@ class Notebook(Gtk.Notebook):
 
         if active:
             self.ts.Button.do_pressed()
+
+        self.auto_show_switcher()
+
+    def auto_show_switcher(self):
+        if self.get_n_pages() > 1:
+            self.maincotrols.Title.hide()
+            self.maincotrols.sc.show_all()
+
+        else:
+            self.maincotrols.sc.hide()
+            self.maincotrols.Title.show()
+
 
 
 
