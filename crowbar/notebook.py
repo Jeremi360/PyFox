@@ -76,7 +76,7 @@ class Notebook(Gtk.Notebook):
         num = self.page_num(wvc)
 
         ts = TabSwitcher(self, num)
-        self.maincotrols.TabsSwitcher.add(ts)
+        self.maincotrols.TabsSwitcher.add(ts.get())
 
         try:
             ts.join_group(self.rgroup[0])
