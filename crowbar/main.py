@@ -13,7 +13,7 @@ class Main(grabbo.Window):
         self.MC = crowbar.MainControls(self)
         self.set_icon_from_file(crowbar.icon)
 
-        self.tabs = crowbar.TabControls(self.MC).get()
+        self.tabs = crowbar.TabControls(self.MC)
         self.tabs.notebook.add_tab(url = crowbar.home, active = True)
 
         self.hb.set_show_close_button(True)
@@ -26,7 +26,7 @@ class Main(grabbo.Window):
         self.hb.set_has_subtitle(False)
         self.set_titlebar(self.hb)
 
-        self.add(self.tabs)
+        self.add(self.tabs.get())
 
         self.hb.show()
         self.tabs.show()
