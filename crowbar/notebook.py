@@ -62,7 +62,7 @@ class Notebook(Gtk.Notebook):
         Gtk.Notebook.__init__(self)
         self.tabcontrols = tabcontrols
         self.maincotrols = maincontrols
-        self.get_show_tabs(False)
+        self.set_show_tabs(False)
         self.rgroup = []
 
         self.maincotrols.addb.connect("clicked", self.on_add)
