@@ -1,5 +1,5 @@
-import os, sys
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+import os #, sys
+#sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import grabbo
 
 r = os.path.realpath(__file__)
