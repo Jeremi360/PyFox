@@ -5,3 +5,5 @@ from crowbar.variable import *
 from crowbar.main_controls import MainControls
 from crowbar.aboutd import AboutD
 from crowbar.notebook import Notebook
+from crowbar.webview_continer import WebViewContiner
+from crowbar.tabswitcher import TabSwitcher
