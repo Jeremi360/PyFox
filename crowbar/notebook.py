@@ -59,6 +59,7 @@ class WebViewContiner(Gtk.ScrolledWindow):
         self.ts = TabSwitcher(notebook, self.webview)
 
         self.webview.connect("title-changed", self.title_chang)
+        self.webview.connect("icon-loaded", self.load_icon)
 
         try:
             self.webview.load_uri(url)
@@ -70,10 +71,19 @@ class WebViewContiner(Gtk.ScrolledWindow):
     def title_chang(self, webview, frame, title):
 
         short = self.make_short(title)
-        self.tb.set_label(short)
-        self.tb.set_tooltip(title)
+        self.ts.set_label(short)
+        self.ts.set_tooltip(title)
 
         self.notebook.MC.set_title(title)
+
+    def load_icon(self, webview, url):
+        try:
+            pixbuf = webview.get_icon_pixbuf()
+            self.ts.get_image().set_from_pixbuf(pixbuf)
+
+        except:
+            self.ts.get_image().set_from_icon_name("applications-internet", Gtk.IconSize.BUTTON)
+
 
 class Notebook(Gtk.Notebook):
     def __init__(self, tabcontrols, maincontrols):
