@@ -10,12 +10,12 @@ r = os.path.dirname(r)
 
 TabS_UI = os.path.join(r, "ui", "TabSwitcher.xml")
 class TabSwitcher (grabbo.Builder):
-    def __init__(self, notebook, num):
+    def __init__(self, notebook, webview):
         grabbo.Builder.__init__(self, TabS_UI)
         self.button = self.ui.get_object("button")
         self.removeB = self.ui.get_object("RemoveButton")
 
-        self.num = num
+        self.webview = webview
         self.notebook = notebook
 
         self.button.connect("toggled", self.on_tab)
@@ -39,21 +39,26 @@ class TabSwitcher (grabbo.Builder):
     def set_tooltip(self, tooltip):
         self.button.set_tooltip(tooltip)
 
+    def get_num(self):
+        return self.notebook.page_num(self.webview)
+
     def on_tab(self, button):
-        self.notebook.set_current_page(self.num)
-        wv = self.notebook.get_nth_page(self.num).webwview
-        self.notebook.tabcontrols.set_webview(wv)
+        self.notebook.set_current_page(self.get_num())
+        self.notebook.tabcontrols.set_webview(self.webview)
 
     def on_remove(self, button):
-        self.notebook.remove_page(self.num)
+        self.notebook.remove_page(self.get_num())
         self.notebook.maincotrols.remove(self)
         self.notebook.auto_show_switcher()
 
 class WebViewContiner(Gtk.ScrolledWindow):
-    def __init__(self, url = None):
+    def __init__(self, url = None, notebook):
         Gtk.ScrolledWindow.__init__(self)
         self.webview = WebKit.WebView()
         self.add(self.webview)
+        self.ts = TabSwitcher(notebook, self.webview)
+
+        self.webview.connect("title-changed", self.title_chang)
 
         try:
             self.webview.load_uri(url)
@@ -61,6 +66,14 @@ class WebViewContiner(Gtk.ScrolledWindow):
             pass
 
         self.show_all()
+
+    def title_chang(self, webview, frame, title):
+
+        short = self.make_short(title)
+        self.tb.set_label(short)
+        self.tb.set_tooltip(title)
+
+        self.notebook.MC.set_title(title)
 
 class Notebook(Gtk.Notebook):
     def __init__(self, tabcontrols, maincontrols):
@@ -78,18 +91,16 @@ class Notebook(Gtk.Notebook):
     def add_tab(self, url = None, active = False):
         wvc = WebViewContiner(url)
         self.append_page(child = wvc)
-        num = self.page_num(wvc)
 
-        ts = TabSwitcher(self, num)
-        self.maincotrols.TabsSwitcher.add(ts.get())
+        self.maincotrols.TabsSwitcher.add(wvc.ts.get())
 
         try:
-            ts.join_group(self.rgroup[0])
+            wvc.ts.join_group(self.rgroup[0])
         except:
-            self.rgroup.append(ts.get_group())
+            self.rgroup.append(wvc.ts.get_group())
 
         if active:
-            ts.button.set_active(True)
+            wvc.ts.button.set_active(True)
             self.tabcontrols.set_webview(wvc.webview)
 
         self.auto_show_switcher()
