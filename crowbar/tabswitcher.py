@@ -2,6 +2,7 @@ import os #, sys
 #sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import grabbo
 
+
 r = os.path.realpath(__file__)
 r = os.path.dirname(r)
 r = os.path.dirname(r)
@@ -35,7 +36,7 @@ class TabSwitcher (grabbo.Builder):
         return self.button.get_image()
 
     def set_tooltip(self, tooltip):
-        self.button.set_tooltip(tooltip)
+        self.button.set_tooltip_text(tooltip)
 
     def get_num(self):
         return self.notebook.page_num(self.webview)
