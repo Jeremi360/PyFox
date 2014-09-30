@@ -42,7 +42,7 @@ class TabSwitcher (grabbo.Builder):
 
     def on_tab(self, button):
         self.notebook.set_current_page(self.get_num())
-        self.notebook.tabcontrols.set_webview(self.webviewcontiner)
+        self.notebook.tabcontrols.set_webview(self.webviewcontiner.webview)
 
     def on_remove(self, button):
         self.notebook.remove_page(self.get_num())
