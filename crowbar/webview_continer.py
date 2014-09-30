@@ -17,7 +17,19 @@ class WebViewContiner(Gtk.ScrolledWindow):
         try:
             self.webview.load_uri(url)
         except:
+            nt = "New Tab"
             self.notebook.tabcontrols.urlen.set_text("")
+            self.notebook.tabcontrols.urlen.set_icon_from_icon_name(
+                                                                    Gtk.EntryIconPosition.PRIMARY,
+                                                                    "applications-internet"
+                                                                    )
+
+            self.ts.get_image().set_from_icon_name(
+                                                   "applications-internet",
+                                                   Gtk.IconSize.BUTTON
+                                                   )
+            self.ts.set_label(nt)
+            self.ts.set_tooltip(nt)
 
         self.show_all()
 
