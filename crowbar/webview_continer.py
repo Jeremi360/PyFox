@@ -20,6 +20,21 @@ class WebViewContiner(Gtk.ScrolledWindow):
 
         self.show_all()
 
+    def make_short(self, title, lenght = 26):
+        short = ""
+
+        if len(title) > lenght:
+            for i in range(lenght):
+                try:
+                    short += title[i]
+                except:
+                    pass
+
+        else:
+            short = title
+
+        return short
+
     def title_chang(self, webview, frame, title):
 
         short = self.make_short(title)
