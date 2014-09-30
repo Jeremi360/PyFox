@@ -40,6 +40,7 @@ version: 0.03.06
 Done:
 
 * rebulid tabs mechanic
+* Don't show tabs until its more than 1
 * Tabs on Top:
 	* Gtk.Notebook
 	* Gtk.RadioButton
