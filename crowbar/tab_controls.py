@@ -73,7 +73,6 @@ class TabControls(grabbo.Builder):
 	def set_webview(self, wv):
 		#connect WEBVIEW signals with methods
 		self.webview = wv
-		self.webview.connect("title-changed", self.title_chang)
 		self.webview.connect("icon-loaded", self.load_icon)
 		self.webview.connect("load-finished", self.finish_load)
 		self.webview.connect("load-progress-changed", self.progress_load)
@@ -211,23 +210,14 @@ class TabControls(grabbo.Builder):
 
 		return short
 
-	def title_chang(self, webview, frame, title):
-
-		short = self.make_short(title)
-		self.tb.set_label(short)
-		self.tb.set_tooltip(title)
-
-		self.notebook.MC.set_title(title)
-
 	def load_icon(self, webview, url):
 		try:
 			pixbuf = webview.get_icon_pixbuf()
 			self.urlen.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
-			self.tb.get_image().set_from_pixbuf(self.urlen.get_icon_pixbuf(Gtk.EntryIconPosition.PRIMARY))
 
 		except:
 			self.urlen.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
-			self.tb.get_image().set_from_icon_name("applications-internet", Gtk.IconSize.BUTTON)
+
 
 	def progress_load(self, webview, amount):
 		self.urlen.set_progress_fraction(amount / 100.0)
