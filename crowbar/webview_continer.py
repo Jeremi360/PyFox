@@ -42,7 +42,7 @@ class WebViewContiner(Gtk.ScrolledWindow):
         self.ts.set_label(short)
         self.ts.set_tooltip(title)
 
-        self.notebook.MC.set_title(title)
+        self.notebook.maincotrols.set_title(title)
 
     def load_icon(self, webview, url):
         try:
