@@ -35,3 +35,4 @@ class WebViewContiner(Gtk.ScrolledWindow):
 
         except:
             self.ts.get_image().set_from_icon_name("applications-internet", Gtk.IconSize.BUTTON)
+
