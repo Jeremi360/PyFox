@@ -48,6 +48,8 @@ class MainControls(grabbo.Builder):
                 self.sc.set_min_content_width(neww)
             else:
                 self.sc.set_min_content_width(minw)
+        else:
+            self.sc.set_min_content_width(maxw)
 
     def on_menu(self, button):
         po = Gtk.Popover.new(self.menub)
