@@ -17,7 +17,7 @@ class WebViewContiner(Gtk.ScrolledWindow):
         try:
             self.webview.load_uri(url)
         except:
-            pass
+            self.notebook.tabcontrols.urlen.set_text("")
 
         self.show_all()
 
