@@ -213,10 +213,16 @@ class TabControls(grabbo.Builder):
 	def load_icon(self, webview, url):
 		try:
 			pixbuf = webview.get_icon_pixbuf()
-			self.urlen.set_icon_from_pixbuf(Gtk.EntryIconPosition.PRIMARY, pixbuf)
+			self.urlen.set_icon_from_pixbuf(
+										Gtk.EntryIconPosition.PRIMARY,
+										pixbuf
+										)
 
 		except:
-			self.urlen.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "applications-internet")
+			self.urlen.set_icon_from_icon_name(
+											Gtk.EntryIconPosition.PRIMARY,
+											"applications-internet"
+											)
 
 
 	def progress_load(self, webview, amount):
