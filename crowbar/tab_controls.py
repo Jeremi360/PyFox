@@ -224,7 +224,6 @@ class TabControls(grabbo.Builder):
 											"applications-internet"
 											)
 
-
 	def progress_load(self, webview, amount):
 		self.urlen.set_progress_fraction(amount / 100.0)
 
