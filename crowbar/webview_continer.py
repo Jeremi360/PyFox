@@ -9,7 +9,7 @@ class WebViewContiner(Gtk.ScrolledWindow):
         self.webview = WebKit.WebView()
         self.add(self.webview)
         self.notebook = notebook
-        self.ts = crowbar.TabSwitcher(self.notebook, self.webview)
+        self.ts = crowbar.TabSwitcher(self.notebook, self)
 
         self.webview.connect("title-changed", self.title_chang)
         self.webview.connect("icon-loaded", self.load_icon)
