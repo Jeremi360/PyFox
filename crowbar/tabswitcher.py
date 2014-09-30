@@ -2,19 +2,18 @@ import os #, sys
 #sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import grabbo
 
-
 r = os.path.realpath(__file__)
 r = os.path.dirname(r)
 r = os.path.dirname(r)
 
 TabS_UI = os.path.join(r, "ui", "TabSwitcher.xml")
 class TabSwitcher (grabbo.Builder):
-    def __init__(self, notebook, webview):
+    def __init__(self, notebook, webviewcontiner):
         grabbo.Builder.__init__(self, TabS_UI)
         self.button = self.ui.get_object("button")
         self.removeB = self.ui.get_object("RemoveButton")
 
-        self.webview = webview
+        self.webviewcontiner = webviewcontiner
         self.notebook = notebook
 
         self.button.connect("toggled", self.on_tab)
@@ -39,11 +38,11 @@ class TabSwitcher (grabbo.Builder):
         self.button.set_tooltip_text(tooltip)
 
     def get_num(self):
-        return self.notebook.page_num(self.webview)
+        return self.notebook.page_num(self.webviewcontiner)
 
     def on_tab(self, button):
         self.notebook.set_current_page(self.get_num())
-        self.notebook.tabcontrols.set_webview(self.webview)
+        self.notebook.tabcontrols.set_webview(self.webviewcontiner)
 
     def on_remove(self, button):
         self.notebook.remove_page(self.get_num())
