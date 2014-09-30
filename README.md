@@ -34,17 +34,21 @@ If you won to compile/run this you will need:
 
 To run just double click on main.py in corwbar folder.
 
-version: 0.03.05 - don't work yet
+version: 0.03.06
 "Warning: This program is not finished"
 
 Done:
 
+* rebulid tabs mechanic
+* Tabs on Top:
+	* Gtk.Notebook
+	* Gtk.RadioButton
+	* now selecting work correctly
 * Split to smallest files + make less imports
 * AboutDialog
 * Menu - only 3 bottom buttons work for now
 * history mini list
 * Full screen mode
-* ~~Tabs on Top~~ - instead use Gtk.Notebook
 * google search in url bar
 * progress in url bar
 * history back, forward buttons
@@ -59,11 +63,11 @@ ToDo:
 * Bookmarks
 * new tab page
 * connect open in new tab with addtab
-* Addons(they are planed for 2.x version)
 * Paronoma as list
 * Downloads
 * Settings
 * restore previous session
+* Addons(they are planed for 1.x version)
 
 
 
