@@ -1,7 +1,6 @@
 from gi.repository import Gtk, WebKit
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-import crowbar
 import grabbo
 
 r = os.path.realpath(__file__)
@@ -50,6 +49,7 @@ class TabSwitcher (grabbo.Builder):
         self.notebook.remove_page(self.get_num())
         self.notebook.maincotrols.remove(self)
         self.notebook.auto_show_switcher()
+        self.notebook.maincotrols.auto_set_TabSwitcher_width()
 
 class WebViewContiner(Gtk.ScrolledWindow):
     def __init__(self, url = None, notebook):
@@ -113,6 +113,7 @@ class Notebook(Gtk.Notebook):
             wvc.ts.button.set_active(True)
             self.tabcontrols.set_webview(wvc.webview)
 
+        self.maincotrols.auto_set_TabSwitcher_width()
         self.auto_show_switcher()
 
     def auto_show_switcher(self):
