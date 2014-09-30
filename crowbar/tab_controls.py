@@ -82,7 +82,7 @@ class TabControls(grabbo.Builder):
 		try:
 			self.urlen.set_text(self.webview.get_uri())
 		except:
-			pass
+			self.urlen.set_text("")
 
 	def on_hist(self, button):
 		if self.webview.can_go_forward() or self.webview.can_go_back():
