@@ -17,7 +17,7 @@ class Notebook(Gtk.Notebook):
         self.add_tab()
 
     def add_tab(self, url = None, active = False):
-        wvc = crowbar.WebViewContiner(url, self)
+        wvc = crowbar.WebViewContiner(self, url)
         self.append_page(child = wvc)
 
         self.maincotrols.TabsSwitcher.add(wvc.ts.get())

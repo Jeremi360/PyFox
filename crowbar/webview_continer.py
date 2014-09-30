@@ -4,7 +4,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import crowbar
 
 class WebViewContiner(Gtk.ScrolledWindow):
-    def __init__(self, url = None, notebook):
+    def __init__(self, notebook, url = None):
         Gtk.ScrolledWindow.__init__(self)
         self.webview = WebKit.WebView()
         self.add(self.webview)
