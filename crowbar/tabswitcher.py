@@ -46,6 +46,6 @@ class TabSwitcher (grabbo.Builder):
 
     def on_remove(self, button):
         self.notebook.remove_page(self.get_num())
-        self.notebook.maincotrols.TabsSwitcher.remove(self)
+        self.notebook.maincotrols.TabsSwitcher.remove(self.get())
         self.notebook.auto_show_switcher()
         self.notebook.maincotrols.auto_set_TabSwitcher_width()
