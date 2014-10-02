@@ -39,7 +39,7 @@ class MainControls(grabbo.Builder):
         self.Title.set_label(t)
 
     def set_TabSwitcher_width_add(self, addw):
-        minw = 265
+        minw = crowbar.TabSwitcherSize
         maxw = self.parent.get_allocation().width*0.85
         neww = self.TabsSwitcher.get_allocation().width() + addw
 
