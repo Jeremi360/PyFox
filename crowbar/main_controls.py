@@ -24,6 +24,7 @@ class MainControls(grabbo.Builder):
         self.addb = self.ui.get_object("AddButton")
         self.TabsSwitcher = self.ui.get_object("TabsSwitcher")
 
+        self.sc.set_min_content_width(crowbar.TabSwitcherSize)
         self.sc.hide()
 
         self.menub.connect("clicked", self.on_menu)
@@ -39,7 +40,6 @@ class MainControls(grabbo.Builder):
         self.Title.set_label(t)
 
     def set_TabSwitcher_width_add(self, addw):
-        minw = crowbar.TabSwitcherSize
         maxw = self.parent.get_allocation().width*0.85
         neww = self.TabsSwitcher.get_allocation().width + addw
 
