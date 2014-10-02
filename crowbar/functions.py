@@ -1,5 +1,5 @@
 
-def make_short(self, title, lenght = 26):
+def make_short(title, lenght = 26):
     short = ""
     if len(title) > lenght:
         for i in range(lenght):
