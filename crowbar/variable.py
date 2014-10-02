@@ -14,3 +14,5 @@ icon = os.path.join(r, 'icons', 'icon.png')
 authors = [
            "Jeremi 'jeremi360' Biernacki"
           ]
+
+TabSwitcherSize = 265

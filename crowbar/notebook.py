@@ -31,7 +31,7 @@ class Notebook(Gtk.Notebook):
             wvc.ts.button.set_active(True)
             self.tabcontrols.set_webview(wvc.webview)
 
-        self.maincotrols.auto_set_TabSwitcher_width()
+        self.maincotrols.set_TabSwitcher_width(265)
         self.auto_show_switcher()
 
     def auto_show_switcher(self):
