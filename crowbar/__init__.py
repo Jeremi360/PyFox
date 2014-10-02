@@ -7,3 +7,4 @@ from crowbar.aboutd import AboutD
 from crowbar.notebook import Notebook
 from crowbar.webview_continer import WebViewContiner
 from crowbar.tabswitcher import TabSwitcher
+from crowbar.functions import *
