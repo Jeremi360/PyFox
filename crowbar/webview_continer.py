@@ -37,7 +37,7 @@ class WebViewContiner(Gtk.ScrolledWindow):
 
     def title_chang(self, webview, frame, title):
 
-        short = self.make_short(title)
+        short = crowbar.make_short(title)
         self.ts.set_label(short)
         self.ts.set_tooltip(title)
 
