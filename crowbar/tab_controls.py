@@ -110,7 +110,7 @@ class TabControls(grabbo.Builder):
 			HList.show_all()
 
 	def HList_add(self, i, HList, box):
-		s = self.make_short(i.get_title(), 10)
+		s = crowbar.make_short(i.get_title(), 10)
 		b = Gtk.Button(s)
 		b.set_tooltip_text(i.get_title())
 		img = Gtk.Image()
