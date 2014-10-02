@@ -1,6 +1,7 @@
 import os #, sys
 #sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import grabbo
+import crowbar
 
 r = os.path.realpath(__file__)
 r = os.path.dirname(r)
@@ -48,4 +49,4 @@ class TabSwitcher (grabbo.Builder):
         self.notebook.remove_page(self.get_num())
         self.notebook.maincotrols.TabsSwitcher.remove(self.get())
         self.notebook.auto_show_switcher()
-        self.notebook.maincotrols.auto_set_TabSwitcher_width()
+        self.notebook.maincotrols.set_TabSwitcher_width_add(- crowbar.TabSwitcherSize)
