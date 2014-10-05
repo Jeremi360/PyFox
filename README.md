@@ -37,6 +37,9 @@ To run just double click on main.py in corwbar folder.
 version: 0.04.06
 "Warning: This program is not finished"
 
+[Done List]:[7]
+[ToDo List]:[8]
+
 
 [1]:https://raw.githubusercontent.com/jeremi360/cRoWBaR/master/shot.png
 [2]:https://www.python.org/
@@ -44,3 +47,5 @@ version: 0.04.06
 [4]:https://github.com/jeremi360/Grabbo
 [5]:https://raw.githubusercontent.com/jeremi360/cRoWBaR/master/icons/icon.png
 [6]:http://tiheum.deviantart.com/art/Faenza-Icons-173323228
+[7]:https://github.com/jeremi360/cRoWBaR/blob/master/Done.md
+[8]:https://github.com/jeremi360/cRoWBaR/blob/master/ToDo.md
