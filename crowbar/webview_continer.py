@@ -42,7 +42,7 @@ class WebViewContiner(Gtk.ScrolledWindow):
         self.ts.set_tooltip(title)
 
         self.notebook.maincotrols.set_title(title)
-        self.notebook.tabcontrols.
+        self.notebook.maincotrols.auto_set_TabSwitcher_width()
 
     def load_icon(self, webview, url):
         try:
