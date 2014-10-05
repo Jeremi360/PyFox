@@ -39,7 +39,7 @@ class MainControls(grabbo.Builder):
         self.parent.hb.set_title(t)
         self.Title.set_label(t)
 
-    def auto_set_TabSwitcher_width_add(self):
+    def auto_set_TabSwitcher_width(self):
         maxw = self.parent.get_allocation().width*0.85
         neww = self.TabsSwitcher.get_allocation().width
 
