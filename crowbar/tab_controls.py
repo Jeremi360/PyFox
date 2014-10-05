@@ -189,7 +189,7 @@ class TabControls(grabbo.Builder):
 		url = widget.get_text()
 
 		if not "://" or  not "." in url:
-			url =  + url
+			url = crowbar.defaultSearchEngine + url
 		elif not "://" in url:
 			url = "http://" + url
 
