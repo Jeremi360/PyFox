@@ -1,5 +1,6 @@
 Done:
 
+* DuckDuckGo search in url bar
 * rebulid tabs mechanic
 * Don't show tabs until its more than 1
 * Tabs on Top:
@@ -11,7 +12,6 @@ Done:
 * Menu - only 3 bottom buttons work for now
 * history mini list
 * Full screen mode
-* google search in url bar
 * progress in url bar
 * history back, forward buttons
 * fix address mistake
