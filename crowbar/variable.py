@@ -10,6 +10,7 @@ comment = "Rethinked Web BRowser"
 home = "https://github.com/jeremi360/cRoWBaR"
 rapport = "https://github.com/jeremi360/cRoWBaR/issues"
 icon = os.path.join(r, 'icons', 'icon.png')
+licensetxt = os.path.join(r, 'LICENSE')
 defaultSearchEngine = "https://duckduckgo.com/?q="
 
 abouttxt = "Program and designed by Jeremi 'jeremi360' Biernacki"
