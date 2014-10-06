@@ -24,7 +24,7 @@ class MainControls(grabbo.Builder):
         self.addb = self.ui.get_object("AddButton")
         self.TabsSwitcher = self.ui.get_object("TabsSwitcher")
 
-        self.sc.auto_set_min_content_width()
+        self.auto_set_TabSwitcher_width()
         self.sc.hide()
 
         self.menub.connect("clicked", self.on_menu)
