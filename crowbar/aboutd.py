@@ -14,7 +14,7 @@ class AboutD(grabbo.AboutDialog):
         self.set_rapport_page(crowbar.rapport)
         self.set_version(crowbar.version)
         self.set_license_custom(crowbar.licensetxt)
-        self.set.set_from_file(crowbar.icon)
+        self.set_logo_from_file(crowbar.icon)
         self.set_title("About " + crowbar.appname)
 
     def open_link(self, url):
