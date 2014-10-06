@@ -49,4 +49,4 @@ class TabSwitcher (grabbo.Builder):
         self.notebook.remove_page(self.get_num())
         self.notebook.maincotrols.TabsSwitcher.remove(self.get())
         self.notebook.auto_show_switcher()
-        self.notebook.maincotrols.set_TabSwitcher_width_add(- crowbar.TabSwitcherSize)
+        self.notebook.maincotrols.auto_set_TabSwitcher_width()
