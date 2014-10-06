@@ -1,4 +1,3 @@
-from gi.repository import Gtk
 import os, sys
 import grabbo
 import crowbar
@@ -12,4 +11,7 @@ class AboutD(grabbo.AboutDialog):
         self.set_shortdescrpition(crowbar.comment)
         self.set_home_page(crowbar.home)
         self.set_rapport_page(crowbar.rapport)
+        self.set_version(crowbar.version)
+        self.set_license_custom()
+        self.Logo.set_from_file(crowbar.icon)
 
