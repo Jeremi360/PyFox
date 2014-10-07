@@ -25,7 +25,7 @@ class MainControls(grabbo.Builder):
         self.TabsSwitcher = self.ui.get_object("TabsSwitcher")
 
         self.menub.get_image().set_from_file(crowbar.icon)
-        self.menub.get_image().set_pixel_size(32, 32)
+        self.menub.get_image().set_pixel_size(32)
         self.menub.connect("clicked", self.on_menu)
 
         self.set_title()
