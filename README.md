@@ -28,7 +28,7 @@ If you won to compile/run this you will need:
 - Gtk(3.12 or higher) and Webkit from gi repository:
 
 	- Linux see your dist repo
-	- Windows download [from hear][3]
+	- Windows[3] - download "pygi-aio-*-setup.exe"
 
 - My [Grabbo lib][4]
 
@@ -37,8 +37,8 @@ To run just double click on main.py in corwbar folder.
 version: 0.04.06
 "Warning: This program is not finished"
 
-[Done List]:[7]
-[ToDo List]:[8]
+[Done List][7]
+[ToDo List][8]
 
 
 [1]:https://raw.githubusercontent.com/jeremi360/cRoWBaR/master/shot.png
