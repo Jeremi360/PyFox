@@ -46,9 +46,22 @@ class WebViewContiner(Gtk.ScrolledWindow):
 
     def load_icon(self, webview, url):
         try:
-            pixbuf = self.webview.get_icon_pifbux()
-            self.ts.get_image().set_from_pixbuf(pixbuf)
+            pixbuf = webview.get_icon_pixbuf()
+            self.notebook.tabcontrols.urlen.set_icon_from_pixbuf(
+                                                                 Gtk.EntryIconPosition.PRIMARY,
+                                                                 pixbuf
+                                                                 )
+            upb = self.notebook.tabcontrols.urlen.get_icon_pixbuf(Gtk.EntryIconPosition.PRIMARY)
+            self.ts.get_image().set_from_pixbuf(upb)
 
         except:
-            self.ts.get_image().set_from_icon_name("applications-internet", Gtk.IconSize.BUTTON)
+            self.ts.get_image().set_from_icon_name(
+                                                   "applications-internet",
+                                                   Gtk.IconSize.BUTTON
+                                                   )
+            self.notebook.tabcontrols.urlen.set_icon_from_icon_name(
+                                                                    Gtk.EntryIconPosition.PRIMARY,
+                                                                    "applications-internet"
+                                                                    )
+
 

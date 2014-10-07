@@ -73,7 +73,6 @@ class TabControls(grabbo.Builder):
 	def set_webview(self, wv):
 		#connect WEBVIEW signals with methods
 		self.webview = wv
-		self.webview.connect("icon-loaded", self.load_icon)
 		self.webview.connect("load-finished", self.finish_load)
 		self.webview.connect("load-progress-changed", self.progress_load)
 
@@ -194,20 +193,6 @@ class TabControls(grabbo.Builder):
 			url = "http://" + url
 
 		self.webview.load_uri(url)
-
-	def load_icon(self, webview, url):
-		try:
-			pixbuf = webview.get_icon_pixbuf()
-			self.urlen.set_icon_from_pixbuf(
-										Gtk.EntryIconPosition.PRIMARY,
-										pixbuf
-										)
-
-		except:
-			self.urlen.set_icon_from_icon_name(
-											Gtk.EntryIconPosition.PRIMARY,
-											"applications-internet"
-											)
 
 	def progress_load(self, webview, amount):
 		self.urlen.set_progress_fraction(amount / 100.0)

@@ -36,12 +36,12 @@ class Notebook(Gtk.Notebook):
 
     def auto_show_switcher(self):
         if self.get_n_pages() > 1:
-            self.maincotrols.Title.hide()
+            self.maincotrols.TBox.hide()
             self.maincotrols.sc.show_all()
 
         else:
             self.maincotrols.sc.hide()
-            self.maincotrols.Title.show()
+            self.maincotrols.TBox.show()
 
 
 
