@@ -24,7 +24,7 @@ class MainControls(grabbo.Builder):
         self.addb = self.ui.get_object("AddButton")
         self.TabsSwitcher = self.ui.get_object("TabsSwitcher")
 
-        icon = Gtk.Image.new_from_icon_name(crowbar.icon, 1)
+        icon = Gtk.Image.new_from_icon_name(crowbar.icon, 16)
         pifbux = icon.get_pixbuf()
         self.menub.get_image().set_from_pixbuf(pifbux)
         self.menub.connect("clicked", self.on_menu)
