@@ -1,5 +1,5 @@
 ToDo:
-* web dev tools
+
 * restore closed tabs
 * fix too big favicons on Tabs
 * menu
@@ -12,3 +12,4 @@ ToDo:
 * Settings
 * restore previous session
 * Addons(they are planed for 1.x version)
+* web dev tools(they are planed for 1.x version)
