@@ -1,5 +1,7 @@
 Done:
 
+* Change Menu icon to cRoWBaR icon
+* Use Grabbo.AboutDialog instead Gtk.AboutDialog
 * DuckDuckGo search in url bar
 * rebulid tabs mechanic
 * Don't show tabs until its more than 1
