@@ -53,6 +53,7 @@ class WebViewContiner(Gtk.ScrolledWindow):
                                                                  )
             upb = self.notebook.tabcontrols.urlen.get_icon_pixbuf(Gtk.EntryIconPosition.PRIMARY)
             self.ts.get_image().set_from_pixbuf(upb)
+            self.notebook.maincotrols.Icon.set_from_pixbuf(upb)
 
         except:
             self.ts.get_image().set_from_icon_name(
@@ -63,5 +64,9 @@ class WebViewContiner(Gtk.ScrolledWindow):
                                                                     Gtk.EntryIconPosition.PRIMARY,
                                                                     "applications-internet"
                                                                     )
+            self.notebook.maincotrols.Icon.set_from_icon_name(
+                                                              "applications-internet",
+                                                              Gtk.IconSize.BUTTON
+                                                              )
 
 
