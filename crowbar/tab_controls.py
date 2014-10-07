@@ -198,6 +198,6 @@ class TabControls(grabbo.Builder):
 		self.urlen.set_progress_fraction(amount / 100.0)
 
 	def finish_load(self, webview, frame):
-		self.urlen.set_text(webview.get_uri())
+		self.urlen.set_text(self.webview.get_uri())
 		self.urlen.set_progress_fraction(0.0)
 
