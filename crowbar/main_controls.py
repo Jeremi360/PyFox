@@ -24,13 +24,13 @@ class MainControls(grabbo.Builder):
         self.addb = self.ui.get_object("AddButton")
         self.TabsSwitcher = self.ui.get_object("TabsSwitcher")
 
-        self.auto_set_TabSwitcher_width()
-        self.sc.hide()
-
         self.menub.get_image().set_from_file(crowbar.icon)
         self.menub.get_image().set_size_request(24, 24)
         self.menub.connect("clicked", self.on_menu)
+
         self.set_title()
+        self.auto_set_TabSwitcher_width()
+        self.sc.hide()
 
     def set_title(self, title = None):
         if title is None:
