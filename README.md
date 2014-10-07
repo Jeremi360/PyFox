@@ -28,7 +28,7 @@ If you won to compile/run this you will need:
 - Gtk(3.12 or higher) and Webkit from gi repository:
 
 	- Linux see your dist repo
-	- Windows[3] - download "pygi-aio-*-setup.exe"
+	- [Windows][3] - download "pygi-aio-*-setup.exe"
 
 - My [Grabbo lib][4]
 
@@ -46,6 +46,7 @@ for example 0.07.02 ver:
 "Warning: This program is not finished"
 
 [ChangeLog][7]
+
 [ToDo List][8]
 
 
