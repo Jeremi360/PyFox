@@ -47,7 +47,7 @@ class WebViewContiner(Gtk.ScrolledWindow):
 
     def load_icon(self, webview, url):
         try:
-            pixbuf = Pixbuf.new_from_file_at_scale(webview.get_icon_uri(), 24, 24, False)
+            pixbuf = self.notebook.tabcontrols.urlen.get_image().get_pifbux()
             self.ts.get_image().set_from_pixbuf(pixbuf)
 
         except:
