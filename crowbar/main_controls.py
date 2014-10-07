@@ -20,6 +20,8 @@ class MainControls(grabbo.Builder):
         self.EndBox = self.ui.get_object("EndBox")
         self.TitleBox = self.ui.get_object("TitleBox")
         self.Title = self.ui.get_object("Title")
+        self.TBox = self.ui.get_object("Tbox")
+        self.Icon = self.ui.get_object("Icon")
         self.sc = self.ui.get_object("scrolledwindow")
         self.addb = self.ui.get_object("AddButton")
         self.TabsSwitcher = self.ui.get_object("TabsSwitcher")
