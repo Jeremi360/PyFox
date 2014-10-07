@@ -10,6 +10,7 @@ comment = "Rethinked Web BRowser"
 home = "https://github.com/jeremi360/cRoWBaR"
 rapport = "https://github.com/jeremi360/cRoWBaR/issues"
 icon = os.path.join(r, 'icons', 'icon.png')
+svgicon = os.path.join(r, 'icons', 'icon.svg')
 licensetxt = os.path.join(r, 'LICENSE')
 defaultSearchEngine = "https://duckduckgo.com/?q="
 
