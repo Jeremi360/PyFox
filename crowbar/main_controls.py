@@ -43,9 +43,13 @@ class MainControls(grabbo.Builder):
     def auto_set_TabSwitcher_width(self):
         maxw = self.parent.get_allocation().width*0.85
         neww = self.TabsSwitcher.get_allocation().width
+        minw = 256
 
         if neww <= maxw:
-            self.sc.set_min_content_width(neww)
+            if neww >= minw:
+                self.sc.set_min_content_width(neww)
+            else:
+                self.sc.set_min_content_width(minw)
         else:
             self.sc.set_min_content_width(maxw)
 
