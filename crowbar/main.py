@@ -29,6 +29,8 @@ class Main(grabbo.Window):
 
         self.add(self.tabs.get())
 
+        self.maximize()
+
         self.hb.show()
         self.tabs.get().show()
         self.show()
