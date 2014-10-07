@@ -47,6 +47,7 @@ class WebViewContiner(Gtk.ScrolledWindow):
     def load_icon(self, webview, url):
         try:
             pixbuf = webview.get_icon_pixbuf()
+            pixbuf.scale_simple(24, 24)
             self.ts.get_image().set_from_pixbuf(pixbuf)
 
         except:
