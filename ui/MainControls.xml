@@ -10,7 +10,7 @@
   <object class="GtkImage" id="MenuIcon">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="icon_name">document-properties</property>
+    <property name="pixbuf">icon.png</property>
   </object>
   <object class="GtkButton" id="MenuButton">
     <property name="visible">True</property>
