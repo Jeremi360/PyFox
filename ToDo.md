@@ -1,8 +1,6 @@
 ToDo:
 
 * restore closed tabs
-* fix too big favicons on Tabs
-* fix too small scrolledwindow when is only 2 tabs
 * menu
 * History browsing
 * Bookmarks

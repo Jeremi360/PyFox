@@ -1,4 +1,7 @@
 ChageLog:
+* version 0.07.04:
+	* fix too big favicons on Tabs
+	* fix too small scrolledwindow when is only 2 tabs
 * version 0.07.02:
 	* Change Menu icon to cRoWBaR icon
 	* Use Grabbo.AboutDialog instead Gtk.AboutDialog
