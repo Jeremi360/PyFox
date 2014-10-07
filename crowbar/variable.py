@@ -15,5 +15,5 @@ svgicon = os.path.join(r, 'icons', 'icon.svg')
 icon24 = Pixbuf.new_from_file_at_scale(icon, 24, 24, False)
 licensetxt = os.path.join(r, 'LICENSE')
 defaultSearchEngine = "https://duckduckgo.com/?q="
-
 abouttxt = "Program and designed by Jeremi 'jeremi360' Biernacki"
+tabsize = 256 * 1.5
