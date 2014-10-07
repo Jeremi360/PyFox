@@ -1,5 +1,7 @@
 ToDo:
-
+* web dev tools
+* restore closed tabs
+* fix too big favicons on Tabs
 * menu
 * History browsing
 * Bookmarks
