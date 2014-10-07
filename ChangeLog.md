@@ -1,8 +1,8 @@
 ChageLog:
 * version 0.07.04:
-	* fix too big favicons on Tabs
+	* fix too big web page on Tabs
 	* fix too small scrolledwindow when is only 2 tabs
-	* add web icon to title bar
+	* add web page icon to title bar
 * version 0.07.02:
 	* Change Menu icon to cRoWBaR icon
 	* Use Grabbo.AboutDialog instead Gtk.AboutDialog
@@ -32,4 +32,4 @@ ChageLog:
 	* history back, forward buttons
 	* fix address mistake
 	* zoom in & out & and reset to 100%
-	* show favicon
+	* show web page
