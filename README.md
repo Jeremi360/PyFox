@@ -34,7 +34,7 @@ If you won to compile/run this you will need:
 
 To run just double click on main.py in corwbar folder.
 
-version: 0.04.06
+version: 0.07.02 - Changed version system
 "Warning: This program is not finished"
 
 [Done List][7]
