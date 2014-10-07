@@ -34,7 +34,15 @@ If you won to compile/run this you will need:
 
 To run just double click on main.py in corwbar folder.
 
-version: 0.07.02 - Changed version system
+version: 0.07.02
+
+Changed version system:
+for example 0.07.02 ver:
+
+* 0 - milestones (if 1 is 100% planed futures for version 1.00.00)
+* 07 - main changes (number of done futures for version 1.00.00)
+* 02 - small fixes (number of fixes and small changes after done main future)
+
 "Warning: This program is not finished"
 
 [Done List][7]
