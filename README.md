@@ -45,7 +45,7 @@ for example 0.07.02 ver:
 
 "Warning: This program is not finished"
 
-[Done List][7]
+[ChangeLog][7]
 [ToDo List][8]
 
 
@@ -55,5 +55,5 @@ for example 0.07.02 ver:
 [4]:https://github.com/jeremi360/Grabbo
 [5]:https://raw.githubusercontent.com/jeremi360/cRoWBaR/master/icons/icon.png
 [6]:http://tiheum.deviantart.com/art/Faenza-Icons-173323228
-[7]:https://github.com/jeremi360/cRoWBaR/blob/master/Done.md
+[7]:https://github.com/jeremi360/cRoWBaR/blob/master/ChangeLog.md
 [8]:https://github.com/jeremi360/cRoWBaR/blob/master/ToDo.md
