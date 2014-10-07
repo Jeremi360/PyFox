@@ -1,4 +1,5 @@
-from gi.repository import Gtk, WebKit, GdkPixbuf
+from gi.repository import Gtk, WebKit
+from gi.repository.GdkPixbuf import Pixbuf
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import crowbar
@@ -46,8 +47,7 @@ class WebViewContiner(Gtk.ScrolledWindow):
 
     def load_icon(self, webview, url):
         try:
-            pixbuf = webview.get_icon_pixbuf()
-            pixbuf.scale_simple(24, 24, GdkPixbuf.InterpType.BILINEAR)
+            pixbuf = Pixbuf.new_from_file_at_scale(webview.get_icon_uri(), 24, 24, False)
             self.ts.get_image().set_from_pixbuf(pixbuf)
 
         except:
