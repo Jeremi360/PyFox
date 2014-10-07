@@ -28,6 +28,7 @@ class MainControls(grabbo.Builder):
         self.sc.hide()
 
         self.menub.get_image().set_from_file(crowbar.icon)
+        self.menub.get_image().set_size_request(24, 24)
         self.menub.connect("clicked", self.on_menu)
         self.set_title()
 
