@@ -17,3 +17,4 @@ licensetxt = os.path.join(r, 'LICENSE')
 defaultSearchEngine = "https://duckduckgo.com/?q="
 abouttxt = "Program and designed by Jeremi 'jeremi360' Biernacki"
 tabsize = 384
+settingsdir = os.path.join(os.getenv('HOME'), '.crowbar')
