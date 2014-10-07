@@ -6,7 +6,7 @@ r = os.path.dirname(r)
 r = os.path.dirname(r)
 
 appname = "cRoWBaR"
-version = "0.07.02"
+version = "0.07.04"
 comment = "Rethinked Web BRowser"
 home = "https://github.com/jeremi360/cRoWBaR"
 rapport = "https://github.com/jeremi360/cRoWBaR/issues"
