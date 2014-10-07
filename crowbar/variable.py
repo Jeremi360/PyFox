@@ -17,5 +17,3 @@ licensetxt = os.path.join(r, 'LICENSE')
 defaultSearchEngine = "https://duckduckgo.com/?q="
 
 abouttxt = "Program and designed by Jeremi 'jeremi360' Biernacki"
-
-TabSwitcherSize = 265
