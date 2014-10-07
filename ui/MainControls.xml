@@ -105,6 +105,7 @@
         <property name="can_focus">True</property>
         <property name="vscrollbar_policy">never</property>
         <property name="shadow_type">in</property>
+        <property name="min_content_width">256</property>
         <child>
           <object class="GtkViewport" id="viewport">
             <property name="visible">True</property>
