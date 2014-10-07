@@ -1,4 +1,5 @@
 from gi.repository import Gtk
+from gi.repository.GdkPixbuf import Pixbuf
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import crowbar
@@ -24,8 +25,8 @@ class MainControls(grabbo.Builder):
         self.addb = self.ui.get_object("AddButton")
         self.TabsSwitcher = self.ui.get_object("TabsSwitcher")
 
-        self.menub.get_image().set_from_file(crowbar.icon)
-        self.menub.get_image().set_pixel_size(4)
+        pifbux = Pixbuf.new_from_file_at_scale(crowbar.icon, 16, 16, False)
+        self.menub.get_image().set_from_pixbuf(pifbux)
         self.menub.connect("clicked", self.on_menu)
 
         self.set_title()
