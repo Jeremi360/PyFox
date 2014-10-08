@@ -10,6 +10,16 @@ class Main(grabbo.Window):
     def __init__(self):
         grabbo.Window.__init__(self)
 
+        if not os.path.exists(crowbar.userDir):
+            os.mkdir(crowbar.userDir)
+
+        if not os.path.exists(crowbar.trashFile):
+            crowbar.SaveTrash([])
+
+
+
+
+
         self.hb = Gtk.HeaderBar()
         self.MC = crowbar.MainControls(self)
         self.set_icon_from_file(crowbar.icon)
