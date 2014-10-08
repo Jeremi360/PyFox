@@ -1,4 +1,4 @@
-import pickle, crowbar
+import pickle
 
 def loadPydFile(file):
     loaded = pickle.load(open(file, 'rb'))
