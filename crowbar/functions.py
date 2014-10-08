@@ -7,12 +7,6 @@ def loadPydFile(file):
 def savePydFile(file, data):
     pickle.dump(data, open(file, 'wb'))
 
-def LoadTrash():
-    loadPydFile(crowbar.trashFile)
-
-def SaveTrash(data):
-    savePydFile(crowbar.trashFile, data)
-
 
 def make_short(title, lenght = 26):
     short = ""
