@@ -46,6 +46,9 @@ class TabSwitcher (grabbo.Builder):
         self.notebook.tabcontrols.set_webview(self.webviewcontiner.webview)
 
     def on_remove(self, button):
+        tl = crowbar.loadPydFile(crowbar.trashFile)
+        tl.append(self.webviewcontiner)
+        crowbar.savePydFile(crowbar.trashFile, tl)
         self.notebook.remove_page(self.get_num())
         self.notebook.maincotrols.TabsSwitcher.remove(self.get())
         self.notebook.auto_show_switcher()
