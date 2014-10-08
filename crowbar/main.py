@@ -13,11 +13,13 @@ class Main(grabbo.Window):
         if not os.path.exists(crowbar.userDir):
             os.mkdir(crowbar.userDir)
 
+        if not os.path.exists(crowbar.bookmarksFiles):
+            crowbar.savePydFile(crowbar.bookmarksFiles, [])
+
+
+
         if not os.path.exists(crowbar.trashFile):
-            crowbar.SaveTrash([])
-
-
-
+            crowbar.savePydFile(crowbar.trashFile, [])
 
 
         self.hb = Gtk.HeaderBar()
