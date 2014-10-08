@@ -122,8 +122,7 @@ class TabControls(grabbo.Builder):
 			b.get_image().set_from_icon_name("applications-internet")
 
 		def on_button(button):
-			s = self.make_short(i.get_uri())
-			self.webview.load_uri(s)
+			self.webview.load_uri(i.get_uri()))
 			HList.hide()
 
 		b.connect("clicked", on_button)
