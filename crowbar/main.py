@@ -18,7 +18,7 @@ class Main(grabbo.Window):
         self.tabs.notebook.add_tab(url = crowbar.home, active = True)
 
         self.hb.set_show_close_button(True)
-        self.hb.set_title(crowbar.appname)
+        self.hb.set_title(crowbar.appName)
         self.hb.props.border_width = 0
         self.hb.props.margin = 0
         self.hb.pack_start(self.MC.menub)
