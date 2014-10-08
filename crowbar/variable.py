@@ -20,3 +20,5 @@ tabsize = 384
 userdir = os.path.join(os.getenv('HOME'), '.crowbar')
 settingsFile = os.path.join(userdir, "settings.pyd")
 historyFile = os.path.join(userdir, "history.pyd")
+trashFile = os.path.join(userdir, "trash.pyd")
+sessionFile = os.path.join(userdir, "session.pyd")
