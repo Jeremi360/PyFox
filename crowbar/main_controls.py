@@ -35,9 +35,9 @@ class MainControls(grabbo.Builder):
 
     def set_title(self, title = None):
         if title is None:
-            t = crowbar.appname
+            t = crowbar.appName
         else:
-            t = crowbar.appname + ": " + title
+            t = crowbar.appName + ": " + title
 
         self.parent.hb.set_title(t)
         self.Title.set_label(t)
