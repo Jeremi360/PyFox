@@ -9,6 +9,7 @@ import grabbo
 class Main(grabbo.Window):
     def __init__(self):
         grabbo.Window.__init__(self)
+
         self.hb = Gtk.HeaderBar()
         self.MC = crowbar.MainControls(self)
         self.set_icon_from_file(crowbar.icon)
