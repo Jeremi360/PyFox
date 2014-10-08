@@ -25,6 +25,9 @@ class MainControls(grabbo.Builder):
         self.sc = self.ui.get_object("scrolledwindow")
         self.addb = self.ui.get_object("AddButton")
         self.TabsSwitcher = self.ui.get_object("TabsSwitcher")
+        self.TarshB = self.ui.get_object("Trash")
+        self.GroupB = self.ui.get_object("Groups")
+        self.DownB = self.ui.get_object("Downs")
 
         self.menub.get_image().set_from_pixbuf(crowbar.icon24)
         self.menub.connect("clicked", self.on_menu)
@@ -60,3 +63,37 @@ class MainControls(grabbo.Builder):
         m = crowbar.Menu(po, self.notebook).get()
         po.add(m)
         po.show()
+
+    def on_trash(self, button):
+        TList = Gtk.Popover.new(self.TarshB)
+        box = Gtk.Box()
+        box.set_orientation(Gtk.Orientation.VERTICAL)
+        TList.add(box)
+
+        tl = crowbar.loadPydFile(crowbar.trashFile)
+
+        for i in len(range(1, 10)):
+
+            self.HList_add(tl[i], TList, box)
+
+        TList.show_all()
+
+    def HList_add(self, i, TList, box):
+        s = crowbar.make_short(i.get_title(), 10)
+        b = Gtk.Button(s)
+        b.set_tooltip_text(i.get_title())
+        img = Gtk.Image()
+        b.set_image(img)
+
+        try:
+            pixbuf = i.get_icon_pixbuf()
+            b.get_image().set_from_pixbuf(pixbuf)
+        except:
+            b.get_image().set_from_icon_name("applications-internet")
+
+        def on_button(button):
+            self.webview.load_uri(i.get_uri())
+            TList.hide()
+
+        b.connect("clicked", on_button)
+        box.add(b)
