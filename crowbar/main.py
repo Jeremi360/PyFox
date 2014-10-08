@@ -16,7 +16,14 @@ class Main(grabbo.Window):
         if not os.path.exists(crowbar.bookmarksFiles):
             crowbar.savePydFile(crowbar.bookmarksFiles, [])
 
+        if not os.path.exists(crowbar.historyFile):
+            crowbar.savePydFile(crowbar.historyFile, [])
 
+        if not os.path.exists(crowbar.sessionFile):
+            crowbar.savePydFile(crowbar.sessionFile, [])
+
+        if not os.path.exists(crowbar.settingsFile):
+            crowbar.savePydFile(crowbar.settingsFile, {})
 
         if not os.path.exists(crowbar.trashFile):
             crowbar.savePydFile(crowbar.trashFile, [])
