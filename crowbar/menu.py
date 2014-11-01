@@ -7,7 +7,7 @@ r = os.path.realpath(__file__)
 r = os.path.dirname(r)
 r = os.path.dirname(r)
 
-Menu_UI = os.path.join(r, 'ui', 'Menu.xml')
+Menu_UI = os.path.join(r, 'ui', 'Menu.ui')
 class Menu(grabbo.Builder):
     def __init__(self, po, notebook):
         grabbo.Builder.__init__(self, Menu_UI)

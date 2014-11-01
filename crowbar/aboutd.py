@@ -13,9 +13,12 @@ class AboutD(grabbo.AboutDialog):
         self.set_home_page(crowbar.home)
         self.set_rapport_page(crowbar.rapport)
         self.set_version(crowbar.version)
-        self.set_license_custom(crowbar.licenseText)
-        self.set_logo_from_file(crowbar.icon)
+        self.set_license_text_file(crowbar.licenseText)
+        self.Logo.set_from_file(crowbar.icon)
+        self.set_icon_from_file(crowbar.icon)
         self.set_title("About " + crowbar.appName)
+        
+        self.preshow()
 
     def open_link(self, url):
         self.notebook.add_tab(url, True)

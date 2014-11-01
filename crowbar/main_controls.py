@@ -8,7 +8,7 @@ r = os.path.realpath(__file__)
 r = os.path.dirname(r)
 r = os.path.dirname(r)
 
-UI_Main = os.path.join(r, 'ui', 'MainControls.xml')
+UI_Main = os.path.join(r, 'ui', 'MainControls.ui')
 class MainControls(grabbo.Builder):
     def __init__(self, parent):
         grabbo.Builder.__init__(self, UI_Main)

@@ -9,7 +9,7 @@ r = os.path.dirname(r)
 r = os.path.dirname(r)
 
 
-UI_TabC = os.path.join(r, 'ui', 'TabControls.xml')
+UI_TabC = os.path.join(r, 'ui', 'TabControls.ui')
 class TabControls(grabbo.Builder):
 	def __init__(self, mc, url = None):
 		grabbo.Builder.__init__(self, UI_TabC)

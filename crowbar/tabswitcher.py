@@ -7,7 +7,7 @@ r = os.path.realpath(__file__)
 r = os.path.dirname(r)
 r = os.path.dirname(r)
 
-TabS_UI = os.path.join(r, "ui", "TabSwitcher.xml")
+TabS_UI = os.path.join(r, "ui", "TabSwitcher.ui")
 class TabSwitcher (grabbo.Builder):
     def __init__(self, notebook, webviewcontiner):
         grabbo.Builder.__init__(self, TabS_UI)

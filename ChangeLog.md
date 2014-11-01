@@ -1,4 +1,7 @@
 ChageLog:
+* version 0.07.05:
+	* change all ".xml" files back to ".ui"
+	* fix About Dialog to fit new Grabbo.AboutDialog version 
 * version 0.07.04:
 	* fix too big web page on Tabs
 	* fix too small scrolledwindow when is only 2 tabs
@@ -8,7 +11,7 @@ ChageLog:
 	* Use Grabbo.AboutDialog instead Gtk.AboutDialog
 	* DuckDuckGo search in url bar
 * version 0.06.02:
-	* rebulid tabs mechanic
+	* rewrite tabs mechanic
 	* Don't show tabs until its more than 1
 	* Tabs on Top new good implementation using:
 		* Gtk.Notebook
