@@ -90,6 +90,9 @@ class Extension(object):
 
     def work(self):
         pass
+    
+    def off(self):
+        pass
 
 
 
