@@ -122,7 +122,7 @@ class TabControls(grabbo.Builder):
 			pixbuf = tmpwv.get_icon_pixbuf()
 			b.get_image().set_icon_from_pixbuf(pixbuf)
 		except:
-			b.get_image().set_from_icon_name("applications-internet")
+			b.get_image().set_from_icon_name("applications-internet", Gtk.IconSize.BUTTON)
 
 		def on_button(button):
 			self.webview.load_uri(i.get_uri())
