@@ -10,9 +10,6 @@ class AboutD(grabbo.AboutDialog):
         self.set_about_text(crowbar.aboutText)
         self.set_appname(crowbar.appName)
         self.set_shortdescrpition(crowbar.comment)
-        self.set_home_page(crowbar.home)
-        #self.set_rapport_page(crowbar.rapport)
-        self._RapportButton.hide()
         self.set_version(crowbar.version)
         self.set_license_text_file(crowbar.licenseText)
         self.Logo.set_from_file(crowbar.icon)
@@ -21,7 +18,10 @@ class AboutD(grabbo.AboutDialog):
         
         self.preshow()
 
-    def open_link(self, url):
-        self.notebook.add_tab(url, True)
+    def on_home(self, button):
+        self.notebook.add_tab(crowbar.home, True)
+        
+    def on_rapport(self, button):
+        self.notebook.add_tab(crowbar.rapport, True)
 
 
