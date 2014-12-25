@@ -107,7 +107,7 @@ class TabControls(grabbo.Builder):
 				for i in bl:
 					self.HList_add(i, HList, tmpwv, box)
 			
-			del tmpwv
+			#del tmpwv
 			HList.show_all()
 
 	def HList_add(self, i, HList, tmpwv, box):
