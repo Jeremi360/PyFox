@@ -31,6 +31,7 @@ class MainControls(grabbo.Builder):
 
         self.menub.get_image().set_from_pixbuf(crowbar.icon24)
         self.menub.connect("clicked", self.on_menu)
+        self.TarshB.connect("clicked", self.on_trash)
 
         self.set_title()
         self.auto_set_TabSwitcher_width()
