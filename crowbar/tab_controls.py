@@ -1,4 +1,4 @@
-from gi.repository import Gtk
+from gi.repository import Gtk, WebKit
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import grabbo
@@ -91,24 +91,26 @@ class TabControls(grabbo.Builder):
 			HList.add(box)
 
 			fbl = self.webview.get_back_forward_list()
+			tmpwv = WebKit.WebView()
 
 			if self.webview.can_go_forward():
 
 				bl = fbl.get_forward_list_with_limit(5)
 
 				for i in bl:
-					self.HList_add(i, HList, box)
+					self.HList_add(i, HList, tmpwv, box)
 
 			if self.webview.can_go_back():
 
 				bl = fbl.get_back_list_with_limit(5)
 
 				for i in bl:
-					self.HList_add(i, HList, box)
-
+					self.HList_add(i, HList, tmpwv, box)
+			
+			del tmpwv
 			HList.show_all()
 
-	def HList_add(self, i, HList, box):
+	def HList_add(self, i, HList, tmpwv, box):
 		s = crowbar.make_short(i.get_title(), 10)
 		b = Gtk.Button(s)
 		b.set_tooltip_text(i.get_title())
@@ -116,7 +118,8 @@ class TabControls(grabbo.Builder):
 		b.set_image(img)
 
 		try:
-			pixbuf = self.webview.get_icon_pixbuf()
+			tmpwv.load_uri(i.get_uri())
+			pixbuf = tmpwv.get_icon_pixbuf()
 			b.get_image().set_from_pixbuf(pixbuf)
 		except:
 			b.get_image().set_from_icon_name("applications-internet")
