@@ -107,7 +107,7 @@ class TabControls(grabbo.Builder):
 				for i in bl:
 					self.HList_add(i, HList, tmpwv, box)
 			
-			#del tmpwv
+			del tmpwv
 			HList.show_all()
 
 	def HList_add(self, i, HList, tmpwv, box):
@@ -120,7 +120,7 @@ class TabControls(grabbo.Builder):
 		try:
 			tmpwv.load_uri(i.get_uri())
 			pixbuf = tmpwv.get_icon_pixbuf()
-			b.get_image().set_icon_from_pixbuf(pixbuf)
+			b.get_image().set_from_pixbuf(pixbuf)
 		except:
 			b.get_image().set_from_icon_name("applications-internet", Gtk.IconSize.BUTTON)
 
