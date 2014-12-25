@@ -114,13 +114,14 @@ class TabControls(grabbo.Builder):
 		s = crowbar.make_short(i.get_title(), 10)
 		b = Gtk.Button(s)
 		b.set_tooltip_text(i.get_title())
-		img = Gtk.Image()
-		b.set_image(img)
+		b.set_image(Gtk.Image())
+		b.get_image().set_from_icon_name("applications-internet", Gtk.IconSize.BUTTON)
+		
 
 		try:
 			tmpwv.load_uri(i.get_uri())
 			pixbuf = tmpwv.get_icon_pixbuf()
-			b.get_image().set_from_pixbuf(pixbuf)
+			b.get_image().set_from_pixbuf(pixbuf, Gtk.IconSize.BUTTON)
 		except:
 			b.get_image().set_from_icon_name("applications-internet", Gtk.IconSize.BUTTON)
 
