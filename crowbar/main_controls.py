@@ -75,7 +75,7 @@ class MainControls(grabbo.Builder):
 
         for i in len(range(1, 10)):
 
-            self.HList_add(tl[i], TList, box)
+            self.TList_add(tl[i], TList, box)
 
         TList.show_all()
 
