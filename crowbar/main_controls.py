@@ -78,7 +78,7 @@ class MainControls(grabbo.Builder):
 
         TList.show_all()
 
-    def HList_add(self, i, TList, box):
+    def TList_add(self, i, TList, box):
         s = crowbar.make_short(i.get_title(), 10)
         b = Gtk.Button(s)
         b.set_tooltip_text(i.get_title())
