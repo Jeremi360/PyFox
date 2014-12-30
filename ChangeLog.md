@@ -1,4 +1,6 @@
 ChageLog:
+* version 0.07.06:
+	* small fix
 * version 0.07.05:
 	* change all ".xml" files back to ".ui"
 	* fix About Dialog to fit new Grabbo.AboutDialog version 
