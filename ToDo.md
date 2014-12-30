@@ -11,4 +11,3 @@ ToDo:
 * Settings
 * restore previous session
 * Addons(they are planed for 1.x version)
-* web dev tools(they are planed for 1.x version)
