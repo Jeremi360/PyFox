@@ -10,9 +10,6 @@ version = "0.07."
 comment = "Rethinked Web BRowser"
 home = "https://github.com/jeremi360/cRoWBaR"
 rapport = "https://github.com/jeremi360/cRoWBaR/issues"
-icon = os.path.join(r, 'icons', 'icon.png')
-iconSvg = os.path.join(r, 'icons', 'icon.svg')
-icon24 = Pixbuf.new_from_file_at_scale(icon, 24, 24, False)
 licenseText = os.path.join(r, 'LICENSE')
 defaultSearchEngine = "https://www.qwant.com/?q="
 aboutText = "Developed and designed by Jeremi 'jeremi360' Biernacki"

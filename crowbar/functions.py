@@ -1,4 +1,27 @@
+import os
 import pickle
+from gi.repository.GdkPixbuf import Pixbuf
+
+r = os.path.realpath(__file__)
+r = os.path.dirname(r)
+r = os.path.dirname(r)
+
+def getIcon(name, mime, size):
+    d = os.path.join(r, 'icons')
+    
+    if mime == None:
+        mime = 'png'
+        
+    n = ".".join([name, mime])
+    p = os.path.join(d, n)
+    
+    if size == (None or 256):
+        i = Pixbuf.new_from_file(p)
+    else:
+        i = Pixbuf.new_from_file_at_scale(p, size, size, False)
+        
+    return i
+    
 
 def loadPydFile(file):
     loaded = pickle.load(open(file, 'rb'))
