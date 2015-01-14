@@ -27,7 +27,7 @@ Screenshot:
 If you won to compile/run this you will need:
 
 - [python version 3.x][2]
-- Gtk(3.12 or higher) and Webkit from gi repository:
+- Gtk(3.12 or higher) and WebKit2 from gi repository:
 
 	- Linux see your dist repo
 	- [Windows][3] - download "pygi-aio-*-setup.exe"
