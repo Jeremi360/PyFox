@@ -11,7 +11,7 @@ class WebViewContiner(Gtk.ScrolledWindow):
         self.notebook = notebook
         self.ts = crowbar.TabSwitcher(self.notebook, self)
 
-        self.webview.connect("title-changed", self.title_chang)
+        self.webview.connect("load-changed", self.title_chang)
         self.webview.connect("icon-loaded", self.load_icon)
         self.webview.connect("context-menu", self.open_context_menu)
 
