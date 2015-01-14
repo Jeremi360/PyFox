@@ -6,7 +6,7 @@ r = os.path.dirname(r)
 r = os.path.dirname(r)
 
 appName = "cRoWBaR"
-version = "0.07.06"
+version = "0.07."
 comment = "Rethinked Web BRowser"
 home = "https://github.com/jeremi360/cRoWBaR"
 rapport = "https://github.com/jeremi360/cRoWBaR/issues"
@@ -15,7 +15,7 @@ iconSvg = os.path.join(r, 'icons', 'icon.svg')
 icon24 = Pixbuf.new_from_file_at_scale(icon, 24, 24, False)
 licenseText = os.path.join(r, 'LICENSE')
 defaultSearchEngine = "https://www.qwant.com/?q="
-aboutText = "Program and designed by Jeremi 'jeremi360' Biernacki"
+aboutText = "Developed and designed by Jeremi 'jeremi360' Biernacki"
 tabSize = 384
 userDir = os.path.join(os.getenv('HOME'), '.crowbar')
 settingsFile = os.path.join(userDir, "settings.pyd")
