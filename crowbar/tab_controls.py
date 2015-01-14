@@ -74,7 +74,7 @@ class TabControls(grabbo.Builder):
 		#connect WEBVIEW signals with methods
 		self.webview = wv
 		self.webview.connect("load-progress-changed", self.finish_load)
-		self.webview.connect("load-finshed", self.progress_load)
+		self.webview.connect("load-finished", self.progress_load)
 
 		self.webview.set_full_content_zoom(True)
 
