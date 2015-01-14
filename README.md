@@ -1,4 +1,6 @@
-![Logo][5] **cRoWBaR** - Rethink Web BRowser
+ ![Logo][5]
+ **cRoWBaR** - Rethink Web BRowser
+[Polish Website / Polska strona internatowa przeglądarki][9]
 
 Icon/Logo based on *Vinegard* icon from icon theme [*Faenza* by tiheum][6]
 
@@ -58,3 +60,4 @@ for example 0.07.02 ver:
 [6]:http://tiheum.deviantart.com/art/Faenza-Icons-173323228
 [7]:https://github.com/jeremi360/cRoWBaR/blob/master/ChangeLog.md
 [8]:https://github.com/jeremi360/cRoWBaR/blob/master/ToDo.md
+[9]:http://retrofunhd.esy.es/2014/09/crowbar-moja-przegladarka-internetowa/#more-177
