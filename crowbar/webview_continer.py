@@ -13,6 +13,7 @@ class WebViewContiner(Gtk.ScrolledWindow):
 
         self.webview.connect("title-changed", self.title_chang)
         self.webview.connect("icon-loaded", self.load_icon)
+        self.webview.connect("context-menu", self.open_context_menu)
 
         self.notebook.tabcontrols.urlen.set_text("")
         nt = "New Tab"
@@ -68,4 +69,15 @@ class WebViewContiner(Gtk.ScrolledWindow):
                                                               "applications-internet",
                                                               Gtk.IconSize.BUTTON
                                                               )
-
+        
+    def open_context_menu(self, context_menu, event, hit_test_result, user_data):
+        
+        context_menu. = WebKit.ContextMenuAction.OPEN_LINK_IN_NEW_WINDOW
+        
+        
+        
+        
+        
+        
+        
+        
