@@ -6,7 +6,7 @@ import crowbar
 class WebViewContiner(Gtk.ScrolledWindow):
     def __init__(self, notebook, url = None):
         Gtk.ScrolledWindow.__init__(self)
-        self.webview = WebKit2.WebView()
+        self.webview = WebKit.WebView()
         self.add(self.webview)
         self.notebook = notebook
         self.ts = crowbar.TabSwitcher(self.notebook, self)
