@@ -1,4 +1,4 @@
-from gi.repository import Gtk, WebKit2
+from gi.repository import Gtk, WebKit
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import crowbar
@@ -12,8 +12,8 @@ class WebViewContiner(Gtk.ScrolledWindow):
         self.ts = crowbar.TabSwitcher(self.notebook, self)
         
         
-        self.webview.connect("load-changed", self.title_chang)
-        self.webview.connect("load-changed", self.load_icon)
+        self.webview.connect("title-changed", self.title_chang)
+        self.webview.connect("icon-loaded", self.load_icon)
         self.webview.connect("context-menu", self.open_context_menu)
 
         self.notebook.tabcontrols.urlen.set_text("")
@@ -37,8 +37,7 @@ class WebViewContiner(Gtk.ScrolledWindow):
 
         self.show_all()
 
-    def title_chang(self, webview, frame):
-        title = webview.get_title()
+    def title_chang(self, webview, frame, title):
 
         short = crowbar.make_short(title)
         self.ts.set_label(short)

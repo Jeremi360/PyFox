@@ -68,7 +68,6 @@ class TabControls(grabbo.Builder):
 		self.backfb.connect("clicked", self.find_back)
 		self.nextfb.connect("clicked", self.find_next)
 
-		self.base = WebKit2.FaviconDatabase()
 		self.mc = mc
 
 	def set_webview(self, wv):
@@ -77,7 +76,7 @@ class TabControls(grabbo.Builder):
 		self.webview.connect("load-changed", self.finish_load)
 		self.webview.connect("load-changed", self.progress_load)
 
-		#self.webview WebKit2.WebView.set_z full_content_zoom(True)
+		self.webview.set_full_content_zoom(True)
 
 		try:
 			self.urlen.set_text(self.webview.get_uri())

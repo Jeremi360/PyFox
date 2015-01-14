@@ -1,6 +1,4 @@
 ChageLog:
-* version 0.08.:
-	* Change form WebKit1Gtk to WebKit2Gtk
 * version 0.07.12:
 	* all crowbar own icons size is 16x16
 	* use new getIcon instead icons variables
