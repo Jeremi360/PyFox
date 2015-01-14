@@ -36,7 +36,7 @@ If you won to compile/run this you will need:
 
 To run just double click on main.py in corwbar folder.
 
-version: 0.07.06
+version: 0.07.12
 
 Changed version system:
 for example 0.07.02 ver:

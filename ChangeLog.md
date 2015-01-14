@@ -1,5 +1,7 @@
 ChageLog:
-* version 0.07.:
+* version 0.07.12:
+	* all crowbar own icons size is 16x16
+	* use new getIcon instead icons variables
 	* new icon for groups list button
 	* remove icons variables from crowbar
 	* add getIcon method to crowbar
