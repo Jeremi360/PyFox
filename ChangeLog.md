@@ -1,7 +1,7 @@
 ChageLog:
 * version 0.07.:
-	
-	* Fix url update lag
+	* remove icons variables from crowbar
+	* add getIcon method to crowbar
 	* change search in url bar to Qwant 
 * version 0.07.06:
 	* small fix

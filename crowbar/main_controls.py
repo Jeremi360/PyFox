@@ -29,7 +29,7 @@ class MainControls(grabbo.Builder):
         self.GroupB = self.ui.get_object("Groups")
         self.DownB = self.ui.get_object("Downs")
 
-        self.menub.get_image().set_from_pixbuf(crowbar.icon24)
+        self.menub.get_image().set_from_pixbuf(crowbar.getIcon("icon", "png", 24))
         self.menub.connect("clicked", self.on_menu)
         self.TarshB.connect("clicked", self.on_trash)
 
