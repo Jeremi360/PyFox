@@ -68,6 +68,7 @@ class TabControls(grabbo.Builder):
 		self.backfb.connect("clicked", self.find_back)
 		self.nextfb.connect("clicked", self.find_next)
 
+		self.base = WebKit.FaviconDatabase()
 		self.mc = mc
 
 	def set_webview(self, wv):
@@ -91,36 +92,33 @@ class TabControls(grabbo.Builder):
 			HList.add(box)
 
 			fbl = self.webview.get_back_forward_list()
-			tmpwv = WebKit.WebView()
 
 			if self.webview.can_go_forward():
 
 				bl = fbl.get_forward_list_with_limit(5)
 
 				for i in bl:
-					self.HList_add(i, HList, tmpwv, box)
+					self.HList_add(i, HList, box)
 
 			if self.webview.can_go_back():
 
 				bl = fbl.get_back_list_with_limit(5)
 
 				for i in bl:
-					self.HList_add(i, HList, tmpwv, box)
+					self.HList_add(i, HList, box)
 			
-			del tmpwv
+			
 			HList.show_all()
 
-	def HList_add(self, i, HList, tmpwv, box):
+	def HList_add(self, i, HList, box):
 		s = crowbar.make_short(i.get_title(), 10)
 		b = Gtk.Button(s)
 		b.set_tooltip_text(i.get_title())
 		b.set_image(Gtk.Image())
 		b.get_image().set_from_icon_name("applications-internet", Gtk.IconSize.BUTTON)
-		
 
 		try:
-			tmpwv.load_uri(i.get_uri())
-			pixbuf = tmpwv.get_icon_pixbuf()
+			pixbuf = self.base.get_favicon_pixbuf(i.get_uri())
 			b.get_image().set_from_pixbuf(pixbuf)
 		except:
 			b.get_image().set_from_icon_name("applications-internet", Gtk.IconSize.BUTTON)
