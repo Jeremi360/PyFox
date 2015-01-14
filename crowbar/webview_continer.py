@@ -10,7 +10,6 @@ class WebViewContiner(Gtk.ScrolledWindow):
         self.add(self.webview)
         self.notebook = notebook
         self.ts = crowbar.TabSwitcher(self.notebook, self)
-        self.webview.
 
         self.webview.connect("title-changed", self.title_chang)
         self.webview.connect("icon-loaded", self.load_icon)
@@ -70,6 +69,14 @@ class WebViewContiner(Gtk.ScrolledWindow):
                                                               "applications-internet",
                                                               Gtk.IconSize.BUTTON
                                                               )
+        
+    def open_context_menu(self,
+                          context_menu,
+                          event,
+                          hit_test_result,
+                          user_data):
+        
+        print(context_menu.get_items())
         
     
         
