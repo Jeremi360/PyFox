@@ -77,7 +77,7 @@ class TabControls(grabbo.Builder):
 		self.webview.connect("load-changed", self.finish_load)
 		self.webview.connect("load-changed", self.progress_load)
 
-		self.webview.set_full_content_zoom(True)
+		#self.webview WebKit2.WebView.set_z full_content_zoom(True)
 
 		try:
 			self.urlen.set_text(self.webview.get_uri())
