@@ -69,4 +69,3 @@ class WebViewContiner(Gtk.ScrolledWindow):
                                                               Gtk.IconSize.BUTTON
                                                               )
 
-
