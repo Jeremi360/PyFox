@@ -1,4 +1,4 @@
-from gi.repository import Gtk, WebKit
+from gi.repository import Gtk, WebKit2
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import crowbar
@@ -6,7 +6,7 @@ import crowbar
 class WebViewContiner(Gtk.ScrolledWindow):
     def __init__(self, notebook, url = None):
         Gtk.ScrolledWindow.__init__(self)
-        self.webview = WebKit.WebView()
+        self.webview = WebKit2.WebView()
         self.add(self.webview)
         self.notebook = notebook
         self.ts = crowbar.TabSwitcher(self.notebook, self)
@@ -72,7 +72,7 @@ class WebViewContiner(Gtk.ScrolledWindow):
         
     def open_context_menu(self, context_menu, event, hit_test_result, user_data):
         
-        context_menu. = WebKit.ContextMenuAction.OPEN_LINK_IN_NEW_WINDOW
+        context_menu. = WebKit2.ContextMenuAction.OPEN_LINK_IN_NEW_WINDOW
         
         
         

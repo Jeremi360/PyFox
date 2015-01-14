@@ -1,4 +1,4 @@
-from gi.repository import Gtk, WebKit
+from gi.repository import Gtk, WebKit2
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import grabbo
@@ -68,7 +68,7 @@ class TabControls(grabbo.Builder):
 		self.backfb.connect("clicked", self.find_back)
 		self.nextfb.connect("clicked", self.find_next)
 
-		self.base = WebKit.FaviconDatabase()
+		self.base = WebKit2.FaviconDatabase()
 		self.mc = mc
 
 	def set_webview(self, wv):
