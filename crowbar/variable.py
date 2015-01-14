@@ -1,5 +1,4 @@
 import os
-from gi.repository.GdkPixbuf import Pixbuf
 
 r = os.path.realpath(__file__)
 r = os.path.dirname(r)
