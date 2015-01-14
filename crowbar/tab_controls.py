@@ -194,6 +194,8 @@ class TabControls(grabbo.Builder):
 			url = crowbar.defaultSearchEngine + url
 		elif not "://" in url:
 			url = "http://" + url
+			
+		widget.set_text(url)
 
 		self.webview.load_uri(url)
 
