@@ -1,4 +1,7 @@
 ChageLog:
+* version 0.07.:
+	* Fix url update lag
+	* change search in url bar to Qwant 
 * version 0.07.06:
 	* small fix
 * version 0.07.05:
