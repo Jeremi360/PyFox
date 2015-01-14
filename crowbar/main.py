@@ -31,7 +31,7 @@ class Main(grabbo.Window):
 
         self.hb = Gtk.HeaderBar()
         self.MC = crowbar.MainControls(self)
-        self.set_icon_from_file(crowbar.icon)
+        self.set_icon(crowbar.getIcon('icon'))
 
         self.tabs = crowbar.TabControls(self.MC)
         self.MC.notebook = self.tabs.notebook

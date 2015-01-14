@@ -1,5 +1,6 @@
 ChageLog:
 * version 0.07.:
+	* new icon for groups list button
 	* remove icons variables from crowbar
 	* add getIcon method to crowbar
 	* change search in url bar to Qwant 
