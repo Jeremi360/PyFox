@@ -18,8 +18,8 @@ class AboutD(grabbo.AboutDialog):
         self.set_shortdescrpition(crowbar.comment)
         self.set_version(crowbar.version)
         self.set_license_text_file(crowbar.licenseText)
-        self.Logo.set_from_pixbuf(LargeLogo)
-        self.set_icon(icon)
+        self.Logo.set_from_pixbuf(self.LargeLogo)
+        self.set_icon(self.icon)
         self.set_title("About " + crowbar.appName)
         
         self.preshow()
@@ -29,11 +29,11 @@ class AboutD(grabbo.AboutDialog):
         
     def on_about(self, button):
         grabbo.AboutDialog.on_about(self, button)
-        self.Logo.set_from_pixbuf(LargeLogo)
+        self.Logo.set_from_pixbuf(self.LargeLogo)
         
     def on_license_text(self, button):
         grabbo.AboutDialog.on_license_text(self, button)
-        self.Logo.set_from_pixbuf(SmallLogo)
+        self.Logo.set_from_pixbuf(self.SmallLogo)
         
     def on_rapport(self, button):
         self.notebook.add_tab(crowbar.rapport, True)
