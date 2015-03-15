@@ -12,8 +12,8 @@ class AboutD(grabbo.AboutDialog):
         self.set_shortdescrpition(crowbar.comment)
         self.set_version(crowbar.version)
         self.set_license_text_file(crowbar.licenseText)
-        self.Logo.set_from_file(crowbar.getIcon("icon", "png", 256))
-        self.set_icon_from_file(crowbar.getIcon("icon"))
+        self.Logo.set_from_pixbuf(crowbar.getIcon("icon", "png", 256))
+        self.set_icon(crowbar.getIcon("icon"))
         self.set_title("About " + crowbar.appName)
         
         self.preshow()
