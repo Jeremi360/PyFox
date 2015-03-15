@@ -7,7 +7,6 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 class AboutD(grabbo.AboutDialog):
     
-    
     def __init__(self, notebook):
         grabbo.AboutDialog.__init__(self)
         self.LargeLogo = crowbar.getIcon("icon", "png", 256)
