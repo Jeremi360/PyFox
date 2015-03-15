@@ -2,7 +2,6 @@ import os #, sys
 #sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import grabbo
 import crowbar
-from gi.repository import Gtk
 
 r = os.path.realpath(__file__)
 r = os.path.dirname(r)
