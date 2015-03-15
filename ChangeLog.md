@@ -1,4 +1,6 @@
 ChageLog:
+* version 0.07.13:
+	* fix AboutDialog to use new crowbar.getIcon Function
 * version 0.07.12:
 	* all crowbar own icons size is 16x16
 	* use new getIcon instead icons variables
