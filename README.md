@@ -1,5 +1,6 @@
  ![Logo][5]
  **cRoWBaR** - Rethink Web BRowser
+
 [Polish Website / Polska strona internatowa przeglądarki][9]
 
 Icon/Logo based on *Vinegard* icon from icon theme [*Faenza* by tiheum][6]
