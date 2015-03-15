@@ -3,9 +3,9 @@ import grabbo
 import crowbar
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-LargeLogo = crowbar.getIcon("icon", "png", 256)
-SmallLogo = crowbar.getIcon("icon", "png", 32)
-icon = crowbar.getIcon("icon")
+LargeLogo = crowbar.functions.getIcon("icon", "png", 256)
+SmallLogo = crowbar.functions.getIcon("icon", "png", 32)
+icon = crowbar.functions.getIcon("icon")
 
 class AboutD(grabbo.AboutDialog):
     def __init__(self, notebook):
