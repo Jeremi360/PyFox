@@ -6,12 +6,13 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 
 class AboutD(grabbo.AboutDialog):
-    LargeLogo = crowbar.getIcon("icon", "png", 256)
-    SmallLogo = crowbar.getIcon("icon", "png", 32)
-    icon = crowbar.getIcon("icon")
+    
     
     def __init__(self, notebook):
         grabbo.AboutDialog.__init__(self)
+        self.LargeLogo = crowbar.getIcon("icon", "png", 256)
+        self.SmallLogo = crowbar.getIcon("icon", "png", 32)
+        self.icon = crowbar.getIcon("icon")
         self.notebook = notebook
         self.set_about_text(crowbar.aboutText)
         self.set_appname(crowbar.appName)
