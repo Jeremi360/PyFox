@@ -1,9 +1,10 @@
 ChageLog:
-* version 0.07.14:
-	* fix AboutDialog to use new crowbar.getIcon Function
+* version 0.07.15:
+	* fix About Dialog to use new crowbar.getIcon Function
 	* remove wrong/unused import of Webkit2
+	* change size of logo on About Dialog License page to 32x32
 * version 0.07.12:
-	* all crowbar own icons size is 16x16
+	* all crowbar own icons default size is 16x16
 	* use new getIcon instead icons variables
 	* new icon for groups list button
 	* remove icons variables from crowbar
