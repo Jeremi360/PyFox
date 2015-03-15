@@ -1,7 +1,7 @@
 ChageLog:
 * version 0.07.14:
 	* fix AboutDialog to use new crowbar.getIcon Function
-	* fix wrong/unused import of Webkit2
+	* remove wrong/unused import of Webkit2
 * version 0.07.12:
 	* all crowbar own icons size is 16x16
 	* use new getIcon instead icons variables
