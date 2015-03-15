@@ -1,4 +1,5 @@
  ![Logo][5]
+ 
  **cRoWBaR** - Rethink Web BRowser
 
 [Polish Website / Polska strona internatowa przeglądarki][9]
