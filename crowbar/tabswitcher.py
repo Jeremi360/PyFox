@@ -10,6 +10,11 @@ r = os.path.dirname(r)
 
 TabS_UI = os.path.join(r, "ui", "TabSwitcher.ui")
 class TabSwitcher (grabbo.Builder):
+    button = Gtk.RadioButton
+    removeB = Gtk.Button
+    webview_continer = crowbar.WebViewContiner
+    notebook = crowbar.Notebook
+    
     def __init__(self, notebook, webviewcontiner):
         grabbo.Builder.__init__(self, TabS_UI)
         self.button = self.ui.get_object("button")
