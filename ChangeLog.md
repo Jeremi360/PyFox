@@ -1,4 +1,6 @@
 ChageLog:
+* version 0.07.16:
+	* change all ".ui" files back to ".xml"
 * version 0.07.15:
 	* fix About Dialog to use new crowbar.getIcon Function
 	* remove wrong/unused import of Webkit2
