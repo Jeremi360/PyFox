@@ -49,7 +49,7 @@ for example 0.07.02 ver:
 
 "Warning: This program is not finished"
 
-Some code was forked from https://github.com/zepto/webbrowser 
+Some code was forked from https://github.com/zepto/webbrowser
 
 [ChangeLog][7]
 
