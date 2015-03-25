@@ -49,10 +49,11 @@ for example 0.07.02 ver:
 
 "Warning: This program is not finished"
 
+Some code was forked from https://github.com/zepto/webbrowser 
+
 [ChangeLog][7]
 
 [ToDo List][8]
-
 
 [1]:https://raw.githubusercontent.com/jeremi360/cRoWBaR/master/shot.png
 [2]:https://www.python.org/
