@@ -2,7 +2,9 @@
   "mainFile": "crowbar/main.py", 
   "use-tabs": false, 
   "venv": "", 
-  "relatedProjects": [], 
+  "relatedProjects": [
+    "/home/jeremi360/Projects/Grabbo"
+  ], 
   "name": "cRoWBaR", 
   "license": "GNU General Public License v3", 
   "url": "https://github.com/jeremi360/cRoWBaR", 
