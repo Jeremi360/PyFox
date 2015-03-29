@@ -8,7 +8,9 @@
   "url": "https://github.com/jeremi360/cRoWBaR", 
   "pythonPath": "python3", 
   "preExecScript": "", 
-  "additional_builtins": [], 
+  "additional_builtins": [
+    "gi"
+  ], 
   "programParams": "", 
   "indentation": 4, 
   "PYTHONPATH": "", 
