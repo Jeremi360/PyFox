@@ -4,7 +4,6 @@ import crowbar
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 
-
 class AboutD(grabbo.AboutDialog):
     
     def __init__(self, notebook):
