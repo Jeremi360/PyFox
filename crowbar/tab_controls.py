@@ -117,9 +117,9 @@ class TabControls(grabbo.Builder):
 			
 		img = Gtk.Image()
 		if forward:
-			img = img.new_from_icon_name("go-forward")
+			img = img.new_from_icon_name("go-forward", 4)
 		else:
-			img = img.new_from_icon_name("go-back")
+			img = img.new_from_icon_name("go-back", 4)
 		
 		b.set_image(img)
 
