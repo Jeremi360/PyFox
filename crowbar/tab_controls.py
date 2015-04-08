@@ -114,7 +114,6 @@ class TabControls(grabbo.Builder):
 		b = Gtk.Button(s)
 		b.set_tooltip_text(i.get_title())
 		b.set_image(Gtk.Image())
-		b.get_image().set_from_icon_name("applications-internet", Gtk.IconSize.BUTTON)
 
 		try:
 			pixbuf = self.base.get_favicon_pixbuf(i.get_uri())
