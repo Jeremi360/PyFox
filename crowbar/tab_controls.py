@@ -1,5 +1,6 @@
 from gi.repository import Gtk
 import os, sys
+from telnetlib import FORWARD_X
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import grabbo
 import crowbar
@@ -97,29 +98,30 @@ class TabControls(grabbo.Builder):
 				bl = fbl.get_forward_list_with_limit(5)
 
 				for i in bl:
-					self.HList_add(i, HList, box)
+					self.HList_add(i, HList, box, True)
 
 			if self.webview.can_go_back():
 
 				bl = fbl.get_back_list_with_limit(5)
 
 				for i in bl:
-					self.HList_add(i, HList, box)
+					self.HList_add(i, HList, box, False)
 			
 			
 			HList.show_all()
 
-	def HList_add(self, i, HList, box):
+	def HList_add(self, i, HList, box, forward):
 		s = crowbar.make_short(i.get_title(), 10)
 		b = Gtk.Button(s)
-		b.set_tooltip_text(i.get_title())
-		b.set_image(Gtk.Image())
-
-		try:
-			pixbuf = self.base.get_favicon_pixbuf(i.get_uri())
-			b.get_image().set_from_pixbuf(pixbuf)
-		except:
-			b.get_image().set_from_icon_name("applications-internet", Gtk.IconSize.BUTTON)
+		b.set_tooltip_text(i.get_title())		
+			
+		img = Gtk.Image()
+		if forward:
+			img = img.new_from_icon_name("go-forward")
+		else:
+			img = img.new_from_icon_name("go-back")
+		
+		b.set_image(img)
 
 		def on_button(button):
 			self.webview.load_uri(i.get_uri())
