@@ -116,10 +116,11 @@ class TabControls(grabbo.Builder):
 		b.set_tooltip_text(i.get_title())		
 			
 		img = Gtk.Image()
+		
 		if forward:
-			img = img.new_from_icon_name("go-forward", 4)
+			img = img.new_from_icon_name("go-next", 4)
 		else:
-			img = img.new_from_icon_name("go-back", 4)
+			img = img.new_from_icon_name("go-previous", 4)
 		
 		b.set_image(img)
 
