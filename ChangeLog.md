@@ -46,7 +46,7 @@ ChageLog:
 * version 0.03.00:
 	* Menu - only 3 bottom buttons work for now
 * version 0.02.00:
-	* history mini list
+	* history mini list(last history)
 * version 0.01.05:
 	* Full screen mode
 	* progress in url bar
