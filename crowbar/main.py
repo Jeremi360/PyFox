@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 from gi.repository import Gtk
-import os, sys
+import os
+import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import crowbar
 import grabbo
@@ -29,14 +30,13 @@ class Main(grabbo.Window):
         if not os.path.exists(crowbar.trashFile):
             crowbar.savePydFile(crowbar.trashFile, [])
 
-
         self.hb = Gtk.HeaderBar()
         self.MC = crowbar.MainControls(self)
         self.set_icon(crowbar.getIcon('icon'))
 
         self.tabs = crowbar.TabControls(self.MC)
         self.MC.notebook = self.tabs.notebook
-        self.tabs.notebook.add_tab(url = crowbar.home, active = True)
+        self.tabs.notebook.add_tab(url=crowbar.home, active=True)
 
         self.hb.set_show_close_button(True)
         self.hb.set_title(crowbar.appName)
