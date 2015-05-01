@@ -8,6 +8,7 @@ import crowbar
 import grabbo
 
 
+
 class Main(grabbo.Window):
     def __init__(self):
         grabbo.Window.__init__(self)
