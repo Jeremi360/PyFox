@@ -1,0 +1,10 @@
+# SparkleShare
+.sparkleshare
+
+# Eclipse
+.project
+.pydevproject
+
+# Python
+*.pyc
+
