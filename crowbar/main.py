@@ -4,8 +4,7 @@ from gi.repository import Gtk
 import os
 import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-import crowbar
-import grabbo
+import crowbar, grabbo
 
 class Main(grabbo.Window):
     def __init__(self):
