@@ -1,4 +1,6 @@
 ChageLog:
+* version 0.07.19:
+	* small fix
 * version 0.07.18:
 	* fix About Dialog to fit new Grabbo.AboutDialog version
 	* now last history use "go-next" and "go-previous" icons
