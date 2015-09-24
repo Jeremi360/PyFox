@@ -1,7 +1,7 @@
 import os, sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import grabbo
 import crowbar
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 
 class AboutD(grabbo.AboutDialog):
@@ -19,21 +19,19 @@ class AboutD(grabbo.AboutDialog):
         self.get_logo().set_from_pixbuf(self.LargeLogo)
         self.set_icon(self.icon)
         self.set_title("About " + crowbar.appName)
-        
+
         self.preshow()
 
     def on_home(self, button):
         self.notebook.add_tab(crowbar.home, True)
-        
+
     def on_about(self, button):
         grabbo.AboutDialog.on_about(self, button)
         self.get_logo().set_from_pixbuf(self.LargeLogo)
-        
+
     def on_license_text(self, button):
         grabbo.AboutDialog.on_license_text(self, button)
         self.get_logo().set_from_pixbuf(self.SmallLogo)
-        
+
     def on_rapport(self, button):
         self.notebook.add_tab(crowbar.rapport, True)
-
-
