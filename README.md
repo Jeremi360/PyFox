@@ -57,7 +57,7 @@ Some code was forked from [github.com/zepto/webbrowser][10]
 
 [1]:https://raw.githubusercontent.com/jeremi360/cRoWBaR/master/shot.png
 [2]:http://sh.st/nrLQb
-[3]:http://sourceforge.net/projects/pygobjectwin32/files/
+[3]:http://sh.st/nrLEb
 [4]:https://github.com/jeremi360/Grabbo
 [5]:https://raw.githubusercontent.com/jeremi360/cRoWBaR/master/icons/icon.png
 [6]:http://tiheum.deviantart.com/art/Faenza-Icons-173323228
