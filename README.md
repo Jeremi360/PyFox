@@ -56,7 +56,7 @@ Some code was forked from [github.com/zepto/webbrowser][10]
 [ToDo List][8]
 
 [1]:https://raw.githubusercontent.com/jeremi360/cRoWBaR/master/shot.png
-[2]:https://www.python.org/
+[2]:http://sh.st/nrLQb
 [3]:http://sourceforge.net/projects/pygobjectwin32/files/
 [4]:https://github.com/jeremi360/Grabbo
 [5]:https://raw.githubusercontent.com/jeremi360/cRoWBaR/master/icons/icon.png
