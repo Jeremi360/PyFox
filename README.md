@@ -1,5 +1,5 @@
  ![Logo][5]
- 
+
  **cRoWBaR** - Rethink Web BRowser
 
 [Polish Website / Polska strona internatowa przeglądarki][9]
@@ -32,7 +32,7 @@ If you won to compile/run this you will need:
 - Gtk(3.12 or higher) and WebKit from gi repository:
 
 	- Linux see your dist repo
-	- [Windows][3] - download "pygi-aio-*-setup.exe"
+	- [Windows][3] - download "pygi-aio-*version*-setup.exe"
 
 - My [Grabbo lib][4]
 
@@ -49,7 +49,7 @@ for example 0.07.02 ver:
 
 "Warning: This program is not finished"
 
-Some code was forked from https://github.com/zepto/webbrowser
+Some code was forked from [github.com/zepto/webbrowser][10]
 
 [ChangeLog][7]
 
@@ -64,3 +64,4 @@ Some code was forked from https://github.com/zepto/webbrowser
 [7]:https://github.com/jeremi360/cRoWBaR/blob/master/ChangeLog.md
 [8]:https://github.com/jeremi360/cRoWBaR/blob/master/ToDo.md
 [9]:http://retrofunhd.esy.es/2014/09/crowbar-moja-przegladarka-internetowa/#more-177
+[10]:https://github.com/zepto/webbrowser
