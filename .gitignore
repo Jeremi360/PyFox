@@ -4,6 +4,7 @@
 # Eclipse
 .project
 .pydevproject
+.settings
 
 # Python
 *.pyc
