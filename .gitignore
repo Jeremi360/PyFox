@@ -1,4 +1,6 @@
 # Python
 *.pyc
-push.sh
+
+# SparkleShare
+.sparkleshare
 
