@@ -31,7 +31,7 @@ class MainControls(grabbo.Builder):
 
         self.menub.get_image().set_from_pixbuf(crowbar.getIcon("icon", "png", 16))
         self.GroupB.get_image().set_from_pixbuf(crowbar.getIcon("list", "png", 16))
-        
+
         self.menub.connect("clicked", self.on_menu)
         self.TarshB.connect("clicked", self.on_trash)
 
@@ -48,10 +48,10 @@ class MainControls(grabbo.Builder):
         self.parent.hb.set_title(t)
         self.Title.set_label(t)
 
-    def auto_set_TabSwitcher_width(self):
+    def auto_set_TabSwitcher_width(self, new_tab_size):
         maxw = self.parent.get_allocation().width*0.85
         neww = self.TabsSwitcher.get_allocation().width
-        minw = crowbar.tabSize
+        minw = new_tab_size # crowbar.tabSize
 
         if neww <= maxw:
             if neww >= minw:

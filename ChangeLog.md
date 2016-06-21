@@ -3,7 +3,7 @@ ChageLog:
 	 - fix About Dialog to fit new Grabbo.AboutDialog version
 	 - remove gi.require_version('WebKit', '3.0') warning
 	 - remove gi.require_version('Gtk', '3.0') warning
-	 - better see tabs buttons now
+	 - better see tabs buttons now 
  - version 0.07.19:
 	 - small fix
  - version 0.07.18:
