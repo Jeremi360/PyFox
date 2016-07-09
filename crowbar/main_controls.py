@@ -48,18 +48,9 @@ class MainControls(grabbo.Builder):
         self.parent.hb.set_title(t)
         self.Title.set_label(t)
 
-    def auto_set_TabSwitcher_width(self, new_tab_size):
-        maxw = self.parent.get_allocation().width*0.85
-        neww = self.TabsSwitcher.get_allocation().width
-        minw = new_tab_size # crowbar.tabSize
-
-        if neww <= maxw:
-            if neww >= minw:
-                self.sc.set_min_content_width(neww)
-            else:
-                self.sc.set_min_content_width(minw)
-        else:
-            self.sc.set_min_content_width(maxw)
+    def auto_set_TabSwitcher_width(self):
+        maxw = self.parent.get_allocation().width*0.75
+        self.sc.set_min_content_width(maxw)
 
     def on_menu(self, button):
         po = Gtk.Popover.new(self.menub)
@@ -75,7 +66,7 @@ class MainControls(grabbo.Builder):
 
         tl = crowbar.loadPydFile(crowbar.trashFile)
 
-        for i in len(range(1, 10)):
+        for i in range(1, 10):
 
             self.TList_add(tl[i], TList, box)
 

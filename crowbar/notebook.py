@@ -31,7 +31,6 @@ class Notebook(Gtk.Notebook):
             wvc.ts.button.set_active(True)
             self.tabcontrols.set_webview(wvc.webview)
 
-        new_tab_size = wvc.ts.get_group().get_prefered_width()[0] #hear
         self.maincotrols.auto_set_TabSwitcher_width()
         self.auto_show_switcher()
 
