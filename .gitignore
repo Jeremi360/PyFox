@@ -1,7 +1,6 @@
 # Python
 *.pyc
 
-# SparkleShare
-.sparkleshare
-
 pygtkfx
+pyfox/__pycache__
+.vscode

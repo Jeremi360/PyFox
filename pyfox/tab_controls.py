@@ -1,6 +1,6 @@
 from gi.repository import Gtk
 import os, sys
-from telnetlib import FORWARD_X
+
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import pygtkfx
 import pyfox

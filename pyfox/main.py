@@ -12,7 +12,7 @@ import pyfox, pygtkfx
 class Main(pygtkfx.Window):
     def __init__(self):
         pygtkfx.Window.__init__(self)
-
+        
         if not os.path.exists(pyfox.userDir):
             os.mkdir(pyfox.userDir)
 
