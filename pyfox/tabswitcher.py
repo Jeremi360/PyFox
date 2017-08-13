@@ -1,7 +1,7 @@
 import os #, sys
 #sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import grabbo
-import crowbar
+import pyfox
 
 r = os.path.realpath(__file__)
 r = os.path.dirname(r)
@@ -46,9 +46,9 @@ class TabSwitcher (grabbo.Builder):
         self.notebook.tabcontrols.set_webview(self.webviewcontiner.webview)
 
     def on_remove(self, button):
-        tl = crowbar.loadPydFile(crowbar.trashFile)
+        tl = pyfox.loadPydFile(pyfox.trashFile)
         tl.append(self.webviewcontiner)
-        crowbar.savePydFile(crowbar.trashFile, tl)
+        pyfox.savePydFile(pyfox.trashFile, tl)
         self.notebook.remove_page(self.get_num())
         self.notebook.maincotrols.TabsSwitcher.remove(self.get())
         self.notebook.auto_show_switcher()

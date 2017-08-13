@@ -5,8 +5,8 @@ Name = "ToTop"
 shortDes = "Go To Top of page"
 Descrption = "and nothing more :P"
 Author = "Jeremi 'jeremi360' Biernacki"
-url_1 = "https://github.com/jeremi360/cRoWBaR"
-url_2 = "/blob/master/crowbar/extensions/totop.py"
+url_1 = "https://github.com/jeremi360/pyfox"
+url_2 = "/blob/master/pyfox/extensions/totop.py"
 url = "".join((url_1, url_2))
 Icon = "go-top"
 

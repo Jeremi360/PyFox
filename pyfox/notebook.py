@@ -1,7 +1,7 @@
 from gi.repository import Gtk
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-import crowbar
+import pyfox
 
 class Notebook(Gtk.Notebook):
     def __init__(self, tabcontrols, maincontrols):
@@ -17,7 +17,7 @@ class Notebook(Gtk.Notebook):
         self.add_tab()
 
     def add_tab(self, url = None, active = False):
-        wvc = crowbar.WebViewContiner(self, url)
+        wvc = pyfox.WebViewContiner(self, url)
         self.append_page(child = wvc)
 
         self.maincotrols.TabsSwitcher.add(wvc.ts.get())

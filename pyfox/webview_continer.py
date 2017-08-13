@@ -3,7 +3,7 @@ gi.require_version('WebKit', '3.0')
 from gi.repository import Gtk, WebKit
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-import crowbar
+import pyfox
 
 class WebViewContiner(Gtk.ScrolledWindow):
     def __init__(self, notebook, url = None):
@@ -11,7 +11,7 @@ class WebViewContiner(Gtk.ScrolledWindow):
         self.webview = WebKit.WebView()
         self.add(self.webview)
         self.notebook = notebook
-        self.ts = crowbar.TabSwitcher(self.notebook, self)
+        self.ts = pyfox.TabSwitcher(self.notebook, self)
 
 
         self.webview.connect("title-changed", self.title_chang)
@@ -41,7 +41,7 @@ class WebViewContiner(Gtk.ScrolledWindow):
 
     def title_chang(self, webview, frame, title):
 
-        short = crowbar.make_short(title)
+        short = pyfox.make_short(title)
         self.ts.set_label(short)
         self.ts.set_tooltip(title)
 

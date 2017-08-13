@@ -1,15 +1,11 @@
- ![Logo][5]
+![Logo][5]
 
- **cRoWBaR** - Rethink Web BRowser
-
-[Polish Website / Polska strona internatowa przeglądarki][9]
-
-Icon/Logo based on *Vinegard* icon from icon theme [*Faenza* by tiheum][6]
+**PyFox** - Rethinked Web Browser
 
 Screenshot:
-![cRoWBaR in Action][1]
+![PyFox in Action][1]
 
-**cRowBaR** is simple web browser for Linux inspired by:
+**PyFox** is simple web browser for Linux inspired by:
 
  *  Firefox:
     * Aurialis UI
@@ -31,14 +27,14 @@ If you won to compile/run this you will need:
 - [python version 3.x][2]
 - Gtk(3.12 or higher) and WebKit from gi repository:
 
-	- Linux see your dist repo
+	- Linux - see your dist repo
 	- [Windows][3] - download "pygi-aio-*version*-setup.exe"
 
 - My [Grabbo lib][4]
 
-To run just double click on main.py in corwbar folder.
+To run just double click on main.py in pyfox folder.
 
-version: 0.07.21
+version: 0.07.22
 
 Changed version system:
 for example 0.07.02 ver:
@@ -49,19 +45,14 @@ for example 0.07.02 ver:
 
 "Warning: This program is not finished"
 
-Some code was forked from [github.com/zepto/webbrowser][10]
+[ChangeLog][6]
 
-[ChangeLog][7]
+[ToDo List][7]
 
-[ToDo List][8]
-
-[1]:https://raw.githubusercontent.com/jeremi360/cRoWBaR/master/shot.png
-[2]:http://sh.st/nrLQb
-[3]:http://sh.st/nrLEb
-[4]:https://github.com/jeremi360/Grabbo
-[5]:https://raw.githubusercontent.com/jeremi360/cRoWBaR/master/icons/icon.png
-[6]:http://sh.st/nrLR7
-[7]:https://github.com/jeremi360/cRoWBaR/blob/master/ChangeLog.md
-[8]:https://github.com/jeremi360/cRoWBaR/blob/master/ToDo.md
-[9]:http://sh.st/nrLYr
-[10]:http://sh.st/nrLU2
+[1]:https://raw.githubusercontent.com/jeremi360/PyFox/master/shot.png
+[2]:https://www.python.org
+[3]:https://sourceforge.net/projects/pygobjectwin32/files/
+[4]:https://github.com/jeremi360/PyGtkFX
+[5]:icon.png
+[6]:ChangeLog.md
+[7]:ToDo.md

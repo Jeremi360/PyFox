@@ -3,7 +3,7 @@ import os, sys
 from telnetlib import FORWARD_X
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import grabbo
-import crowbar
+import pyfox
 
 r = os.path.realpath(__file__)
 r = os.path.dirname(r)
@@ -46,7 +46,7 @@ class TabControls(grabbo.Builder):
 		self.LeftScroll.hide()
 
 		#create Notebook
-		self.notebook = crowbar.Notebook(self, mc)
+		self.notebook = pyfox.Notebook(self, mc)
 		self.TabsBox.pack_start(self.notebook, True, True, 1)
 		self.notebook.show()
 
@@ -111,7 +111,7 @@ class TabControls(grabbo.Builder):
 			HList.show_all()
 
 	def HList_add(self, i, HList, box, forward):
-		s = crowbar.make_short(i.get_title(), 10)
+		s = pyfox.make_short(i.get_title(), 10)
 		b = Gtk.Button(s)
 		b.set_tooltip_text(i.get_title())		
 			
@@ -190,7 +190,7 @@ class TabControls(grabbo.Builder):
 		url = widget.get_text()
 
 		if not "://" or  not "." in url:
-			url = crowbar.defaultSearchEngine + url
+			url = pyfox.defaultSearchEngine + url
 		elif not "://" in url:
 			url = "http://" + url
 			

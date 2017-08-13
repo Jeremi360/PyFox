@@ -1,6 +1,6 @@
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-import crowbar
+import pyfox
 import grabbo
 
 r = os.path.realpath(__file__)
@@ -30,15 +30,15 @@ class Menu(grabbo.Builder):
 
     def on_home(self, button):
         self.po.hide()
-        self.notebook.add_tab(crowbar.home, True)
+        self.notebook.add_tab(pyfox.home, True)
 
     def on_rbug(self, button):
         self.po.hide()
-        self.notebook.add_tab(crowbar.rapport, True)
+        self.notebook.add_tab(pyfox.rapport, True)
 
     def on_about(self, button):
         self.po.hide()
-        ad = crowbar.AboutD(self.notebook)
+        ad = pyfox.AboutD(self.notebook)
         ad.show_all()
 
     def get(self):

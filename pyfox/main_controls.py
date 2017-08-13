@@ -1,7 +1,7 @@
 from gi.repository import Gtk
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-import crowbar
+import pyfox
 import grabbo
 
 r = os.path.realpath(__file__)
@@ -29,8 +29,8 @@ class MainControls(grabbo.Builder):
         self.GroupB = self.ui.get_object("Groups")
         self.DownB = self.ui.get_object("Downs")
 
-        self.menub.get_image().set_from_pixbuf(crowbar.getIcon("icon", "png", 16))
-        self.GroupB.get_image().set_from_pixbuf(crowbar.getIcon("list", "png", 16))
+        self.menub.get_image().set_from_pixbuf(pyfox.getIcon("icon", "png", 16))
+        self.GroupB.get_image().set_from_pixbuf(pyfox.getIcon("list", "png", 16))
 
         self.menub.connect("clicked", self.on_menu)
         self.TarshB.connect("clicked", self.on_trash)
@@ -41,9 +41,9 @@ class MainControls(grabbo.Builder):
 
     def set_title(self, title = None):
         if title is None:
-            t = crowbar.appName
+            t = pyfox.appName
         else:
-            t = crowbar.appName + ": " + title
+            t = pyfox.appName + ": " + title
 
         self.parent.hb.set_title(t)
         self.Title.set_label(t)
@@ -54,7 +54,7 @@ class MainControls(grabbo.Builder):
 
     def on_menu(self, button):
         po = Gtk.Popover.new(self.menub)
-        m = crowbar.Menu(po, self.notebook).get()
+        m = pyfox.Menu(po, self.notebook).get()
         po.add(m)
         po.show()
 
@@ -64,7 +64,7 @@ class MainControls(grabbo.Builder):
         box.set_orientation(Gtk.Orientation.VERTICAL)
         TList.add(box)
 
-        tl = crowbar.loadPydFile(crowbar.trashFile)
+        tl = pyfox.loadPydFile(pyfox.trashFile)
 
         for i in range(1, 10):
 
@@ -73,7 +73,7 @@ class MainControls(grabbo.Builder):
         TList.show_all()
 
     def TList_add(self, i, TList, box):
-        s = crowbar.make_short(i.get_title(), 10)
+        s = pyfox.make_short(i.get_title(), 10)
         b = Gtk.Button(s)
         b.set_tooltip_text(i.get_title())
         img = Gtk.Image()
