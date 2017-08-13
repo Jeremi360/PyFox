@@ -2,7 +2,7 @@ from gi.repository import Gtk
 import os, sys
 from telnetlib import FORWARD_X
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-import grabbo
+import pygtkfx
 import pyfox
 
 r = os.path.realpath(__file__)
@@ -11,9 +11,9 @@ r = os.path.dirname(r)
 
 
 UI_TabC = os.path.join(r, 'ui', 'TabControls.xml')
-class TabControls(grabbo.Builder):
+class TabControls(pygtkfx.Builder):
 	def __init__(self, mc, url = None):
-		grabbo.Builder.__init__(self, UI_TabC)
+		pygtkfx.Builder.__init__(self, UI_TabC)
 
 		#get objects from UI_Tab
 		#main tab toolbar

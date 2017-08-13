@@ -1,11 +1,11 @@
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-import grabbo
+import pygtkfx
 import pyfox
 
-class AboutD(grabbo.AboutDialog):
+class AboutD(pygtkfx.AboutDialog):
     def __init__(self, notebook):
-        grabbo.AboutDialog.__init__(self)
+        pygtkfx.AboutDialog.__init__(self)
 
         Logo = pyfox.getIcon("icon", "png", 256)
         icon = pyfox.getIcon("icon")

@@ -7,11 +7,11 @@ from gi.repository import Gtk
 import os
 import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-import pyfox, grabbo
+import pyfox, pygtkfx
 
-class Main(grabbo.Window):
+class Main(pygtkfx.Window):
     def __init__(self):
-        grabbo.Window.__init__(self)
+        pygtkfx.Window.__init__(self)
 
         if not os.path.exists(pyfox.userDir):
             os.mkdir(pyfox.userDir)
@@ -58,7 +58,7 @@ class Main(grabbo.Window):
         self.show()
 
     def on_close(self, button):
-        grabbo.Window.on_close(self, button)
+        pygtkfx.Window.on_close(self, button)
 
 if __name__ == "__main__":
     app = Main()

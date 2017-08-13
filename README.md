@@ -30,7 +30,7 @@ If you won to compile/run this you will need:
 	- Linux - see your dist repo
 	- [Windows][3] - download "pygi-aio-*version*-setup.exe"
 
-- My [Grabbo lib][4]
+- My [pygtkfx lib][4]
 
 To run just double click on main.py in pyfox folder.
 

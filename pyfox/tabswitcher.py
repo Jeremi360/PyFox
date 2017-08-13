@@ -1,6 +1,6 @@
 import os #, sys
 #sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-import grabbo
+import pygtkfx
 import pyfox
 
 r = os.path.realpath(__file__)
@@ -8,9 +8,9 @@ r = os.path.dirname(r)
 r = os.path.dirname(r)
 
 TabS_UI = os.path.join(r, "ui", "TabSwitcher.xml")
-class TabSwitcher (grabbo.Builder):
+class TabSwitcher (pygtkfx.Builder):
     def __init__(self, notebook, webviewcontiner):
-        grabbo.Builder.__init__(self, TabS_UI)
+        pygtkfx.Builder.__init__(self, TabS_UI)
         self.button = self.ui.get_object("button")
         self.removeB = self.ui.get_object("RemoveButton")
 

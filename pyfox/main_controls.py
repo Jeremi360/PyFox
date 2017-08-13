@@ -2,16 +2,16 @@ from gi.repository import Gtk
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import pyfox
-import grabbo
+import pygtkfx
 
 r = os.path.realpath(__file__)
 r = os.path.dirname(r)
 r = os.path.dirname(r)
 
 UI_Main = os.path.join(r, 'ui', 'MainControls.xml')
-class MainControls(grabbo.Builder):
+class MainControls(pygtkfx.Builder):
     def __init__(self, parent):
-        grabbo.Builder.__init__(self, UI_Main)
+        pygtkfx.Builder.__init__(self, UI_Main)
 
         self.notebook = None
         self.parent = parent

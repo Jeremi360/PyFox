@@ -1,16 +1,16 @@
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import pyfox
-import grabbo
+import pygtkfx
 
 r = os.path.realpath(__file__)
 r = os.path.dirname(r)
 r = os.path.dirname(r)
 
 Menu_UI = os.path.join(r, 'ui', 'Menu.xml')
-class Menu(grabbo.Builder):
+class Menu(pygtkfx.Builder):
     def __init__(self, po, notebook):
-        grabbo.Builder.__init__(self, Menu_UI)
+        pygtkfx.Builder.__init__(self, Menu_UI)
 
         self.notebook = notebook
         self.po = po

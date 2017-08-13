@@ -1,4 +1,4 @@
-from grabbo import Builder
+from pygtkfx import Builder
 from gi.repository import Gtk
 import os
 
