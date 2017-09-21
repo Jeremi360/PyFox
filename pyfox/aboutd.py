@@ -7,7 +7,7 @@ class AboutD(pygtkfx.AboutDialog):
     def __init__(self, notebook):
         pygtkfx.AboutDialog.__init__(self)
 
-        Logo = pyfox.getIcon("icon", "png", 64)
+        Logo = pyfox.getIcon("icon", "svg", 64)
         icon = pyfox.getIcon("icon")
         self.notebook = notebook
 

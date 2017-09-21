@@ -24,15 +24,26 @@ def getIcon(name, mime = None, size = None):
     
 
 def loadPydFile(file):
-    loaded = pickle.load(open(file, 'rb'))
-    return loaded
+    try:
+        loaded = pickle.load(open(file, 'rb'))
+        return loaded
+    
+    except EOFError:
+        return None
 
 def savePydFile(file, data):
     pickle.dump(data, open(file, 'wb'))
 
 
-def make_short(title, lenght = 26):
+def make_short(title, lenght = 26, uri = ""):
     short = ""
+    
+    if not isinstance(title, str):
+        title == uri
+        if uri == "":
+            title = "Error : None Title"
+            return title
+
     if len(title) > lenght:
         for i in range(lenght):
             try:

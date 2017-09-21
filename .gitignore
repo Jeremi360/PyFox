@@ -4,3 +4,5 @@
 pygtkfx
 pyfox/__pycache__
 .vscode
+*.xml~
+

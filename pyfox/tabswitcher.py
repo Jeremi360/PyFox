@@ -38,19 +38,33 @@ class TabSwitcher (pygtkfx.Builder):
     def set_tooltip(self, tooltip):
         self.button.set_tooltip_text(tooltip)
 
-    def get_num(self):
-        return self.notebook.page_num(self.webviewcontiner)
-
     def on_tab(self, button):
-        self.notebook.set_current_page(self.get_num())
+        page_num = self.notebook.page_num(self.webviewcontiner)
+        self.notebook.set_current_page(page_num)
         self.notebook.tabcontrols.set_webview(self.webviewcontiner.webview)
 
     def on_remove(self, button):
-        tl = pyfox.loadPydFile(pyfox.trashFile)
-        tl.append(self.webviewcontiner)
-        pyfox.savePydFile(pyfox.trashFile, tl)
-        self.notebook.remove_page(self.get_num())
-        self.notebook.maincotrols.TabsSwitcher.remove(self.get())
+        tf = pyfox.loadPydFile(pyfox.trashFile)
+        if tf == None:
+            tf = []
+        
+        wvc = self.webviewcontiner
+        nblist = wvc.get_backlist()
+        
+        nblist.append(wvc.get_current_history_item())
+        tf.append(nblist)
+        pyfox.savePydFile(pyfox.trashFile, tf)
+
+        page_num = self.notebook.get_current_page()
+        self.notebook.remove_page(page_num)
+        self.notebook.maincontrols.parent.remove(self.get())
+
+        nwvc = self.notebook.get_current_page_child()
+        self.notebook.maincontrols.set_title(nwvc.get_current_title())
+        self.notebook.tabcontrols.urlen.set_text(nwvc.get_current_uri())
+        
         self.notebook.auto_show_switcher()
-        self.notebook.maincotrols.auto_set_TabSwitcher_width()
+        self.notebook.maincontrols.auto_set_TabSwitcher_width()
+        self.webviewcontiner = nwvc     
+        self.notebook.maincontrols.TarshB.set_sensitive(True)
 

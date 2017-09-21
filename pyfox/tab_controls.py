@@ -81,6 +81,7 @@ class TabControls(pygtkfx.Builder):
 
 		try:
 			self.urlen.set_text(self.webview.get_uri())
+
 		except:
 			self.urlen.set_text("")
 
@@ -199,6 +200,9 @@ class TabControls(pygtkfx.Builder):
 		self.webview.load_uri(url)
 
 	def progress_load(self, webview, amount):
+		if self.webview.get_uri() != None:
+			self.urlen.set_text(self.webview.get_uri())
+			
 		self.urlen.set_progress_fraction(amount / 100.0)
 
 	def finish_load(self, webview, frame):

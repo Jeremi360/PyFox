@@ -1,5 +1,9 @@
 ChangeLog:
- - version 0.07.22:
+ - version 0.08.05:
+	 - working restore closed tabs(still some bugs)
+	 - now project use only svg icons
+	 - fix prevoius url before page if finshed load
+	 - fix none url when loading new page
 	 - change broswer name to PyFox
 	 - change grabbo in to PyGtkFX
 

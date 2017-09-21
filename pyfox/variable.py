@@ -5,7 +5,7 @@ r = os.path.dirname(r)
 r = os.path.dirname(r)
 
 appName = "pyfox"
-version = "0.07.22"
+version = "0.08.05"
 comment = "Rethinked Web BRowser"
 home = "https://github.com/jeremi360/pyfox"
 rapport = "https://github.com/jeremi360/pyfox/issues"
@@ -14,7 +14,8 @@ defaultSearchEngine = "https://www.qwant.com/?q="
 aboutFile = os.path.join(r, 'README.md')
 toDoFile = os.path.join(r, 'ToDo.md')
 changelog = os.path.join(r, 'ChangeLog.md')
-tabSize = 400
+tabSpace = 50
+trashListLimit = 10
 
 if sys.platform == 'win32':
     userDir = os.path.join("C:","Users", os.getlogin(), "pyfox")

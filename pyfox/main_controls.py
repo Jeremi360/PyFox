@@ -29,11 +29,18 @@ class MainControls(pygtkfx.Builder):
         self.GroupB = self.ui.get_object("Groups")
         self.DownB = self.ui.get_object("Downs")
 
-        self.menub.get_image().set_from_pixbuf(pyfox.getIcon("icon", "png", 16))
-        self.GroupB.get_image().set_from_pixbuf(pyfox.getIcon("list", "png", 16))
+        self.menub.get_image().set_from_pixbuf(pyfox.getIcon("icon", "svg", 32))
 
         self.menub.connect("clicked", self.on_menu)
         self.TarshB.connect("clicked", self.on_trash)
+
+        if not os.path.exists(pyfox.trashFile):
+            self.TarshB.set_sensitive(False)
+        
+        else:
+            tl = pyfox.loadPydFile(pyfox.trashFile)
+            if tl == None:
+                self.TarshB.set_sensitive(False)
 
         self.set_title()
         self.auto_set_TabSwitcher_width()
@@ -49,7 +56,7 @@ class MainControls(pygtkfx.Builder):
         self.Title.set_label(t)
 
     def auto_set_TabSwitcher_width(self):
-        maxw = self.parent.get_allocation().width*0.75
+        maxw = self.parent.get_allocation().width*pyfox.variable.tabSpace/100
         self.sc.set_min_content_width(maxw)
 
     def on_menu(self, button):
@@ -65,29 +72,61 @@ class MainControls(pygtkfx.Builder):
         TList.add(box)
 
         tl = pyfox.loadPydFile(pyfox.trashFile)
+        # print(tl)
 
-        for i in range(1, 10):
+        i = 0;
+        for item in tl:
+            if i < pyfox.trashListLimit:
+                id = len(tl) - 1 - i
+                b = TrashListButton(tl, id, TList, self.notebook)
+                box.add(b)
 
-            self.TList_add(tl[i], TList, box)
+            else:
+                break
+
+            i += 1
 
         TList.show_all()
+       
 
-    def TList_add(self, i, TList, box):
-        s = pyfox.make_short(i.get_title(), 10)
-        b = Gtk.Button(s)
-        b.set_tooltip_text(i.get_title())
+class TrashListButton(Gtk.Button):
+    def __init__(self, i, id, TList, notebook):
+        self.notebook = notebook
+        self.id = id
+        i = i[id][-1]
+        print(i)
+        
+        s = ""
+        if i["title"] != None:
+            s = pyfox.make_short(i["title"], 10, i["uri"])
+        
+        Gtk.Button.__init__(self, s)
+        self.set_tooltip_text(i["uri"])
         img = Gtk.Image()
-        b.set_image(img)
+        self.set_image(img)
 
         try:
             pixbuf = i.get_icon_pixbuf()
-            b.get_image().set_from_pixbuf(pixbuf)
+            self.get_image().set_from_pixbuf(pixbuf)
         except:
-            b.get_image().set_from_icon_name("applications-internet")
+            self.get_image().set_from_icon_name("applications-internet",
+                                                Gtk.IconSize.BUTTON)
 
-        def on_button(button):
-            self.webview.load_uri(i.get_uri())
-            TList.hide()
+        self.connect("clicked", self.on_button)
 
-        b.connect("clicked", on_button)
-        box.add(b)
+
+    def on_button(self, button):
+        tf = pyfox.loadPydFile(pyfox.trashFile)
+        i = tf[self.id]
+        tf.remove(i)
+        pyfox.savePydFile(pyfox.trashFile, tf)
+
+        wvc = self.notebook.add_tab(i[-1]["uri"])
+
+        for item in i:
+            wvc.add_history_item(item["uri"], item["title"])
+
+        TList.hide()
+
+        
+        

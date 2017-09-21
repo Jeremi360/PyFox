@@ -34,25 +34,27 @@ If you won to compile/run this you will need:
 
 To run just double click on main.py in pyfox folder.
 
-version: 0.07.22
+version: 0.08.05
 
 Changed version system:
-for example 0.07.02 ver:
+for example 0.08.05 ver:
 
 * 0 - milestones (if 1 is 100% planed futures for version 1.00.00)
-* 07 - main changes (number of done futures for version 1.00.00)
-* 02 - small fixes (number of fixes and small changes after done main future)
+* 8 - main changes (number of done futures for version 1.00.00)
+* 05 - small fixes (number of fixes and small changes after done main future)
 
 "Warning: This program is not finished"
+
+From version 0.08.05 icons base on Pop Linux Icon Theme
 
 [ChangeLog][6]
 
 [ToDo List][7]
 
-[1]:https://raw.githubusercontent.com/jeremi360/PyFox/master/shot.png
+[1]:shot.png
 [2]:https://www.python.org
 [3]:https://sourceforge.net/projects/pygobjectwin32/files/
 [4]:https://github.com/jeremi360/PyGtkFX
-[5]:icon.png
+[5]:icons/icon.png
 [6]:ChangeLog.md
 [7]:ToDo.md
